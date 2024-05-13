@@ -1,0 +1,47 @@
+<template>
+    <div>
+        <section
+            class="relative bg-[url('/assets/img/refund-policy-top.png')] bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]">
+            <div class="absolute top-0 left-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+            <div
+                class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[246px]">
+            </div>
+            <div class="container relative z-10 lg:px-[97px] xl:px-4">
+                <div>
+                    <p class="mb-[18px] border-l-[3px] border-primary pl-2.5 leading-5 text-[#FBFBFD]">Venture Plans, your
+                        dream starts with us.</p>
+                    <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px] xl:leading-[53px]">
+                        Refund/Return Policy</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="container lg:px-[97px] xl:px-4 mt-24 mb-60">
+            <p class="max-w-4xl">{{ description }}</p>
+        </section>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            description: 'All payments are non-refundable, and they cannot be canceled once they have been made. Other service charges may be refundable, but this is entirely at The Venture Plans discretion. Customers can contact us, so we can assess whether or not a refund is possible.'
+        }
+    },
+
+    head() {
+        return {
+            title: 'Refund Policy',
+            link: [
+                {
+                    rel: 'canonical',
+                    href: this.content?.metaFields[0]?.canonicalUrl?((process.env.FE_BASE_URL?process.env.FE_BASE_URL:'https://seveti.vercel.app')+this.content.metaFields[0].canonicalUrl):((process.env.FE_BASE_URL?process.env.FE_BASE_URL:'https://seveti.vercel.app') + this.$route.path)
+                }
+            ]
+        };
+    },
+
+    methods: {},
+};
+</script>

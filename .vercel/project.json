@@ -1,0 +1,15 @@
+{
+  "projectId": "prj_Te6w8LxOZPixRhiLPMkoo1PbvgqA",
+  "orgId": "team_net4OPpNikiYxfDyAlgyCphz",
+  "settings": {
+    "createdAt": 1659587185646,
+    "framework": "nuxtjs",
+    "devCommand": "SET NODE_OPTIONS=--openssl-legacy-provider && nuxt",
+    "installCommand": "npm i --legacy-peer-deps",
+    "buildCommand": "npm run build",
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "18.x"
+  }
+}
