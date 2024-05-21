@@ -2,12 +2,10 @@
     <div>
         <div class="left-side-megamenu transition-left fixed -left-full bottom-0 left-[-84%] top-0 z-[60] h-screen w-10/12 bg-white md:left-[-360px] md:w-[360px]" :class="{ '!left-0 !block': $store.state.nav.open }">
             <div class="absolute right-0 top-0 z-10 flex h-[52px] w-[52px] items-center justify-center bg-primary" @click="$store.dispatch('nav/toggle')">
-                <a href="javascript:;" class="text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x text-white">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
             </div>
             <div id="menu-scroll-top" class="h-full overflow-y-auto overflow-x-hidden pb-12">
                 <!-- :class="{ '-left-full': dropdowns.includes('true') }" -->
@@ -15,7 +13,7 @@
                     <div class="">
                         <div class="ml-0">
                             <nuxt-link :to="localePath('/')" class="block w-full cursor-pointer px-5 py-4" @click.native="$store.dispatch('nav/toggle')">
-                                <img loading="lazy" class="h-[23px] w-[93px]" src="/assets/img/logo-black.svg" width="120" />
+                                <nuxt-img format="webp" src="/assets/img/logo-black.svg" alt="Logo" class="h-[23px] w-[93px]" loading="lazy" />
                             </nuxt-link>
                         </div>
                         <!-- <div class="mb-5 grid justify-end text-right">
@@ -45,7 +43,7 @@
                                             </a>
                                             <div class="mt-[22px]">
                                                 <nuxt-link :to="mainNav.url">
-                                                    <h4 class="px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black" @click="$store.dispatch('nav/toggle')">{{ mainNav.name }}</h4>
+                                                    <p class="px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black" @click="$store.dispatch('nav/toggle')">{{ mainNav.name }}</p>
                                                 </nuxt-link>
                                                 <ul v-if="mainNav.navChildItems" class="text-[13px] font-normal leading-4 text-black">
                                                     <li v-for="(subNav, subInd) in mainNav.navChildItems" :key="subNav.url + subInd">

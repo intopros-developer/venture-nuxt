@@ -2,7 +2,7 @@
     <section class="py-10 md:py-16 lg:pt-[168px]">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="text-center">
-                <h2 class="mb-3 text-[22px] font-medium leading-[27px] text-[#202A36] xl:text-[31px] xl:leading-[32px]" v-html="title"></h2>
+                <h4 class="mb-3 text-[22px] font-medium leading-[27px] text-[#202A36] xl:text-[31px] xl:leading-[32px]" v-html="title"></h4>
                 <p class="mx-auto mb-[26px] w-3/5 text-[15px] font-medium leading-[18px] -tracking-[0.03px] text-[#586376] sm:max-w-none xl:text-[22px] xl:leading-[21px] xl:-tracking-[0.04px]">
                     {{ description }}
                 </p>
@@ -20,7 +20,7 @@
                         :index="i"
                         class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white p-5 px-[17px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[126px] xl:w-[126px]"
                     >
-                        <img loading="lazy" :src="company.attributes.iconUrl" />
+                        <nuxt-img format="webp" :src="company.attributes.iconUrl" :alt="'Featured in' + i" loading="lazy" />
                     </div>
                 </div>
             </div>

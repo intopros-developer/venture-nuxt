@@ -1,5 +1,5 @@
 <template>
-    <section class="overflow-hidden py-10 md:py-16 xl:pb-[236px] xl:pt-36">
+    <section class="my-16 overflow-hidden md:my-20">
         <div class="container">
             <div class="mb-10 flex items-center justify-center text-center sm:gap-[33px]">
                 <div class="h-px w-1/5 bg-[#d5d5d5] sm:block sm:w-full"></div>
@@ -12,8 +12,8 @@
                 <template v-if="slider_data && !viewAll">
                     <div v-for="(data, i) in slider_data" :key="i" class="swiper-slide !h-auto">
                         <div class="swiper-slides-box flex overflow-hidden">
-                            <div style="background-image: linear-gradient(162deg, #ffffff 0%, #f0f9ff 100%)" class="px-[22px] pt-[28px] pb-3 text-center">
-                                <img loading="lazy" :src="data.attributes.profileImgUrl" class="mx-auto h-[115px] w-[115px] rounded-full object-cover" />
+                            <div style="background-image: linear-gradient(162deg, #ffffff 0%, #f0f9ff 100%)" class="px-[22px] pb-3 pt-[28px] text-center">
+                                <nuxt-img :src="data.attributes.profileImgUrl" class="mx-auto h-[115px] w-[115px] rounded-full object-cover" :alt="data.attributes.name" loading="lazy" format="webp" />
                                 <div class="max-w-[120px] pt-2.5">
                                     <p v-if="data.attributes.name" class="text-sm font-bold leading-[23px]">{{ data.attributes.name }}</p>
                                     <p class="pt-3.5 text-[15px] text-[#6c7d88]">{{ data.attributes.companyName }}</p>
@@ -25,18 +25,18 @@
                                         <icons-star v-for="rt in Math.abs(data.attributes.rating)" :key="rt" />
                                     </div>
                                     <div class="py-[3px] pr-4">
-                                        <a target="_blank" :href="data.attributes.googleLink" class="inline-block flex-none">
+                                        <a target="_blank" href="https://www.google.com/" class="inline-block flex-none">
                                             <icons-google-icon class="h-5 w-5 lg:h-[38px] lg:w-[38px]" />
                                         </a>
                                     </div>
                                 </div>
-                                <div class="hidden pt-[18px] pr-7 pb-2 md:block md:pb-0">
+                                <div class="hidden pb-2 pr-7 pt-[18px] md:block md:pb-0">
                                     <div class="line-clamp-6 text-sm font-light leading-[22px] text-[#333333]">{{ data.attributes.description }}</div>
                                 </div>
-                                <div class="block pt-[18px] pr-7 pb-2 md:hidden md:pb-0">
+                                <div class="block pb-2 pr-7 pt-[18px] md:hidden md:pb-0">
                                     <div v-if="!data.attributes.readMoreOn" class="line-clamp-6 text-sm font-light leading-[22px] text-[#333333]">{{ truncateString(data.attributes.description) }}</div>
                                     <div v-else class="line-clamp-6 text-sm font-light leading-[22px] text-[#333333]">{{ data.attributes.description }}</div>
-                                    <p v-if="data.attributes.description.length > 100" class="line-clamp-6 text-md mt-5 cursor-pointer font-bold leading-[22px] text-[#333333]" @click="toggleReadMore(data)">
+                                    <p v-if="data.attributes.description.length > 100" class="text-md mt-5 line-clamp-6 cursor-pointer font-bold leading-[22px] text-[#333333]" @click="toggleReadMore(data)">
                                         {{ data.attributes.readMoreOn ? 'Read Less' : 'Read More' }}
                                     </p>
                                 </div>
@@ -50,8 +50,8 @@
         <div v-if="slider_data && viewAll" class="mb-16 grid grid-cols-1 gap-x-5 gap-y-6 px-4 md:grid-cols-2 lg:grid-cols-3">
             <div v-for="(data, i) in slider_data" :key="i" class="swiper-slide !h-auto">
                 <div class="swiper-slides-box flex overflow-hidden">
-                    <div style="background-image: linear-gradient(162deg, #ffffff 0%, #f0f9ff 100%)" class="px-[22px] pt-[28px] pb-3 text-center">
-                        <img loading="lazy" :src="data.attributes.profileImgUrl" class="mx-auto h-[115px] w-[115px] rounded-full object-cover" />
+                    <div style="background-image: linear-gradient(162deg, #ffffff 0%, #f0f9ff 100%)" class="px-[22px] pb-3 pt-[28px] text-center">
+                        <nuxt-img format="webp" :src="data.attributes.profileImgUrl" class="mx-auto h-[115px] w-[115px] rounded-full object-cover" :alt="data.attributes.name" loading="lazy" />
                         <div class="max-w-[120px] pt-2.5">
                             <p v-if="data.attributes.name" class="text-sm font-bold leading-[23px]">{{ data.attributes.name }}</p>
                             <p class="pt-3.5 text-[15px] text-[#6c7d88]">{{ data.attributes.companyName }}</p>
@@ -63,12 +63,12 @@
                                 <icons-star v-for="rt in Math.abs(data.attributes.rating)" :key="rt" />
                             </div>
                             <div class="py-[3px] pr-4">
-                                <a target="_blank" :href="data.attributes.googleLink" class="inline-block flex-none">
+                                <a target="_blank" href="https://www.google.com/" class="inline-block flex-none">
                                     <icons-google-icon class="h-5 w-5 lg:h-[38px] lg:w-[38px]" />
                                 </a>
                             </div>
                         </div>
-                        <div class="pt-[18px] pr-7 pb-2 md:pb-0">
+                        <div class="pb-2 pr-7 pt-[18px] md:pb-0">
                             <div class="line-clamp-6 text-sm font-light leading-[22px] text-[#333333]">
                                 {{ data.attributes.description }}
                             </div>
@@ -79,10 +79,10 @@
         </div>
 
         <div class="px-10 text-center md:px-4 lg:px-[97px] xl:px-4 xl:pt-5">
-            <button type="button" v-if="!buttonUrl" class="outline-btn border-[#000]/[0.08] py-[23px] px-14 text-sm uppercase -tracking-[-0.03px] text-[#00ADFF]" @click="viewAll = !viewAll">
+            <button type="button" v-if="!buttonUrl" class="outline-btn border-[#000]/[0.08] px-14 py-[23px] text-sm uppercase -tracking-[-0.03px] text-[#00ADFF]" @click="viewAll = !viewAll">
                 {{ viewAll ? 'View less Reviews' : buttonText }}
             </button>
-            <a :href="buttonUrl" v-else class="outline-btn border-[#000]/[0.08] py-[23px] px-14 text-sm uppercase -tracking-[-0.03px] text-[#00ADFF]">{{ buttonText }}</a>
+            <a :href="buttonUrl" v-else class="outline-btn border-[#000]/[0.08] px-14 py-[23px] text-sm uppercase -tracking-[-0.03px] text-[#00ADFF]">{{ buttonText }}</a>
         </div>
     </section>
 </template>
@@ -164,8 +164,6 @@
             [...this.testimonials].forEach((da) => {
                 this.slider_data.push(da);
             });
-            //this.slider_data = [...this.testimonials];
-            console.log(this.slider_data);
             this.aboutClient.init();
         },
         computed: {},

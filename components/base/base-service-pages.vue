@@ -4,9 +4,9 @@
             <video class="responsive-contact-us-section-video absolute h-auto w-full object-cover" style="min-height: 571px; height: 20vw" autoplay loop muted playsinline>
                 <source :src="content.bannerVideoUrl" type="video/mp4" />
             </video>
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
-            <div class="container relative z-10 px-10 pt-[287px] pb-9 md:bg-left md:px-4 lg:px-[97px] xl:px-4 xl:pt-[164px] xl:pb-20">
+            <div class="container relative z-10 px-10 pb-9 pt-[287px] md:bg-left md:px-4 lg:px-[97px] xl:px-4 xl:pb-20 xl:pt-[164px]">
                 <div>
                     <p class="mb-[19px] font-normal leading-4 text-[#FBFBFD] xl:leading-6">{{ content.bannerSubtitle }}</p>
                     <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px]">{{ content.bannerTitle }}</h1>
@@ -88,7 +88,7 @@
                                 :class="{ 'font-bold !text-primary': activeCategoryData.id == category.id }"
                                 @click="activeCategoryData = category"
                             >
-                                <a href="javascript:;" class="block rounded-md border border-transparent px-[11px] py-1 text-lg hover:border-primary">{{ category.attributes.title }}</a>
+                                <p class="block rounded-md border border-transparent px-[11px] py-1 text-lg hover:border-primary">{{ category.attributes.title }}</p>
                             </li>
                         </ul>
                     </div>
@@ -160,7 +160,7 @@
                 <div class="mt-10 space-y-8 md:mt-[70px] md:space-y-14 xl:space-y-28">
                     <div v-for="(process, i) in section9Data" :key="i" class="grid grid-cols-1 items-start justify-between gap-10 md:grid-cols-2 xl:gap-20">
                         <div class="order-2 mb-10 md:mb-0" :class="{ 'md:!order-1': i % 2 !== 0 }">
-                            <img loading="lazy" :src="process.attributes.imgUrl" :alt="process.attributes.title" class="mx-auto" :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }" />
+                            <nuxt-img format="webp" :src="process.attributes.imgUrl" :alt="process.attributes.title" class="mx-auto" :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }" loading="lazy" />
                         </div>
                         <div :class="{ 'md:!order-2': i % 2 !== 0 }">
                             <div class="mb-3 flex gap-5 xl:gap-7">
@@ -265,8 +265,8 @@
 
                     <div v-if="activeProductData.descriptionMediaType === 'images'" v-swiper:brandLogo="slider_options" class="swiper relative bg-transparent" :cleanup-styles-on-destroy="false">
                         <div v-if="activeProductData.images" class="swiper-wrapper items-center !px-10">
-                            <div v-for="image in activeProductData.images" :key="image.imgUrl" class="swiper-slide bg-white p-4">
-                                <img loading="lazy" :src="image.imgUrl" class="h-full w-full object-cover" />
+                            <div v-for="(image, i) in activeProductData.images" :key="image.imgUrl" class="swiper-slide bg-white p-4">
+                                <nuxt-img format="webp" :src="image.imgUrl" class="h-full w-full object-cover" :alt="'swiper-slide_' + i" loading="lazy" />
                             </div>
                         </div>
                         <div class="swiper-button-next -mr-3"></div>

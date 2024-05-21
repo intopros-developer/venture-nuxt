@@ -22,7 +22,6 @@
     // import AOS from 'aos';
     // import 'aos/dist/aos.css';
     export default {
-
         name: 'Default',
 
         // middleware(context) {
@@ -85,6 +84,14 @@
                     });
                 }
             },
+        },
+
+        head() {
+            const currentPath = this.$route.path;
+            const canonicalUrl = (process.env.baseUrl ? process.env.baseUrl : 'https://www.ventureplans.us') + this.$route.path;
+            return {
+                link: [{ hid: 'canonical', rel: 'canonical', href: canonicalUrl }],
+            };
         },
     };
 </script>

@@ -5,7 +5,7 @@
                 <div class="grid grid-cols-1">
                     <div class="w-full rounded-full bg-white">
                         <div
-                            class="text-blue-100 rounded-full bg-primary p-0.5 text-center text-xs font-medium leading-none text-white transition-all duration-300"
+                            class="rounded-full bg-primary p-0.5 text-center text-xs font-medium leading-none text-blue-100 text-white transition-all duration-300"
                             :class="{ 'bg-green': completedForm === 100, 'px-0': completedForm === 0 }"
                             :style="{ width: `${completedForm}%` }"
                         >
@@ -16,11 +16,11 @@
             </div>
         </section>
 
-        <section class="pt-5 pb-[130px] md:pt-[110px]">
+        <section class="pb-[130px] pt-5 md:pt-[110px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div v-if="currentStep <= 2" class="justify-between gap-5 md:flex lg:gap-[103px]">
                     <div class="grow">
-                        <img loading="lazy" src="/assets/img/img-12.png" class="mx-auto md:ml-0" alt="" />
+                        <nuxt-img format="webp" src="/assets/img/img-12.png" class="mx-auto md:ml-0" alt="contact" loading="lazy" />
                     </div>
                     <div class="w-full grow md:max-w-[396px]">
                         <form id="contact-form" action="" @submit.prevent="onSubmit">
@@ -89,7 +89,7 @@
                                                         @select="closePositionDropdown"
                                                     >
                                                         <template slot="caret">
-                                                            <button type="submit" class="pointer-events-none absolute right-0 top-0 mt-4 mr-4 xl:mt-[18px]">
+                                                            <button type="submit" class="pointer-events-none absolute right-0 top-0 mr-4 mt-4 xl:mt-[18px]">
                                                                 <icons-search class="h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4" />
                                                             </button>
                                                         </template>
@@ -151,14 +151,14 @@
                                                 <div class="block">
                                                     <span class="text-[13px] text-[#0b0b0b]/70">{{ $t('connect_with_us') }}</span>
                                                 </div>
-                                                <a href="https://www.linkedin.com/company/31139649/" target="_blank" class="mt-1.5 block w-fit rounded-md bg-[#0288d1] py-[2px] px-[31px] text-white">
+                                                <a href="https://www.linkedin.com/company/31139649/" target="_blank" class="mt-1.5 block w-fit rounded-md bg-[#0288d1] px-[31px] py-[2px] text-white">
                                                     <icons-linkedin class="h-4 w-4" />
                                                 </a>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="pt-7 md:w-1/3">
-                                        <button class="b-btn w-auto !rounded py-1.5 px-[25px] text-sm" type="submit">{{ $t('next') }}</button>
+                                        <button class="b-btn w-auto !rounded px-[25px] py-1.5 text-sm" type="submit">{{ $t('next') }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -304,7 +304,7 @@
                                     <div v-if="captchaError" class="captcha-error">Please verify reCaptcha.</div>
                                 </div> -->
                                 <div>
-                                    <button type="submit" class="b-btn custom-btn inline-block !rounded py-4 px-9 text-[12px] font-bold">Book An Interview</button>
+                                    <button type="submit" class="b-btn custom-btn inline-block !rounded px-9 py-4 text-[12px] font-bold">Book An Interview</button>
                                 </div>
                             </div>
                         </form>
@@ -312,12 +312,13 @@
                 </div>
                 <div v-else class="justify-between gap-5 space-y-4 md:flex md:space-y-0 lg:gap-[103px]">
                     <div class="mb-5 w-full grow md:order-2 md:mb-0 md:max-w-[498px]">
-                        <img loading="lazy" src="/assets/img/img-12.png" class="mx-auto md:ml-0" alt="" />
+                        <nuxt-img src="/assets/img/img-12.png" class="mx-auto md:ml-0" alt="contact 2" loading="lazy" />
                     </div>
                     <div class="w-full grow">
-                        <img loading="lazy" src="/assets/img/congo-icon.svg" alt="" />
+                        <nuxt-img src="/assets/img/congo-icon.svg" alt="icon" loading="lazy" />
+
                         <h2
-                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                             v-html="$t('congratulations_you_have_span_successfully_span_booked_your_interview')"
                         ></h2>
                         <p

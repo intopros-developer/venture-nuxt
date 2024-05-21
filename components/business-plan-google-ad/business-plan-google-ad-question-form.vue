@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-[#FBFBFD] py-10 md:py-16 lg:pt-[114px] lg:pb-[90px]">
+    <section class="bg-[#FBFBFD] py-10 md:py-16 lg:pb-[90px] lg:pt-[114px]">
         <div id="question-box" class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex flex-col items-start justify-between gap-5 md:flex-row">
                 <div v-show="currentQuestion < 7" class="order-2 flex-1 md:order-1 lg:mx-auto lg:max-w-[500px]">
@@ -158,9 +158,10 @@
                 </div> -->
 
                 <div v-show="currentQuestion === 8" class="order-2 flex-1 md:order-1">
-                    <img loading="lazy" src="/assets/img/congo-icon.svg" alt="" />
+                    <nuxt-img src="/assets/img/congo-icon.svg" alt="Icon Congo" loading="lazy" />
+
                     <h2
-                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                         v-html="$t('congratulations_you_have_br_span_successfully_span_booked_your_consultation')"
                     ></h2>
                     <p class="mb-6 text-sm font-medium -tracking-[0.04px] text-[#586376] lg:text-base xl:leading-[27px]">
@@ -171,9 +172,9 @@
                 </div>
 
                 <div v-show="currentQuestion === 9" class="order-2 flex-1 md:order-1">
-                    <img loading="lazy" src="/assets/img/congo-icon.svg" alt="" />
+                    <nuxt-img src="/assets/img/congo-icon.svg" alt="Icon Congo" loading="lazy" />
                     <h2
-                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                         v-html="$t('we_are_sorry_all_of_our_clients_require_br_span_working_capital_span_in_order_to_qualify')"
                     ></h2>
                     <p class="mb-6 text-sm font-medium -tracking-[0.04px] text-[#586376] lg:text-base xl:leading-[27px]">
@@ -184,7 +185,7 @@
                 </div>
 
                 <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-black/50 md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                    <img loading="lazy" :src="`/assets/img/que-${currentQuestion}.jpg`" class="h-full w-full object-cover" />
+                    <nuxt-img format="webp" :src="`/assets/img/que-${currentQuestion}.jpg`" class="h-full w-full object-cover" alt="Question Image" loading="lazy" />
                 </div>
             </div>
         </div>

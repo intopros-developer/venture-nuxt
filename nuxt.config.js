@@ -3,12 +3,17 @@ export default {
         // host: 0,
     },
     head: {
-        title: 'venture',
+        title: 'Venture Plans',
         htmlAttrs: {
             lang: 'en',
         },
         meta: [
             { charset: 'utf-8' },
+            { hid: 'language', name: 'language', content: 'English' },
+            {
+                name: 'robots',
+                content: 'index, all',
+            },
             { hid: 'og:title', property: 'og:title', content: 'Venture Plans' },
             {
                 hid: 'description',
@@ -28,10 +33,11 @@ export default {
                     'Venture Plans is a global management consulting firm with a sophisticated team of diverse industry-specific consultants with deep expertise in finance, legal advisory and digital innovation. Our executive-level consultants are ivy league trained with institutional-caliber capabilities. We enable the best possible outcomes through value-based methodologies that succinctly capture the maximum value of your principals, intellectual property, business performance, markets, and outlook.',
             },
             { name: 'format-detection', content: 'telephone=no' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0' },
 
             { hid: 'og:type', property: 'og:type', content: 'website' },
             { hid: 'og:site_name', property: 'og:site_name', content: 'Venture Plans' },
+            { hid: 'og:url', property: 'og:url', content: process.env.FE_BASE_URL || 'https://www.ventureplans.us' },
             { hid: 'og:image', property: 'og:image', content: 'https://venture.vercel.app/assets/img/social.png' },
             { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://venture.vercel.app/assets/img/social.png' },
             { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
@@ -81,9 +87,11 @@ export default {
         strapiReadOnlyToken: process.env.STRAPI_TOKEN,
         strapiURL: process.env.STRAPI_URL,
         meiliSearchURL: process.env.MEILISEARCH_URL,
+        baseUrl: process.env.FE_BASE_URL,
     },
     privateRuntimeConfig: {},
     publicRuntimeConfig: {
+        baseUrl: process.env.FE_BASE_URL,
         meiliSearchURL: process.env.MEILISEARCH_URL,
         hubspotApiURL: 'https://api.hsforms.com/submissions/v3/integration/submit', // process.env.HUBSPOT_API_URL,
         hubspotPortalId: 22527844, // process.env.HUBSPOT_PORTAL_ID,
@@ -130,7 +138,7 @@ export default {
 
     buildModules: ['@nuxt/postcss8', '@nuxtjs/composition-api/module', 'nuxt-compress'],
 
-    modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', '@nuxtjs/toast', '@nuxtjs/i18n', '@nuxtjs/dayjs', '@nuxtjs/strapi', 'cookie-universal-nuxt', '@nuxtjs/recaptcha', '@nuxtjs/sitemap', 'nuxt-compress'],
+    modules: ['@nuxtjs/axios', '@nuxt/image', '@nuxtjs/auth-next', '@nuxtjs/toast', '@nuxtjs/i18n', '@nuxtjs/dayjs', '@nuxtjs/strapi', 'cookie-universal-nuxt', '@nuxtjs/recaptcha', '@nuxtjs/sitemap', 'nuxt-compress'],
 
     recaptcha: {
         // siteKey: '6LeHRAIkAAAAAFlMcNTurod0E0Wo7-vL0ZBgPEUY',
@@ -169,6 +177,13 @@ export default {
         fallbackLocale: {
             default: 'en',
         },
+    },
+
+    image: {
+        strapi: {
+            baseURL: '/static/assets/img',
+        },
+        domains: ['fs1.hubspotusercontent-na1.net'],
     },
 
     generate: {

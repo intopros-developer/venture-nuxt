@@ -26,13 +26,13 @@
                                     </li>
                                 </ul>
                                 <div>
-                                    <a :href="content.bannerButtonUrl" class="outline-btn w-full py-[14px] px-11 text-center text-lg font-semibold leading-[21px] md:w-auto">
+                                    <a :href="content.bannerButtonUrl" class="outline-btn w-full px-11 py-[14px] text-center text-lg font-semibold leading-[21px] md:w-auto">
                                         {{ content.bannerButtonText }}
                                     </a>
                                 </div>
                             </div>
                             <div class="lg:max-w-sm xl:max-w-[490px]">
-                                <img loading="lazy" :src="content.bannerImageUrl" class="" alt="" />
+                                <nuxt-img format="webp" :src="content.bannerImageUrl" :alt="content.bannerTitle" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
                 </div>
                 <div class="grid grid-cols-1 gap-7 space-y-4 pt-8 md:grid-cols-2 md:space-y-0 md:pt-[78px]">
                     <div class="flex flex-col justify-between" v-for="item in section6Data">
-                        <img loading="lazy" :src="item.attributes.imgUrl" class="mx-auto max-w-full md:max-w-[360px]" :alt="item.attributes.title" />
+                        <nuxt-img format="webp" :src="item.attributes.imgUrl" class="mx-auto max-w-full md:max-w-[360px]" :alt="item.attributes.title" loading="lazy" />
                         <div class="mt-4 text-center">
                             <button type="button" class="text-[15px] font-semibold text-primary" @click="$refs.previewModal.open(), previewSelectedMarketReport(item.attributes.marketReports)">
                                 {{ item.attributes.title }}
@@ -163,7 +163,7 @@
                 <div class="grid grid-cols-1">
                     <div v-html="content.section7Title"></div>
                     <div class="py-10">
-                        <img loading="lazy" :src="content.section7ImgUrl" class="mx-auto" alt="" />
+                        <nuxt-img format="webp" :src="content.section7ImgUrl" :alt="content.section7Subtitle" class="mx-auto" loading="lazy" />
                     </div>
                     <div class="text-center">
                         <h4 class="text-2xl font-medium uppercase text-[#202a36]">{{ content.section7Subtitle }}</h4>
@@ -193,7 +193,7 @@
                 <div class="mt-10 space-y-8 md:mt-[70px] md:space-y-14 xl:space-y-28">
                     <div v-for="(process, i) in section9Data" :key="i" class="grid grid-cols-1 items-start justify-between gap-10 md:grid-cols-2 xl:gap-20">
                         <div class="order-2 mb-10 md:mb-0" :class="{ 'md:!order-1': i % 2 !== 0 }">
-                            <img loading="lazy" :src="process.attributes.imgUrl" :alt="process.attributes.title" class="mx-auto" :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }" />
+                            <nuxt-img format="webp" :src="process.attributes.imgUrl" :alt="process.attributes.title" class="mx-auto" :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }" loading="lazy" />
                         </div>
                         <div :class="{ 'md:!order-2': i % 2 !== 0 }">
                             <div class="mb-3 flex gap-5 xl:gap-7">
@@ -306,8 +306,8 @@
 
                     <div v-if="activeProductData.descriptionMediaType === 'images'" v-swiper:brandLogo="slider_options" class="swiper relative bg-transparent" :cleanup-styles-on-destroy="false">
                         <div class="swiper-wrapper items-center !px-10">
-                            <div v-if="activeProductData.images" class="swiper-slide bg-white p-4" v-for="image in activeProductData.images">
-                                <img loading="lazy" :src="image.imgUrl" class="h-full w-full object-cover" />
+                            <div v-if="activeProductData.images" class="swiper-slide bg-white p-4" v-for="(image, i) in activeProductData.images">
+                                <nuxt-img format="webp" :src="image.imgUrl" class="h-full w-full object-cover" :alt="'swiper-slide' + i" loading="lazy" />
                             </div>
                         </div>
                         <div class="swiper-button-next -mr-3"></div>

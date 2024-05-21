@@ -1,7 +1,7 @@
 <template>
-    <footer class="bg-[#202A36] pt-12 pb-7">
+    <footer class="bg-[#202A36] pb-7 pt-12">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
-            <div class="mb-[62px] flex flex-col gap-10 sm:flex-row sm:justify-between xl:mb-[85px]">
+            <div class="mb-10 flex flex-col gap-10 sm:flex-row sm:justify-between xl:mb-[85px]">
                 <div>
                     <nuxt-link :to="localePath('/')">
                         <svg xmlns="http://www.w3.org/2000/svg" width="129" height="31" viewBox="0 0 129 31">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:mt-40">
+            <div class="lg:mt-24">
                 <div class="mb-[52px] grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-[60px] xl:gap-[248px]">
                     <div>
                         <p class="leading-6 text-white">
@@ -120,12 +120,8 @@
                                     :class="{ error: $v.params.email.$error }"
                                     @input="$v.params.email.$model = $event.target.value.trim()"
                                 />
-                                <!-- <div v-if="$v.params.email.$error">
-                                        <p v-if="!$v.params.email.required">{{ $helper.requiredMessage('Email') }}</p>
-                                        <p v-else-if="!$v.params.email.email">{{ $helper.emailMessage() }}</p>
-                                    </div> -->
                             </div>
-                            <button type="submit" class="btn py-[14px] px-[36px] text-sm font-semibold leading-[19px] lg:leading-[22px]">Submit</button>
+                            <button type="submit" class="btn px-[36px] py-[14px] text-sm font-semibold leading-[19px] lg:leading-[22px]">Submit</button>
                         </div>
                         <div v-if="isSubmitted" class="mt-5 flex items-start gap-3">
                             <icons-check-circle class="h-6 w-6 text-green" />
@@ -197,8 +193,7 @@
                     <p class="text-[15px] font-medium leading-[18px] text-white/50">© 2010 - 2023 Venture Plans, Inc.</p>
                 </div>
                 <div class="order-1 flex-none lg:order-2">
-                    <ul class="flex flex-wrap items-center justify-center gap-8 text-xs font-medium leading-[25px] -tracking-[0.03px] text-white/50 md:text-[14px]">
-                        <li><a href="javascript:;" class="transition-all duration-300 hover:text-white">Login</a></li>
+                    <ul class="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm font-medium leading-[25px] -tracking-[0.03px] text-white/50 md:text-[14px]">
                         <li><a href="/offices" class="transition-all duration-300 hover:text-white">Offices</a></li>
                         <li><a href="javascript:;" class="transition-all duration-300 hover:text-white">Cookies Policy</a></li>
                         <li><nuxt-link to="/refund-policy" class="transition-all duration-300 hover:text-white">Refund Policy</nuxt-link></li>
@@ -208,7 +203,6 @@
                             <nuxt-link to="/terms-and-conditions" class="transition-all duration-300 hover:text-white">Terms & Conditions</nuxt-link>
                         </li>
                         <li><nuxt-link to="/contact-us" class="transition-all duration-300 hover:text-white">Contact</nuxt-link></li>
-                        <li><a href="javascript:;" class="transition-all duration-300 hover:text-white" @click="scrollToTop()">Top</a></li>
                     </ul>
                 </div>
             </div>
@@ -262,7 +256,6 @@
 
             scrollToTop() {
                 window.scrollTo({ top: 0, behavior: 'smooth', easing: 'linear' });
-                // document.body.scrollIntoView({ behavior: 'smooth', block: 'start', easing: 'linear' });
             },
         },
     };

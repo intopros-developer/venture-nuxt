@@ -16,7 +16,7 @@
             <div class="grid grid-cols-1 gap-3 md:grid-cols-4 xl:gap-5">
                 <div v-for="(work, i) in works" :key="i" class="text-center font-medium">
                     <div class="mb-5 flex h-[250px] items-center justify-center overflow-hidden">
-                        <img loading="lazy" :src="work.fields.image.fields.file.url" alt="" class="mx-auto" />
+                        <nuxt-img format="webp" :src="work.fields.image.fields.file.url" :alt="work.fields.title" class="mx-auto" loading="lazy" />
                     </div>
                     <h3 class="mb-1 text-xl text-[#586376] md:text-[13px] md:leading-4">{{ work.fields.title }}</h3>
                     <a href="" class="text-[17px] uppercase text-primary hover:text-black md:text-xs">{{ $t('download_pdf') }}</a>

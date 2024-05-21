@@ -1,7 +1,7 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pt-[100px] pb-12 md:bg-[center_top_8%] lg:pt-[166px] xl:bg-[center_top_12%] xl:pb-[67px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-12 pt-[100px] md:bg-[center_top_8%] lg:pt-[166px] xl:bg-[center_top_12%] xl:pb-[67px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 lg:px-[97px] xl:px-4">
                 <div>
@@ -50,7 +50,7 @@
                     <h3 class="pb-[43px] text-center text-2xl font-medium text-[#0B3A02] md:text-[31px]" v-html="content.section3Title"></h3>
                     <div class="flex flex-wrap items-center justify-center gap-4 lg:gap-[50px]">
                         <div v-for="(logo, i) in section3Data" :key="i" class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white p-5 px-[17px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[126px] xl:w-[126px]">
-                            <img loading="lazy" :src="logo.attributes.iconUrl" />
+                            <nuxt-img format="webp" :src="logo.attributes.iconUrl" :alt="'icon_' + i" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
         <!--            </div>-->
         <!--        </section>-->
 
-        <section class="pt-[94px] pb-[108px]">
+        <section class="pb-[108px] pt-[94px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="text-center">
                     <h2 class="mb-3 text-[22px] font-medium leading-[27px] text-[#202A36] xl:text-[31px] xl:leading-[32px]" v-html="content.CTA1Title"></h2>

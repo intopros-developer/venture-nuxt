@@ -1,5 +1,5 @@
 <template>
-    <section id="readyToTalk" class="bg-cover py-10 md:py-16 xl:py-32 xl:py-[178px]" :style="{ backgroundImage: `url(${imgUrl})` }">
+    <section id="readyToTalk" class="bg-cover py-10 md:py-16 xl:py-32" :style="{ backgroundImage: `url(${imgUrl})` }">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <form id="ready-to-talk-form" action="" @submit.prevent="onSubmit">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
@@ -11,10 +11,9 @@
                             {{ talkInTitle }}
                         </p>
 
-                        <!-- /assets/img/selection-arrow.svg -->
                         <div v-click-outside="closeSearch" id="dropdown" class="relative w-full sm:max-w-[342px]">
                             <div
-                                class="group relative flex w-full cursor-pointer items-center justify-between rounded-[4px] border-2 border-white bg-transparent py-[18px] px-9 text-[17px] font-semibold text-white transition-all duration-150 hover:!border-primary hover:!bg-primary hover:!text-white lg:py-[25px]"
+                                class="group relative flex w-full cursor-pointer items-center justify-between rounded-[4px] border-2 border-white bg-transparent px-9 py-[18px] text-[17px] font-semibold text-white transition-all duration-150 hover:!border-primary hover:!bg-primary hover:!text-white lg:py-[25px]"
                                 :class="{ 'bg-[#f9ecea] text-danger': $v.params.service.$error, 'rounded-b-none !border-primary !bg-primary !text-white': showService }"
                                 @click="openSearch()"
                             >
@@ -69,10 +68,6 @@
                                         class="form-input h-[50px] shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                                         :class="{ error: $v.params.fullname.$error }"
                                     />
-                                    <!-- <div v-if="$v.params.fullname.$error">
-                                        <p v-if="!$v.params.fullname.required">{{ $helper.requiredMessage('Full Name') }}</p>
-                                        <p v-else-if="!$v.params.fullname.alphaNumericSpace">{{ $helper.alphaNumSpaceMessage('Full Name') }}</p>
-                                    </div> -->
                                 </div>
 
                                 <div class="form-input-group">
@@ -86,9 +81,6 @@
                                         class="form-input h-[50px] shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                                         :class="{ error: $v.params.phone.$error }"
                                     />
-                                    <!-- <div v-if="$v.params.phone.$error">
-                                        <p v-if="!$v.params.phone.required">{{ $helper.requiredMessage('Phone Number') }}</p>
-                                    </div> -->
                                 </div>
 
                                 <div class="form-input-group">
@@ -102,19 +94,11 @@
                                         :class="{ error: $v.params.email.$error }"
                                         @input="$v.params.email.$model = $event.target.value.trim()"
                                     />
-                                    <!-- <div v-if="$v.params.email.$error">
-                                        <p v-if="!$v.params.email.required">{{ $helper.requiredMessage('Email') }}</p>
-                                        <p v-else-if="!$v.params.email.email">{{ $helper.emailMessage() }}</p>
-                                    </div> -->
                                 </div>
                                 <div>
                                     <recaptcha id="recaptcha1" ref="recaptcha1" @success="captchaError = false" @error="captchaError = true" />
                                     <div v-if="captchaError" class="captcha-error">Please verify reCaptcha.</div>
                                 </div>
-                                <!-- <div>
-                                    <recaptcha id="recaptcha1" ref="recaptcha1" @success="captchaError = false" @error="captchaError = true" />
-                                    <div v-if="captchaError" class="captcha-error">Please verify reCaptcha.</div>
-                                </div> -->
                                 <button :disabled="isSubmitting" type="submit" class="outline-btn w-full border border-white/60 py-3 text-center text-[17px] font-semibold -tracking-[0.03px] xl:py-[7px]">{{ $t('submit') }}</button>
                                 <div v-if="isSubmitted" class="mt-5 flex justify-center gap-3">
                                     <icons-check-circle class="relative top-[2px] !h-6 !w-6 text-green" />
@@ -212,7 +196,7 @@
 
         async mounted() {
             try {
-                // await this.$recaptcha.reset();
+                await this.$recaptcha.reset();
                 const id = await this.$recaptcha?.render('recaptcha1', {
                     sitekey: '6LckFPUaAAAAABvoKl9AOVILIzozGu2HjHV5U6mK',
                 });

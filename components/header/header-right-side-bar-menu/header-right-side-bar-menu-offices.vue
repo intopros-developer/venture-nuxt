@@ -27,7 +27,7 @@
                                                 <p class="text-[#BFBFBF]">Back</p>
                                             </a>
                                             <div class="mt-[22px]">
-                                                <h4 class="px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black">{{ mainOff.name }}</h4>
+                                                <p class="px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black">{{ mainOff.name }}</p>
                                                 <ul class="text-[13px] font-normal leading-4 text-black">
                                                     <li v-for="subOff in mainOff.subLinks" :key="subOff.link">
                                                         <nuxt-link :to="subOff.link" class="rightmenu-link flex items-center justify-start py-[10px] px-6 text-center" @click.native="$store.dispatch('nav/toggle')">{{

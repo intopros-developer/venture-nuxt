@@ -1,5 +1,5 @@
 <template>
-    <section class="py-10 md:py-16 xl:pt-[114px] xl:pb-14">
+    <section class="py-10 md:py-16 xl:pb-14 xl:pt-[114px]">
         <div id="question-box" class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex flex-col items-center justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
                 <div class="w-full flex-none space-y-4 md:max-w-[330px] md:space-y-6 xl:max-w-[535px] xl:space-y-9">
@@ -42,7 +42,7 @@
                         <div v-if="captchaError" class="captcha-error">Please verify reCaptcha.</div>
                     </div>
                     <div class="">
-                        <button type="submit" class="btn ml-auto mr-0 !w-auto !max-w-max py-4 px-16 uppercase hover:bg-primary-700 xl:py-5 xl:px-20">{{ $t('book_a_consultation') }}</button>
+                        <button type="submit" class="btn ml-auto mr-0 !w-auto !max-w-max px-16 py-4 uppercase hover:bg-primary-700 xl:px-20 xl:py-5">{{ $t('book_a_consultation') }}</button>
                     </div>
                     <div v-if="isSubmitted" class="mt-5 flex justify-center gap-3">
                         <icons-check-circle class="relative top-[2px] h-6 w-6 text-green" />
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-transparent md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                    <img loading="lazy" :src="image" class="h-full w-full object-cover" />
+                    <nuxt-img format="webp" :src="image" class="h-full w-full object-cover" alt="Form Question" loading="lazy" />
                 </div>
             </div>
         </div>

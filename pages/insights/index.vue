@@ -1,7 +1,7 @@
 <template>
     <div>
-        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pt-[287px] pb-9 md:bg-left md:pt-[202px] xl:pb-20" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-9 pt-[287px] md:bg-left md:pt-[202px] xl:pb-20" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div>
@@ -13,7 +13,7 @@
 
         <common-banner-tab :tabs="tabs" :is-show-save-btn="true" />
         <div>
-            <section class="pt-24 pb-[42px]">
+            <section class="pb-[42px] pt-24">
                 <div id="OurLatestInsights" class="container">
                     <div class="justify-between gap-5 space-y-4 md:flex md:space-y-0">
                         <div>
@@ -33,7 +33,7 @@
                     <div class="container lg:px-[97px] xl:px-4">
                         <div class="flex flex-col items-center gap-4 xl:flex-row xl:flex-nowrap xl:gap-4">
                             <h5 class="mr-5 hidden flex-initial whitespace-nowrap text-base font-medium text-[#5f5f5f] xl:block">Filter by:</h5>
-                            <h5 class="flex w-full flex-1 items-center justify-between border border-[#d5d5d5] py-3.5 px-6 text-base font-medium text-[#00ADFF] xl:hidden">
+                            <h5 class="flex w-full flex-1 items-center justify-between border border-[#d5d5d5] px-6 py-3.5 text-base font-medium text-[#00ADFF] xl:hidden">
                                 Filter Insights
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" @click="showMobileFilter = !showMobileFilter">
                                     <path
@@ -95,7 +95,7 @@
 
                                         <h5
                                             slot="reference"
-                                            class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 py-3 px-5 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
+                                            class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 px-5 py-3 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
                                             :class="{ 'border-[#1eb1fc] !text-primary': activePopper === 'industry' }"
                                         >
                                             Industry
@@ -141,7 +141,7 @@
 
                                         <h5
                                             slot="reference"
-                                            class="reference flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 py-3 px-5 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
+                                            class="reference flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 px-5 py-3 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
                                             :class="{ 'border-[#1eb1fc] !text-primary': activePopper === 'services' }"
                                         >
                                             Services
@@ -186,7 +186,7 @@
                                         </div>
                                         <h5
                                             slot="reference"
-                                            class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 py-3 px-5 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
+                                            class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 px-5 py-3 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
                                             :class="{ 'border-[#1eb1fc] !text-primary': activePopper === 'type' }"
                                         >
                                             Type
@@ -231,7 +231,7 @@
                                         </div>
                                         <h5
                                             slot="reference"
-                                            class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 py-3 px-5 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
+                                            class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 px-5 py-3 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
                                             :class="{ 'border-[#1eb1fc] !text-primary': activePopper === 'media' }"
                                         >
                                             Media Type
@@ -246,7 +246,7 @@
                         <div v-if="appliedFilters.length > 0" class="mb-6 text-black">
                             <h6 class="mr-2 inline-block align-middle text-black/70">Selected:</h6>
                             <ul class="gap inline-flex flex-wrap">
-                                <li v-for="(option, index) in appliedFilters" :key="`applay_${index}`" class="group mr-1 mb-1 rounded bg-black/10 px-2 py-1">
+                                <li v-for="(option, index) in appliedFilters" :key="`applay_${index}`" class="group mb-1 mr-1 rounded bg-black/10 px-2 py-1">
                                     <button class="flex cursor-pointer items-center gap-1.5" @click="removeFilter(option)">{{ option.label || option }}<icons-close class="group-hover:text-danger" /></button>
                                 </li>
                                 <li class="mb-1 rounded bg-primary/20 px-2 py-1"><button class="cursor-pointer" @click="removeAllFilter()">Clear All</button></li>
@@ -265,10 +265,10 @@
                             </div>
                             <div class="flex h-[calc(100%-125px)] flex-col justify-between py-3 xl:h-[calc(100%-340px)] xl:py-4">
                                 <div>
-                                    <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                    <p class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                         {{ insight.attributes.Insightsource }}
-                                    </h4>
-                                    <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="line-clamp-1 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
+                                    </p>
+                                    <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-1 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
                                     <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                         {{ insight.attributes.paragraph }}
                                     </p>
@@ -308,7 +308,7 @@
             <section class="flex flex-col gap-24">
                 <div v-for="(_, insightIndex) in [1]" :key="insightIndex" class="flex flex-col">
                     <!-- first row -->
-                    <div v-if="insightCatalogue2.length > 0" class="py-10 md:py-16 lg:pt-[50px] lg:pb-[44px]">
+                    <div v-if="insightCatalogue2.length > 0" class="py-10 md:py-16 lg:pb-[44px] lg:pt-[50px]">
                         <div class="container">
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div
@@ -322,11 +322,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -347,7 +347,7 @@
                     </div>
 
                     <!-- second row -->
-                    <div v-if="insightCatalogue2.slice(3).length > 0" class="py-10 md:py-16 lg:pt-0 lg:pb-[113px]">
+                    <div v-if="insightCatalogue2.slice(3).length > 0" class="py-10 md:py-16 lg:pb-[113px] lg:pt-0">
                         <div class="container">
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue2.slice(3)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0': i !== 0 && i % 3 == 0, 'md:border-r': i % 2 == 0 }">
@@ -361,11 +361,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -390,7 +390,7 @@
 
                     <!-- third row -->
                     <!-- <section class="pt-[92px] pb-[119px]"> -->
-                    <div v-if="insightCatalogue3.length > 0" class="py-10 md:py-16 lg:pt-[92px] lg:pb-[87px]">
+                    <div v-if="insightCatalogue3.length > 0" class="py-10 md:py-16 lg:pb-[87px] lg:pt-[92px]">
                         <div class="container">
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue3.slice(0, 4)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0': i === 3, 'md:border-r': i % 2 == 0 }">
@@ -399,11 +399,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -440,11 +440,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -469,7 +469,7 @@
                     <div v-if="insightCatalogue3.length > 0" class="pb-10 lg:pb-[54px] lg:pt-[87px]">
                         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                             <div class="grid grid-cols-1 items-center justify-between border border-[#d5d5d5] lg:grid-cols-2">
-                                <div class="order-2 py-9 px-2.5 md:py-14 md:pl-9 lg:order-1 lg:max-w-[500px]">
+                                <div class="order-2 px-2.5 py-9 md:py-14 md:pl-9 lg:order-1 lg:max-w-[500px]">
                                     <h4 class="text-2xl font-bold uppercase leading-9" v-html="content.CTA1Title"></h4>
                                     <p class="pb-8 pt-2.5">{{ content.CTA1Description }}</p>
 
@@ -497,11 +497,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -524,7 +524,7 @@
 
                     <!-- sixth row -->
                     <!-- <section class="pt-[87px] pb-[74px]"> -->
-                    <div v-if="insightCatalogue4.slice(4).length > 0" class="py-10 md:py-16 lg:pt-0 lg:pb-[54px]">
+                    <div v-if="insightCatalogue4.slice(4).length > 0" class="py-10 md:py-16 lg:pb-[54px] lg:pt-0">
                         <div class="container">
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue4.slice(4)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0 lg:col-span-2': i === 2, 'md:border-r': i % 2 == 0 }">
@@ -533,11 +533,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
                                                 }}</nuxt-link>
                                             </div>
@@ -570,7 +570,7 @@
                         :buttonTitle="content.section2ButtonText"
                     />
 
-                    <div v-if="insightCatalogue5.length > 0" class="mt-32 py-10 md:py-16 lg:pt-0 lg:pb-[54px]">
+                    <div v-if="insightCatalogue5.length > 0" class="mt-32 py-10 md:py-16 lg:pb-[54px] lg:pt-0">
                         <div class="container" v-if="insightCatalogue5.slice(0, 3).length > 0">
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue5.slice(0, 3)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0 lg:col-span-2': i === 2, 'md:border-r': i % 2 == 0 }">
@@ -579,11 +579,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
                                                 }}</nuxt-link>
                                             </div>
@@ -617,11 +617,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}

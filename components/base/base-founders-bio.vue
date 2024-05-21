@@ -39,7 +39,7 @@
                     <h3 class="pb-[43px] text-center text-2xl font-medium text-[#0B3A02] md:text-[31px]" v-html="content.section2Title"></h3>
                     <div class="flex flex-wrap items-center justify-center gap-4 lg:gap-[50px]">
                         <div v-for="(logo, i) in section2Icons" :key="i" class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white p-5 px-[17px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[126px] xl:w-[126px]">
-                            <img loading="lazy" :src="logo.attributes.iconUrl" />
+                            <nuxt-img format="webp" :src="logo.attributes.iconUrl" :alt="'icon' + i" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,9 @@
                             <div class="bg-white px-5 py-6 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:min-h-[120px] lg:min-h-[192px] lg:px-[30px] xl:min-h-[144px]">
                                 <p class="text-[15px] leading-6 -tracking-[0.03]">{{ value.attributes.description }}</p>
                             </div>
-                            <div class="h-48 w-full md:h-32 lg:h-48"><img loading="lazy" :src="value.attributes.imgURL" alt="" class="h-full w-full object-cover" /></div>
+                            <div class="h-48 w-full md:h-32 lg:h-48">
+                                <nuxt-img format="webp" :src="value.attributes.imgURL" :alt="value.attributes.title" class="h-full w-full object-cover" loading="lazy" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,7 +109,7 @@
             <div class="justify-content-center grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
                 <div v-for="(icon, ic) in icons" :key="ic" class="justify-self-center">
                     <a :href="icon.attributes.url" class="flex flex-col items-center justify-center">
-                        <img loading="lazy" class="h-10 w-10" :src="icon.attributes.icon" />
+                        <nuxt-img format="webp" class="h-10 w-10" :src="icon.attributes.icon" :alt="icon.attributes.name" loading="lazy" />
                         <p>{{ icon.attributes.name }}</p>
                     </a>
                 </div>

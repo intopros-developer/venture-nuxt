@@ -1,14 +1,14 @@
 <template>
     <ul class="grid grid-cols-1 divide-y divide-[#e6e6e6] border border-[#e6e6e6] bg-white text-center sm:grid-cols-2 sm:divide-x md:grid-cols-3">
-        <li v-for="(service, i) in services" :key="i" class="group relative overflow-hidden px-8 pt-[50px] pb-[43px] hover:bg-primary">
+        <li v-for="(service, i) in services" :key="i" class="group relative overflow-hidden px-8 pb-[43px] pt-[50px] hover:bg-primary">
             <div class="duration-700 group-hover:scale-75 group-hover:opacity-0">
                 <div class="mb-4 h-28">
-                    <img loading="lazy" :src="service.svgLink" class="mx-auto" alt="image" />
+                    <nuxt-img format="webp" :src="service.svgLink" class="mx-auto" :alt="service.title" loading="lazy" />
                 </div>
                 <h3 class="text-xl font-semibold leading-[50px] group-hover:text-white lg:text-2xl">{{ service.title }}</h3>
             </div>
 
-            <div class="absolute top-0 bottom-0 right-0 left-0 text-start">
+            <div class="absolute bottom-0 left-0 right-0 top-0 text-start">
                 <div class="translate-y-[200%] transform px-4 pt-8 text-white opacity-0 transition-transform delay-200 duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                     <h5 class="text-xl font-bold">{{ service.title }}</h5>
                     {{ service.Description }}

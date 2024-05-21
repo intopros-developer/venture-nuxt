@@ -1,12 +1,12 @@
 <template>
-    <div class="bg-cover bg-[32%_top] bg-no-repeat pt-[112px] pb-[72px] lg:bg-[center_top_25%]" :style="{ backgroundImage: `url(${imageUrl || '/assets/img/image-17.webp'})` }">
+    <div class="bg-cover bg-[32%_top] bg-no-repeat pb-[72px] pt-[112px] lg:bg-[center_top_25%]" :style="{ backgroundImage: `url(${imageUrl || '/assets/img/image-17.webp'})` }">
         <div class="container lg:px-[97px] xl:px-4">
             <div class="items-start justify-between gap-5 lg:flex xl:gap-[107px]">
                 <div class="relative">
                     <div class="absolute -inset-5 m-auto h-full w-full bg-black/30 blur-2xl"></div>
                     <div class="relative z-[1]" v-if="tellUsMoreData.length">
                         <h3
-                            class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[36px] sm:leading-[52px] lg:pt-0 [&>span]:border-b-[5px] [&>span]:border-primary [&>br]:hidden md:[&>br]:block"
+                            class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[36px] sm:leading-[52px] lg:pt-0 [&>br]:hidden md:[&>br]:block [&>span]:border-b-[5px] [&>span]:border-primary"
                             v-html="tellUsMoreTitle"
                         ></h3>
                         <p class="text-white">{{ tellUseMoreSubtitle }}</p>
@@ -87,9 +87,7 @@
                             <label for="send_nda">Send NDA</label>
                         </div> -->
                         <div v-show="params.send_nda" class="ml-auto text-sm">
-                            <a href="javascript:;" class="flex w-fit items-center gap-1.5 text-white hover:font-bold" :class="{ '!text-primary': params.file }" @click="$refs.file.click()">
-                                <icons-attach /> Attach file (pdf, office file)
-                            </a>
+                            <button class="flex w-fit items-center gap-1.5 text-white hover:font-bold" :class="{ '!text-primary': params.file }" @click="$refs.file.click()"><icons-attach /> Attach file (pdf, office file)</button>
                             <input ref="file" type="file" style="display: none" accept="application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document" @change="onFileChange" />
                         </div>
                         <!-- <div>

@@ -4,9 +4,9 @@
             <video class="responsive-contact-us-section-video absolute h-auto w-full object-cover" style="min-height: 571px; height: 20vw" autoplay loop muted playsinline>
                 <source :src="content.bannerImgUrl" type="video/mp4" />
             </video>
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
-            <div class="container relative z-10 px-10 pt-[287px] pb-9 md:bg-left md:px-4 lg:px-[97px] xl:px-4 xl:pt-[164px] xl:pb-20">
+            <div class="container relative z-10 px-10 pb-9 pt-[287px] md:bg-left md:px-4 lg:px-[97px] xl:px-4 xl:pb-20 xl:pt-[164px]">
                 <div>
                     <p class="mb-5 border-l-[3px] border-primary pl-2.5 text-sm leading-3 text-[#FBFBFD] md:text-base md:leading-4">
                         {{ content.bannerSubtitle }}
@@ -21,7 +21,7 @@
         <common-banner-tab :tabs="tabs" :is-show-save-btn="true" />
 
         <!-- overview -->
-        <section class="pt-14 pb-20 md:pb-32">
+        <section class="pb-20 pt-14 md:pb-32">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-8 flex items-center justify-center gap-2.5 text-center">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -43,7 +43,7 @@
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
                 </div>
                 <div class="mt-[71px] grid grid-cols-1 divide-y divide-[#d5d5d5] border border-[#d5d5d5] sm:grid-cols-2 sm:divide-x lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-                    <div v-for="(contact, i) in section2Data" :key="i" class="px-[30px] pt-11 pb-10 lg:pb-[150px]">
+                    <div v-for="(contact, i) in section2Data" :key="i" class="px-[30px] pb-10 pt-11 lg:pb-[150px]">
                         <p class="text-[21px] font-semibold text-[#202a36]">{{ contact.attributes.name }}</p>
                         <p class="line-clamp-2 min-h-[68px] pt-3 text-lg font-light text-[#202a36]">{{ contact.attributes.location }}</p>
                         <a :href="`mailto:${contact.attributes.email}`" class="block pt-[30px] text-lg text-[#202a36] underline duration-150 hover:text-primary">{{ contact.attributes.email }}</a>
@@ -54,13 +54,13 @@
         </section>
 
         <!-- follow-us -->
-        <section class="pt-20 pb-10 md:pt-[166px] lg:pb-0">
+        <section class="pb-10 pt-20 md:pt-[166px] lg:pb-0">
             <div class="container lg:px-[97px] xl:px-4">
                 <div class="grid grid-cols-1 space-y-20 md:grid-cols-2 md:gap-5 md:space-y-0 lg:gap-24 xl:gap-36">
                     <div>
                         <h3 class="text-[28px] font-bold leading-[60px] text-[#030303]" v-html="content.section3Column1Title"></h3>
                         <div class="pt-6 lg:pt-16">
-                            <ul class="divide-y divide-[#d5d5d5] border-t border-b border-[#d5d5d5]">
+                            <ul class="divide-y divide-[#d5d5d5] border-b border-t border-[#d5d5d5]">
                                 <li class="py-4" v-for="socialMedia in section3Column1Data">
                                     <a :href="socialMedia.attributes.url" target="_blank" class="flex items-center justify-between text-lg text-[#202a36] hover:text-primary"
                                         ><span>{{ socialMedia.attributes.socialMediaName }}</span>
@@ -73,7 +73,7 @@
                     <div>
                         <h3 class="text-[28px] font-bold leading-[60px] text-[#030303]" v-html="content.section3Column2Title"></h3>
                         <div class="pt-6 lg:pt-16">
-                            <ul class="divide-y divide-[#d5d5d5] border-t border-b border-[#d5d5d5]">
+                            <ul class="divide-y divide-[#d5d5d5] border-b border-t border-[#d5d5d5]">
                                 <li v-for="data in section3Column2Data" class="flex items-center justify-between py-4 text-lg text-[#202a36] hover:text-primary">
                                     <a target="_blank" :href="data.attributes.subscribeToUrl">{{ data.attributes.subscribeTo }}</a> <icons-right-menu-arrow class="text-[#00ADFF]" />
                                 </li>
@@ -120,7 +120,7 @@
         </section>
 
         <!-- press Release -->
-        <section class="py-10 md:py-16 xl:pt-[108px] xl:pb-[176px]">
+        <section class="py-10 md:py-16 xl:pb-[176px] xl:pt-[108px]">
             <div class="container lg:px-[97px] xl:px-4">
                 <div id="pressRelease" class="flex items-center justify-center gap-[33px] text-center">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -169,7 +169,7 @@
         />
 
         <!-- Trending -->
-        <section class="py-10 md:py-16 xl:pt-[129px] xl:pb-[52px]">
+        <section class="py-10 md:py-16 xl:pb-[52px] xl:pt-[129px]">
             <div class="container lg:px-[97px] xl:px-4">
                 <div id="ventureInsight" class="flex items-center justify-center gap-[33px] text-center">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -214,12 +214,12 @@
                         </div>
                         <div class="flex h-[calc(100%-125px)] flex-col justify-between py-3 xl:h-[calc(100%-173px)] xl:py-[34px]">
                             <div>
-                                <h4 class="mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                <p class="mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                     {{ insight.attributes.Insightsource }}
-                                </h4>
+                                </p>
 
                                 <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
-                                <p class="mt-3 mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
+                                <p class="mb-5 mt-3 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                     {{ insight.attributes.paragraph }}
                                 </p>
                             </div>

@@ -1,55 +1,56 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
-            <div class="absolute top-0 left-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
-            <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[246px]"></div>
-            <div class="container relative z-10 lg:px-[97px] xl:px-4">
+        <section class="bg-[right_48%_top] pt-[164px] md:bg-[center_top_25%] xl:pb-[75px] relative bg-cover bg-no-repeat pb-9" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+            <div class="w-[90%] from-[#2b3746] absolute left-0 top-0 z-0 h-full bg-gradient-to-r via-transparent"></div>
+            <div class="h-[161px] from-[#202a36] xl:h-[246px] absolute bottom-0 left-0 w-full bg-gradient-to-t via-transparent opacity-80"></div>
+            <div class="lg:px-[97px] container relative z-10 xl:px-4">
                 <div>
-                    <p class="mb-[18px] border-l-[3px] border-primary pl-2.5 leading-5 text-[#FBFBFD]">{{ content.bannerSubtitle }}</p>
-                    <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px] xl:leading-[53px]">{{ content.bannerTitle }}</h1>
-                    <p v-html="content.bannerDescription" class="max-w-[415px] font-normal leading-5 text-[#FBFBFD]"></p>
+                    <p class="mb-[18px] border-l-[3px] text-[#FBFBFD] border-primary pl-2.5 leading-5">{{ content.bannerSubtitle }}</p>
+                    <h1 class="text-[38px] leading-[42px] xl:text-[40px] xl:leading-[53px] mb-4 font-bold text-white">{{ content.bannerTitle }}</h1>
+                    <p v-html="content.bannerDescription" class="max-w-[415px] text-[#FBFBFD] font-normal leading-5"></p>
                 </div>
             </div>
         </section>
 
         <common-banner-tab :tabs="tabs" />
 
-        <section class="relative z-10 overflow-hidden bg-white py-[92px]">
+        <section class="py-[92px] relative z-10 overflow-hidden bg-white">
             <div id="featuredClient" class="container relative">
                 <div class="flex flex-col items-center justify-between gap-10 md:flex-row">
                     <div class="grid flex-1 grid-cols-1">
                         <div>
-                            <h3 class="border- inline-block border-b-[6px] border-primary text-[30px] font-bold uppercase leading-[47px] [&>span]:text-primary" v-html="content.section1Title"></h3>
+                            <h3 class="border- border-b-[6px] text-[30px] leading-[47px] inline-block border-primary font-bold uppercase [&>span]:text-primary" v-html="content.section1Title"></h3>
                         </div>
                         <div class="mt-8 flex gap-2 md:gap-9">
                             <span class="flex-none">
-                                <img loading="lazy" src="/assets/img/quote-one.png" alt="" />
+                                <nuxt-img src="/assets/img/quote-one.png" alt="QuoteOne" loading="lazy" format="webp" />
                             </span>
-                            <p class="max-w-[377px] text-lg italic leading-[28px] -tracking-[0.04px] text-[#707070]">
+                            <p class="max-w-[377px] leading-[28px] text-[#707070] text-lg italic -tracking-[0.04px]">
                                 {{ content.section1Description }}
                             </p>
                             <span class="flex-none self-end">
-                                <img loading="lazy" src="/assets/img/quote-two.png" alt="" />
+                                <nuxt-img src="/assets/img/quote-two.png" alt="QuoteTwo" loading="lazy" format="webp" />
                             </span>
                         </div>
-                        <div class="mt-20 lg:mt-[204px]">
-                            <p class="text-[21px] italic leading-[42px] -tracking-[0.04px] text-[#707070]">{{ content.section1Subtitle }}</p>
-                            <img loading="lazy" :src="content.section1DescriptionImgUrl || '/assets/img/review_image.png'" :alt="content.section1Title" class="mt-6" />
+                        <div class="lg:mt-[204px] mt-20">
+                            <p class="text-[21px] leading-[42px] text-[#707070] italic -tracking-[0.04px]">{{ content.section1Subtitle }}</p>
+
+                            <nuxt-img :src="content.section1DescriptionImgUrl || '/assets/img/review_image.png'" :alt="content.section1Title" class="mt-6" loading="lazy" format="webp" />
                         </div>
                     </div>
                     <div>
-                        <img loading="lazy" :src="content.section1ImgUrl" :alt="content.section1Title" />
+                        <nuxt-img :src="content.section1ImgUrl" :alt="content.section1Title" loading="lazy" format="webp" />
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="aboutUs" class="pt-14 pb-20 md:pb-32">
-            <div class="container px-10 lg:px-[97px] xl:px-4">
-                <div class="mb-0 flex items-center justify-center gap-[5px] text-center md:mb-4 md:gap-8">
-                    <div class="block h-px w-full bg-[#d5d5d5]"></div>
-                    <h2 id="aboutUs" class="shrink-0 text-[22px] font-bold uppercase leading-8 text-black md:text-3xl md:leading-[43px]" v-html="content.section2Title"></h2>
-                    <div class="block h-px w-full bg-[#d5d5d5]"></div>
+        <section id="aboutUs" class="pb-20 pt-14 md:pb-32">
+            <div class="lg:px-[97px] container px-10 xl:px-4">
+                <div class="gap-[5px] mb-0 flex items-center justify-center text-center md:mb-4 md:gap-8">
+                    <div class="bg-[#d5d5d5] block h-px w-full"></div>
+                    <h2 id="aboutUs" class="text-[22px] md:leading-[43px] shrink-0 font-bold uppercase leading-8 text-black md:text-3xl" v-html="content.section2Title"></h2>
+                    <div class="bg-[#d5d5d5] block h-px w-full"></div>
                 </div>
                 <common-toggle-content :content="content.section2Description" />
             </div>
@@ -92,7 +93,7 @@
 
         <!-- our-team -->
         <div>
-            <common-our-team class="pb-10 md:!pb-0" :title="content.section9Title" :description="content.section9Description" :teams="section9Data" />
+            <common-our-team class="md:!pb-0 pb-10" :title="content.section9Title" :description="content.section9Description" :teams="section9Data" />
         </div>
 
         <common-faq :title="content.section10Title" :description="content.section10Description" :faqs="section10Data" />

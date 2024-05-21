@@ -15,16 +15,12 @@
                             'bg-gradient-to-r from-[#2B3746]/70 md:-left-[40%] md:w-[65%]': i === 0,
                         }"
                     ></div>
-                    <!-- <div class="absolute top-0 z-0 h-full w-full" :class="{ 'bg-gradient-to-r from-[#2B3746]/70 md:w-[45%]': i === 0, 'bg-gradient-to-r from-[#2B3746]/70 md:w-[40%]': i === 5,'bg-gradient-to-r from-[#2B3746]/70 md:w-[80%]': i === 4, 'bg-gradient-to-r from-[#2B3746]/70 md:w-[40%]': i === 3, 'bg-gradient-to-r from-[#2b3746] md:w-[50%]': i === 2, 'bg-gradient-to-r from-[#2b3746] md:w-[80%]': i === 1 }"></div> -->
                     <div class="absolute bottom-0 left-0 z-0 h-[89px] w-full bg-gradient-to-t from-[#202A36] opacity-80"></div>
                     <div v-if="slide.attributes.slideVideoUrl">
-                        <!-- :poster="`https:${slide.attributes.slideImage.attributes.file.url}`" -->
                         <video class="force-video-reload responsive-slide-video absolute inset-0 -z-10 h-full w-full object-cover" :style="videoHeight" autoplay loop muted playsinline>
                             <source :src="slide.attributes.slideVideoUrl" type="video/mp4" />
                         </video>
                     </div>
-                    <!-- scale-[3] md:scale-[1.25] xl:scale-[1.1] -->
-                    <!-- <img v-else :src="`https:${slide.attributes.slideImage.attributes.file.url}`" class="slider-img absolute -z-10 h-full w-full object-cover" /> -->
                     <img
                         v-else
                         loading="lazy"
@@ -34,29 +30,32 @@
                             'bg-[position:center]': i === 3 || i === 2,
                             'bg-[position:-500px_0px]': i === 1,
                         }"
+                        :alt="slide.attributes.title"
                         :style="{ backgroundImage: `url(${slide.attributes.slideImageUrl})` }"
                     />
-                    <!-- 'bg-[position:-410px_30px] md:bg-[position:center_70px] lg:bg-center xl:bg-[center_-70px]': i === 5, -->
                     <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4" :class="{ '': i === 0 }">
                         <div
                             class="full-slide-animation-after full-slide-animation-before group flex min-h-[38rem] place-content-center items-center justify-start pb-4 pt-36 md:min-h-[40rem] lg:max-w-[950px] xl:min-h-screen"
                             :class="{ 'full-slide-animation-after full-slide-animation-before': i === 0 }"
                         >
-                            <!-- <div class="py-20 xl:pt-[220px] xl:pb-[100px]" :class="{ 'xl:!pb-[255px] xl:!pt-[147px]': i === 0 }"> -->
                             <div class="flex-1">
                                 <h1
-                                    class="slide-text-animation-before slide-text-animation-after text-[26px] font-extrabold uppercase leading-[42px] text-white sm:text-[38px] md:whitespace-nowrap xl:text-[50px] xl:leading-[53px]"
-                                    :class="{ 'max-w-[295px] !whitespace-normal sm:max-w-[430px] xl:max-w-[626px]': i === 0 }"
+                                    v-if="i === 0"
+                                    class="slide-text-animation-before slide-text-animation-after max-w-[295px] !whitespace-normal text-[26px] font-extrabold uppercase leading-[42px] text-white sm:max-w-[430px] sm:text-[38px] md:whitespace-nowrap xl:max-w-[626px] xl:text-[50px] xl:leading-[53px]"
                                     v-html="slide.attributes.title"
                                 ></h1>
-
-                                <!-- Link above button -- if button is absent only -->
+                                <h2
+                                    v-else
+                                    class="slide-text-animation-before slide-text-animation-after max-w-[295px] !whitespace-normal text-[26px] font-extrabold uppercase leading-[42px] text-white sm:max-w-[430px] sm:text-[38px] md:whitespace-nowrap xl:max-w-[626px] xl:text-[50px] xl:leading-[53px]"
+                                    v-html="slide.attributes.title"
+                                ></h2>
                                 <nuxt-link
                                     v-if="slide.attributes.buttonText && $helper.isInternalUrl(slide.attributes.linkUrl)"
                                     :to="slide.attributes.linkUrl"
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
-                                    {{ slide.attributes.linkTitle }} <img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" width="21" />
+                                    {{ slide.attributes.linkTitle }}
+                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle" loading="lazy" format="webp" />
                                 </nuxt-link>
 
                                 <a
@@ -65,15 +64,14 @@
                                     :href="slide.attributes.linkUrl"
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
-                                    {{ slide.attributes.linkTitle }} <img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" width="21" />
+                                    {{ slide.attributes.linkTitle }}
+                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle" loading="lazy" format="webp" />
                                 </a>
-                                <!-- Link above button -- if button is absent only -->
 
                                 <p class="slide-text-animation-before slide-text-animation-after max-w-[377px] pt-4 text-[1.1rem] leading-[22px] text-[#FBFBFD] xl:max-w-[590px]" :class="{ 'mb-[46px] !pt-0': slide.attributes.buttonText }">
                                     {{ slide.attributes.description }}
                                 </p>
 
-                                <!-- Button -->
                                 <nuxt-link
                                     v-if="slide.attributes.buttonUrl && $helper.isInternalUrl(slide.attributes.buttonUrl)"
                                     :to="slide.attributes.buttonUrl"
@@ -88,16 +86,13 @@
                                     class="outline-btn slide-text-animation-before slide-text-animation-after px-10 py-3 text-[13px] font-semibold uppercase leading-4 xl:px-16 xl:py-[22px]"
                                     >{{ slide.attributes.buttonText }}</a
                                 >
-
-                                <!-- Button -->
-
-                                <!-- Link below button -- if button is present only -->
                                 <nuxt-link
                                     v-if="!slide.attributes.buttonText && $helper.isInternalUrl(slide.attributes.linkUrl)"
                                     :to="slide.attributes.linkUrl"
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
-                                    {{ slide.attributes.linkTitle }} <img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" width="21" />
+                                    {{ slide.attributes.linkTitle }}
+                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle" loading="lazy" format="webp" />
                                 </nuxt-link>
 
                                 <a
@@ -106,9 +101,9 @@
                                     :href="slide.attributes.linkUrl"
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
-                                    {{ slide.attributes.linkTitle }} <img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" width="21" />
+                                    {{ slide.attributes.linkTitle }}
+                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle" loading="lazy" format="webp" />
                                 </a>
-                                <!-- Link below button -- if button is present only -->
                             </div>
                         </div>
                     </div>
@@ -133,7 +128,7 @@
         </div>
         <div class="absolute bottom-10 right-20 z-20 hidden animate-bounce text-white lg:block">
             <p class="mb-2 pl-1 text-sm text-white">Scroll</p>
-            <button @click="scrollToNextSection()" class="rounded-full border border-white p-2">
+            <button @click="scrollToNextSection()" class="rounded-full border border-white p-2" aria-label="Scroll Next Section">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="fill-whi mx-auto h-6 w-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
@@ -263,7 +258,7 @@
     };
 </script>
 
-<style>
+<style scoped>
     .hero-slider .swiper-pagination::-webkit-scrollbar {
         width: 0px;
     }

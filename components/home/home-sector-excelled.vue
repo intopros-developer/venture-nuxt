@@ -1,47 +1,48 @@
 <template>
     <section class="py-[50px] lg:pt-[78px]">
-        <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
+        <div class="lg:px-[97px] container px-10 md:px-4 xl:px-4">
             <div class="text-center">
-                <div class="mb-9 flex items-center justify-center gap-2 text-center sm:gap-[33px]">
-                    <div class="h-px w-1/5 bg-[#D5D5D5]"></div>
+                <div class="sm:gap-[33px] mb-9 flex items-center justify-center gap-2 text-center">
+                    <div class="bg-[#D5D5D5] h-px w-1/5"></div>
                     <h2 class="max-w-[90%] text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl [&>br]:inline-block sm:[&>br]:hidden [&>span]:text-primary" v-html="title"></h2>
-                    <div class="h-px w-1/5 bg-[#D5D5D5]"></div>
+                    <div class="bg-[#D5D5D5] h-px w-1/5"></div>
                 </div>
-                <p class="text-[15px] font-medium leading-[18px] -tracking-[0.04px] text-[#707070] xl:text-[20px] xl:leading-[23px]">
+                <p class="text-[15px] leading-[18px] text-[#707070] xl:text-[20px] xl:leading-[23px] font-medium -tracking-[0.04px]">
                     {{ description }}
                 </p>
             </div>
         </div>
-        <div class="container px-10 pt-8 md:px-4 lg:px-[97px] lg:pt-[104px] xl:px-4">
+        <div class="lg:px-[97px] lg:pt-[104px] container px-10 pt-8 md:px-4 xl:px-4">
             <div class="flex flex-col gap-11 md:flex-row md:items-center md:justify-between md:gap-5 lg:gap-10">
                 <section class="sectors-slider relative overflow-hidden">
-                    <img loading="lazy" src="/assets/img/top-overlay.png" class="absolute -top-16 z-10" alt="" />
+                    <nuxt-img format="webp" src="/assets/img/top-overlay.png" class="absolute -top-16 z-10" alt="Sectors we excelled in" loading="lazy" />
+
                     <div v-swiper:sectorsSlider="sliderOptions" class="swiper" :cleanup-styles-on-destroy="false">
                         <div class="swiper-wrapper !max-h-[470px] lg:!max-h-[610px]">
-                            <div v-for="(service, index) in data" :key="`service_${index}`" class="swiper-slide !h-auto py-[18px]">
+                            <div v-for="(service, index) in data" :key="`service_${index}`" class="swiper-slide py-[18px] !h-auto">
                                 <a href="javascript:;" @click="clickedSelector" class="ml-[150px] flex items-center gap-1 opacity-20 transition-all duration-300 hover:opacity-100">
                                     <div class="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white lg:h-12 lg:w-12">
-                                        <icons-building v-if="index === 0" class="h-4 w-3 lg:h-5 lg:w-[25px]" />
-                                        <icons-eduction v-else-if="index === 1" class="h-5 w-4 lg:h-[20px] lg:w-[34px]" />
-                                        <icons-wifi v-else-if="index === 2" class="h-5 w-4 lg:h-[25px] lg:w-[34px]" />
-                                        <icons-cannabis v-else-if="index === 3" class="h-4 w-4 lg:h-[22px] lg:w-[22px]" />
-                                        <icons-finacial v-else-if="index === 4" class="ld:w-[22px] h-4 w-4 lg:h-[23px]" />
-                                        <icons-brokerage v-else-if="index === 5" class="h-4 w-4 lg:h-[25px] lg:w-[25px]" />
-                                        <icons-clean-tech v-else-if="index === 6" class="h-5 w-4 lg:h-[25px] lg:w-[34px]" />
-                                        <icons-heart-care v-else-if="index === 7" class="h-4 w-4 lg:h-[25px] lg:w-[25px]" />
-                                        <icons-residential v-else-if="index === 8" class="h-4 w-4 lg:h-[25px] lg:w-[22px]" />
-                                        <icons-consumer v-else-if="index === 9" class="h-4 w-4 lg:h-[25px] lg:w-[22px]" />
-                                        <icons-manufacturing v-else-if="index === 10" class="h-4 w-4 lg:h-[22px] lg:w-[29px]" />
-                                        <icons-bitcoin v-else-if="index === 11" class="h-4 w-4 lg:h-[25px] lg:w-[22px]" />
+                                        <icons-building v-if="index === 0" class="lg:w-[25px] h-4 w-3 lg:h-5" />
+                                        <icons-eduction v-else-if="index === 1" class="lg:h-[20px] lg:w-[34px] h-5 w-4" />
+                                        <icons-wifi v-else-if="index === 2" class="lg:h-[25px] lg:w-[34px] h-5 w-4" />
+                                        <icons-cannabis v-else-if="index === 3" class="lg:h-[22px] lg:w-[22px] h-4 w-4" />
+                                        <icons-finacial v-else-if="index === 4" class="ld:w-[22px] lg:h-[23px] h-4 w-4" />
+                                        <icons-brokerage v-else-if="index === 5" class="lg:h-[25px] lg:w-[25px] h-4 w-4" />
+                                        <icons-clean-tech v-else-if="index === 6" class="lg:h-[25px] lg:w-[34px] h-5 w-4" />
+                                        <icons-heart-care v-else-if="index === 7" class="lg:h-[25px] lg:w-[25px] h-4 w-4" />
+                                        <icons-residential v-else-if="index === 8" class="lg:h-[25px] lg:w-[22px] h-4 w-4" />
+                                        <icons-consumer v-else-if="index === 9" class="lg:h-[25px] lg:w-[22px] h-4 w-4" />
+                                        <icons-manufacturing v-else-if="index === 10" class="lg:h-[22px] lg:w-[29px] h-4 w-4" />
+                                        <icons-bitcoin v-else-if="index === 11" class="lg:h-[25px] lg:w-[22px] h-4 w-4" />
                                     </div>
-                                    <p class="max-w-[152px] text-left text-[9px] font-semibold leading-[11px] -tracking-[-0.02px] text-[#202A36]">
+                                    <p class="max-w-[152px] text-[9px] leading-[11px] text-[#202A36] text-left font-semibold -tracking-[-0.02px]">
                                         {{ service.attributes.sectorName }}
                                     </p>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <img loading="lazy" src="/assets/img/bottom-overlay.png" class="absolute -bottom-12 z-10 lg:-bottom-16" alt="" />
+                    <nuxt-img format="webp" src="/assets/img/bottom-overlay.png" class="absolute -bottom-12 z-10 lg:-bottom-16" alt="Sectors we excelled in" loading="lazy" />
                 </section>
                 <home-sector-chart ref="sectorChart" />
             </div>

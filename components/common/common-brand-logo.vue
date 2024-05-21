@@ -4,7 +4,7 @@
             <div v-swiper:brandLogo="slider_options" class="swiper relative bg-transparent" :cleanup-styles-on-destroy="false">
                 <div class="swiper-wrapper items-center">
                     <div v-for="(logo, i) in logos" :key="i" class="swiper-slide flex justify-center lg:!min-w-[294px]">
-                        <img loading="lazy" :src="logo.logoUrl" />
+                        <nuxt-img :src="logo.logoUrl" :alt="'LOGO-' + i" loading="lazy" />
                     </div>
                 </div>
             </div>

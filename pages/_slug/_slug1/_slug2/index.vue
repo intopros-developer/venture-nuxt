@@ -79,9 +79,5 @@
                 baseTemplates: ['about-page', 'contact-us', 'divisions', 'founders-bio', 'google-ad', 'our-team', 'service-pages', 'single-insights'],
             };
         },
-        mounted() {
-            // console.log(this.baseURL);
-            // console.log(this.content);
-        },
     };
 </script>

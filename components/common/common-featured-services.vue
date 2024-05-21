@@ -17,7 +17,7 @@
                             </div>
                             <VueSlideToggle :open="serviceTitle === service.attributes.title" tag="section" :duration="500" class="block lg:hidden">
                                 <div v-if="serviceDescription" :id="`service-${index}`">
-                                    <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] lg:px-[30px] lg:pt-[30px] lg:pb-16">
+                                    <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] lg:px-[30px] lg:pb-16 lg:pt-[30px]">
                                         <img
                                             loading="lazy"
                                             v-if="!serviceDescription.attributes.descriptionVideoUrl && serviceDescription.attributes.descriptionImageUrl"
@@ -44,12 +44,12 @@
                                                 width="100%"
                                                 :height="videoHeight"
                                             ></iframe>
-                                            <button v-show="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] py-5 px-11 group-hover:bg-primary" @click="play()">
+                                            <button v-show="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] px-11 py-5 group-hover:bg-primary" @click="play()">
                                                 <icons-play />
                                             </button>
                                         </div>
                                         <div class="pt-5 md:pt-[29px]">
-                                            <h4 v-if="serviceDescription.attributes.descriptionTitle" class="text-xl text-[#2F2F2F] md:text-2xl lg:text-3xl">{{ serviceDescription.attributes.descriptionTitle }}</h4>
+                                            <p v-if="serviceDescription.attributes.descriptionTitle" class="text-xl text-[#2F2F2F] md:text-2xl lg:text-3xl">{{ serviceDescription.attributes.descriptionTitle }}</p>
                                             <common-custom-strapi-display classes="pt-5 text-lg font-normal text-[#4D4D4D]" :data="serviceDescription.attributes.descriptionPara"></common-custom-strapi-display>
                                             <nuxt-link v-if="$helper.isInternalUrl(serviceDescription.attributes.descriptionLinkUrl)" :to="serviceDescription.attributes.descriptionLinkUrl" class="block pt-6 font-semibold text-[#0DA1F1]">
                                                 {{ serviceDescription.attributes.descriptionLink }}</nuxt-link
@@ -65,7 +65,7 @@
             </div>
         </div>
         <div v-if="serviceDescription && services.length && !isMobileView" class="hidden lg:block">
-            <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pt-8 md:pb-[57px]">
+            <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-[57px] md:pt-8">
                 <img
                     loading="lazy"
                     v-if="!serviceDescription.attributes.descriptionVideoUrl && serviceDescription.attributes.descriptionImageUrl"
@@ -92,12 +92,12 @@
                         width="100%"
                         :height="videoHeight"
                     ></iframe>
-                    <button v-show="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] py-5 px-11 group-hover:bg-primary" @click="play()">
+                    <button v-show="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] px-11 py-5 group-hover:bg-primary" @click="play()">
                         <icons-play />
                     </button>
                 </div>
                 <div class="pt-5 md:pt-[29px]">
-                    <h4 v-if="serviceDescription.attributes.descriptionTitle" class="text-xl -tracking-[-0.06px] text-[#2F2F2F] md:text-2xl lg:text-[32px]">{{ serviceDescription.attributes.descriptionTitle }}</h4>
+                    <p v-if="serviceDescription.attributes.descriptionTitle" class="text-xl -tracking-[-0.06px] text-[#2F2F2F] md:text-2xl lg:text-[32px]">{{ serviceDescription.attributes.descriptionTitle }}</p>
                     <common-custom-strapi-display classes="pt-[15px] text-lg leading-6 -tracking-[-0.03px] text-[#4D4D4D]" :data="serviceDescription.attributes.descriptionPara"></common-custom-strapi-display>
                     <nuxt-link v-if="$helper.isInternalUrl(serviceDescription.attributes.descriptionLinkUrl)" :to="serviceDescription.attributes.descriptionLinkUrl" class="block pt-6 font-semibold text-[#0DA1F1]">
                         {{ serviceDescription.attributes.descriptionLink }}</nuxt-link
@@ -170,6 +170,17 @@
             };
         },
 
+        head() {
+            return {
+                script: [
+                    {
+                        type: 'application/ld+json',
+                        json: this.schemaMarkup,
+                    },
+                ],
+            };
+        },
+
         computed: {
             serviceDescription() {
                 return this.services.find((service) => service.attributes.title === this.serviceTitle);
@@ -185,6 +196,10 @@
                 } else {
                     return '';
                 }
+            },
+
+            schemaMarkup() {
+                return this.generateSchema(this.$props.services);
             },
         },
 
@@ -246,6 +261,24 @@
                         });
                     }
                 }, 250);
+            },
+
+            generateSchema(data) {
+                return data.map((service) => {
+                    return {
+                        '@context': 'https://schema.org',
+                        '@type': 'Service',
+                        serviceType: service.attributes.title,
+                        provider: {
+                            '@type': 'Organization',
+                            name: 'Ventureplans™',
+                        },
+                        description: service.attributes.descriptionPara,
+                        url: service.attributes.descriptionLinkUrl,
+                        image: service.attributes.descriptionImageUrl,
+                        name: service.attributes.descriptionTitle,
+                    };
+                });
             },
         },
     };

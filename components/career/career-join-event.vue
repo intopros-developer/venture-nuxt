@@ -1,9 +1,11 @@
 <template>
-    <section class="overflow-y-hidden bg-cover bg-[top_36%_center] py-10 xl:pt-20 xl:pb-[75px]" :style="{ backgroundImage: `url(${imageUrl})` }">
+    <section class="overflow-y-hidden bg-cover bg-[top_36%_center] py-10 xl:pb-[75px] xl:pt-20" :style="{ backgroundImage: `url(${imageUrl})` }">
         <div class="container">
             <div class="grid grid-cols-1">
                 <div class="relative max-w-[637px] md:pt-[140px]">
-                    <div class="absolute -left-20 top-2.5 h-full w-full"><img loading="lazy" src="/assets/img/bg-blur-subcribe.png" alt="" /></div>
+                    <div class="absolute -left-20 top-2.5 h-full w-full">
+                        <nuxt-img format="webp" src="/assets/img/bg-blur-subcribe.png" alt="Subscribe" loading="lazy" />
+                    </div>
                     <div class="relative z-[1]">
                         <h5 class="text-center text-2xl font-bold uppercase leading-8 text-[#f7f4f4] md:text-left md:leading-10 [&>br]:md:hidden" v-html="title"></h5>
                         <form id="career-join-form" action="" @submit.prevent="onSubmit">

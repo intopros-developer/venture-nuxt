@@ -3,7 +3,7 @@
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex flex-col items-center justify-between gap-5 md:flex-row">
                 <div class="flex-1">
-                    <h2 class="mb-7 max-w-[404px] text-[26px] leading-[30px] -tracking-[0.05px] text-[#202A36] xl:max-w-[463px]" v-html="title"></h2>
+                    <h4 class="mb-7 max-w-[404px] text-[26px] leading-[30px] -tracking-[0.05px] text-[#202A36] xl:max-w-[463px]" v-html="title"></h4>
                     <p class="mb-5 max-w-[490px] text-[18px] leading-[30px] -tracking-[0.05px] text-[#202A36]" v-html="description"></p>
                     <form id="subscribe-form" action="" @submit.prevent="onSubmit">
                         <div class="hidden max-w-[498px] items-stretch sm:block xl:mt-[106px] xl:max-w-[624px]">
@@ -17,10 +17,6 @@
                                         :class="{ error: $v.params.email.$error }"
                                         @input="$v.params.email.$model = $event.target.value.trim()"
                                     />
-                                    <!-- <div v-if="$v.params.email.$error">
-                                        <p v-if="!$v.params.email.required">{{ $helper.requiredMessage('Email') }}</p>
-                                        <p v-else-if="!$v.params.email.email">{{ $helper.emailMessage() }}</p>
-                                    </div> -->
                                 </div>
                                 <button type="submit" class="btn flex-none rounded-l-none py-[22px]">Get It Free</button>
                             </div>
@@ -32,7 +28,7 @@
                     </form>
                 </div>
                 <div class="max-w-[400px] flex-none xl:max-w-[529px]">
-                    <img loading="lazy" :src="imageUrl" />
+                    <nuxt-img format="webp" :src="imageUrl" :alt="title" loading="lazy" />
                 </div>
                 <form id="subscribe-form-another" action="" class="block sm:hidden" @submit.prevent="onSubmit">
                     <div class="max-w-[498px] items-stretch xl:mt-[106px] xl:max-w-[624px]">
@@ -46,10 +42,6 @@
                                     :class="{ error: $v.params.email.$error }"
                                     @input="$v.params.email.$model = $event.target.value.trim()"
                                 />
-                                <!-- <div v-if="$v.params.email.$error">
-                                    <p v-if="!$v.params.email.required">{{ $helper.requiredMessage('Email') }}</p>
-                                    <p v-else-if="!$v.params.email.email">{{ $helper.emailMessage() }}</p>
-                                </div> -->
                             </div>
                             <button type="submit" class="btn flex-none rounded-l-none">{{ buttonTitle }}</button>
                         </div>

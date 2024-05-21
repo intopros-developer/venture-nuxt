@@ -4,36 +4,6 @@
 
         <lazy-common-dynamic-questionnaire :data="questionnaires"></lazy-common-dynamic-questionnaire>
 
-        <!-- <common-questions-form :title="content.questionnaireTitle" :description="content.questionnaireDescription" :questions="questionnaires" />
-        <section class="pt-8 pb-10 xl:pt-10 xl:pb-20">
-            <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
-                <div class="flex items-center gap-[10px]">
-                    <div class="w-[5px] self-stretch bg-primary"></div>
-                    <p class="text-sm font-semibold text-[#202A36] md:text-base xl:text-2xl xl:leading-9">Across sectors, we identify new markets , scale revenue, improve operations and provide financing support</p>
-                </div>
-            </div>
-        </section> -->
-        <!-- <section class="pt-6 pb-0 md:pb-24 xl:pt-10">
-            <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
-                <div class="mb-11 flex items-center justify-center gap-[33px] text-center" >
-                    <div class="hidden h-px w-full bg-[#D5D5D5] sm:block"></div>
-                    <h2 class="text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl">OUR <span class="text-primary">CORE VALUES</span></h2>
-                    <div class="hidden h-px w-full bg-[#D5D5D5] sm:block"></div>
-                </div>
-                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                    <div v-for="(core_value, i) in coreValues" :key="i" class="bg-white shadow-[0_3px_6px_0_rgba(0,0,0,0.16)]" >
-                        <div class="flex items-center justify-between bg-primary/80 px-3 py-10 xl:px-6" >
-                            <h3 class="text-xl font-bold leading-[17px] text-white md:text-sm xl:text-xl xl:leading-[30px]">{{ core_value.fields.title }}</h3>
-                            <div class="h-8 w-8 flex-none rounded-full bg-white text-center text-xl font-extrabold leading-8 text-[#0CA5F0] xl:h-[39px] xl:w-[39px] xl:text-[25px] xl:leading-[39px]">{{ core_value.fields.id }}</div>
-                        </div>
-                        <div class="px-6 py-5 xl:p-8" >
-                            <p class="text-sm font-medium text-black xl:text-base xl:leading-[30px]">{{ core_value.fields.description }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
         <lazy-common-contact-us
             :videoThumbnailURL="content.video1ThumbnailUrl"
             :buttonTitle="content.video1ButtonText"
@@ -45,7 +15,7 @@
 
         <lazy-common-company-overview :value="content.section1Description" :title="content.section1Title" />
 
-        <section class="py-10 md:py-16 lg:pt-[116px]">
+        <section class="my-10 md:my-16 md:pb-0">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-9 flex items-center justify-center gap-2 text-center sm:gap-[33px] md:mb-[48px]">
                     <div class="h-px w-1/5 bg-[#D5D5D5] sm:w-full"></div>

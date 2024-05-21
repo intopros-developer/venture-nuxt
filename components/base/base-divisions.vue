@@ -4,9 +4,9 @@
             <video class="responsive-contact-us-section-video absolute h-auto w-full object-cover" style="min-height: 571px; height: 20vw" autoplay loop muted playsinline>
                 <source :src="content.bannerVideoUrl" type="video/mp4" />
             </video>
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
-            <div class="container relative z-10 px-10 pt-[287px] pb-9 md:bg-left md:px-4 lg:px-[97px] xl:px-4 xl:pt-[164px] xl:pb-20">
+            <div class="container relative z-10 px-10 pb-9 pt-[287px] md:bg-left md:px-4 lg:px-[97px] xl:px-4 xl:pb-20 xl:pt-[164px]">
                 <div>
                     <p class="mb-5 border-l-[3px] border-primary pl-2.5 text-sm leading-3 text-[#FBFBFD] md:text-base md:leading-4">
                         {{ content.bannerSubtitle }}
@@ -96,13 +96,14 @@
                 <div v-if="section4Data && Array.isArray(section4Data)" class="mt-10 space-y-8 md:mt-[70px] md:space-y-14 xl:space-y-28">
                     <div v-for="(process, i) in section4Data" :key="i" class="grid grid-cols-1 items-start justify-between gap-10 md:grid-cols-2 xl:gap-20">
                         <div class="order-2 mb-10 md:mb-0" :class="{ 'md:!order-1': i % 2 !== 0 }">
-                            <img
+                            <nuxt-img
                                 v-if="process.attributes.imgUrl && process.attributes.title"
-                                loading="lazy"
+                                format="webp"
                                 :src="process.attributes.imgUrl"
                                 :alt="process.attributes.title"
                                 class="mx-auto"
                                 :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }"
+                                loading="lazy"
                             />
                         </div>
                         <div :class="{ 'md:!order-2': i % 2 !== 0 }">

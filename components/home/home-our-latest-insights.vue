@@ -1,5 +1,5 @@
 <template>
-    <section class="pt-10 pb-20 xl:pt-12 xl:pb-[170px]">
+    <section class="pb-20 pt-10 xl:pt-12">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="mb-[57px] flex items-center justify-center gap-2 text-center sm:gap-[33px] xl:mb-[68px]">
                 <div class="h-px w-1/4 bg-[#D5D5D5] sm:block sm:w-full"></div>
@@ -9,16 +9,16 @@
             <div v-if="insightsData" class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-2">
                 <div v-for="(insight, i) in insightsData" :key="i" class="relative mb-8 md:px-7" :class="{ 'border-[#d5d5d5] md:border-r': i % 2 === 0 }">
                     <div class="h-48 w-full shadow-[0px_3px_6px_rgba(0,0,0,0.6)] xl:h-[276px]">
-                        <img loading="lazy" :src="insight.attributes.imgUrl" class="h-full w-full object-cover" />
+                        <nuxt-img format="webp" :src="insight.attributes.imgUrl" class="h-full w-full object-cover" :alt="insight.attributes.title" loading="lazy" />
                     </div>
                     <div class="flex h-[calc(100%-192px)] flex-col justify-between px-0 py-[34px] xl:h-[calc(100%-276px)]">
                         <div>
-                            <h4 class="mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                            <p class="mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                 {{ insight.attributes.Insightsource }}
-                            </h4>
+                            </p>
 
                             <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
-                            <p class="mt-3 mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">{{ insight.attributes.paragraph }}</p>
+                            <p class="mb-5 mt-3 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">{{ insight.attributes.paragraph }}</p>
                         </div>
 
                         <div class="relative flex items-center justify-between">
@@ -34,8 +34,7 @@
                 </div>
             </div>
             <div v-if="!isShowMore" class="mt-5 text-center md:mt-[52px]">
-                <nuxt-link to="/insights" class="outline-btn rounded-[10px] border-[#000]/[0.08] py-[22px] px-[61px] text-sm font-medium uppercase leading-[22px] -tracking-[0.03px] text-[#00ADFF]">{{ $t('see_all_insights') }}</nuxt-link>
-                <!-- @click="isShowMore = true" -->
+                <nuxt-link to="/insights" class="outline-btn rounded-[10px] border-[#000]/[0.08] px-[61px] py-[22px] text-sm font-medium uppercase leading-[22px] -tracking-[0.03px] text-[#00ADFF]">{{ $t('see_all_insights') }}</nuxt-link>
             </div>
         </div>
     </section>

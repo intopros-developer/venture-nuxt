@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="container bg-white px-10 py-6">
                                     <div class="mb-6 uppercase">
-                                        <h3 class="cursor-pointer !border-b-0 !leading-5 duration-150 hover:text-primary">{{ $t('industries') }}</h3>
+                                        <p class="cursor-pointer !border-b-0 !leading-5 duration-150 hover:text-primary">{{ $t('industries') }}</p>
                                     </div>
                                     <div class="grid grid-cols-4 divide-x divide-[#707070]/20">
                                         <ul class="self-stretch pr-12" :class="{ 'self-stretch px-12': mInd > 0 }" v-for="(mainIndNav, mInd) in $store.state.nav.industries" :key="mInd + mainIndNav.attributes.name">
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="container bg-white px-10 py-6">
                                     <div class="mb-6 uppercase">
-                                        <h3 class="!border-b-0 text-[10px] !leading-5">{{ $t('offices') }}</h3>
+                                        <p class="!border-b-0 text-[10px] !leading-5">{{ $t('offices') }}</p>
                                     </div>
                                     <div class="grid grid-cols-7 gap-4">
                                         <ul v-for="off of usOffices" :key="off.name" class="menu-drop-top">
@@ -119,16 +119,16 @@
                                 </div>
                                 <div class="container bg-white px-10 py-6">
                                     <div class="mb-6 uppercase">
-                                        <h3 class="!border-b-0 text-[10px] !leading-5">{{ $t('languages') }}</h3>
+                                        <p class="!border-b-0 text-[10px] !leading-5">{{ $t('languages') }}</p>
                                     </div>
                                     <div class="flex items-start justify-between divide-x divide-[#707070]/20">
                                         <ul class="pr-12">
                                             <li>
-                                                <h6 class="text-sm font-semibold" href="javascript:;">{{ $t('global') }}</h6>
+                                                <p class="text-sm font-semibold" href="javascript:;">{{ $t('global') }}</p>
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('en')">
-                                                            <img loading="lazy" src="/assets/img/flag-global.png" class="w-[22px]" />
+                                                            <nuxt-img format="webp" src="/assets/img/flag-global.png" width="22" height="15" class="w-[22px]" alt="English" loading="lazy" />
                                                             <p>English</p>
                                                         </a>
                                                     </li>
@@ -137,127 +137,127 @@
                                         </ul>
                                         <ul class="px-12">
                                             <li>
-                                                <h6 class="text-sm font-semibold" href="javascript:;">{{ $t('north_nd_south_america') }}</h6>
+                                                <p class="text-sm font-semibold" href="javascript:;">{{ $t('north_nd_south_america') }}</p>
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('pt-br')">
-                                                            <img loading="lazy" src="/assets/img/flag-brazil.png" class="w-[22px]" />
+                                                            <nuxt-img format="webp" src="/assets/img/flag-brazil.png" class="w-[22px]" width="22" height="15" alt="Brazil (Português)" loading="lazy" />
                                                             <p>Brazil (Português)</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es-ar')">
-                                                            <img loading="lazy" src="/assets/img/flag-argentina.png" class="w-[22px]" />
-                                                            <p>Argentina (Español)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-argentina.png" class="w-[22px]" width="22" height="15" alt="Argentina (Español)" loading="lazy" />
+                                                            <p>Argentina (Español)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es-cl')">
-                                                            <img loading="lazy" src="/assets/img/flag-chile.png" class="w-[22px]" />
-                                                            <p>Chile (Español)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-chile.png" class="w-[22px]" width="22" height="15" alt="Chile (Español)" loading="lazy" />
+                                                            <p>Chile (Español)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es-co')">
-                                                            <img loading="lazy" src="/assets/img/flag-colombia.png" class="w-[22px]" />
-                                                            <p>Colombia (Español)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-colombia.png" class="w-[22px]" width="22" height="15" alt="Colombia (Español)" loading="lazy" />
+                                                            <p>Colombia (Español)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es-co')">
-                                                            <img loading="lazy" src="/assets/img/canada.jpg" class="w-[22px]" />
-                                                            <p>Canada</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/canada.jpg" class="w-[22px]" width="22" height="15" alt="Canada" loading="lazy" />
+                                                            <p>Canada</p>
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="px-12">
                                             <li>
-                                                <h6 class="text-sm font-semibold" href="javascript:;">{{ $t('europe') }}</h6>
+                                                <p class="text-sm font-semibold" href="javascript:;">{{ $t('europe') }}</p>
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('fr')">
-                                                            <img loading="lazy" src="/assets/img/flag-france.png" class="w-[22px]" />
-                                                            <p>France (Français)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-france.png" class="w-[22px]" width="22" height="15" alt="France (Français)" loading="lazy" />
+                                                            <p>France (Français)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('de-ch')">
-                                                            <img loading="lazy" src="/assets/img/flag-germany.png" class="w-[22px]" />
-                                                            <p>Germany / Switzerland (Deutsch)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-germany.png" class="w-[22px]" width="22" height="15" alt="Germany" loading="lazy" />
+                                                            <p>Germany / Switzerland (Deutsch)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('it')">
-                                                            <img loading="lazy" src="/assets/img/flag-italy.png" class="w-[22px]" />
-                                                            <p>Italy (Italiano)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-italy.png" class="w-[22px]" width="22" height="15" alt="Italy" loading="lazy" />
+                                                            <p>Italy (Italiano)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es')">
-                                                            <img loading="lazy" src="/assets/img/flag-spain.png" class="w-[22px]" />
+                                                            <nuxt-img format="webp" src="/assets/img/flag-spain.png" class="w-[22px]" width="22" height="15" alt="Spain (Español)" loading="lazy" />
                                                             <p>Spain (Español)</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('ru')">
-                                                            <img loading="lazy" src="/assets/img/flag-russia.png" class="w-[22px]" />
-                                                            <p>Russia (Русский)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-russia.png" class="w-[22px]" width="22" height="15" alt="Russia (Русский)" loading="lazy" />
+                                                            <p>Russia (Русский)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('ru')">
-                                                            <img loading="lazy" src="/assets/img/uk.jpg" class="w-[22px]" />
-                                                            <p>England</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/uk.jpg" class="w-[22px]" width="22" height="15" alt="England" loading="lazy" />
+                                                            <p>England</p>
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="px-12">
                                             <li>
-                                                <h6 class="text-sm font-semibold" href="javascript:;">{{ $t('asia_nd_australia') }}</h6>
+                                                <p class="text-sm font-semibold" href="javascript:;">{{ $t('asia_nd_australia') }}</p>
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh')">
-                                                            <img loading="lazy" src="/assets/img/flag-chaina.png" class="w-[22px]" />
-                                                            <p>China (中文版)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-chaina.png" class="w-[22px]" width="22" height="15" alt="China (中文版)" loading="lazy" />
+                                                            <p>China (中文版)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('ko')">
-                                                            <img loading="lazy" src="/assets/img/flag-korea.png" class="w-[22px]" />
-                                                            <p>Korea (한국어)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-korea.png" class="w-[22px]" width="22" height="15" alt="Korea (한국어)" loading="lazy" />
+                                                            <p>Korea (한국어)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('ja')">
-                                                            <img loading="lazy" src="/assets/img/flag-japan.png" class="w-[22px]" />
-                                                            <p>Japan (日本語)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-japan.png" class="w-[22px]" width="22" height="15" alt="Japan (日本語)" loading="lazy" />
+                                                            <p>Japan (日本語)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh-tw')">
-                                                            <img loading="lazy" src="/assets/img/flag-taiwan.png" class="w-[22px]" />
-                                                            <p>Taiwan (日本語)</p></a
-                                                        >
+                                                            <nuxt-img format="webp" src="/assets/img/flag-taiwan.png" class="w-[22px]" width="22" height="15" alt="Taiwan (日本語)" loading="lazy" />
+                                                            <p>Taiwan (日本語)</p>
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh-hk')">
-                                                            <img loading="lazy" src="/assets/img/flag-hongkong.png" class="w-[22px]" />
+                                                            <nuxt-img format="webp" src="/assets/img/flag-hongkong.png" class="w-[22px]" width="22" height="15" alt="Hong Kong (日本語)" loading="lazy" />
                                                             <p>Hong Kong (日本語)</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh-au')">
-                                                            <img loading="lazy" src="/assets/img/australia.png" class="w-[22px]" />
+                                                            <nuxt-img format="webp" src="/assets/img/australia.png" class="w-[22px]" width="22" height="15" alt="Australia" loading="lazy" />
                                                             <p>Australia</p>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh-ir')">
-                                                            <img loading="lazy" src="/assets/img/iran.png" class="w-[22px]" />
+                                                            <nuxt-img format="webp" src="/assets/img/iran.png" class="w-[22px]" width="22" height="15" alt="Iran" loading="lazy" />
                                                             <p>Iran</p>
                                                         </a>
                                                     </li>

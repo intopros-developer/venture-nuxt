@@ -120,10 +120,7 @@
             play() {
                 this.playing = true;
                 this.$nextTick(() => {
-                    console.log('Running');
-                    console.log(this.$refs);
                     const youtubePlayer = this.$refs.youtubePlayer;
-                    console.log(youtubePlayer);
 
                     // Check if the iframe element exists
                     if (youtubePlayer) {

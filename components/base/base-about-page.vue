@@ -1,7 +1,7 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-no-repeat pt-[250px] pb-8 md:pt-[166px] md:pb-[69px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+        <section class="relative bg-cover bg-no-repeat pb-8 pt-[250px] md:pb-[69px] md:pt-[166px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-90 xl:h-[307px]"></div>
             <div class="container relative z-10 px-10 lg:px-[97px] xl:px-4">
                 <div>
@@ -18,11 +18,11 @@
         <common-banner-tab :is-show-save-btn="true" :tabs="tabs" />
 
         <!-- about-us us -->
-        <section class="pt-14 pb-20 md:pb-32">
+        <section class="pb-20 pt-14 md:pb-32">
             <div class="container px-10 lg:px-[97px] xl:px-4">
                 <div class="mb-0 flex items-center justify-center gap-[5px] text-center md:mb-4 md:gap-8">
                     <div class="block h-px w-full bg-[#d5d5d5]"></div>
-                    <h2 id="aboutUs" class="shrink-0 text-[22px] font-bold uppercase leading-8 text-black md:text-3xl md:leading-[43px]" v-html="content.section1Title"></h2>
+                    <p id="aboutUs" class="shrink-0 text-[22px] font-bold uppercase leading-8 text-black md:text-3xl md:leading-[43px]" v-html="content.section1Title"></p>
                     <div class="block h-px w-full bg-[#d5d5d5]"></div>
                 </div>
                 <common-toggle-content :content="content.section1Paragraph" />
@@ -97,7 +97,7 @@
                                 </div>
                             </div>
                             <div class="mx-auto h-[180px] w-full max-w-[320px] overflow-hidden rounded-[100px] shadow-[0px_3px_6px_rgba(0,0,0,0.36)] md:h-[228px]">
-                                <img loading="lazy" :src="data.attributes.imgUrl" class="h-full w-full object-cover" />
+                                <nuxt-img format="webp" :src="data.attributes.imgUrl" class="h-full w-full object-cover" :alt="data.attributes.title" loading="lazy" />
                             </div>
                         </div>
                     </div>

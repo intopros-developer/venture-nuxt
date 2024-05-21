@@ -6,12 +6,12 @@
         <div class="show-separator-border relative border-b border-[#ede7e7] md:border-b-0 xl:px-4">
             <div class="px-4 lg:container" :class="{ relative: scrollPosition !== 'down' }">
                 <div class="flex items-center justify-between py-3 xl:py-0" :class="{ '!py-3': scrollPosition == 'down' }">
-                    <a href="javascript:;" class="home-header-text inline-block flex-none p-2 pl-0 text-primary md:pt-0" :class="{ 'md:pt-2': scrollPosition == 'down' }" @click="$store.dispatch('nav/toggle')">
+                    <button class="home-header-text inline-block flex-none p-2 pl-0 text-primary md:pt-0" :class="{ 'md:pt-2': scrollPosition == 'down' }" @click="$store.dispatch('nav/toggle')">
                         <icons-hamburger class="w-[17px] !text-primary xl:w-5" />
-                    </a>
+                    </button>
                     <div class="ml-3 mr-[3px] flex flex-1 items-center justify-center gap-[17px] md:flex-none md:justify-start">
                         <div class="home-header-logo flex-none text-black">
-                            <nuxt-link :to="localePath('/')">
+                            <nuxt-link :to="localePath('/')" aria-label="Venture Plans">
                                 <icons-logo class="w-28 lg:w-[66px] xl:w-[93px]" :class="{ 'w-28': scrollPosition == 'down' }" />
                             </nuxt-link>
                         </div>
@@ -28,17 +28,15 @@
                                     class="home-header-text inline-block px-[9px] py-8 transition-all duration-300 hover:text-primary group-hover:text-primary"
                                     @mouseenter.native="$store.dispatch('nav/activeDropdown', mainNav)"
                                     @click.native="$store.dispatch('nav/deactiveDropdown', mainNav)"
-                                    >{{ mainNav.name }}</nuxt-link
+                                    :aria-label="mainNav.name"
                                 >
+                                    {{ mainNav.name }}
+                                </nuxt-link>
                                 <div v-show="mainNav.isOpened" :id="mainNav.url" class="sub-menu right-0 mx-auto grid max-w-[1198px] grid-cols-12">
                                     <template v-if="mainNav.navChildItems">
                                         <div v-for="(subNav, subId) in mainNav.navChildItems" :key="subNav.url + subId" class="bg-white px-10 py-6" :class="subNav.mainClass ? subNav.mainClass : ''">
                                             <div class="mb-6">
-                                                <h3>
-                                                    <nuxt-link :to="subNav.url" @click.native="$store.dispatch('nav/resetAllDesktopMenu', mainNav)" class="uppercase transition-all duration-300 hover:text-primary">{{
-                                                        subNav.name
-                                                    }}</nuxt-link>
-                                                </h3>
+                                                <nuxt-link :to="subNav.url" @click.native="$store.dispatch('nav/resetAllDesktopMenu', mainNav)" class="uppercase transition-all duration-300 hover:text-primary">{{ subNav.name }}</nuxt-link>
                                             </div>
                                             <div
                                                 v-if="subNav.navChildItems && Array.isArray(subNav.navChildItems) && subNav.navChildItems.length > 0 && Array.isArray(subNav.navChildItems[0])"
@@ -92,9 +90,9 @@
                                 <icons-phone class="h-[19px] w-3 xl:w-[17px]" />
                                 <p>{{ this.navigationButtons.navigationButton2Text }}</p>
                             </a>
-                            <a href="javascript:;" class="home-header-text !text-primary" @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'search')">
+                            <button aria-label="Search" class="home-header-text !text-primary" @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'search')">
                                 <icons-search id="search-show" class="w-5" />
-                            </a>
+                            </button>
 
                             <Transition :duration="{ enter: 500, leave: 800 }" name="slide-left-to-right">
                                 <div v-show="$store.state.nav.dropdown.search" class="absolute right-0 top-0 z-[60] mr-0 h-full w-full bg-white xl:ml-[13%] xl:w-[87%]" :class="searchExpand">
@@ -126,7 +124,7 @@
                                             :class="[isExapndSearchDetails ? 'is-expanded' : 'is-not-expanded', scrollPosition === 'down' ? '!top-[55px]' : 'xl:!top-[68px]']"
                                         >
                                             <div class="w-full pb-4 sm:w-1/2">
-                                                <h6 class="mb-[15px] w-full text-[0.85rem] font-light leading-5 text-[#767676]">{{ $t('popular_searches') }}</h6>
+                                                <p class="mb-[15px] w-full text-[0.85rem] font-light leading-5 text-[#767676]">{{ $t('popular_searches') }}</p>
                                                 <ul class="space-y-4 text-[15px] text-[#030303]">
                                                     <li>
                                                         <nuxt-link to="/search?search=venture Experts" class="hover:text-primary">{{ $t('venture_experts') }}</nuxt-link>
@@ -140,7 +138,7 @@
                                                 </ul>
                                             </div>
                                             <div class="w-full border-t border-[#d5d5d5] pt-4 sm:w-1/2 sm:border-t-0 sm:pb-4 sm:pt-0">
-                                                <h6 class="mb-[15px] w-full text-[0.85rem] font-light leading-5 text-[#767676]">{{ $t('previous_searches') }}</h6>
+                                                <p class="mb-[15px] w-full text-[0.85rem] font-light leading-5 text-[#767676]">{{ $t('previous_searches') }}</p>
                                                 <ul class="space-y-4 text-[15px] text-[#030303]">
                                                     <li>
                                                         <nuxt-link to="/search?search=New start up technology" class="hover:text-primary">{{ $t('new_start_up_technology') }}</nuxt-link>
@@ -154,23 +152,23 @@
                                                 </ul>
                                             </div>
                                             <div class="hidden w-full border-t border-[#d5d5d5] pt-4 sm:block">
-                                                <h6 class="mb-[15px] w-full text-[0.85rem] font-light leading-5 text-[#767676]">{{ $t('recently_visited_pages') }}</h6>
+                                                <p class="mb-[15px] w-full text-[0.85rem] font-light leading-5 text-[#767676]">{{ $t('recently_visited_pages') }}</p>
                                                 <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
                                                     <nuxt-link to="/search?search=grant service" class="flex items-center gap-4 text-[15px] font-semibold text-[#030303]">
                                                         <div class="h-16 w-16 flex-none overflow-hidden rounded-md">
-                                                            <img loading="lazy" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" />
+                                                            <nuxt-img format="webp" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" alt="Grant Service" loading="lazy" />
                                                         </div>
                                                         <p>Grant Service</p>
                                                     </nuxt-link>
                                                     <nuxt-link to="/search?search=media" class="flex items-center gap-4 text-[15px] font-semibold text-[#030303]">
                                                         <div class="h-16 w-16 flex-none overflow-hidden rounded-md">
-                                                            <img loading="lazy" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" />
+                                                            <nuxt-img format="webp" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" alt="Media" loading="lazy" />
                                                         </div>
                                                         <p>Media</p>
                                                     </nuxt-link>
                                                     <nuxt-link to="/search?search=careers" class="flex items-center gap-4 text-[15px] font-semibold text-[#030303]">
                                                         <div class="h-16 w-16 flex-none overflow-hidden rounded-md">
-                                                            <img loading="lazy" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" />
+                                                            <nuxt-img format="webp" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" alt="Careers" loading="lazy" />
                                                         </div>
                                                         <p>Careers</p>
                                                     </nuxt-link>
