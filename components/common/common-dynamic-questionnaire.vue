@@ -1,11 +1,11 @@
 <template>
-    <section id="dynamic-question-box" class="container bg-[#FBFBFD] px-10 py-10 md:px-4 md:py-16 lg:px-[97px] lg:pt-[114px] lg:pb-[90px] xl:px-4">
+    <section id="dynamic-question-box" class="container bg-[#FBFBFD] px-10 py-10 md:px-4 md:py-16 lg:px-[97px] lg:pb-[90px] lg:pt-[114px] xl:px-4">
         <div v-if="finalStepActivated" class="flex flex-col items-center justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
             <div>
                 <div>
                     <img loading="lazy" src="/assets/img/congo-icon.svg" alt />
                     <h2
-                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                         v-html="finalExitDetails.title"
                     ></h2>
                     <p class="mb-6 text-sm font-medium -tracking-[0.04px] text-[#586376] lg:text-base xl:leading-[27px]" v-html="finalExitDetails.subTitle"></p>
@@ -154,8 +154,8 @@
                     </button>
                 </div>
             </div>
-            <div class="order-1 order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-transparent md:order-2 md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                <img :src="currentQuestion.image" class="h-full w-full object-cover" />
+            <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-transparent md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
+                <nuxt-img format="webp" :src="currentQuestion.image" alt="Current Question" class="h-full w-full object-cover" loading="lazy" />
             </div>
         </div>
     </section>

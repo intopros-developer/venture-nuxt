@@ -26,51 +26,51 @@
 
                         <ul class="m-0 mb-4 list-none p-0 pt-5 text-[13px] font-semibold leading-4 text-black">
                             <li v-for="(mainNav, mainInd) in $store.state.nav.mobileNavbar" :key="mainNav.url + mainInd">
-                                <a href="javascript:;" class="rightmenu-link flex items-center justify-start gap-3 px-6 py-2" @click="showMobileMenu(mainNav, 'main')">
+                                <button :aria-label="mainNav.name" class="rightmenu-link flex items-center justify-start gap-3 px-6 py-2" @click="showMobileMenu(mainNav, 'main')">
                                     <p>{{ mainNav.name }}</p>
                                     <icons-right-menu-arrow class="text-primary" />
-                                </a>
+                                </button>
                                 <Transition>
                                     <div v-show="mainNav.isOpened" class="left-right-animation pointer-events-auto absolute left-full top-0 h-full w-full bg-white">
                                         <div class="flex flex-col pb-28 lg:pb-10">
-                                            <a
-                                                href="javascript:;"
+                                            <button
+                                                :aria-label="$t('back')"
                                                 class="text flex items-center gap-[10px] border-b border-[#707070]/20 px-6 py-[17px] text-sm font-medium leading-[17px] text-primary"
                                                 @click="hideMobileMenu(mainNav, 'main')"
                                             >
                                                 <icons-right-menu-arrow class="rotate-180" />
                                                 <p class="text-[#BFBFBF]">{{ $t('back') }}</p>
-                                            </a>
+                                            </button>
                                             <div class="mt-[22px]">
                                                 <nuxt-link :to="mainNav.url">
                                                     <p class="px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black" @click="$store.dispatch('nav/toggle')">{{ mainNav.name }}</p>
                                                 </nuxt-link>
                                                 <ul v-if="mainNav.navChildItems" class="text-[13px] font-normal leading-4 text-black">
                                                     <li v-for="(subNav, subInd) in mainNav.navChildItems" :key="subNav.url + subInd">
-                                                        <a
-                                                            href="javascript:;"
+                                                        <button
+                                                            :aria-label="subNav.name"
                                                             v-if="subNav.navChildItems && subNav.navChildItems.length > 0"
                                                             @click="showMobileMenu(subNav, 'level1', mainNav)"
                                                             class="rightmenu-link flex items-center justify-start gap-2 px-6 py-[10px]"
                                                         >
                                                             <p>{{ subNav.name }}</p>
                                                             <icons-right-menu-arrow class="text-primary" />
-                                                        </a>
+                                                        </button>
                                                         <nuxt-link v-else :to="subNav.url" class="rightmenu-link flex items-center justify-start px-6 py-[10px]" @click.native="$store.dispatch('nav/toggle')">
                                                             <p>{{ subNav.name }}</p>
                                                         </nuxt-link>
                                                         <Transition>
                                                             <div v-show="subNav.isOpened" class="left-right-animation pointer-events-auto absolute left-full top-0 h-full w-full bg-white">
                                                                 <div class="flex flex-col pb-28 lg:pb-10">
-                                                                    <a
-                                                                        href="javascript:;"
+                                                                    <button
+                                                                        :aria-label="$t('back')"
                                                                         to="/business-plan-'immigration_business_plans'google-ad"
                                                                         class="text flex items-center gap-[10px] border-b border-[#707070]/20 px-6 py-[17px] text-sm font-medium leading-[17px] text-primary"
                                                                         @click="hideMobileMenu(subNav, 'level1', mainNav)"
                                                                     >
                                                                         <icons-right-menu-arrow class="rotate-180" />
                                                                         <p class="text-[#BFBFBF]">{{ $t('back') }}</p>
-                                                                    </a>
+                                                                    </button>
                                                                     <div class="mt-[22px]">
                                                                         <nuxt-link :to="subNav.url" @click.native="$store.dispatch('nav/toggle')" class="block px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black">
                                                                             {{ subNav.name }}</nuxt-link
@@ -120,10 +120,10 @@
                         </ul>
                     </div>
                     <div v-show="dropdowns.search">
-                        <a href="javascript:;" class="text flex items-center gap-[10px] border-b border-[#707070]/20 px-6 py-[17px] text-sm font-medium leading-[17px] text-primary" @click="closeMenu('search')">
+                        <button :aria-label="$t('back')" class="text flex items-center gap-[10px] border-b border-[#707070]/20 px-6 py-[17px] text-sm font-medium leading-[17px] text-primary" @click="closeMenu('search')">
                             <icons-right-menu-arrow class="rotate-180" />
                             <p class="text-[#BFBFBF]">{{ $t('back') }}</p>
-                        </a>
+                        </button>
                         <div class="relative mx-auto mb-[14px]">
                             <input class="h-[52px] w-full border-b border-[#707070]/10 bg-white px-5 pl-14 text-sm leading-[17px] text-[#BFBFBF] focus:outline-none" type="search" name="search" placeholder="Search" />
                             <button type="submit" class="absolute left-0 top-0 ml-4 mt-4">
@@ -178,7 +178,7 @@
                                 <nuxt-link to="/consulting" class="flex items-center justify-start px-6 py-2 text-center">{{ $t('consulting_services') }}</nuxt-link>
                             </li>
                             <li>
-                                <a href="javascript:;" class="flex items-center justify-start px-6 py-2 text-center">{{ $t('vector') }}</a>
+                                <button :aria-label="$t('vector')" class="flex items-center justify-start px-6 py-2 text-center">{{ $t('vector') }}</button>
                             </li>
                             <li>
                                 <nuxt-link to="/insights" class="flex items-center justify-start px-6 py-2 text-center">{{ $t('insights') }}</nuxt-link>

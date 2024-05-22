@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[url(/assets/img/our_client_bg.png)] bg-cover bg-[right_20%_top] bg-no-repeat py-14 pb-24 md:py-16 lg:bg-center xl:pt-[162px] xl:pb-20">
+    <div class="bg-[url(/assets/img/our_client_bg.png)] bg-cover bg-[right_20%_top] bg-no-repeat py-14 pb-24 md:py-16 lg:bg-center xl:pb-20 xl:pt-[162px]">
         <section class="relative">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="pb-[50px]">
@@ -25,7 +25,9 @@
                             <div class="container lg:px-[97px] xl:px-4">
                                 <div class="mb-10 flex flex-col items-center gap-10 md:flex-row md:items-start lg:mb-[106px]">
                                     <div class="flex-1">
-                                        <div class="mb-4"><img loading="lazy" src="/assets/img/icon_quote.png" class="" alt="" /></div>
+                                        <div class="mb-4">
+                                            <nuxt-img src="/assets/img/icon_quote.png" alt="Quote" loading="lazy" />
+                                        </div>
                                         <div class="space-y-5 font-bold -tracking-[0.04px] text-[#707070] lg:text-lg">
                                             <p class="max-w-[633px]">
                                                 {{ data.attributes.description }}
@@ -34,17 +36,14 @@
                                     </div>
                                     <!-- shadow-[0_3px_6px_rgba(0,0,0,0.48)]  -->
                                     <div class="h-[200px] w-[200px] flex-none overflow-hidden rounded-full xl:h-[340px] xl:w-[340px]">
-                                        <img loading="lazy" :src="data.attributes.profileImgUrl" alt="" class="h-full w-full rounded-full object-cover" />
+                                        <nuxt-img format="webp" :src="data.attributes.profileImgUrl" alt="Profile Image" class="h-full w-full rounded-full object-cover" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="text-center md:text-left">
                                     <p class="inline-block border-b-[5px] border-r-[5px] border-primary border-r-transparent pb-2 text-xl italic text-black md:inline-block xl:border-b-[9px] xl:text-[21px] xl:leading-[60px]">
                                         {{ data.attributes.name }}
                                         <span v-if="data.attributes.companyName">
-                                            {{
-                                                `-
-                                                                                    ${data.attributes.companyName}`
-                                            }}
+                                            {{ `- ${data.attributes.companyName}` }}
                                         </span>
                                     </p>
                                 </div>

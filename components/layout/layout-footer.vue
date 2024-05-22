@@ -194,8 +194,8 @@
                 </div>
                 <div class="order-1 flex-none lg:order-2">
                     <ul class="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm font-medium leading-[25px] -tracking-[0.03px] text-white/50 md:text-[14px]">
-                        <li><a href="/offices" class="transition-all duration-300 hover:text-white">Offices</a></li>
-                        <li><a href="javascript:;" class="transition-all duration-300 hover:text-white">Cookies Policy</a></li>
+                        <li><nuxt-link to="/offices" class="transition-all duration-300 hover:text-white">Offices</nuxt-link></li>
+                        <li><button aria-label="Cookies Policy" class="transition-all duration-300 hover:text-white">Cookies Policy</button></li>
                         <li><nuxt-link to="/refund-policy" class="transition-all duration-300 hover:text-white">Refund Policy</nuxt-link></li>
                         <li><nuxt-link to="/subscribe" class="transition-all duration-300 hover:text-white">Subscribe</nuxt-link></li>
                         <li><nuxt-link to="/privacy-policy" class="transition-all duration-300 hover:text-white">Privacy</nuxt-link></li>

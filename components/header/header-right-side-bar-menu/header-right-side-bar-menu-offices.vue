@@ -1,36 +1,36 @@
 <template>
     <li>
-        <a href="javascript:;" class="rightmenu-link flex items-center justify-start gap-3 py-2 px-6 text-center" @click="showMenu('offices')">
+        <button aria-label="Offices" class="rightmenu-link flex items-center justify-start gap-3 px-6 py-2 text-center" @click="showMenu('offices')">
             <p>Offices</p>
             <icons-right-menu-arrow class="text-primary" />
-        </a>
+        </button>
         <Transition>
-            <div v-show="dropdowns.offices" class="left-right-animation pointer-events-auto absolute top-0 left-full h-full w-full bg-white">
+            <div v-show="dropdowns.offices" class="left-right-animation pointer-events-auto absolute left-full top-0 h-full w-full bg-white">
                 <div class="flex flex-col">
-                    <a href="javascript:;" class="text flex items-center gap-[10px] border-b border-[#707070]/20 py-[17px] px-6 text-sm font-medium leading-[17px] text-primary" @click="closeMenu('offices')">
+                    <button aria-label="Back" class="text flex items-center gap-[10px] border-b border-[#707070]/20 px-6 py-[17px] text-sm font-medium leading-[17px] text-primary" @click="closeMenu('offices')">
                         <icons-right-menu-arrow class="rotate-180" />
                         <p class="text-[#BFBFBF]">Back</p>
-                    </a>
+                    </button>
                     <div class="mt-[22px]">
                         <nuxt-link to="/cities" class="px-6 text-[13px] font-semibold leading-4 text-black">Offices</nuxt-link>
                         <ul class="mt-[19px] text-[13px] font-normal leading-4 text-black">
                             <li v-for="mainOff in usOffices" :key="mainOff.id">
-                                <a href="javascript:;" class="rightmenu-link flex items-center justify-start gap-3 py-[10px] px-6 text-center" @click="showMenu(mainOff.id)">
+                                <button :aria-label="mainOff.name" class="rightmenu-link flex items-center justify-start gap-3 px-6 py-[10px] text-center" @click="showMenu(mainOff.id)">
                                     <p>{{ mainOff.name }}</p>
                                     <icons-right-menu-arrow class="text-primary" />
-                                </a>
+                                </button>
                                 <Transition>
-                                    <div v-show="dropdowns.offices_sub_menu[mainOff.id]" class="left-right-animation pointer-events-auto absolute top-0 left-full h-full w-full bg-white">
+                                    <div v-show="dropdowns.offices_sub_menu[mainOff.id]" class="left-right-animation pointer-events-auto absolute left-full top-0 h-full w-full bg-white">
                                         <div class="flex flex-col">
-                                            <a href="javascript:;" class="text flex items-center gap-[10px] border-b border-[#707070]/20 py-[17px] px-6 text-sm font-medium leading-[17px] text-primary" @click="closeMenu(mainOff.id)">
+                                            <button aria-label="Back" class="text flex items-center gap-[10px] border-b border-[#707070]/20 px-6 py-[17px] text-sm font-medium leading-[17px] text-primary" @click="closeMenu(mainOff.id)">
                                                 <icons-right-menu-arrow class="rotate-180" />
                                                 <p class="text-[#BFBFBF]">Back</p>
-                                            </a>
+                                            </button>
                                             <div class="mt-[22px]">
                                                 <p class="px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black">{{ mainOff.name }}</p>
                                                 <ul class="text-[13px] font-normal leading-4 text-black">
                                                     <li v-for="subOff in mainOff.subLinks" :key="subOff.link">
-                                                        <nuxt-link :to="subOff.link" class="rightmenu-link flex items-center justify-start py-[10px] px-6 text-center" @click.native="$store.dispatch('nav/toggle')">{{
+                                                        <nuxt-link :to="subOff.link" class="rightmenu-link flex items-center justify-start px-6 py-[10px] text-center" @click.native="$store.dispatch('nav/toggle')">{{
                                                             subOff.name
                                                         }}</nuxt-link>
                                                     </li>
@@ -41,7 +41,7 @@
                                 </Transition>
                             </li>
                             <li>
-                                <a href="/offices" class="rightmenu-link flex items-center justify-start gap-3 py-[10px] px-6 text-center">
+                                <a href="/offices" class="rightmenu-link flex items-center justify-start gap-3 px-6 py-[10px] text-center">
                                     <p>Show All Offices</p>
                                 </a>
                             </li>

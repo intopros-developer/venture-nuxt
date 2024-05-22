@@ -25,7 +25,7 @@
                                         <icons-star v-for="rt in Math.abs(data.attributes.rating)" :key="rt" />
                                     </div>
                                     <div class="py-[3px] pr-4">
-                                        <a target="_blank" href="https://www.google.com/" class="inline-block flex-none">
+                                        <a target="_blank" href="https://www.google.com/" class="inline-block flex-none" aria-label="Google Icon">
                                             <icons-google-icon class="h-5 w-5 lg:h-[38px] lg:w-[38px]" />
                                         </a>
                                     </div>
@@ -63,7 +63,7 @@
                                 <icons-star v-for="rt in Math.abs(data.attributes.rating)" :key="rt" />
                             </div>
                             <div class="py-[3px] pr-4">
-                                <a target="_blank" href="https://www.google.com/" class="inline-block flex-none">
+                                <a target="_blank" href="https://www.google.com/" class="inline-block flex-none" aria-label="Google Icon">
                                     <icons-google-icon class="h-5 w-5 lg:h-[38px] lg:w-[38px]" />
                                 </a>
                             </div>

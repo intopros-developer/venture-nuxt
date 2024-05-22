@@ -14,7 +14,7 @@
             <div class="grid grid-cols-1 gap-[51px] sm:grid-cols-2 md:grid-cols-3 xl:gap-24">
                 <div>
                     <div class="mx-auto mb-[25px] h-[295px] w-[295px] overflow-hidden rounded-full sm:h-[188px] sm:w-[188px] xl:mb-9 xl:h-[276px] xl:w-[276px]">
-                        <img loading="lazy" src="/assets/img/team-1.jpg" class="w-full" />
+                        <nuxt-img format="webp" src="/assets/img/team-1.jpg" alt="Arleo Dordar" loading="lazy" />
                     </div>
                     <div class="mb-[25px] text-center sm:text-left xl:mb-[55px]">
                         <h5 class="mb-2 text-xl font-bold leading-6 -tracking-[0.04px] text-[#586376] xl:mb-3 xl:text-[26px] xl:leading-8 xl:-tracking-[0.05px]">Arleo Dordar</h5>
@@ -28,7 +28,7 @@
                 </div>
                 <div>
                     <div class="mx-auto mb-[25px] h-[295px] w-[295px] overflow-hidden rounded-full sm:h-[188px] sm:w-[188px] xl:mb-9 xl:h-[276px] xl:w-[276px]">
-                        <img loading="lazy" src="/assets/img/team-1.jpg" class="w-full" />
+                        <nuxt-img format="webp" src="/assets/img/team-1.jpg" alt="Amaris Olguin" loading="lazy" />
                     </div>
                     <div class="mb-3 text-center sm:text-left xl:mb-5">
                         <h5 class="mb-2 text-xl font-bold leading-6 -tracking-[0.04px] text-[#586376] xl:mb-3 xl:text-[26px] xl:leading-8 xl:-tracking-[0.05px]">Amaris Olguin</h5>
@@ -42,7 +42,7 @@
                 </div>
                 <div>
                     <div class="mx-auto mb-[25px] h-[295px] w-[295px] overflow-hidden rounded-full sm:h-[188px] sm:w-[188px] xl:mb-9 xl:h-[276px] xl:w-[276px]">
-                        <img loading="lazy" src="/assets/img/team-1.jpg" class="w-full" />
+                        <nuxt-img format="webp" src="/assets/img/team-1.jpg" alt="Amaris Olguin" loading="lazy" />
                     </div>
                     <div class="mb-3 text-center sm:text-left xl:mb-5">
                         <h5 class="mb-2 text-xl font-bold leading-6 -tracking-[0.04px] text-[#586376] xl:mb-3 xl:text-[26px] xl:leading-8 xl:-tracking-[0.05px]">Amaris Olguin</h5>

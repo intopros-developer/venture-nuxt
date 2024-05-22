@@ -6,7 +6,7 @@
         <div class="show-separator-border relative border-b border-[#ede7e7] md:border-b-0 xl:px-4">
             <div class="px-4 lg:container" :class="{ relative: scrollPosition !== 'down' }">
                 <div class="flex items-center justify-between py-3 xl:py-0" :class="{ '!py-3': scrollPosition == 'down' }">
-                    <button class="home-header-text inline-block flex-none p-2 pl-0 text-primary md:pt-0" :class="{ 'md:pt-2': scrollPosition == 'down' }" @click="$store.dispatch('nav/toggle')">
+                    <button aria-label="Hamburger Icon" class="home-header-text inline-block flex-none p-2 pl-0 text-primary md:pt-0" :class="{ 'md:pt-2': scrollPosition == 'down' }" @click="$store.dispatch('nav/toggle')">
                         <icons-hamburger class="w-[17px] !text-primary xl:w-5" />
                     </button>
                     <div class="ml-3 mr-[3px] flex flex-1 items-center justify-center gap-[17px] md:flex-none md:justify-start">
@@ -32,7 +32,7 @@
                                 >
                                     {{ mainNav.name }}
                                 </nuxt-link>
-                                <div v-show="mainNav.isOpened" :id="mainNav.url" class="sub-menu right-0 mx-auto grid max-w-[1198px] grid-cols-12">
+                                <div v-show="mainNav.isOpened" class="sub-menu right-0 mx-auto grid max-w-[1198px] grid-cols-12">
                                     <template v-if="mainNav.navChildItems">
                                         <div v-for="(subNav, subId) in mainNav.navChildItems" :key="subNav.url + subId" class="bg-white px-10 py-6" :class="subNav.mainClass ? subNav.mainClass : ''">
                                             <div class="mb-6">

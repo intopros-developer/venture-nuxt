@@ -16,7 +16,7 @@
                         </div>
                         <div v-if="serviceTitle === service.fields.title" class="block lg:hidden">
                             <div v-if="serviceDescription && isMobileView" :id="`service-${index}`">
-                                <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] lg:px-8 lg:pt-8 lg:pb-16">
+                                <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] lg:px-8 lg:pb-16 lg:pt-8">
                                     <img loading="lazy" v-if="serviceDescription.fields.descriptionMediaType === 'image'" :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`" class="h-full w-full object-cover" />
                                     <div
                                         v-else-if="serviceDescription.fields.videoThumbnailImage"
@@ -39,7 +39,7 @@
                                         ></iframe>
                                         <button
                                             v-show="showOverlay"
-                                            class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] py-5 px-11 group-hover:bg-primary"
+                                            class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] px-11 py-5 group-hover:bg-primary"
                                             @click="play(serviceDescription.fields.wistiaVideoId)"
                                         >
                                             <icons-play />
@@ -50,7 +50,7 @@
                                         <p class="pt-5 text-sm text-[#4D4D4D]">
                                             {{ serviceDescription.fields.descriptionPara }}
                                         </p>
-                                        <a href="javascript:;" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.fields.descriptionLink }}</a>
+                                        <a href="javascript:;" aria-label="Consulting" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.fields.descriptionLink }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div v-if="serviceDescription && !isMobileView" class="hidden lg:block">
-            <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pt-8 md:pb-16">
+            <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-16 md:pt-8">
                 <img loading="lazy" v-if="serviceDescription.fields.descriptionMediaType === 'image'" :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`" class="h-full w-full object-cover" />
                 <div
                     v-else-if="serviceDescription.fields.videoThumbnailImage"
@@ -82,7 +82,7 @@
                         width="100%"
                         :height="videoHeight"
                     ></iframe>
-                    <button v-show="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] py-5 px-11 group-hover:bg-primary" @click="play(serviceDescription.fields.wistiaVideoId)">
+                    <button v-show="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] px-11 py-5 group-hover:bg-primary" @click="play(serviceDescription.fields.wistiaVideoId)">
                         <icons-play />
                     </button>
                 </div>

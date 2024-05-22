@@ -118,6 +118,7 @@ export default {
 
     router: {
         middleware: 'route',
+        trailingSlash: true,
     },
 
     plugins: [
@@ -490,6 +491,7 @@ export default {
             return routes;
         },
         cacheTime: 7200000,
+        trailingSlash: true,
         filter({ routes }) {
             // Filter out the i18n routes from the sitemap
             const locales = ['en', 'pt-br', 'es', 'es-ar', 'es-co', 'es-cl', 'fr', 'de-ch', 'it', 'es', 'ru', 'zh', 'ko', 'ja', 'zh-tw', 'zh-hk'];

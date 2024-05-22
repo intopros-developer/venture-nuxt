@@ -22,11 +22,11 @@
                         </div>
 
                         <div class="relative flex items-center justify-between">
-                            <a href="javascript:;" class="inline-block text-xs font-medium -tracking-[0.02px] text-[#646464] transition-all duration-300"
-                                >{{ insight.attributes.insightType }} | {{ $helper.formatInsightPublishDate(insight.attributes.date) }}</a
-                            >
+                            <button aria-label="insight.attributes.insightType" class="inline-block text-xs font-medium -tracking-[0.02px] text-[#646464] transition-all duration-300">
+                                {{ insight.attributes.insightType }} | {{ $helper.formatInsightPublishDate(insight.attributes.date) }}
+                            </button>
                             <div class="flex w-[50px] items-center divide-x divide-[#d5d5d5]">
-                                <button><icons-save class="mr-2 text-[#707070] hover:text-primary" /></button>
+                                <button aria-label="Save"><icons-save class="mr-2 text-[#707070] hover:text-primary" /></button>
                                 <common-share class="pl-1" popper-class="!top-0 !-right-1" :customLink="`/insights/${insight.attributes.singleInsightPageSlug}`" />
                             </div>
                         </div>

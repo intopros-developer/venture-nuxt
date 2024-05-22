@@ -1,8 +1,8 @@
 <template>
     <div v-if="content" class="bg-white">
-        <div class="left-0 top-0 bottom-0 w-full bg-[url(/assets/img/book-consult-girl.webp)] bg-cover bg-right-top lg:fixed lg:h-[100vh] lg:w-2/5">
+        <div class="bottom-0 left-0 top-0 w-full bg-[url(/assets/img/book-consult-girl.webp)] bg-cover bg-right-top lg:fixed lg:h-[100vh] lg:w-2/5">
             <div class="relative flex w-full flex-col justify-around overflow-hidden px-10 lg:h-[100vh] xl:pl-[65px]">
-                <div class="fixed left-2.5 top-2.5 lg:top-3 lg:left-3 xl:top-7 xl:left-7">
+                <div class="fixed left-2.5 top-2.5 lg:left-3 lg:top-3 xl:left-7 xl:top-7">
                     <button type="button" class="inline-block" @click="goBackHome()"><icons-close class="!h-6 !w-6 text-white hover:text-primary lg:h-[30px] lg:w-[30px]" /></button>
                 </div>
                 <div class="pt-[50px] text-white lg:pt-5 xl:pt-0">
@@ -13,7 +13,7 @@
                 <div class="relative">
                     <span class="absolute -inset-5 -z-[1] m-auto bg-black/30 blur-2xl"></span>
                     <h3
-                        class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[32px] sm:leading-[52px] lg:pt-0 [&>span]:border-b-[5px] [&>span]:border-primary [&>br]:hidden md:[&>br]:block"
+                        class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[32px] sm:leading-[52px] lg:pt-0 [&>br]:hidden md:[&>br]:block [&>span]:border-b-[5px] [&>span]:border-primary"
                         v-html="content.title2"
                     ></h3>
                     <ul class="mb-6 flex flex-wrap items-start gap-y-3 pt-4 text-white sm:gap-5 md:mb-[68px] lg:grid lg:grid-cols-2 xl:flex">
@@ -24,9 +24,9 @@
                     </ul>
                     <div class="pb-6 md:mb-5">
                         <p class="mb-6 text-2xl text-[#f7f4f4]">{{ content.subTitle1 }}</p>
-                        <div class="grid grid-cols-4 place-items-center items-center gap-y-2 gap-x-5 sm:flex sm:flex-wrap sm:gap-2 md:gap-1">
+                        <div class="grid grid-cols-4 place-items-center items-center gap-x-5 gap-y-2 sm:flex sm:flex-wrap sm:gap-2 md:gap-1">
                             <div v-for="(logo, i) in content.seenOnOption.data" :key="i" class="flex h-[62px] w-[62px] items-center justify-center rounded-full bg-white p-1 px-2 shadow-[0px_1px_8px_rgba(0,0,0,0.2)]">
-                                <img loading="lazy" :src="logo.attributes.iconUrl" alt="logo" />
+                                <nuxt-img :src="logo.attributes.iconUrl" alt="logo" loading="lazy" />
                             </div>
                         </div>
                     </div>

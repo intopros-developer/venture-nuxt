@@ -91,7 +91,7 @@
                                         <div class="flex h-[45px] w-[45px] items-center justify-center rounded-full bg-primary text-[17px] font-bold leading-[15px] -tracking-[0.03px] text-white xl:leading-[27px] xl:-tracking-[0.04px]">
                                             {{ i + 1 }}
                                         </div>
-                                        <p class="text-base font-bold leading-[21px] -tracking-[0.03px] text-primary lg:text-2xl lg:leading-8 xl:-tracking-[0.05px]">{{ data.attributes.title }}</p>
+                                        <h3 class="text-base font-bold leading-[21px] -tracking-[0.03px] text-primary lg:text-2xl lg:leading-8 xl:-tracking-[0.05px]">{{ data.attributes.title }}</h3>
                                     </div>
                                     <p class="font-medium -tracking-[0.03px] text-black md:max-w-[275px]">{{ data.attributes.description }}</p>
                                 </div>
@@ -177,10 +177,6 @@
                     },
                 ],
             };
-        },
-
-        mounted() {
-            // console.log(this.$props);
         },
 
         computed: {

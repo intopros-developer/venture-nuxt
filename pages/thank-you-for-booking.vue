@@ -36,20 +36,20 @@
                         </template>
                     </li>
                 </ol>
-                <div :class="isReadyToTalkSubmitted ? 'rounded-t-none' : ''" class="grid w-full grid-cols-1 gap-6 bg-white p-5 sm:gap-6 md:grid-cols-2 md:px-8 xl:pb-[97px] xl:pr-11 xl:pl-[72px]">
+                <div :class="isReadyToTalkSubmitted ? 'rounded-t-none' : ''" class="grid w-full grid-cols-1 gap-6 bg-white p-5 sm:gap-6 md:grid-cols-2 md:px-8 xl:pb-[97px] xl:pl-[72px] xl:pr-11">
                     <div class="col-span-full"></div>
                     <div>
                         <div class="flex items-start justify-center gap-2 md:gap-3">
                             <div class="pt-1"><icons-check-circle class="flex h-[40px] w-[40px] justify-start text-green" /></div>
                             <h3
                                 v-if="isReadyToTalkSubmitted"
-                                class="mb-2.5 text-start text-[22px] font-bold uppercase leading-[32px] text-black md:text-left md:leading-[39px] xl:text-[25px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                                class="mb-2.5 text-start text-[22px] font-bold uppercase leading-[32px] text-black md:text-left md:leading-[39px] xl:text-[25px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                             >
                                 Thank you for <span>Submitting your details!</span>
                             </h3>
                             <h3
                                 v-else
-                                class="mb-2.5 text-start text-[22px] font-bold uppercase leading-[32px] text-black md:text-left md:leading-[39px] xl:text-[25px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                                class="mb-2.5 text-start text-[22px] font-bold uppercase leading-[32px] text-black md:text-left md:leading-[39px] xl:text-[25px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                             >
                                 Thank you for <span>Booking your consultation!</span>
                             </h3>
@@ -117,8 +117,16 @@
                             </a>
                         </div>
                     </div>
-                    <img loading="lazy" src="https://images.ctfassets.net/koyrlvjc3wvc/4tyXkBS5yBBWxIucd0xDLs/c95a6fb1c7db45141872da1dc2dcd8ce/iStock-1191132586.jpg" class="h-full w-full object-cover" />
+                    <nuxt-img
+                        format="webp"
+                        src="https://images.ctfassets.net/koyrlvjc3wvc/4tyXkBS5yBBWxIucd0xDLs/c95a6fb1c7db45141872da1dc2dcd8ce/iStock-1191132586.jpg"
+                        class="h-full w-full object-cover"
+                        alt="Continue Exploring"
+                        loading="lazy"
+                    />
+
                     <nuxt-link v-if="!isReadyToTalkSubmitted" to="/" class="b-btn mx-auto text-xs md:hidden lg:max-w-[322px] lg:py-6">Continue Exploring</nuxt-link>
+
                     <!-- Force rebuild-->
                     <nuxt-link
                         to="/book-consult"

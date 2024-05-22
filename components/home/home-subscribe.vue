@@ -1,5 +1,5 @@
 <template>
-    <section class="rounded-2xl bg-[#e7f5ff] py-10 md:py-28 xl:py-36">
+    <section class="rounded-2xl bg-[#e7f5ff] py-10 md:py-20 xl:py-24">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex flex-col items-center justify-between gap-5 md:flex-row">
                 <div class="flex-1">

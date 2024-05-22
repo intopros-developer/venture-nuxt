@@ -1,11 +1,11 @@
 <template>
     <div>
-        <section class="align-center relative flex h-[477px] justify-center overflow-hidden pt-[289px] pb-24">
+        <section class="align-center relative flex h-[477px] justify-center overflow-hidden pb-24 pt-[289px]">
             <video class="force-video-reload absolute inset-0 mt-0 h-full w-full object-cover" autoplay loop muted playsinline>
                 <source src="https://videos.ctfassets.net/koyrlvjc3wvc/5Eke5W5guSg2OEDmm5TKtB/86fa202e97192c590b4acdd8e484c24a/global_search.mp4" type="video/mp4" />
             </video>
 
-            <div class="absolute top-0 -left-1/3 z-0 h-full w-full bg-gradient-to-r from-[#2b3746]"></div>
+            <div class="absolute -left-1/3 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746]"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 lg:px-[97px] xl:px-4">
                 <div>
@@ -44,7 +44,7 @@
                     </button>
                 </div>
             </div>
-            <div class="relative mb-10 border-[#cfcfcf] xl:border-t xl:border-b">
+            <div class="relative mb-10 border-[#cfcfcf] xl:border-b xl:border-t">
                 <div class="container">
                     <div class="flex flex-col justify-between xl:flex-row xl:flex-nowrap xl:gap-4">
                         <div class="flex flex-col border-b-2 border-[#cfcfcf]/60 xl:flex-row xl:items-center xl:border-b-0">
@@ -131,7 +131,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="container pb-4">
-                                                    <ul class="mt-2 mb-4 block h-[calc(100vh-128px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
+                                                    <ul class="mb-4 mt-2 block h-[calc(100vh-128px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
                                                         <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter2Data" :key="filter.filterCateogries">
                                                             <input-filter-checkbox :id="filter.filterCateogries" v-model="servicesFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                             <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
@@ -177,7 +177,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="container pb-4">
-                                                    <ul class="mt-2 mb-4 block max-h-[calc(100vh-128px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
+                                                    <ul class="mb-4 mt-2 block max-h-[calc(100vh-128px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
                                                         <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter3Data">
                                                             <input-filter-checkbox :id="filter.filterCateogries" v-model="typeFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                         </li>
@@ -271,7 +271,7 @@
                 <div v-if="appliedFilters.length > 0" class="mb-6 text-black">
                     <h6 class="mr-2 inline-block align-middle text-black/70">Selected:</h6>
                     <ul class="gap inline-flex flex-wrap">
-                        <li v-for="(option, index) in appliedFilters" :key="`applay_${index}`" class="group mr-1 mb-1 rounded bg-black/10 px-2 py-1">
+                        <li v-for="(option, index) in appliedFilters" :key="`applay_${index}`" class="group mb-1 mr-1 rounded bg-black/10 px-2 py-1">
                             <button class="flex cursor-pointer items-center gap-1.5" @click="removeFilter(option)">
                                 {{ option.label || option }}
                                 <icons-close class="group-hover:text-danger" />
@@ -306,7 +306,7 @@
                                 </p>
                             </nuxt-link>
                             <nuxt-link :to="getLink(item)" class="hidden h-[150px] min-w-[200px] max-w-[295px] flex-none overflow-hidden rounded-[3px] md:inline-block">
-                                <img loading="lazy" :src="getImageUrl(item)" class="h-full w-full max-w-[200px] object-cover" />
+                                <nuxt-img format="webp" :src="getImageUrl(item)" class="h-full w-full max-w-[200px] object-cover" alt="Results" loading="lazy" />
                             </nuxt-link>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
     <section class="py-10 md:py-16 lg:pt-[168px]">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="text-center">
-                <h4 class="mb-3 text-[22px] font-medium leading-[27px] text-[#202A36] xl:text-[31px] xl:leading-[32px]" v-html="title"></h4>
+                <p class="mb-3 text-[22px] font-medium leading-[27px] text-[#202A36] xl:text-[31px] xl:leading-[32px]" v-html="title"></p>
                 <p class="mx-auto mb-[26px] w-3/5 text-[15px] font-medium leading-[18px] -tracking-[0.03px] text-[#586376] sm:max-w-none xl:text-[22px] xl:leading-[21px] xl:-tracking-[0.04px]">
                     {{ description }}
                 </p>

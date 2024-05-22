@@ -33,6 +33,7 @@
                         :alt="slide.attributes.title"
                         :style="{ backgroundImage: `url(${slide.attributes.slideImageUrl})` }"
                     />
+
                     <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4" :class="{ '': i === 0 }">
                         <div
                             class="full-slide-animation-after full-slide-animation-before group flex min-h-[38rem] place-content-center items-center justify-start pb-4 pt-36 md:min-h-[40rem] lg:max-w-[950px] xl:min-h-screen"
@@ -55,7 +56,7 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle" loading="lazy" format="webp" />
+                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle + '-1'" loading="lazy" format="webp" />
                                 </nuxt-link>
 
                                 <a
@@ -65,7 +66,7 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle" loading="lazy" format="webp" />
+                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle + '-1'" loading="lazy" format="webp" />
                                 </a>
 
                                 <p class="slide-text-animation-before slide-text-animation-after max-w-[377px] pt-4 text-[1.1rem] leading-[22px] text-[#FBFBFD] xl:max-w-[590px]" :class="{ 'mb-[46px] !pt-0': slide.attributes.buttonText }">
@@ -92,7 +93,7 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle" loading="lazy" format="webp" />
+                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle + '-1'" loading="lazy" format="webp" />
                                 </nuxt-link>
 
                                 <a
@@ -102,7 +103,7 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle" loading="lazy" format="webp" />
+                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle + '-1'" loading="lazy" format="webp" />
                                 </a>
                             </div>
                         </div>

@@ -54,7 +54,9 @@
                                             <nuxt-link v-if="$helper.isInternalUrl(serviceDescription.attributes.descriptionLinkUrl)" :to="serviceDescription.attributes.descriptionLinkUrl" class="block pt-6 font-semibold text-[#0DA1F1]">
                                                 {{ serviceDescription.attributes.descriptionLink }}</nuxt-link
                                             >
-                                            <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.attributes.descriptionLink }}</a>
+                                            <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Consulting" class="block pt-6 font-semibold text-[#0DA1F1]">
+                                                {{ serviceDescription.attributes.descriptionLink }}</a
+                                            >
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +104,7 @@
                     <nuxt-link v-if="$helper.isInternalUrl(serviceDescription.attributes.descriptionLinkUrl)" :to="serviceDescription.attributes.descriptionLinkUrl" class="block pt-6 font-semibold text-[#0DA1F1]">
                         {{ serviceDescription.attributes.descriptionLink }}</nuxt-link
                     >
-                    <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.attributes.descriptionLink }}</a>
+                    <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Consulting" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.attributes.descriptionLink }}</a>
                 </div>
             </div>
         </div>

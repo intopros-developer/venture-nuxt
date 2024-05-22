@@ -36,7 +36,7 @@
                                     :key="i"
                                     class="xs:h-[50px] xs:w-[50px] flex h-[46px] w-[46px] flex-row items-center justify-center rounded-full bg-white p-1 px-2 shadow-[0px_1px_8px_rgba(0,0,0,0.2)] sm:h-[57px] sm:w-[57px] md:h-[65px] md:w-[65px] xl:h-[75px] xl:w-[75px]"
                                 >
-                                    <img loading="lazy" :src="company.attributes.iconUrl" class="shrink-0" />
+                                    <nuxt-img format="webp" :src="company.attributes.iconUrl" class="shrink-0" :alt="'Company_' + i" loading="lazy" />
                                 </div>
                             </div>
                         </div>

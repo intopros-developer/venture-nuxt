@@ -1,8 +1,8 @@
 <template>
-    <section class="overflow-hidden bg-[url(/assets/img/mobile_image_16.jpg)] bg-cover pt-96 pb-8 md:bg-[url(/assets/img/image_16.jpg)] md:py-20">
+    <section class="overflow-hidden bg-[url(/assets/img/mobile_image_16.jpg)] bg-cover pb-8 pt-96 md:bg-[url(/assets/img/image_16.jpg)] md:py-20">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="grid grid-cols-1 items-start gap-5 md:grid-cols-2">
-                <div class="relative z-[1] flex flex-col justify-center xl:pt-5 xl:pl-10">
+                <div class="relative z-[1] flex flex-col justify-center xl:pl-10 xl:pt-5">
                     <span class="absolute -inset-5 -z-[1] m-auto bg-black/30 blur-2xl"></span>
                     <h2 class="mb-3.5 max-w-full text-center text-xl font-bold uppercase text-white md:max-w-[455px] md:text-left md:text-3xl xl:text-[40px] xl:leading-[52px]">{{ $props.tellUsMoreTitle }}</h2>
                     <ul class="mb-10 grid grid-cols-3 gap-2 text-white md:mb-[65px] md:gap-5">
@@ -24,7 +24,7 @@
                                 :key="i"
                                 class="xs:h-[50px] xs:w-[50px] flex h-[46px] w-[46px] flex-row items-center justify-center rounded-full bg-white p-1 px-2 shadow-[0px_1px_8px_rgba(0,0,0,0.2)] sm:h-[57px] sm:w-[57px] md:h-[65px] md:w-[65px] xl:h-[75px] xl:w-[75px]"
                             >
-                                <img loading="lazy" :src="company.attributes.iconUrl" class="shrink-0" />
+                                <nuxt-img format="webp" :src="company.attributes.iconUrl" class="shrink-0" :alt="'Company_' + i" loading="lazy" />
                             </div>
                         </div>
                     </div>
