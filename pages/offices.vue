@@ -1,8 +1,8 @@
 <template>
     <div class="container mx-auto py-16">
         <div>
-            <h4 class="mb-4 text-xl text-primary">About Venture Plans</h4>
-            <h2 class="text-[2.5rem] font-bold leading-10">Offices</h2>
+            <h1 class="text-[2.5rem] font-bold leading-10">Offices</h1>
+            <h3 class="mt-4 text-xl text-primary">About Venture Plans</h3>
         </div>
 
         <div class="mt-12 grid grid-cols-12 gap-5">
@@ -26,8 +26,21 @@
 </template>
 <script>
     export default {
-        head: {
-            title: 'Sitemap',
+        head() {
+            return {
+                title: 'Offices | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                    {
+                        hid: 'keywords',
+                        property: 'keywords',
+                        content: 'Venture Plans Offices, venture plans offices',
+                    },
+                ],
+            };
         },
         data() {
             return {

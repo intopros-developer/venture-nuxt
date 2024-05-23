@@ -32,8 +32,8 @@
                 <section class="relative">
                     <div class="container lg:px-[97px] xl:px-4">
                         <div class="flex flex-col items-center gap-4 xl:flex-row xl:flex-nowrap xl:gap-4">
-                            <h5 class="mr-5 hidden flex-initial whitespace-nowrap text-base font-medium text-[#5f5f5f] xl:block">Filter by:</h5>
-                            <h5 class="flex w-full flex-1 items-center justify-between border border-[#d5d5d5] px-6 py-3.5 text-base font-medium text-[#00ADFF] xl:hidden">
+                            <p class="mr-5 hidden flex-initial whitespace-nowrap text-base font-medium text-[#5f5f5f] xl:block">Filter by:</p>
+                            <p class="flex w-full flex-1 items-center justify-between border border-[#d5d5d5] px-6 py-3.5 text-base font-medium text-[#00ADFF] xl:hidden">
                                 Filter Insights
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" @click="showMobileFilter = !showMobileFilter">
                                     <path
@@ -42,22 +42,9 @@
                                         d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
                                     />
                                 </svg>
-                            </h5>
+                            </p>
                             <ul class="mb-6 hidden w-full flex-col justify-center gap-4 xl:mb-0 xl:flex xl:w-auto xl:flex-row xl:items-center xl:gap-[15px] xl:pl-0" :class="{ '!flex': showMobileFilter }">
-                                <!-- <ul class="md:flex block gap-9 space-y-3 md:space-y-0"> -->
-                                <li class="">
-                                    <!-- <div>
-                                    <h5
-                                        class="flex cursor-pointer select-none items-center justify-between gap-4 border border-[#00ADFF] bg-white/90 py-3 px-5 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(0,0,0,0.36)] xl:justify-start"
-                                    >
-                                        Industries
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" class="rotate-180 text-primary xl:rotate-180">
-                                            <g>
-                                                <g><path fill="currentColor" d="M.439.546l4.907 4.907L10.254.546z"></path></g>
-                                            </g>
-                                        </svg>
-                                    </h5>
-                                </div> -->
+                                <li>
                                     <popper
                                         ref="industryPopper"
                                         trigger="clickToToggle"
@@ -80,10 +67,10 @@
                                             </div>
                                             <div class="container pb-4">
                                                 <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter1Data" :key="filter.filterCateogries">
+                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter1Data" :key="filter.id">
                                                         <input-filter-checkbox :id="filter.filterCateogries" v-model="industryFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                         <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.subCategories">
+                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
                                                                 <input-filter-checkbox :id="subFilter.subCategories" v-model="industryFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                             </li>
                                                         </ul>
@@ -93,14 +80,14 @@
                                             <button class="filter-btn" @click="applyFilters(), $refs.industryPopper.doClose()">Apply</button>
                                         </div>
 
-                                        <h5
+                                        <p
                                             slot="reference"
                                             class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 px-5 py-3 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
                                             :class="{ 'border-[#1eb1fc] !text-primary': activePopper === 'industry' }"
                                         >
                                             Industry
                                             <icons-downarrow class="text-primary xl:rotate-0" :class="{ 'xl:!rotate-180': activePopper === 'industry' }" />
-                                        </h5>
+                                        </p>
                                     </popper>
                                 </li>
                                 <li>
@@ -126,10 +113,10 @@
                                             </div>
                                             <div class="container pb-4">
                                                 <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter2Data" :key="filter.filterCateogries">
+                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter2Data" :key="filter.id">
                                                         <input-filter-checkbox :id="filter.filterCateogries" v-model="servicesFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                         <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.subCategories">
+                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
                                                                 <input-filter-checkbox :id="subFilter.subCategories" v-model="servicesFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                             </li>
                                                         </ul>
@@ -139,14 +126,14 @@
                                             <button class="filter-btn" @click="applyFilters(), $refs.servicesPopper.doClose()">Apply</button>
                                         </div>
 
-                                        <h5
+                                        <p
                                             slot="reference"
                                             class="reference flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 px-5 py-3 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
                                             :class="{ 'border-[#1eb1fc] !text-primary': activePopper === 'services' }"
                                         >
                                             Services
                                             <icons-downarrow class="text-primary xl:rotate-0" :class="{ 'xl:!rotate-180': activePopper === 'services' }" />
-                                        </h5>
+                                        </p>
                                     </popper>
                                 </li>
                                 <li>
@@ -172,10 +159,10 @@
                                             </div>
                                             <div class="container pb-4">
                                                 <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter3Data" :key="filter.filterCateogries">
+                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter3Data" :key="filter.id">
                                                         <input-filter-checkbox :id="filter.filterCateogries" v-model="typeFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                         <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.subCategories">
+                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
                                                                 <input-filter-checkbox :id="subFilter.subCategories" v-model="typeFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                             </li>
                                                         </ul>
@@ -184,14 +171,14 @@
                                             </div>
                                             <button class="filter-btn" @click="applyFilters(), $refs.typePopper.doClose()">Apply</button>
                                         </div>
-                                        <h5
+                                        <p
                                             slot="reference"
                                             class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 px-5 py-3 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
                                             :class="{ 'border-[#1eb1fc] !text-primary': activePopper === 'type' }"
                                         >
                                             Type
                                             <icons-downarrow class="text-primary xl:rotate-0" :class="{ 'xl:!rotate-180': activePopper === 'type' }" />
-                                        </h5>
+                                        </p>
                                     </popper>
                                 </li>
                                 <li>
@@ -217,10 +204,10 @@
                                             </div>
                                             <div class="container pb-4">
                                                 <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter4Data" :key="filter.filterCateogries">
+                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter4Data" :key="filter.id">
                                                         <input-filter-checkbox :id="filter.filterCateogries" v-model="mediaFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                         <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.subCategories">
+                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
                                                                 <input-filter-checkbox :id="subFilter.subCategories" v-model="mediaFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                             </li>
                                                         </ul>
@@ -229,14 +216,14 @@
                                             </div>
                                             <button class="filter-btn" @click="applyFilters(), $refs.mediaPopper.doClose()">Apply</button>
                                         </div>
-                                        <h5
+                                        <p
                                             slot="reference"
                                             class="flex cursor-pointer select-none items-center justify-between gap-4 border border-transparent bg-white/90 px-5 py-3 text-base font-semibold leading-5 text-black shadow-[0_3px_6px_rgba(239,239,239)] duration-150 hover:border-[#1eb1fc] hover:!text-primary xl:justify-start"
                                             :class="{ 'border-[#1eb1fc] !text-primary': activePopper === 'media' }"
                                         >
                                             Media Type
                                             <icons-downarrow class="text-primary xl:rotate-0" :class="{ 'xl:!rotate-180': activePopper === 'media' }" />
-                                        </h5>
+                                        </p>
                                     </popper>
                                 </li>
                             </ul>
@@ -261,22 +248,24 @@
                     <div class="lg:-mx-7 lg:flex">
                         <div v-for="insight in insightCatalogue1" class="mb-8 w-full lg:max-w-[670px] lg:px-7" :key="insight.id">
                             <div>
-                                <img loading="lazy" :src="insight.attributes.imgUrl" class="h-72 w-full object-cover" />
+                                <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" :title="insight.attributes.title">
+                                    <img loading="lazy" :src="insight.attributes.imgUrl" class="h-72 w-full object-cover" />
+                                </nuxt-link>
                             </div>
                             <div class="flex h-[calc(100%-125px)] flex-col justify-between py-3 xl:h-[calc(100%-340px)] xl:py-4">
                                 <div>
-                                    <p class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                    <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                         {{ insight.attributes.Insightsource }}
                                     </p>
-                                    <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-1 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
+                                    <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="line-clamp-1 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
                                     <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                         {{ insight.attributes.paragraph }}
                                     </p>
                                 </div>
                                 <div class="relative flex items-center justify-between">
-                                    <a href="javascript:;" class="inline-block text-[15px] font-medium leading-6 -tracking-[0.03px] text-[#646464] transition-all duration-300">
+                                    <p class="inline-block text-[15px] font-medium leading-6 -tracking-[0.03px] text-[#646464] transition-all duration-300">
                                         {{ insight.attributes.insightType }} | {{ $helper.formatInsightPublishDate(insight.attributes.date) }}
-                                    </a>
+                                    </p>
                                     <span>
                                         <common-share :is-show-save-btn="true" :customLink="`/${insight.attributes.singleInsightPageSlug}`" />
                                     </span>
@@ -296,7 +285,7 @@
                                             {{ data.attributes.insightIndustry }}
                                         </p>
                                         <nuxt-link :to="`/insights/${data.attributes.slug}`" class="mb-1.5 block text-[22px] font-semibold leading-7 duration-150 hover:text-primary"> {{ data.attributes.insightTitle }} </nuxt-link>
-                                        <a href="javascript:;" class="text-[15px] font-medium leading-6 -tracking-[0.03px] text-[#646464]">{{ data.attributes.InsightType }} | {{ $helper.formatInsightPublishDate(data.attributes.date) }}</a>
+                                        <p class="text-[15px] font-medium leading-6 -tracking-[0.03px] text-[#646464]">{{ data.attributes.InsightType }} | {{ $helper.formatInsightPublishDate(data.attributes.date) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -318,15 +307,17 @@
                                     :class="{ '!border-0 lg:col-span-2': i === 2, '!border-0': i === 6, 'md:border-l lg:border-0': i % 2 !== 0 }"
                                 >
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                        <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                        <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" :title="item.attributes.title">
+                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                        </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -353,28 +344,27 @@
                                 <div v-for="(item, i) in insightCatalogue2.slice(3)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0': i !== 0 && i % 3 == 0, 'md:border-r': i % 2 == 0 }">
                                     <div class="relative">
                                         <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                            <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
+                                                <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                            </nuxt-link>
                                         </div>
-                                        <a href="#" class="absolute inset-x-0 top-1/2 mx-auto flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-primary opacity-[0.76px] shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                            <icons-play class="h-4 w-3.5" />
-                                        </a>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
                                             </p>
                                         </div>
                                         <div class="absolute bottom-5 flex w-full items-center justify-between md:w-[calc(100%-56px)]">
-                                            <a href="javascript:;" class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                                            <p class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
-                                            </a>
+                                            </p>
                                             <span>
                                                 <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
@@ -395,24 +385,26 @@
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue3.slice(0, 4)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0': i === 3, 'md:border-r': i % 2 == 0 }">
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                        <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                        <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
+                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                        </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
                                             </p>
                                         </div>
                                         <div class="absolute bottom-5 flex w-full items-center justify-between md:w-[calc(100%-56px)]">
-                                            <a href="javascript:;" class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                                            <p class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
-                                            </a>
+                                            </p>
                                             <span>
                                                 <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
@@ -432,28 +424,27 @@
                                 <div v-for="(item, i) in insightCatalogue3.slice(4)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 md:first:border-r">
                                     <div class="relative">
                                         <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-72 w-full object-cover" />
+                                            <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
+                                                <img loading="lazy" :src="item.attributes.imgUrl" class="h-72 w-full object-cover" />
+                                            </nuxt-link>
                                         </div>
-                                        <a href="#" class="absolute inset-x-0 top-1/2 mx-auto flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-primary opacity-[0.76px] shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                            <icons-play class="h-4 w-3.5" />
-                                        </a>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
                                             </p>
                                         </div>
                                         <div class="absolute bottom-5 flex w-full items-center justify-between md:w-[calc(100%-56px)]">
-                                            <a href="javascript:;" class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                                            <p class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
-                                            </a>
+                                            </p>
                                             <span>
                                                 <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
@@ -489,28 +480,27 @@
                                 <div v-for="(item, i) in insightCatalogue4.slice(0, 4)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0': i === 3, 'md:border-r': i % 2 == 0 }">
                                     <div class="relative">
                                         <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                            <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`">
+                                                <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                            </nuxt-link>
                                         </div>
-                                        <a href="#" class="absolute inset-x-0 top-1/2 mx-auto flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-primary opacity-[0.76px] shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                            <icons-play class="h-4 w-3.5" />
-                                        </a>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
                                             </p>
                                         </div>
                                         <div class="absolute bottom-5 flex w-full items-center justify-between md:w-[calc(100%-56px)]">
-                                            <a href="javascript:;" class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                                            <p class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
-                                            </a>
+                                            </p>
                                             <span>
                                                 <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
@@ -529,15 +519,17 @@
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue4.slice(4)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0 lg:col-span-2': i === 2, 'md:border-r': i % 2 == 0 }">
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                        <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                        <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
+                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                        </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
                                                 }}</nuxt-link>
                                             </div>
@@ -546,9 +538,9 @@
                                             </p>
                                         </div>
                                         <div class="absolute bottom-5 flex w-full items-center justify-between md:w-[calc(100%-56px)]">
-                                            <a href="javascript:;" class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                                            <p class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
-                                            </a>
+                                            </p>
                                             <span>
                                                 <common-share :is-show-save-btn="true" :customLink="`/insights/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
@@ -575,15 +567,17 @@
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue5.slice(0, 3)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0 lg:col-span-2': i === 2, 'md:border-r': i % 2 == 0 }">
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                        <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                        <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
+                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                        </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
                                                 }}</nuxt-link>
                                             </div>
@@ -592,9 +586,9 @@
                                             </p>
                                         </div>
                                         <div class="absolute bottom-5 flex w-full items-center justify-between md:w-[calc(100%-56px)]">
-                                            <a href="javascript:;" class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                                            <p class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
-                                            </a>
+                                            </p>
                                             <span>
                                                 <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
@@ -609,28 +603,27 @@
                                 <div v-for="(item, i) in insightCatalogue5.slice(3)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0': i === 3, 'md:border-r': i % 2 == 0 }">
                                     <div class="relative">
                                         <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                            <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
+                                                <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                            </nuxt-link>
                                         </div>
-                                        <a href="#" class="absolute inset-x-0 top-1/2 mx-auto flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-primary opacity-[0.76px] shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
-                                            <icons-play class="h-4 w-3.5" />
-                                        </a>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
                                             </p>
                                         </div>
                                         <div class="absolute bottom-5 flex w-full items-center justify-between md:w-[calc(100%-56px)]">
-                                            <a href="javascript:;" class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                                            <p class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
-                                            </a>
+                                            </p>
                                             <span>
                                                 <common-share :is-show-save-btn="true" :customLink="`/insights/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
@@ -712,6 +705,10 @@
                 ],
                 meta: [
                     {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                    {
                         hid: 'og:title',
                         property: 'og:title',
                         content: this.content?.metaFields[0]?.title,
@@ -789,63 +786,15 @@
             },
             insightCatalogue2() {
                 return this.content?.insightCatalogue2?.data || [];
-                /*
-            return this.content?.insightCatalogue2?.data?.
-            filter(d => this.appliedFilters.length ?
-                      this.appliedFilters.includes(d?.attributes?.typeFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.mediaFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.servicesSubFIlter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.servicesFilters?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.industryFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.industrySubFilter?.toLowerCase())
-            : true) || []
-
-             */
             },
             insightCatalogue3() {
                 return this.content?.insightCatalogue3?.data || [];
-                /*
-            return this.content?.insightCatalogue3?.data?.
-            filter(d => this.appliedFilters.length ?
-                      this.appliedFilters.includes(d?.attributes?.typeFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.mediaFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.servicesSubFIlter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.servicesFilters?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.industryFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.industrySubFilter?.toLowerCase())
-            : true) || []
-
-             */
             },
             insightCatalogue4() {
                 return this.content?.insightCatalogue3?.data || [];
-                /*
-            return this.content?.insightCatalogue4?.data?.
-            filter(d => this.appliedFilters.length ?
-                      this.appliedFilters.includes(d?.attributes?.typeFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.mediaFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.servicesSubFIlter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.servicesFilters?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.industryFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.industrySubFilter?.toLowerCase())
-            : true) || []
-
-             */
             },
             insightCatalogue5() {
                 return this.content?.insightCatalogue3?.data || [];
-                /*
-            return this.content?.insightCatalogue5?.data?.
-            filter(d => this.appliedFilters.length ?
-                      this.appliedFilters.includes(d?.attributes?.typeFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.mediaFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.servicesSubFIlter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.servicesFilters?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.industryFilter?.toLowerCase()) ||
-                      this.appliedFilters.includes(d?.attributes?.industrySubFilter?.toLowerCase())
-            : true) || []
-
-             */
             },
             section1Column2Data() {
                 return this.content?.section1Column2Component?.data || [];
@@ -888,10 +837,7 @@
                         obj.push(key.toLowerCase());
                         return obj;
                     }, []);
-                // let dateFilter = [];
-                // if (this.dateFilterOption.start_date !== '' && this.dateFilterOption.end_date !== '') {
-                //     dateFilter = [{ id: 'date', label: this.dateFilterOption.start_date + ' - ' + this.dateFilterOption.end_date }];
-                // }
+
                 this.appliedFilters = [];
                 this.$router.push({ path: '/search', query: { industry: [...industryFilter], service: [...servicesFilter], type: [...typeFilter] } });
                 this.appliedFilters = [...industryFilter, ...servicesFilter, ...typeFilter, ...regionFilter];

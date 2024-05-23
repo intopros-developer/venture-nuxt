@@ -86,10 +86,10 @@
                                                 </div>
                                                 <div class="container pb-4">
                                                     <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter1Data" :key="filter.filterCateogries">
+                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter1Data" :key="filter.id">
                                                             <input-filter-checkbox :id="filter.filterCateogries" v-model="industryFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                             <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                                <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.subCategories">
+                                                                <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
                                                                     <input-filter-checkbox :id="subFilter.subCategories" v-model="industryFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                                 </li>
                                                             </ul>
@@ -132,10 +132,10 @@
                                                 </div>
                                                 <div class="container pb-4">
                                                     <ul class="mb-4 mt-2 block h-[calc(100vh-128px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter2Data" :key="filter.filterCateogries">
+                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter2Data" :key="filter.id">
                                                             <input-filter-checkbox :id="filter.filterCateogries" v-model="servicesFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                             <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                                <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.subCategories">
+                                                                <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
                                                                     <input-filter-checkbox :id="subFilter.subCategories" v-model="servicesFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                                 </li>
                                                             </ul>
@@ -178,7 +178,7 @@
                                                 </div>
                                                 <div class="container pb-4">
                                                     <ul class="mb-4 mt-2 block max-h-[calc(100vh-128px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter3Data">
+                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter3Data" :key="filter.id">
                                                             <input-filter-checkbox :id="filter.filterCateogries" v-model="typeFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                         </li>
                                                     </ul>
@@ -945,7 +945,13 @@
 
         head() {
             return {
-                title: 'Search Results',
+                title: 'Search Results | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'noindex',
+                    },
+                ],
                 link: [
                     {
                         rel: 'canonical',
@@ -1038,7 +1044,7 @@
                 if (changeValue) {
                     this.search = this.$route.query.search;
                 }
-                clearTimeout(this.timeoutId); // clear previous timeout
+                clearTimeout(this.timeoutId); 
                 this.timeoutId = setTimeout(() => {
                     const hitSearch = async () => {
                         const results = await this.$axios.post(`${process.env.meiliSearchURL}/indexes/search-page/search`, {
@@ -1059,16 +1065,6 @@
             },
             getLink(item) {
                 return item?.url;
-                /*
-            console.log(item)
-            if (item?.id?.includes('insight-page')) return `/insights/${item?.Slug}`
-            if (item?.id?.includes('single-media-page')) return `/media-mentions/${item?.Slug}`
-            if (item?.id?.includes('city-page')) return `/cities`
-            if (item?.id?.includes("-page")) {
-                return item?.id?.substring(0, item?.id.indexOf("-page"))
-            }
-            return `/${item?.id}`
-             */
             },
 
             isInsight(_meilisearch_id) {

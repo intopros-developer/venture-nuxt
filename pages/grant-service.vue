@@ -73,24 +73,6 @@
                             </li>
                         </ul>
                     </div>
-
-                    <!--                    <div class="mt-4 flex-1 md:mt-0">-->
-                    <!--                        <div-->
-                    <!--                            class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-[10px] lg:grid-cols-3">-->
-                    <!--                            <div v-for="(item) in activeCategorySampleData"-->
-                    <!--                                class="flex cursor-pointer flex-col justify-between rounded-2xl border border-[#dfdfdf] px-10 pt-[18px] pb-[9px] text-center duration-200 hover:shadow-[0px_1px_8px_rgba(0,0,0,0.12)]"-->
-                    <!--                                @click="$refs.previewModal.open(), activeProductData = item.attributes">-->
-                    <!--                                <img loading="lazy" :src="item.attributes.thumbnailImgUrl || '/assets/img/indus_market_report_02.png'"-->
-                    <!--                                    class="mx-auto" alt="" />-->
-                    <!--                                <div class="pt-[5px]">-->
-                    <!--                                    <button type="button" class="text-[15px] font-semibold leading-[22px] text-primary">-->
-                    <!--                                        Preview-->
-                    <!--                                        <icons-arrow-right-thin class="relative -mt-[3px] inline-block" />-->
-                    <!--                                    </button>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
                     <common-category-slider :active-category-sample-data="activeCategorySampleData" @preview="previewLatestWork" />
                 </div>
             </div>
@@ -353,6 +335,10 @@
                     },
                 ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

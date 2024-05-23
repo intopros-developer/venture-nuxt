@@ -38,5 +38,15 @@
                 currentPage: 'about-page',
             };
         },
+        head() {
+            return {
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'noindex',
+                    },
+                ],
+            };
+        },
     };
 </script>

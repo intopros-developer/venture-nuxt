@@ -12,10 +12,10 @@
                 </div>
                 <div class="relative">
                     <span class="absolute -inset-5 -z-[1] m-auto bg-black/30 blur-2xl"></span>
-                    <h3
+                    <p
                         class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[32px] sm:leading-[52px] lg:pt-0 [&>br]:hidden md:[&>br]:block [&>span]:border-b-[5px] [&>span]:border-primary"
                         v-html="content.title2"
-                    ></h3>
+                    ></p>
                     <ul class="mb-6 flex flex-wrap items-start gap-y-3 pt-4 text-white sm:gap-5 md:mb-[68px] lg:grid lg:grid-cols-2 xl:flex">
                         <li v-for="(item, index) in content.bannerComponent.data" :key="index" class="w-1/2 grow text-3xl font-bold sm:w-auto md:text-[45px] md:leading-[55px]">
                             <span>{{ item.attributes.sectionDescription }} </span>
@@ -36,7 +36,7 @@
         <div class="w-full p-8 lg:ml-[40%] lg:w-3/5">
             <div class="flex lg:h-full">
                 <div class="mx-auto max-w-[702px] lg:rounded-xl lg:p-8 lg:px-5 lg:shadow-[0_1px_8px_rgba(0,0,0,0.06)]">
-                    <h2 class="mb-3 text-base font-bold leading-[25px] text-black xl:mb-[26px] xl:text-[28px] xl:leading-[36px]" v-html="content.title1"></h2>
+                    <h1 class="mb-3 text-base font-bold leading-[25px] text-black xl:mb-[26px] xl:text-[28px] xl:leading-[36px]" v-html="content.title1"></h1>
                     <p class="mb-7 text-sm font-medium leading-6 -tracking-[0.04px] text-[#353535] md:min-w-[600px] xl:text-[18px]">
                         {{ isShowBackHome ? $t('congratulations_on_booking_your_consultation') : $t('Congratulations on your first step towards growth, now book your consultations with one of our business analysts.') }}
                     </p>
@@ -66,7 +66,6 @@
                                     </span>
                                 </a>
                                 <template v-if="stepIdx !== steps.length - 1">
-                                    <!-- Arrow separator for lg screens and up -->
                                     <div class="absolute right-0 top-0 hidden h-full w-5 md:block" aria-hidden="true">
                                         <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none" preserveAspectRatio="none">
                                             <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor" stroke-linejoin="round" />
@@ -88,10 +87,6 @@
                                     class="form-input h-[50px] shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                                     :class="{ error: $v.params.fullname.$error }"
                                 />
-                                <!-- <div v-if="$v.params.fullname.$error">
-                                        <p v-if="!$v.params.fullname.required">{{ $helper.requiredMessage('Full Name') }}</p>
-                                        <p v-else-if="!$v.params.fullname.alphaNumericSpace">{{ $helper.alphaNumSpaceMessage('Full Name') }}</p>
-                                    </div> -->
                             </div>
 
                             <div class="form-input-group">
@@ -105,9 +100,6 @@
                                     class="form-input h-[50px] shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                                     :class="{ error: $v.params.phone.$error }"
                                 />
-                                <!-- <div v-if="$v.params.phone.$error">
-                                        <p v-if="!$v.params.phone.required">{{ $helper.requiredMessage('Phone Number') }}</p>
-                                    </div> -->
                             </div>
 
                             <div class="form-input-group">
@@ -121,10 +113,6 @@
                                     :class="{ error: $v.params.email.$error }"
                                     @input="$v.params.email.$model = $event.target.value.trim()"
                                 />
-                                <!-- <div v-if="$v.params.email.$error">
-                                        <p v-if="!$v.params.email.required">{{ $helper.requiredMessage('Email') }}</p>
-                                        <p v-else-if="!$v.params.email.email">{{ $helper.emailMessage() }}</p>
-                                    </div> -->
                             </div>
                             <div>
                                 <recaptcha id="recaptcha1" ref="recaptcha1" @success="captchaError = false" @error="captchaError = true" />
@@ -134,7 +122,7 @@
                             <button
                                 :disabled="isSubmitting"
                                 type="submit"
-                                class="!mt-10 flex items-center gap-3 rounded bg-primary px-[15px] py-[20px] text-sm font-semibold leading-[11px] text-white transition-all duration-300 hover:bg-primary-700 xl:py-3 xl:text-xs xl:leading-4"
+                                class="!mt-10 flex items-center gap-3 rounded bg-primary px-[15px] py-[20px] text-base font-semibold text-white transition-all duration-300 hover:bg-primary-700 xl:py-3"
                             >
                                 <icons-calendar class="w-4 xl:w-[17px]" />
                                 <p>Continue to Booking</p>
@@ -284,7 +272,6 @@
                         if (window.innerWidth < 768) {
                             setTimeout(() => {
                                 this.$nextTick(() => {
-                                    // window.scrollTo({ top: 0, behavior: 'smooth' })
                                     let domRect = document.querySelector('.error');
                                     if (domRect !== null) {
                                         domRect = document.querySelector('.error').getBoundingClientRect();
@@ -312,14 +299,6 @@
                             { id: '01', name: 'Contact Details', href: '#', status: 'complete' },
                             { id: '02', name: 'Booking Details', href: '#', status: 'current' },
                         ];
-                        /*
-                        this.$v.params.$reset();
-                        this.params = {
-                            fullname: '',
-                            email: '',
-                            phone: '',
-                        };
-                        */
                         this.widgetId ? await this.$recaptcha.reset(this.widgetId) : await this.$recaptcha.reset();
                     } else {
                         console.log('Not Capturing');
@@ -331,7 +310,6 @@
 
             isCalendlyScheduledEvent(e) {
                 if (e.data.event && e.data.event === 'calendly.event_scheduled') {
-                    // this.isShowBackHome = true;
                     this.gtag_report_conversion();
                     this.$router.push({ path: '/thank-you-for-booking' });
                     sessionStorage.removeItem('ready-to-talk-submitted');
@@ -347,6 +325,29 @@
                     this.$router.push({ path: '/' });
                 }
             },
+        },
+
+        head() {
+            return {
+                title: 'Book a free consultation | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                    {
+                        hid: 'keywords',
+                        property: 'keywords',
+                        content: 'Venture Plans Book Consulation, venture plans free consultation',
+                    },
+                ],
+                link: [
+                    {
+                        rel: 'canonical',
+                        href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                ],
+            };
         },
     };
 </script>

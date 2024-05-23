@@ -5,7 +5,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="pt-7 pb-[46px] md:pt-[136px]">
                         <p class="mb-5 border-l-[3px] border-primary pl-2.5 text-sm font-normal leading-3 text-[#030303] md:text-base md:leading-5">Insights</p>
-                        <h4 class="text-[40px] font-bold leading-[44px] text-[#030303]">{{ content.bannerTitle }}</h4>
+                        <h1 class="text-[40px] font-bold leading-[44px] text-[#030303]">{{ content.bannerTitle }}</h1>
                         <p class="mt-4 leading-[26px] text-[#030303]">{{ content.bannerSubtitle }}</p>
                     </div>
                     <div class="relative bottom-0 left-[-50vw] top-0 ml-[50%] h-80 w-[100vw] max-w-none md:absolute md:left-[calc(50%+2.5rem)] md:ml-0 md:mt-0 md:h-full md:w-[calc(50vw-2.5rem)]">
@@ -20,7 +20,7 @@
                     <div>
                         <div class="flex flex-wrap items-end gap-5 pb-5 lg:block lg:pb-0">
                             <div v-for="(author, i) in section1Column1Data" class="shrink-0 border-[#e8e8e8] lg:border-t" :class="{ 'lg:pt-[29px]': i !== 0 }">
-                                <h4 v-if="i === 0" class="pt-8 font-semibold leading-[22px]">{{ content.section1Column1Title }}</h4>
+                                <p v-if="i === 0" class="pt-8 font-semibold leading-[22px]">{{ content.section1Column1Title }}</p>
                                 <div class="mt-[5px]">
                                     <img loading="lazy" :src="author.attributes.imageUrl" class="h-24 w-24 rounded-[5px] object-cover shadow-[0_3px_6px_rgba(0,0,0,0.44)]" :alt="author.attributes.authorName" />
                                 </div>
@@ -49,7 +49,7 @@
                         </audio>
                         <div class="mt-[37px] mb-[17px] block h-[2px] w-full bg-primary"></div>
                         <div>
-                            <h4 class="font-semibold">{{ content.section1Column2Title }}</h4>
+                            <p class="font-semibold">{{ content.section1Column2Title }}</p>
                         </div>
                         <div class="mt-4 space-y-[29px]" v-if="typeof content.section1Column2Description === 'string'">
                             <div class="flex items-start gap-[15px]" v-for="(section, i) in content.section1Column2Description.split(`\n\n`)" :key="i">
@@ -307,6 +307,10 @@
                     },
                 ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

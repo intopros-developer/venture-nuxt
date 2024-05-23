@@ -57,25 +57,6 @@
             </div>
         </section>
 
-        <!--        <section class="pt-[94px] pb-[108px]">-->
-        <!--            <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">-->
-        <!--                <div class="grid grid-cols-1">-->
-        <!--                    <div class="text-center">-->
-        <!--                        <h5 class="text-[26px] font-semibold leading-[53px] text-[#202a36]" v-html="content.CTA1Title">-->
-        <!--                        </h5>-->
-        <!--                        <p class="mt-1 mb-[43px] text-[15px] leading-[21px] -tracking-[0.03px] text-[#586376]"-->
-        <!--                           v-html="content.CTA1Description"></p>-->
-
-        <!--                        <nuxt-link v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" :to="content.CTA1ButtonLink"-->
-        <!--                                   class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-[22px]">{{ content.CTA1ButtonText-->
-        <!--                            }}</nuxt-link>-->
-        <!--                        <a v-else target="_blank" :href="content.CTA1ButtonLink"-->
-        <!--                           class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-[22px]">{{ content.CTA1ButtonText }}</a>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </section>-->
-
         <section class="pb-[108px] pt-[94px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="text-center">
@@ -93,22 +74,6 @@
         <section id="employmentOpportunities">
             <common-tell-more-about-projects :featuredCompanies="section3Data" :tellUsMoreData="section4Data" :tellUsMoreTitle="content.section4Title" :tellUseMoreSubtitle="content.section4Subtitle" :imageUrl="content.section4ImgUrl" />
         </section>
-
-        <!-- As seen on -->
-        <!-- <div id="employmentOpportunities">
-            <common-consultation :values="content.asSeen" :as-seen-image="content.asSeenImage.fields.file.url" />
-
-            <section class="pb-10 md:pb-[156px]">
-                <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
-                    <div class="text-center">
-                        <p class="mb-3 text-2xl font-medium text-[#202A36]">{{ content.joinTeamTitle }}</p>
-                        <p class="mb-8 text-base font-medium text-[#586376]">{{ content.joinTeamDescription }}</p>
-                        <nuxt-link to="/book-consult" class="b-btn">BOOK A FREE CONSULTATION</nuxt-link>
-                    </div>
-                </div>
-            </section>
-            <common-interested-service :value="content.buyService.fields" />
-        </div> -->
 
         <!-- work at best place -->
         <section>
@@ -190,6 +155,10 @@
                     },
                 ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

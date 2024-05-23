@@ -10,27 +10,21 @@ export default {
         meta: [
             { charset: 'utf-8' },
             { hid: 'language', name: 'language', content: 'English' },
-            {
-                name: 'robots',
-                content: 'index, all',
-            },
             { hid: 'og:title', property: 'og:title', content: 'Venture Plans' },
             {
                 hid: 'description',
                 property: 'description',
-                content:
-                    'Venture Plans is a global management consulting firm with a sophisticated team of diverse industry-specific consultants with deep expertise in finance, legal advisory and digital innovation. Our executive-level consultants are ivy league trained with institutional-caliber capabilities. We enable the best possible outcomes through value-based methodologies that succinctly capture the maximum value of your principals, intellectual property, business performance, markets, and outlook.',
+                content: 'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
             },
             {
                 hid: 'keywords',
                 property: 'keywords',
-                content: 'Venturefund',
+                content: 'Venture Plans, ventureplans',
             },
             {
                 hid: 'og:description',
                 property: 'og:description',
-                content:
-                    'Venture Plans is a global management consulting firm with a sophisticated team of diverse industry-specific consultants with deep expertise in finance, legal advisory and digital innovation. Our executive-level consultants are ivy league trained with institutional-caliber capabilities. We enable the best possible outcomes through value-based methodologies that succinctly capture the maximum value of your principals, intellectual property, business performance, markets, and outlook.',
+                content: 'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
             },
             { name: 'format-detection', content: 'telephone=no' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0' },
@@ -48,8 +42,7 @@ export default {
             {
                 hid: 'twitter:description',
                 name: 'twitter:description',
-                content:
-                    'Venture Plans is a global management consulting firm with a sophisticated team of diverse industry-specific consultants with deep expertise in finance, legal advisory and digital innovation. Our executive-level consultants are ivy league trained with institutional-caliber capabilities. We enable the best possible outcomes through value-based methodologies that succinctly capture the maximum value of your principals, intellectual property, business performance, markets, and outlook.',
+                content: 'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
             },
             { hid: 'twitter:image', name: 'twitter:image', content: 'https://venture.vercel.app/assets/img/social.png' },
         ],
@@ -118,7 +111,6 @@ export default {
 
     router: {
         middleware: 'route',
-        trailingSlash: true,
     },
 
     plugins: [
@@ -491,7 +483,6 @@ export default {
             return routes;
         },
         cacheTime: 7200000,
-        trailingSlash: true,
         filter({ routes }) {
             // Filter out the i18n routes from the sitemap
             const locales = ['en', 'pt-br', 'es', 'es-ar', 'es-co', 'es-cl', 'fr', 'de-ch', 'it', 'es', 'ru', 'zh', 'ko', 'ja', 'zh-tw', 'zh-hk'];

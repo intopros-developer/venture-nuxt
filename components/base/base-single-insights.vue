@@ -4,9 +4,9 @@
             <div class="container">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="pb-[46px] pt-7 md:pt-[136px]">
-                        <p class="mb-5 border-l-[3px] border-primary pl-2.5 text-sm font-[1.2rem] font-normal leading-3 text-[#030303] md:text-base md:leading-5">Insights</p>
+                        <p class="font-[1.2rem] mb-5 border-l-[3px] border-primary pl-2.5 text-sm font-normal leading-3 text-[#030303] md:text-base md:leading-5">Insights</p>
                         <h4 class="text-[50px] font-bold leading-[44px] text-[#030303]">{{ content.bannerTitle }}</h4>
-                        <p class="mt-4 font-[1.3rem] leading-[26px] text-[#030303]">{{ content.bannerSubtitle }}</p>
+                        <p class="font-[1.3rem] mt-4 leading-[26px] text-[#030303]">{{ content.bannerSubtitle }}</p>
                     </div>
                     <div class="relative bottom-0 left-[-50vw] top-0 ml-[50%] h-80 w-[100vw] max-w-none md:absolute md:left-[calc(50%+2.5rem)] md:ml-0 md:mt-0 md:h-full md:w-[calc(50vw-2.5rem)]">
                         <nuxt-img format="webp" :src="content.bannerImgUrl" alt="" class="h-full w-full object-cover" :alt="content.bannerTitle" loading="lazy" />
@@ -108,7 +108,7 @@
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost1.Insightsource }}</p>
                                 <nuxt-img format="webp" :src="insightPost1.imgUrl" :alt="insightPost1.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost1.title }}</p>
+                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost1.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost1.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost1.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
@@ -157,7 +157,7 @@
                                 <nuxt-img format="webp" :src="insightPost2.imgUrl" :alt="insightPost2.title" loading="lazy" />
 
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost2.title }}</p>
+                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost2.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost2.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost2.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
@@ -193,7 +193,7 @@
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost3.Insightsource }}</p>
                                 <nuxt-img format="webp" :src="insightPost3.imgUrl" :alt="insightPost3.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost3.title }}</p>
+                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost3.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost3.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost3.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
@@ -263,7 +263,7 @@
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost4.Insightsource }}</p>
                                 <nuxt-img format="webp" :src="insightPost4.imgUrl" :alt="insightPost4.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost4.title }}</p>
+                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost4.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost4.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost4.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
@@ -303,6 +303,10 @@
                     },
                 ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

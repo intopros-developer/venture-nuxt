@@ -20,7 +20,6 @@
         <section v-else class="relative bg-cover bg-center bg-no-repeat pb-10 pt-[166px] md:bg-left xl:pb-20" :style="{ backgroundImage: `url(${content.bannerImageUrl})` }">
             <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
-            <!-- <div class="absolute top-0 z-0 h-full w-full bg-black/30"></div> -->
             <div class="absolute top-0 z-0 h-full w-full bg-gradient-to-r from-[#2B3746]/70 md:-left-[40%] md:w-[90%]"></div>
             <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div>
@@ -92,24 +91,6 @@
                             </li>
                         </ul>
                     </div>
-
-                    <!--                    <div class="mt-4 flex-1 md:mt-0">-->
-                    <!--                        <div-->
-                    <!--                            class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-[10px] lg:grid-cols-3">-->
-                    <!--                            <div v-for="(item) in activeCategorySampleData"-->
-                    <!--                                 class="flex cursor-pointer flex-col justify-between rounded-2xl border border-[#dfdfdf] px-10 pt-[18px] pb-[9px] text-center duration-200 hover:shadow-[0px_1px_8px_rgba(0,0,0,0.12)]"-->
-                    <!--                                 @click="$refs.previewModal.open(), activeProductData = item.attributes">-->
-                    <!--                                <img loading="lazy" :src="item.attributes.thumbnailImgUrl || '/assets/img/indus_market_report_02.png'"-->
-                    <!--                                     class="mx-auto" alt="" />-->
-                    <!--                                <div class="pt-[5px]">-->
-                    <!--                                    <button type="button" class="text-[15px] font-semibold leading-[22px] text-primary">-->
-                    <!--                                        Preview-->
-                    <!--                                        <icons-arrow-right-thin class="relative -mt-[3px] inline-block" />-->
-                    <!--                                    </button>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
 
                     <common-category-slider :active-category-sample-data="activeCategorySampleData" @preview="previewLatestWork" />
                 </div>
@@ -367,6 +348,10 @@
                     },
                 ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

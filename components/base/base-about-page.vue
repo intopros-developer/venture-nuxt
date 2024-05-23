@@ -207,6 +207,10 @@
                 ],
                 meta: [
                     {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                    {
                         hid: 'og:title',
                         property: 'og:title',
                         name: 'title',

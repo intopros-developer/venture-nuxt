@@ -58,7 +58,7 @@
             <div class="container lg:px-[97px] xl:px-4">
                 <div class="grid grid-cols-1 space-y-20 md:grid-cols-2 md:gap-5 md:space-y-0 lg:gap-24 xl:gap-36">
                     <div>
-                        <h3 class="text-[28px] font-bold leading-[60px] text-[#030303]" v-html="content.section3Column1Title"></h3>
+                        <p class="text-[28px] font-bold leading-[60px] text-[#030303]" v-html="content.section3Column1Title"></p>
                         <div class="pt-6 lg:pt-16">
                             <ul class="divide-y divide-[#d5d5d5] border-b border-t border-[#d5d5d5]">
                                 <li class="py-4" v-for="socialMedia in section3Column1Data">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-[28px] font-bold leading-[60px] text-[#030303]" v-html="content.section3Column2Title"></h3>
+                        <p class="text-[28px] font-bold leading-[60px] text-[#030303]" v-html="content.section3Column2Title"></p>
                         <div class="pt-6 lg:pt-16">
                             <ul class="divide-y divide-[#d5d5d5] border-b border-t border-[#d5d5d5]">
                                 <li v-for="data in section3Column2Data" class="flex items-center justify-between py-4 text-lg text-[#202a36] hover:text-primary">
@@ -169,7 +169,7 @@
         />
 
         <!-- Trending -->
-        <section class="py-10 md:py-16 xl:pb-[52px] xl:pt-[129px]">
+        <section class="py-10 md:py-16 lg:py-20">
             <div class="container lg:px-[97px] xl:px-4">
                 <div id="ventureInsight" class="flex items-center justify-center gap-[33px] text-center">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -371,6 +371,10 @@
                     },
                 ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

@@ -10,7 +10,7 @@
 
             <div class="absolute bottom-0 left-0 right-0 top-0 text-start">
                 <div class="translate-y-[200%] transform px-4 pt-8 text-white opacity-0 transition-transform delay-200 duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    <h5 class="text-xl font-bold">{{ service.title }}</h5>
+                    <p class="text-xl font-bold">{{ service.title }}</p>
                     {{ service.Description }}
                 </div>
             </div>

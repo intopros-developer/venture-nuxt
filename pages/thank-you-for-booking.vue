@@ -153,6 +153,17 @@
                 ],
             };
         },
+        head() {
+            return {
+                title: 'Thank you for booking | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'noindex',
+                    },
+                ],
+            };
+        },
         mounted() {
             const checkIfFilled = sessionStorage.getItem('ready-to-talk-submitted');
             if (checkIfFilled) {

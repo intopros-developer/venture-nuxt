@@ -2,7 +2,7 @@
     <div v-if="content">
         <section class="pt-10 pb-6">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
-                <h3 class="text-[25px] font-bold uppercase">{{ content.title1 }}</h3>
+                <h1 class="text-[25px] font-bold uppercase">{{ content.title1 }}</h1>
                 <p class="pt-[24px] text-xs font-light leading-[14px]">{{ content.description1 }}</p>
             </div>
         </section>
@@ -790,6 +790,18 @@
                     console.log(error);
                 }
             },
+        },
+
+        head() {
+            return {
+                title: 'Subscribe | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                ],
+            };
         },
     };
 </script>

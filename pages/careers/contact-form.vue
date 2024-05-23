@@ -24,7 +24,7 @@
                     </div>
                     <div class="w-full grow md:max-w-[396px]">
                         <form id="contact-form" action="" @submit.prevent="onSubmit">
-                            <h4 class="font-semibold uppercase leading-[53px] -tracking-[0.03px] text-primary">{{ $t('about_you') }}</h4>
+                            <h4 class="pb-3 text-2xl font-semibold uppercase -tracking-[0.03px] text-primary">{{ $t('about_you') }}</h4>
                             <div v-if="currentStep === 1" class="space-y-6 md:space-y-[42px]">
                                 <div>
                                     <input
@@ -318,7 +318,7 @@
                         <nuxt-img src="/assets/img/congo-icon.svg" alt="icon" loading="lazy" />
 
                         <h2
-                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
+                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
                             v-html="$t('congratulations_you_have_span_successfully_span_booked_your_interview')"
                         ></h2>
                         <p
@@ -379,13 +379,19 @@
 
         head() {
             return {
-                title: 'Careers - Contact Form',
+                title: 'Careers - Contact Form | Venture Plans',
                 link: [
                     {
                         rel: 'canonical',
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                ],
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'noindex',
                     },
                 ],
             };
@@ -547,7 +553,6 @@
                 const filePath = file.name;
                 const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.pdf)$/i;
                 if (!allowedExtensions.exec(filePath)) {
-                    // alert('Please upload file having extensions .jpeg/.jpg/.png/.pdf only.');
                     file.value = '';
                     this.$v.params[fileType].$touch();
                     return false;
@@ -592,23 +597,6 @@
                     if (!data) {
                         return false;
                     }
-                    /*
-                    this.params = {
-                        full_name: '',
-                        email: '',
-                        phone: '',
-                        position: '',
-                        cover_letter: '',
-                        diploma: '',
-                        resume: '',
-                        school: '',
-                        do_you_have_at_least_years_of_experience: '',
-                        geographic_flexibility: '',
-                        are_you_interested_in_a_internship_program: '',
-                    };
-
-                     */
-                    // this.$router.push(this.localePath('/book-consult?from=careers-contact-form'));
                     return true;
                 }
             },

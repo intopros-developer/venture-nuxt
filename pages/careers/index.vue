@@ -13,16 +13,11 @@
             </div>
         </section>
 
-        <!-- tabs-options -->
         <career-banner-tab />
 
         <common-dynamic-questionnaire mainContainerClass="!max-w-[520px]" @changeQue1="assignQueAns1" :data="questionnaires"></common-dynamic-questionnaire>
 
-        <!-- <career-consultant :careersconsultants="section1Data" class="pt-10 md:pt-16 xl:pt-[72px] xl:pb-16" /> -->
-
         <common-questionnaire-content :currentQuestion="currentFirstCareerQuestion" />
-
-        <!-- <career-company-overview id="careersAtVenturePlans" /> -->
 
         <section class="pt-20 md:pt-28">
             <div id="careersAtVenturePlans" class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
@@ -77,8 +72,6 @@
             :buttonUrl="content.CTA2ButtonLink"
         />
 
-        <!-- <career-our-team id="ourTeam" class="!pt-0" /> -->
-
         <common-readytotalk
             page="careers"
             :imgUrl="readyToTalkForm.imgUrl"
@@ -89,9 +82,6 @@
         />
 
         <common-faq :title="content.section7Title" :description="content.section7Description" :faqs="section7Data" />
-
-        <!-- Brand logo -->
-        <!-- <common-brand-logo /> -->
     </div>
 </template>
 
@@ -150,6 +140,10 @@
                     },
                 ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

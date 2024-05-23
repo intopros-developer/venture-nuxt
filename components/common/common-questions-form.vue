@@ -3,9 +3,9 @@
         <div id="question-box" class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex flex-col items-center justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
                 <div v-if="currentQuestion !== Infinity" class="order-2 flex-1 md:order-1 lg:mx-auto lg:max-w-[490px]">
-                    <h2 class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">
+                    <p class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">
                         {{ title }}
-                    </h2>
+                    </p>
                     <p v-if="!questions[currentQuestion - 1] && currentQuestion !== 100" class="mb-[31px] text-[17px] font-medium leading-5 -tracking-[0.03px] text-[#586376] lg:max-w-[450px]">
                         {{ formSubtitle }}
                     </p>
@@ -71,10 +71,6 @@
                                         class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                                         :class="{ error: $v.contactInfo.full_name.$error }"
                                     />
-                                    <!-- <div v-if="$v.contactInfo.full_name.$error">
-                                    <p v-if="!$v.contactInfo.full_name.required">{{ $helper.requiredMessage(`${$t('full_name')}`) }}</p>
-                                    <p v-else-if="!$v.contactInfo.full_name.alphaNumericSpace">{{ $helper.alphaNumSpaceMessage(`${$t('full_name')}`) }}</p>
-                                </div> -->
                                 </div>
 
                                 <div class="form-input-group">
@@ -88,9 +84,6 @@
                                         class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                                         :class="{ error: $v.contactInfo.phone.$error }"
                                     />
-                                    <!-- <div v-if="$v.contactInfo.phone.$error">
-                                    <p v-if="!$v.contactInfo.phone.required">{{ $helper.requiredMessage(`${$t('phone_number')}`) }}</p>
-                                </div> -->
                                 </div>
 
                                 <div class="form-input-group">
@@ -104,15 +97,7 @@
                                         :class="{ error: $v.contactInfo.email.$error }"
                                         @input="$v.contactInfo.email.$model = $event.target.value.trim()"
                                     />
-                                    <!-- <div v-if="$v.contactInfo.email.$error">
-                                    <p v-if="!$v.contactInfo.email.required">{{ $helper.requiredMessage(`${$t('email')}`) }}</p>
-                                    <p v-else-if="!$v.contactInfo.email.email">{{ $helper.emailMessage() }}</p>
-                                </div> -->
                                 </div>
-                                <!-- <div v-if="currentQuestion === 9">
-                                <recaptcha id="grantQue" ref="grantQue" @success="captchaError = false" @error="captchaError = true" />
-                                <div v-if="captchaError" class="captcha-error">Please verify reCaptcha.</div>
-                            </div> -->
                                 <button class="b-btn w-full max-w-full py-[0.9rem] text-xs md:py-5" @click="goToNext()">{{ $t('next') }}</button>
                             </div>
                         </div>

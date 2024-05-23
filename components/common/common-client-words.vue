@@ -5,7 +5,7 @@
                 <div class="pb-[50px]">
                     <div id="ourClientsWords" class="mb-5 flex items-center justify-center gap-2.5 text-center">
                         <slot v-if="hasCustomHeaderSlot" name="customHeader">
-                            <h2 v-html="title" class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold lg:text-3xl xl:text-[40px] xl:leading-none"></h2>
+                            <h2 v-html="title" class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold"></h2>
                         </slot>
                         <template v-else>
                             <div class="block h-px w-full bg-[#d5d5d5]"></div>

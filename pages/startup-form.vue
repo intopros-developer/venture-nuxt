@@ -2,7 +2,7 @@
     <div>
         <section class="pt-10 pb-6">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
-                <h3 class="text-[40px] font-medium uppercase">Startup Form</h3>
+                <h1 class="text-[40px] font-medium uppercase">Startup Form</h1>
                 <p class="text-md pt-[24px] font-light leading-[14px]">To enable us for better assessment please fill in all the required details below</p>
             </div>
         </section>
@@ -19,3 +19,19 @@
         </section>
     </div>
 </template>
+
+<script>
+    export default {
+        head() {
+            return {
+                title: 'Start Up Form | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                ],
+            };
+        },
+    };
+</script>

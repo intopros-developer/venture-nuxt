@@ -4,9 +4,9 @@
             <form id="ready-to-talk-form" action="" @submit.prevent="onSubmit">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
                     <div>
-                        <h2 class="mb-[47px] text-[40px] font-bold leading-[50px] -tracking-[0.05px] text-white lg:text-[30px] lg:leading-[38px] xl:-tracking-[0.07px]">
+                        <p class="mb-[47px] text-[40px] font-bold leading-[50px] -tracking-[0.05px] text-white lg:text-[30px] lg:leading-[38px] xl:-tracking-[0.07px]">
                             {{ title }}
-                        </h2>
+                        </p>
                         <p class="mb-2 text-center text-[19px] font-light leading-[38px] -tracking-[0.04px] text-white/[0.64] md:text-left">
                             {{ talkInTitle }}
                         </p>

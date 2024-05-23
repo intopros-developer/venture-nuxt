@@ -2,7 +2,7 @@
     <section class="py-10 md:pt-16 md:pb-0 xl:pt-[86px] xl:pb-10">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex items-center justify-start gap-[33px] text-start">
-                <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold lg:text-3xl xl:text-[40px] xl:leading-none">{{ heading }}</h2>
+                <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold">{{ heading }}</h2>
             </div>
             <div class="grid grid-cols-1 sm:gap-14 lg:grid-cols-2 lg:gap-4">
                 <div>

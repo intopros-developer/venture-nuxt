@@ -24,7 +24,7 @@
                     </div>
                     <div>
                         <div class="w-full lg:w-5/6">
-                            <h4 class="line-clamp-1 my-5 text-sm font-semibold text-primary">{{ media.attributes.mediaSource }}</h4>
+                            <p class="line-clamp-1 my-5 text-sm font-semibold text-primary">{{ media.attributes.mediaSource }}</p>
                             <div>
                                 <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="line-clamp-2 mb-5 block text-[24px] font-bold">{{ media.attributes.title }}</nuxt-link>
                             </div>
@@ -85,6 +85,10 @@
                     },
                 ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

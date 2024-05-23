@@ -3,7 +3,7 @@
         <!-- Hero form -->
         <google-ad-heroform :main-text="content.bannerTitle" :sub-text="content.bannerPara" :services="bannerServices" />
         <section class="py-10 md:py-16 xl:pt-[100px] xl:pb-[115px]">
-            <h2 class="underlined-heading mb-5 inline-block w-full text-center text-3xl font-bold xl:text-[40px] xl:leading-none">{{ content.coreCustomSoftwareDev }}</h2>
+            <h3 class="underlined-heading mb-5 inline-block w-full text-center text-xl md:text-2xl lg:text-3xl font-bold">{{ content.coreCustomSoftwareDev }}</h3>
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-8 text-center lg:mb-16">
                     <p class="mx-auto max-w-[950px] lg:text-lg lg:leading-7">
@@ -24,7 +24,7 @@
         <section class="py-10 lg:pb-[120px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-10 flex items-center justify-center gap-[33px] text-center">
-                    <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold uppercase lg:text-3xl xl:text-[40px] xl:leading-none">{{ content.whyChooseHeading }}</h2>
+                    <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold uppercase">{{ content.whyChooseHeading }}</h2>
                 </div>
                 <div class="mx-auto mb-10 max-w-[950px] text-center">
                     <p class="text-lg font-light leading-8 -tracking-[0.04px]">{{ content.whyChooseVenturePlansPara }}</p>
@@ -36,7 +36,7 @@
         <section class="py-10 md:py-16 xl:pt-[158px] xl:pb-[120px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-[30px] flex items-center justify-center gap-[33px] text-center">
-                    <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold uppercase lg:text-3xl xl:text-[40px] xl:leading-none">{{ content.toolsHeading }}</h2>
+                    <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold uppercase">{{ content.toolsHeading }}</h2>
                 </div>
                 <div class="mx-auto mb-[73px] max-w-[950px] text-center">
                     <p class="text-lg font-light leading-8 -tracking-[0.03px]">
@@ -57,7 +57,7 @@
         </section>
         <common-client-words :testimonials="testinominals">
             <template v-slot:customHeader>
-                <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold uppercase lg:text-3xl xl:text-[40px] xl:leading-none">Our Client Words</h2>
+                <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold uppercase">Our Client Words</h2>
             </template>
         </common-client-words>
 
@@ -79,7 +79,7 @@
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-10 text-center md:mb-20">
                     <div class="mb-5 flex items-center justify-center gap-[33px] text-center">
-                        <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold uppercase lg:text-3xl xl:text-[40px] xl:leading-none">COMPLETE Services catalogue</h2>
+                        <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold uppercase">COMPLETE Services catalogue</h2>
                     </div>
                     <div class="mx-auto mb-10 max-w-[950px] text-center">
                         <p class="text-lg leading-8 -tracking-[0.04px] text-[#566378]">
@@ -200,7 +200,18 @@
 
         head() {
             return {
-                title: 'Software Google Ad',
+                title: 'Software Google Ad | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'noindex',
+                    },
+                    {
+                        hid: 'keywords',
+                        property: 'keywords',
+                        content: 'Venture Plans Technology, venture plans technology',
+                    },
+                ],
                 link: [
                     {
                         rel: 'canonical',

@@ -14,13 +14,25 @@
 <script>
     export default {
         name: 'NuxtError',
-        layout: 'default',
+        layout: 'error',
 
         props: {
             error: {
                 type: Object,
                 default: () => {},
             },
+        },
+
+        head() {
+            return {
+                title: error.statusCode ? '404 | Page Not Found' : 'An error occurred',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'noindex',
+                    },
+                ],
+            };
         },
 
         mounted() {

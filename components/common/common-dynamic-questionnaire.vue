@@ -5,7 +5,7 @@
                 <div>
                     <img loading="lazy" src="/assets/img/congo-icon.svg" alt />
                     <h2
-                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
+                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
                         v-html="finalExitDetails.title"
                     ></h2>
                     <p class="mb-6 text-sm font-medium -tracking-[0.04px] text-[#586376] lg:text-base xl:leading-[27px]" v-html="finalExitDetails.subTitle"></p>
@@ -20,9 +20,9 @@
         </div>
         <div id="question-box" v-else class="flex flex-col items-start justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
             <div v-if="!isformCompleted && !questionnaireComplete" class="order-2 flex-1 md:order-1 lg:mx-auto lg:max-w-[490px]" :class="mainContainerClass">
-                <h2 class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">
+                <p class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">
                     {{ data.questionnaireHeader ? data.questionnaireHeader : "Your trusted partner in navigating through uncertain times. Let's accelerate your growth." }}
-                </h2>
+                </p>
                 <p class="mb-[31px] text-[17px] font-medium leading-5 -tracking-[0.03px] text-[#586376] lg:max-w-[450px]">
                     {{ data.questionnaireSubHeader ? data.questionnaireSubHeader : 'Answer these questions so we can better help you with your Business objectives' }}
                 </p>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div v-if="isformCompleted && !questionnaireComplete" class="order-2 flex-1 md:order-1 lg:mx-auto lg:max-w-[490px]">
-                <h2 class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">{{ data.formHeading }}</h2>
+                <p class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">{{ data.formHeading }}</p>
                 <p class="mb-[31px] text-[17px] font-medium leading-5 -tracking-[0.03px] text-[#586376] lg:max-w-[450px]">{{ data.formSubTitle }}</p>
                 <div class="mb-5 flex flex-col gap-4 leading-[19px] sm:flex-row md:justify-between lg:mb-[27px]">
                     <p class="text-[18px] font-semibold leading-[22px] -tracking-[0.04px] text-[#586376]">{{ data.formQuestion }}</p>
@@ -91,10 +91,6 @@
                             class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                             :class="{ error: $v.contactInfo.full_name.$error }"
                         />
-                        <!-- <div v-if="$v.contactInfo.full_name.$error">
-                    <p v-if="!$v.contactInfo.full_name.required">{{ $helper.requiredMessage(`${$t('full_name')}`) }}</p>
-                    <p v-else-if="!$v.contactInfo.full_name.alphaNumericSpace">{{ $helper.alphaNumSpaceMessage(`${$t('full_name')}`) }}</p>
-            </div>-->
                     </div>
 
                     <div class="form-input-group">
@@ -108,9 +104,6 @@
                             class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                             :class="{ error: $v.contactInfo.phone.$error }"
                         />
-                        <!-- <div v-if="$v.contactInfo.phone.$error">
-                    <p v-if="!$v.contactInfo.phone.required">{{ $helper.requiredMessage(`${$t('phone_number')}`) }}</p>
-            </div>-->
                     </div>
 
                     <div class="form-input-group">
@@ -124,15 +117,7 @@
                             :class="{ error: $v.contactInfo.email.$error }"
                             @input="$v.contactInfo.email.$model = $event.target.value.trim()"
                         />
-                        <!-- <div v-if="$v.contactInfo.email.$error">
-                    <p v-if="!$v.contactInfo.email.required">{{ $helper.requiredMessage(`${$t('email')}`) }}</p>
-                    <p v-else-if="!$v.contactInfo.email.email">{{ $helper.emailMessage() }}</p>
-            </div>-->
                     </div>
-                    <!-- <div v-if="currentQuestion === 9">
-                <recaptcha id="grantQue" ref="grantQue" @success="captchaError = false" @error="captchaError = true" />
-                <div v-if="captchaError" class="captcha-error">Please verify reCaptcha.</div>
-          </div>-->
                     <div>
                         <recaptcha id="recaptcha1" ref="recaptcha1" @success="captchaError = false" @error="captchaError = true" />
                         <div v-if="captchaError" class="captcha-error">Please verify reCaptcha.</div>
@@ -142,7 +127,7 @@
             </div>
 
             <div v-if="questionnaireComplete && !isformCompleted" class="order-2 flex-1 md:order-1 lg:mx-auto lg:max-w-[490px]">
-                <h2 class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">{{ data.finalHeading ? data.finalHeading : finalHeading }}</h2>
+                <p class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">{{ data.finalHeading ? data.finalHeading : finalHeading }}</p>
                 <p class="mb-[31px] text-[17px] font-medium leading-5 -tracking-[0.03px] text-[#586376] lg:max-w-[450px]">{{ data.finalSubTitle ? data.finalSubTitle : finalSubTitle }}</p>
                 <div class="mb-5 flex flex-col gap-4 leading-[19px] sm:flex-row md:justify-between lg:mb-[26px]">
                     <p class="text-lg font-semibold leading-4 -tracking-[0.04px] text-lightgrey">{{ data.finalQuestion ? data.finalQuestion : finalQuestion }}</p>
