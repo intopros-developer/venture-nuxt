@@ -7,5 +7,10 @@
                 "serverFiles": ["./.nuxt/dist/sitemap-routes.json"]
             }
         }
-    ]
+    ],
+    "functions": {
+        "api/**": {
+            "excludeFiles": "{.nuxt,*.cache,node_modules,public,app}/**"
+        }
+    }
 }
