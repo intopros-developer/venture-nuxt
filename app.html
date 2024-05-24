@@ -3,7 +3,6 @@
     <head {{ HEAD_ATTRS }}>
         {{ HEAD }}
 
-        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11266175330"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -13,8 +12,6 @@
             gtag('js', new Date());
             gtag('config', 'AW-11266175330');
         </script>
-
-        <!-- Google Tag Manager -->
 
         <script>
             (function (w, d, s, l, i) {
@@ -33,17 +30,10 @@
             window.intercomSettings = {
                 api_base: 'https://api-iam.intercom.io',
                 app_id: 'elswu46p',
-                /*
-    name: user.name, // Full name
-    user_id: user.id, // a UUID for your user
-    email: user.email, // the email for your user
-    created_at: user.createdAt // Signup date as a Unix timestamp
-    */
             };
         </script>
 
         <script>
-            // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/elswu46p'
             (function () {
                 var w = window;
                 var ic = w.Intercom;
@@ -78,12 +68,9 @@
                 }
             })();
         </script>
-
-        <!-- End Google Tag Manager -->
     </head>
     <body {{ BODY_ATTRS }}>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7N3SGS" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
         {{ APP }}
     </body>
 </html>
