@@ -28,10 +28,10 @@
                             </p>
                         </div>
                         <p class="mb-3 mt-[25px] h-24 overflow-hidden whitespace-pre-line text-sm leading-6 -tracking-[0.04px] text-[#202A36]" :class="{ '!h-auto': readMore.includes(i) }" v-html="team.attributes.description"></p>
-                        <a href="javascript:;" class="flex items-center justify-center gap-4 text-sm font-semibold text-[#83888e] xl:text-xl" @click="showReadMore(i)">
+                        <button :aria-label="$t('read_more')" class="flex items-center justify-center gap-4 text-sm font-semibold text-[#83888e] xl:text-xl" @click="showReadMore(i)">
                             <p class="text-base">{{ readMore.includes(i) ? $t('read_less') : $t('read_more') }}</p>
                             <icons-downarrow class="w-2 xl:w-[11px]" :class="{ 'rotate-180': readMore.includes(i) }" />
-                        </a>
+                        </button>
 
                         <nuxt-img format="webp" :src="`${team.attributes.logoUrl || team.attributes.iconUrl}`" :alt="team.attributes.name + '_icon'" class="mx-auto mt-[23px] h-11" loading="lazy" />
                     </div>

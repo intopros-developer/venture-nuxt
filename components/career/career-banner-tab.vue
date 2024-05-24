@@ -32,8 +32,7 @@
                                             <li class="border-b border-[#f1f1f1]">
                                                 <nuxt-link
                                                     :to="localePath('/careers/contact-form')"
-                                                    class="hover:bg-gray-100 group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-primary hover:text-white"
-                                                    href="javascript:;"
+                                                    class="group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-gray-100 hover:bg-primary hover:text-white"
                                                     @click.stop="$refs.share.doClose()"
                                                 >
                                                     <p>{{ $t('summer_internship') }}</p>
@@ -42,8 +41,7 @@
                                             <li class="border-b border-[#f1f1f1]">
                                                 <nuxt-link
                                                     :to="localePath('/careers/contact-form')"
-                                                    class="hover:bg-gray-100 group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-primary hover:text-white"
-                                                    href="javascript:;"
+                                                    class="group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-gray-100 hover:bg-primary hover:text-white"
                                                     @click.stop="$refs.share.doClose()"
                                                 >
                                                     <p>{{ $t('associate_consultant_internship') }}</p>
@@ -52,8 +50,7 @@
                                             <li class="border-b border-[#f1f1f1]">
                                                 <nuxt-link
                                                     :to="localePath('/careers/contact-form')"
-                                                    class="hover:bg-gray-100 group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-primary hover:text-white"
-                                                    href="javascript:;"
+                                                    class="group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-gray-100 hover:bg-primary hover:text-white"
                                                     @click.stop="$refs.share.doClose()"
                                                 >
                                                     <p>{{ $t('consultant_jd_phd') }}</p>
@@ -62,8 +59,7 @@
                                             <li>
                                                 <nuxt-link
                                                     :to="localePath('/careers/contact-form')"
-                                                    class="hover:bg-gray-100 group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-primary hover:text-white"
-                                                    href="javascript:;"
+                                                    class="group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-gray-100 hover:bg-primary hover:text-white"
                                                     @click.stop="$refs.share.doClose()"
                                                 >
                                                     <p>{{ $t('associate_consultant') }}</p>
@@ -72,8 +68,7 @@
                                             <li>
                                                 <nuxt-link
                                                     :to="localePath('/careers/contact-form')"
-                                                    class="hover:bg-gray-100 group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-primary hover:text-white"
-                                                    href="javascript:;"
+                                                    class="group flex items-center gap-2 px-2.5 py-3.5 text-[11px] text-xs font-light text-[#030303] transition-all duration-300 hover:bg-gray-100 hover:bg-primary hover:text-white"
                                                     @click.stop="$refs.share.doClose()"
                                                 >
                                                     <p>{{ $t('professional_and_functional') }}</p>
@@ -82,10 +77,10 @@
                                         </ul>
                                     </div>
 
-                                    <a slot="reference" href="javascript:;" class="flex items-center justify-center whitespace-nowrap py-4 hover:text-primary" :class="{ '!text-primary': isOpenFindRole }">
+                                    <button slot="reference" :aria-label="$t('find_roles')" class="flex items-center justify-center whitespace-nowrap py-4 hover:text-primary" :class="{ '!text-primary': isOpenFindRole }">
                                         {{ $t('find_roles') }}
                                         <icons-downarrow class="ml-1 rotate-0 text-primary" :class="{ '!rotate-180': isOpenFindRole }" />
-                                    </a>
+                                    </button>
                                 </popper>
                             </li>
                             <li v-for="tab in tabs" :key="tab.id">

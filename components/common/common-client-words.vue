@@ -5,7 +5,7 @@
                 <div class="pb-[50px]">
                     <div id="ourClientsWords" class="mb-5 flex items-center justify-center gap-2.5 text-center">
                         <slot v-if="hasCustomHeaderSlot" name="customHeader">
-                            <h2 v-html="title" class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold"></h2>
+                            <h2 v-html="title" class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold md:text-2xl lg:text-3xl"></h2>
                         </slot>
                         <template v-else>
                             <div class="block h-px w-full bg-[#d5d5d5]"></div>
@@ -119,7 +119,7 @@
                         clickable: true,
 
                         renderBullet: (index, className) => {
-                            return `<a href="javascript:;" class="career-slider-bullet-icon ${className}"></a>`;
+                            return `<p aria-label="Bullet Icon" class="career-slider-bullet-icon ${className}"></p>`;
                         },
                     },
                     navigation: {

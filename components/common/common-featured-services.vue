@@ -18,17 +18,21 @@
                             <VueSlideToggle :open="serviceTitle === service.attributes.title" tag="section" :duration="500" class="block lg:hidden">
                                 <div v-if="serviceDescription" :id="`service-${index}`">
                                     <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] lg:px-[30px] lg:pb-16 lg:pt-[30px]">
-                                        <img
-                                            loading="lazy"
+                                        <nuxt-img
                                             v-if="!serviceDescription.attributes.descriptionVideoUrl && serviceDescription.attributes.descriptionImageUrl"
+                                            format="webp"
                                             :src="`${serviceDescription.attributes.descriptionImageUrl}`"
+                                            :alt="service.attributes.title"
                                             class="h-[180px] w-full object-cover sm:h-[280px] lg:h-[380px]"
+                                            loading="lazy"
                                         />
+
                                         <div
                                             v-else-if="serviceDescription.attributes.descriptionVideoUrl"
                                             ref="video"
                                             class="relative h-[180px] w-full bg-cover bg-center bg-no-repeat sm:h-[280px] lg:h-[380px]"
                                             :style="{ backgroundImage: `url(${serviceDescription.attributes.descriptionImageUrl})` }"
+                                            lazyload
                                         >
                                             <iframe
                                                 v-if="!showOverlay"
@@ -68,17 +72,21 @@
         </div>
         <div v-if="serviceDescription && services.length && !isMobileView" class="hidden lg:block">
             <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-[57px] md:pt-8">
-                <img
-                    loading="lazy"
+                <nuxt-img
                     v-if="!serviceDescription.attributes.descriptionVideoUrl && serviceDescription.attributes.descriptionImageUrl"
                     :src="`${serviceDescription.attributes.descriptionImageUrl}`"
                     class="h-[180px] w-full object-cover sm:h-[280px] lg:h-[380px]"
+                    format="webp"
+                    :alt="serviceDescription.attributes.descriptionTitle"
+                    loading="lazy"
                 />
+
                 <div
                     v-else-if="serviceDescription.attributes.descriptionVideoUrl"
                     ref="video"
                     class="relative h-[180px] w-full bg-cover bg-center bg-no-repeat sm:h-[280px] lg:h-[380px]"
                     :style="{ backgroundImage: `url(${serviceDescription.attributes.descriptionImageUrl})` }"
+                    lazyload
                 >
                     <iframe
                         v-if="!showOverlay"

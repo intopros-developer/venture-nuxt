@@ -2,7 +2,7 @@
     <section class="py-10 md:pt-16 md:pb-0 xl:pt-[86px] xl:pb-10">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex items-center justify-start gap-[33px] text-start">
-                <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold">{{ heading }}</h2>
+                <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold md:text-2xl lg:text-3xl">{{ heading }}</h2>
             </div>
             <div class="grid grid-cols-1 sm:gap-14 lg:grid-cols-2 lg:gap-4">
                 <div>
@@ -28,7 +28,9 @@
                             </div>
                         </div>
                     </div>
-                    <div><img loading="lazy" :src="bottomLogo" alt="" class="mx-auto" /></div>
+                    <div>
+                        <nuxt-img format="webp" :src="bottomLogo" alt="Bottom Logo" loading="lazy" class="mx-auto" />
+                    </div>
                 </div>
                 <div class="h-[400px] sm:h-auto lg:mt-40">
                     <ul class="relative top-28 mx-auto h-[295px] max-w-[295px] rounded-full border-[5px] border-primary/10 sm:top-24 sm:h-[365px] sm:max-w-[365px] lg:top-0 lg:mr-0 xl:h-[438px] xl:max-w-[438px]">

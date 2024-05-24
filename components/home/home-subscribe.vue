@@ -3,7 +3,7 @@
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex flex-col items-center justify-between gap-5 md:flex-row">
                 <div class="flex-1">
-                    <h4 class="mb-7 max-w-[404px] text-[26px] leading-[30px] -tracking-[0.05px] text-[#202A36] xl:max-w-[463px]" v-html="title"></h4>
+                    <p class="mb-7 max-w-[404px] text-[26px] leading-[30px] -tracking-[0.05px] text-[#202A36] xl:max-w-[463px]" v-html="title"></p>
                     <p class="mb-5 max-w-[490px] text-[18px] leading-[30px] -tracking-[0.05px] text-[#202A36]" v-html="description"></p>
                     <form id="subscribe-form" action="" @submit.prevent="onSubmit">
                         <div class="hidden max-w-[498px] items-stretch sm:block xl:mt-[106px] xl:max-w-[624px]">

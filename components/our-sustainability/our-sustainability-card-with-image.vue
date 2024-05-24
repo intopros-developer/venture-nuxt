@@ -22,11 +22,11 @@
                     <p class="mb-7 text-xs font-normal leading-5 -tracking-[0.03px] text-[#353535] sm:text-sm lg:text-xl lg:leading-[35px]">
                         {{ value.description }}
                     </p>
-                    <a href="javascript:;" class="b-btn hidden py-[30px] text-[14px] font-bold -tracking-[0.03px] md:block">{{ value.buttonTitle }}</a>
+                    <p class="b-btn hidden py-[30px] text-[14px] font-bold -tracking-[0.03px] md:block">{{ value.buttonTitle }}</p>
                 </div>
 
                 <nuxt-img format="webp" :src="imgSrc" alt="card-image" loading="lazy" />
-                <a href="javascript:;" class="b-btn mx-auto md:hidden">{{ value.buttonTitle }}</a>
+                <p class="b-btn mx-auto md:hidden">{{ value.buttonTitle }}</p>
             </div>
         </div>
     </section>

@@ -249,7 +249,7 @@
                         <div v-for="insight in insightCatalogue1" class="mb-8 w-full lg:max-w-[670px] lg:px-7" :key="insight.id">
                             <div>
                                 <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" :title="insight.attributes.title">
-                                    <img loading="lazy" :src="insight.attributes.imgUrl" class="h-72 w-full object-cover" />
+                                    <nuxt-img format="webp" :src="insight.attributes.imgUrl" class="h-72 w-full object-cover" :alt="insight.attributes.title" loading="lazy" />
                                 </nuxt-link>
                             </div>
                             <div class="flex h-[calc(100%-125px)] flex-col justify-between py-3 xl:h-[calc(100%-340px)] xl:py-4">
@@ -308,7 +308,7 @@
                                 >
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                         <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" :title="item.attributes.title">
-                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                            <nuxt-img format="webp" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :alt="item.attributes.title" loading="lazy" :class="{ '!h-72': i === 2 }" />
                                         </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
@@ -324,9 +324,9 @@
                                             </p>
                                         </div>
                                         <div class="absolute bottom-5 flex w-full items-center justify-between md:w-[calc(100%-56px)]">
-                                            <a href="javascript:;" class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                                            <p class="inline-block text-[13px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
-                                            </a>
+                                            </p>
                                             <span>
                                                 <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
@@ -345,7 +345,7 @@
                                     <div class="relative">
                                         <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                             <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
-                                                <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                                <nuxt-img format="webp" :src="item.attributes.imgUrl" :alt="item.attributes.title" loading="lazy" class="h-[170px] w-full object-cover" />
                                             </nuxt-link>
                                         </div>
                                     </div>
@@ -386,7 +386,7 @@
                                 <div v-for="(item, i) in insightCatalogue3.slice(0, 4)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0': i === 3, 'md:border-r': i % 2 == 0 }">
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                         <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
-                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                            <nuxt-img format="webp" :src="item.attributes.imgUrl" :alt="item.attributes.title" loading="lazy" class="h-[170px] w-full object-cover" />
                                         </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
@@ -425,7 +425,7 @@
                                     <div class="relative">
                                         <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                             <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
-                                                <img loading="lazy" :src="item.attributes.imgUrl" class="h-72 w-full object-cover" />
+                                                <nuxt-img format="webp" :src="item.attributes.imgUrl" :alt="item.attributes.title" loading="lazy" class="h-72 w-full object-cover" />
                                             </nuxt-link>
                                         </div>
                                     </div>
@@ -481,7 +481,7 @@
                                     <div class="relative">
                                         <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                             <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`">
-                                                <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                                <nuxt-img format="webp" :src="item.attributes.imgUrl" :alt="item.attributes.title" loading="lazy" class="h-[170px] w-full object-cover" />
                                             </nuxt-link>
                                         </div>
                                     </div>
@@ -520,7 +520,7 @@
                                 <div v-for="(item, i) in insightCatalogue4.slice(4)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0 lg:col-span-2': i === 2, 'md:border-r': i % 2 == 0 }">
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                         <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
-                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                            <nuxt-img format="webp" :src="item.attributes.imgUrl" :alt="item.attributes.title" loading="lazy" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
                                         </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
@@ -568,7 +568,7 @@
                                 <div v-for="(item, i) in insightCatalogue5.slice(0, 3)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0 lg:col-span-2': i === 2, 'md:border-r': i % 2 == 0 }">
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                         <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
-                                            <img loading="lazy" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
+                                            <nuxt-img format="webp" :src="item.attributes.imgUrl" :alt="item.attributes.title" loading="lazy" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
                                         </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
@@ -604,7 +604,7 @@
                                     <div class="relative">
                                         <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                             <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`">
-                                                <img loading="lazy" :src="item.attributes.imgUrl" class="h-[170px] w-full object-cover" />
+                                                <nuxt-img format="webp" :src="item.attributes.imgUrl" :alt="item.attributes.title" loading="lazy" class="h-[170px] w-full object-cover" />
                                             </nuxt-link>
                                         </div>
                                     </div>

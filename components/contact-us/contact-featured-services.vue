@@ -17,7 +17,15 @@
                         <div v-if="serviceTitle === service.fields.title" class="block lg:hidden">
                             <div v-if="serviceDescription && isMobileView" :id="`service-${index}`">
                                 <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] lg:px-8 lg:pb-16 lg:pt-8">
-                                    <img loading="lazy" v-if="serviceDescription.fields.descriptionMediaType === 'image'" :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`" class="h-full w-full object-cover" />
+                                    <nuxt-img
+                                        format="webp"
+                                        v-if="serviceDescription.fields.descriptionMediaType === 'image'"
+                                        :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`"
+                                        :alt="serviceDescription.fields.descriptionTitle"
+                                        loading="lazy"
+                                        class="h-full w-full object-cover"
+                                    />
+
                                     <div
                                         v-else-if="serviceDescription.fields.videoThumbnailImage"
                                         ref="video"
@@ -50,7 +58,7 @@
                                         <p class="pt-5 text-sm text-[#4D4D4D]">
                                             {{ serviceDescription.fields.descriptionPara }}
                                         </p>
-                                        <a href="javascript:;" aria-label="Consulting" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.fields.descriptionLink }}</a>
+                                        <p aria-label="Consulting" class="block pt-6 font-semibold text-[#0DA1F1]">{{ serviceDescription.fields.descriptionLink }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +69,15 @@
         </div>
         <div v-if="serviceDescription && !isMobileView" class="hidden lg:block">
             <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-16 md:pt-8">
-                <img loading="lazy" v-if="serviceDescription.fields.descriptionMediaType === 'image'" :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`" class="h-full w-full object-cover" />
+                <nuxt-img
+                    format="webp"
+                    v-if="serviceDescription.fields.descriptionMediaType === 'image'"
+                    :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`"
+                    :alt="serviceDescription.fields.descriptionTitle"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                />
+
                 <div
                     v-else-if="serviceDescription.fields.videoThumbnailImage"
                     ref="video"
@@ -91,7 +107,7 @@
                     <p class="pt-5 text-sm leading-6 -tracking-[-0.03px] text-[#4D4D4D]">
                         {{ serviceDescription.fields.descriptionPara }}
                     </p>
-                    <a href="javascript:;" class="block pt-6 text-[16px] font-semibold leading-[23px] text-[#0DA1F1]"> {{ serviceDescription.fields.descriptionLink }}</a>
+                    <p class="block pt-6 text-[16px] font-semibold leading-[23px] text-[#0DA1F1]">{{ serviceDescription.fields.descriptionLink }}</p>
                 </div>
             </div>
         </div>

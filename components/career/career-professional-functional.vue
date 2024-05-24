@@ -63,7 +63,7 @@
                         clickable: true,
 
                         renderBullet: (index, className) => {
-                            return `<a href="javascript:;" class="career-slider-bullet-icon ${className}"></a>`;
+                            return `<p aria-label="Bullet Icon" class="career-slider-bullet-icon ${className}"></p>`;
                         },
                     },
                     breakpoints: {

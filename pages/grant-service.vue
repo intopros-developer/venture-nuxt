@@ -69,7 +69,7 @@
                                 :class="{ 'font-bold !text-primary': activeCategoryData.id == category.id }"
                                 @click="activeCategoryData = category"
                             >
-                                <a href="javascript:;" class="block rounded-md border border-transparent px-[11px] py-1 text-lg hover:border-primary">{{ category.attributes.title }}</a>
+                                <p class="block rounded-md border border-transparent px-[11px] py-1 text-lg hover:border-primary">{{ category.attributes.title }}</p>
                             </li>
                         </ul>
                     </div>
@@ -122,7 +122,7 @@
                 <div class="mt-10 space-y-8 md:mt-[70px] md:space-y-14 xl:space-y-28">
                     <div v-for="(process, i) in section9Data" :key="i" class="grid grid-cols-1 items-start justify-between gap-10 md:grid-cols-2 xl:gap-20">
                         <div class="order-2 mb-10 md:mb-0" :class="{ 'md:!order-1': i % 2 !== 0 }">
-                            <img loading="lazy" :src="process.attributes.imgUrl" :alt="process.attributes.title" class="mx-auto" :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }" />
+                            <nuxt-img format="webp" :src="process.attributes.imgUrl" :alt="process.attributes.title" class="mx-auto" :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }" loading="lazy" />
                         </div>
                         <div :class="{ 'md:!order-2': i % 2 !== 0 }">
                             <div class="mb-3 flex gap-5 xl:gap-7">
@@ -137,7 +137,7 @@
                                     <p v-if="activeProcessReadMore.includes(i)" class="overflow-hidden text-sm font-medium text-[#353535] xl:text-lg xl:leading-9">
                                         {{ process.attributes.description }}
                                     </p>
-                                    <a href="javascript:;" class="mt-3 flex items-center justify-start gap-4 text-sm font-semibold text-primary xl:text-xl" @click="toggleProcess(i)">
+                                    <button :aria-label="$t('read_more')" class="mt-3 flex items-center justify-start gap-4 text-sm font-semibold text-primary xl:text-xl" @click="toggleProcess(i)">
                                         <p class="text-base">{{ activeProcessReadMore.includes(i) ? $t('read_less') : $t('read_more') }}</p>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" class="h-1 w-2 xl:h-[6px] xl:w-[11px]" :class="{ 'rotate-180': activeProcessReadMore.includes(i) }">
                                             <g>
@@ -146,7 +146,7 @@
                                                 </g>
                                             </g>
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -233,8 +233,8 @@
                     <div v-if="activeProductData.descriptionMediaType === 'images'" v-swiper:brandLogo="slider_options" class="swiper relative bg-transparent" :cleanup-styles-on-destroy="false">
                         <div class="swiper-wrapper items-center !px-10">
                             <template v-if="activeProductData.images">
-                                <div :key="image.imgUrl" class="swiper-slide bg-white p-4" v-for="image in activeProductData.images">
-                                    <img loading="lazy" :src="image.imgUrl" class="h-full w-full object-cover" />
+                                <div :key="image.imgUrl" class="swiper-slide bg-white p-4" v-for="(image, index) in activeProductData.images">
+                                    <nuxt-img format="webp" :src="image.imgUrl" :alt="'Description Image - ' + index" loading="lazy" class="h-full w-full object-cover" />
                                 </div>
                             </template>
                         </div>

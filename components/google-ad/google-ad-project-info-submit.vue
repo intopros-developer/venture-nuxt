@@ -4,7 +4,7 @@
             <div class="grid grid-cols-1 items-start gap-5 md:grid-cols-2">
                 <div class="relative z-[1] flex flex-col justify-center xl:pl-10 xl:pt-5">
                     <span class="absolute -inset-5 -z-[1] m-auto bg-black/30 blur-2xl"></span>
-                    <h2 class="mb-3.5 max-w-full text-center text-xl md:text-2xl lg:text-3xl font-bold uppercase text-white md:max-w-[455px] md:text-left">{{ $props.tellUsMoreTitle }}</h2>
+                    <h2 class="mb-3.5 max-w-full text-center text-xl font-bold uppercase text-white md:max-w-[455px] md:text-left md:text-2xl lg:text-3xl">{{ $props.tellUsMoreTitle }}</h2>
                     <ul class="mb-10 grid grid-cols-3 gap-2 text-white md:mb-[65px] md:gap-5">
                         <li class="text-3xl font-bold md:text-5xl md:leading-[55px] xl:text-6xl">
                             {{ $props.firstProofValue }} <span class="block text-base font-normal xl:text-xl">{{ $props.firstProofTitle }}</span>
@@ -87,9 +87,9 @@
                             <label for="send_nda">Send NDA</label>
                         </div> -->
                         <div v-show="params.send_nda" class="ml-auto text-sm">
-                            <a href="javascript:;" class="flex w-fit items-center gap-1.5 text-white hover:font-bold" :class="{ '!text-primary': params.file }" @click="$refs.file.click()">
+                            <button aria-label="Attach file (pdf, office file)" class="flex w-fit items-center gap-1.5 text-white hover:font-bold" :class="{ '!text-primary': params.file }" @click="$refs.file.click()">
                                 <icons-attach /> Attach file (pdf, office file)
-                            </a>
+                            </button>
                             <input ref="file" type="file" style="display: none" accept="application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document" @change="onFileChange" />
                         </div>
                         <!-- <div>

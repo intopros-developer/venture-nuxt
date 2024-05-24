@@ -5,14 +5,14 @@
                 <div v-for="(consultant, i) in currentContents" :key="i" class="swiper-slide flex flex-col bg-white px-6 pt-4 pb-[46px] sm:min-h-full sm:justify-between">
                     <h5 class="min-h-[42px] font-semibold capitalize leading-[18px] tracking-[0.42px] text-[#030303]">{{ consultant.title }}</h5>
                     <div class="mt-[9px] h-[151px] overflow-hidden shadow-[0_3px_6px_rgba(180,180,180,0.44)]">
-                        <img loading="lazy" :src="consultant.image" class="h-full w-full object-cover object-top" alt />
+                        <nuxt-img :src="consultant.image" :alt="consultant.title" loading="lazy" class="h-full w-full object-cover object-top" />
                     </div>
                     <p class="pb-5 pt-[26px] text-sm leading-[26px] -tracking-[0.04px] text-[#202a36]">{{ consultant.description }}</p>
                     <div class="mt-auto">
-                        <a href="#" class="flex items-center gap-4 text-primary">
+                        <button aria-label="Learn more" class="flex items-center gap-4 text-primary">
                             <p class="text-sm font-semibold leading-[13px] -tracking-[0.03px]">Learn more</p>
                             <icons-downarrow class="-rotate-90" />
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -461,7 +461,7 @@
                         clickable: true,
 
                         renderBullet: (index, className) => {
-                            return `<a href="javascript:;" class="career-slider-bullet-icon ${className}"></a>`;
+                            return `<p aria-label="Bullet Icon" class="career-slider-bullet-icon ${className}"></p>`;
                         },
                     },
                     breakpoints: {

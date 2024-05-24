@@ -44,7 +44,15 @@
                 </div>
                 <div v-if="serviceDescription" class="float-1">
                     <div class="mb-[34px] w-full bg-black/10 shadow-[0_3px_6px_rgba(0,0,0,0.75)] xl:h-[474px]">
-                        <img loading="lazy" v-if="serviceDescription.fields.descriptionMediaType === 'image'" :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`" class="h-full w-full object-cover" />
+                        <nuxt-img
+                            v-if="serviceDescription.fields.descriptionMediaType === 'image'"
+                            format="webp"
+                            :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`"
+                            :alt="serviceDescription.fields.descriptionPara"
+                            loading="lazy"
+                            class="h-full w-full object-cover"
+                        />
+
                         <div v-else v-html="serviceDescription.fields.videoScript"></div>
                     </div>
                     <p class="text-sm font-light leading-6 text-black xl:text-[23px] xl:leading-[48px]">

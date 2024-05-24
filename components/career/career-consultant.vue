@@ -55,7 +55,7 @@
                         clickable: true,
 
                         renderBullet: (index, className) => {
-                            return `<button class="career-slider-bullet-icon ${className}"></button>`;
+                            return `<p aria-label="Bullet Icon" class="career-slider-bullet-icon ${className}"></p>`;
                         },
                     },
                     breakpoints: {

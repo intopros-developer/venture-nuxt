@@ -23,7 +23,7 @@
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
-                            <img class="mr-2 h-6 w-6 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Michael Gough" />Michael Gough
+                            <nuxt-img format="webp" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Michael Gough" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Michael Gough
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
                     </div>
@@ -42,13 +42,13 @@
                     <div id="dropdownComment1" class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                <button aria-label="Edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                                <button aria-label="Remove" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                                <button aria-label="Report" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
                             </li>
                         </ul>
                     </div>
@@ -69,7 +69,7 @@
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
-                            <img class="mr-2 h-6 w-6 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Jese Leos" />Jese Leos
+                            <nuxt-img format="webp" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Jese Leos" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Jese Leos
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-12" title="February 12th, 2022">Feb. 12, 2022</time></p>
                     </div>
@@ -88,13 +88,13 @@
                     <div id="dropdownComment2" class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                <button aria-label="Edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                                <button aria-label="Remove" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                                <button aria-label="Report" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
                             </li>
                         </ul>
                     </div>
@@ -113,7 +113,7 @@
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
-                            <img class="mr-2 h-6 w-6 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="Bonnie Green" />Bonnie Green
+                            <nuxt-img format="webp" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="Bonnie Green" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Bonnie Green
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-03-12" title="March 12th, 2022">Mar. 12, 2022</time></p>
                     </div>
@@ -132,13 +132,13 @@
                     <div id="dropdownComment3" class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                <button aria-label="Edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                                <button aria-label="Remove" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                                <button aria-label="Report" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
                             </li>
                         </ul>
                     </div>
@@ -157,7 +157,7 @@
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
-                            <img class="mr-2 h-6 w-6 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-4.jpg" alt="Helene Engels" />Helene Engels
+                            <nuxt-img format="webp" src="https://flowbite.com/docs/images/people/profile-picture-4.jpg" alt="Helene Engels" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Helene Engels
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-06-23" title="June 23rd, 2022">Jun. 23, 2022</time></p>
                     </div>
@@ -175,13 +175,13 @@
                     <div id="dropdownComment4" class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                <button aria-label="Edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</a>
+                                <button aria-label="Remove" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
                             </li>
                             <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                                <button aria-label="Report" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
                             </li>
                         </ul>
                     </div>

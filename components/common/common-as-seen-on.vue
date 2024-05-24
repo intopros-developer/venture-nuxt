@@ -9,19 +9,19 @@
             </div>
             <div class="flex flex-wrap items-center justify-center gap-4 md:gap-[66px] xl:gap-20">
                 <div class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[138px] xl:w-[138px]">
-                    <img loading="lazy" class="w-[62px] xl:w-[96px]" src="/assets/img/placement-logo-1.png" />
+                    <nuxt-img format="webp" src="/assets/img/placement-logo-1.png" alt="Placement Logo 1" loading="lazy" class="w-[62px] xl:w-[96px]" />
                 </div>
                 <div class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[138px] xl:w-[138px]">
-                    <img loading="lazy" class="w-20 xl:w-[128px]" src="/assets/img/placement-logo-2.png" />
+                    <nuxt-img format="webp" src="/assets/img/placement-logo-2.png" alt="Placement Logo 2" loading="lazy" class="w-20 xl:w-[128px]" />
                 </div>
                 <div class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[138px] xl:w-[138px]">
-                    <img loading="lazy" class="w-[67px] xl:w-[107px]" src="/assets/img/placement-logo-3.png" />
+                    <nuxt-img format="webp" src="/assets/img/placement-logo-3.png" alt="Placement Logo 3" loading="lazy" class="w-[67px] xl:w-[107px]" />
                 </div>
                 <div class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[138px] xl:w-[138px]">
-                    <img loading="lazy" class="w-11 xl:w-[70px]" src="/assets/img/placement-logo-4.png" />
+                    <nuxt-img format="webp" src="/assets/img/placement-logo-4.png" alt="Placement Logo 4" loading="lazy" class="w-11 xl:w-[70px]" />
                 </div>
                 <div class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[138px] xl:w-[138px]">
-                    <img loading="lazy" class="w-[52px] xl:w-[80px]" src="/assets/img/placement-logo-5.png" />
+                    <nuxt-img format="webp" src="/assets/img/placement-logo-5.png" alt="Placement Logo 5" loading="lazy" class="w-[52px] xl:w-[80px]" />
                 </div>
             </div>
         </div>

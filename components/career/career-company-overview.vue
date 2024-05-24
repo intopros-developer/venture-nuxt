@@ -18,14 +18,14 @@
                     <div class="absolute inset-x-0 bottom-0 h-9 bg-[#FBFBFD]/50 backdrop-blur-sm" :class="{ hidden: isShowReadMore }"></div>
                 </div>
                 <div class="text-center">
-                    <a v-if="!isShowReadMore" href="javascript:;" class="flex items-center justify-center gap-4 text-sm font-semibold text-primary xl:text-xl" @click="isShowReadMore = true">
-                        <p class="text-base">read more</p>
+                    <button v-if="!isShowReadMore" :aria-label="$t('read_more')" class="flex items-center justify-center gap-4 text-sm font-semibold text-primary xl:text-xl" @click="isShowReadMore = true">
+                        <p class="text-base">{{ $t('read_more') }}</p>
                         <icons-downarrow class="w-2 xl:w-[11px]" />
-                    </a>
-                    <a v-else href="javascript:;" class="flex items-center justify-center gap-4 text-sm font-semibold text-primary xl:text-xl" @click="isShowReadMore = false">
-                        <p class="text-base">read less</p>
+                    </button>
+                    <button v-else :aria-label="$t('read_less')" class="flex items-center justify-center gap-4 text-sm font-semibold text-primary xl:text-xl" @click="isShowReadMore = false">
+                        <p class="text-base">{{ $t('read_less') }}</p>
                         <icons-downarrow class="w-2 rotate-180 xl:w-[11px]" />
-                    </a>
+                    </button>
                 </div>
             </div>
             <div class="mb-7 flex items-center justify-center gap-[33px] pt-10 text-center lg:mb-[67px] xl:pt-[117px]">
@@ -59,7 +59,7 @@
                                 See where you're strong, where you lag, and what the savings potential can be when you improve specific elements of your performance and capability. Our benchmarking database of 250+ plants across a wide
                                 variety of industries captures today's most relevant KPIs, allowing you to visualize your current state, spot areas of opportunity and prioritize the actions that will vault you ahead of your competitors.
                             </p>
-                            <a href="javascript:;" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</a>
+                            <button aria-label="Learn More" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</button>
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@
                                 See where you're strong, where you lag, and what the savings potential can be when you improve specific elements of your performance and capability. Our benchmarking database of 250+ plants across a wide
                                 variety of industries captures today's most relevant KPIs, allowing you to visualize your current state, spot areas of opportunity and prioritize the actions that will vault you ahead of your competitors.
                             </p>
-                            <a href="javascript:;" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</a>
+                            <button aria-label="Learn More" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</button>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
                                 See where you're strong, where you lag, and what the savings potential can be when you improve specific elements of your performance and capability. Our benchmarking database of 250+ plants across a wide
                                 variety of industries captures today's most relevant KPIs, allowing you to visualize your current state, spot areas of opportunity and prioritize the actions that will vault you ahead of your competitors.
                             </p>
-                            <a href="javascript:;" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</a>
+                            <button aria-label="Learn More" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</button>
                         </div>
                     </div>
 
@@ -101,7 +101,7 @@
                                 See where you're strong, where you lag, and what the savings potential can be when you improve specific elements of your performance and capability. Our benchmarking database of 250+ plants across a wide
                                 variety of industries captures today's most relevant KPIs, allowing you to visualize your current state, spot areas of opportunity and prioritize the actions that will vault you ahead of your competitors.
                             </p>
-                            <a href="javascript:;" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</a>
+                            <button aria-label="Learn More" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</button>
                         </div>
                     </div>
                 </div>

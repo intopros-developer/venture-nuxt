@@ -21,12 +21,16 @@
                         </li>
                         <li class="home-header-icon h-[13px] w-[1px] bg-black/30 xl:h-4"></li>
                         <li class="menu group cursor-auto">
-                            <a href="#" class="home-header-text flex items-center gap-[6px] transition-all duration-300 hover:text-primary group-hover:text-primary" @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'industries')">
+                            <button
+                                :aria-label="$t('industries')"
+                                class="home-header-text flex items-center gap-[6px] transition-all duration-300 hover:text-primary group-hover:text-primary"
+                                @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'industries')"
+                            >
                                 <p>{{ $t('industries') }}</p>
                                 <div class="!text-primary">
                                     <icons-topmenuarrow class="!text-primary" :class="{ 'rotate-180': $store.state.nav.dropdown.industries }" />
                                 </div>
-                            </a>
+                            </button>
 
                             <div v-show="$store.state.nav.dropdown.industries" id="industries" class="sub-menu !top-[33px] !z-30 bg-white">
                                 <div class="absolute right-6 top-5">
@@ -61,12 +65,16 @@
                 <div>
                     <ul class="megamenu flex space-x-[9px] text-xs font-semibold leading-[13px] text-black xl:text-[13px] xl:leading-4">
                         <li class="menu group cursor-auto">
-                            <a href="#" class="home-header-text flex items-center gap-[6px] transition-all duration-300 hover:text-primary group-hover:text-primary" @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'offices')">
+                            <button
+                                :aria-label="$t('offices')"
+                                class="home-header-text flex items-center gap-[6px] transition-all duration-300 hover:text-primary group-hover:text-primary"
+                                @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'offices')"
+                            >
                                 <p class="pointer-events-none">{{ $t('offices') }}</p>
                                 <div class="!text-primary">
                                     <icons-topmenuarrow class="!text-primary" :class="{ 'rotate-180': $store.state.nav.dropdown.offices }" />
                                 </div>
-                            </a>
+                            </button>
 
                             <div v-show="$store.state.nav.dropdown.offices" id="offices" class="sub-menu !top-[33px] !z-30 bg-white">
                                 <div class="absolute right-6 top-5">
@@ -98,12 +106,12 @@
                         </li>
                         <li class="home-header-icon-right-first h-[13px] w-[1px] bg-white/30 xl:h-4"></li>
                         <li>
-                            <a href="javascript:;" class="home-header-text transition-all duration-300 hover:text-primary" @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'language')">{{ $t('language') }}</a>
+                            <button :aria-label="$t('language')" class="home-header-text transition-all duration-300 hover:text-primary" @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'language')">{{ $t('language') }}</button>
                         </li>
                         <li class="home-header-icon-right h-[13px] w-[1px] bg-black/30 xl:h-4"></li>
                         <li class="menu group">
-                            <a
-                                href="javascript:;"
+                            <button
+                                :aria-label="currentLocale"
                                 class="home-header-text flex items-center gap-[6px] transition-all duration-300 hover:text-primary group-hover:text-primary"
                                 @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'language')"
                             >
@@ -111,7 +119,7 @@
                                 <div class="text-primary">
                                     <icons-topmenuarrow class="!text-primary" :class="{ 'rotate-180': $store.state.nav.dropdown.language }" />
                                 </div>
-                            </a>
+                            </button>
 
                             <div v-show="$store.state.nav.dropdown.language" id="language" class="sub-menu !top-[33px] !z-30 bg-white">
                                 <div class="absolute right-6 top-5">
@@ -124,142 +132,142 @@
                                     <div class="flex items-start justify-between divide-x divide-[#707070]/20">
                                         <ul class="pr-12">
                                             <li>
-                                                <p class="text-sm font-semibold" href="javascript:;">{{ $t('global') }}</p>
+                                                <p class="text-sm font-semibold">{{ $t('global') }}</p>
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('en')">
+                                                        <button aria-label="English" class="flex items-center gap-2" @click="switchLang('en')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-global.png" width="22" height="15" class="w-[22px]" alt="English" loading="lazy" />
                                                             <p>English</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="px-12">
                                             <li>
-                                                <p class="text-sm font-semibold" href="javascript:;">{{ $t('north_nd_south_america') }}</p>
+                                                <p class="text-sm font-semibold">{{ $t('north_nd_south_america') }}</p>
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('pt-br')">
+                                                        <button aria-label="Brazil (Português)" class="flex items-center gap-2" @click="switchLang('pt-br')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-brazil.png" class="w-[22px]" width="22" height="15" alt="Brazil (Português)" loading="lazy" />
                                                             <p>Brazil (Português)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es-ar')">
+                                                        <button aria-label="Argentina (Español)" class="flex items-center gap-2" @click="switchLang('es-ar')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-argentina.png" class="w-[22px]" width="22" height="15" alt="Argentina (Español)" loading="lazy" />
                                                             <p>Argentina (Español)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es-cl')">
+                                                        <button arial-label="Chile (Español)" class="flex items-center gap-2" @click="switchLang('es-cl')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-chile.png" class="w-[22px]" width="22" height="15" alt="Chile (Español)" loading="lazy" />
                                                             <p>Chile (Español)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es-co')">
+                                                        <button aria-label="Colombia (Español)" class="flex items-center gap-2" @click="switchLang('es-co')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-colombia.png" class="w-[22px]" width="22" height="15" alt="Colombia (Español)" loading="lazy" />
                                                             <p>Colombia (Español)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es-co')">
+                                                        <button aria-label="Canada" class="flex items-center gap-2" @click="switchLang('es-co')">
                                                             <nuxt-img format="webp" src="/assets/img/canada.jpg" class="w-[22px]" width="22" height="15" alt="Canada" loading="lazy" />
                                                             <p>Canada</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="px-12">
                                             <li>
-                                                <p class="text-sm font-semibold" href="javascript:;">{{ $t('europe') }}</p>
+                                                <p class="text-sm font-semibold">{{ $t('europe') }}</p>
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('fr')">
+                                                        <button aria-label="France(Français)" class="flex items-center gap-2" @click="switchLang('fr')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-france.png" class="w-[22px]" width="22" height="15" alt="France (Français)" loading="lazy" />
                                                             <p>France (Français)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('de-ch')">
+                                                        <button aria-label="Germany / Switzerland (Deutsch)" class="flex items-center gap-2" @click="switchLang('de-ch')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-germany.png" class="w-[22px]" width="22" height="15" alt="Germany" loading="lazy" />
                                                             <p>Germany / Switzerland (Deutsch)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('it')">
+                                                        <button aria-label="Italy (Italiano)" class="flex items-center gap-2" @click="switchLang('it')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-italy.png" class="w-[22px]" width="22" height="15" alt="Italy" loading="lazy" />
                                                             <p>Italy (Italiano)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('es')">
+                                                        <button aria-label="Spain (Español)" class="flex items-center gap-2" @click="switchLang('es')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-spain.png" class="w-[22px]" width="22" height="15" alt="Spain (Español)" loading="lazy" />
                                                             <p>Spain (Español)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('ru')">
+                                                        <button aria-label="Russia (Русский)" class="flex items-center gap-2" @click="switchLang('ru')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-russia.png" class="w-[22px]" width="22" height="15" alt="Russia (Русский)" loading="lazy" />
                                                             <p>Russia (Русский)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('ru')">
+                                                        <button aria-label="England" class="flex items-center gap-2" @click="switchLang('ru')">
                                                             <nuxt-img format="webp" src="/assets/img/uk.jpg" class="w-[22px]" width="22" height="15" alt="England" loading="lazy" />
                                                             <p>England</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul class="px-12">
                                             <li>
-                                                <p class="text-sm font-semibold" href="javascript:;">{{ $t('asia_nd_australia') }}</p>
+                                                <p class="text-sm font-semibold">{{ $t('asia_nd_australia') }}</p>
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh')">
+                                                        <button aria-label="China (中文版)" class="flex items-center gap-2" @click="switchLang('zh')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-chaina.png" class="w-[22px]" width="22" height="15" alt="China (中文版)" loading="lazy" />
                                                             <p>China (中文版)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('ko')">
+                                                        <button aria-label="Korea (한국어)" class="flex items-center gap-2" @click="switchLang('ko')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-korea.png" class="w-[22px]" width="22" height="15" alt="Korea (한국어)" loading="lazy" />
                                                             <p>Korea (한국어)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('ja')">
+                                                        <button aria-label="Japan (日本語)" class="flex items-center gap-2" @click="switchLang('ja')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-japan.png" class="w-[22px]" width="22" height="15" alt="Japan (日本語)" loading="lazy" />
                                                             <p>Japan (日本語)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh-tw')">
+                                                        <button aria-label="Taiwan (日本語)" class="flex items-center gap-2" @click="switchLang('zh-tw')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-taiwan.png" class="w-[22px]" width="22" height="15" alt="Taiwan (日本語)" loading="lazy" />
                                                             <p>Taiwan (日本語)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh-hk')">
+                                                        <button aria-label="Hong Kong (日本語)" class="flex items-center gap-2" @click="switchLang('zh-hk')">
                                                             <nuxt-img format="webp" src="/assets/img/flag-hongkong.png" class="w-[22px]" width="22" height="15" alt="Hong Kong (日本語)" loading="lazy" />
                                                             <p>Hong Kong (日本語)</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh-au')">
+                                                        <button aria-label="Australia" class="flex items-center gap-2" @click="switchLang('zh-au')">
                                                             <nuxt-img format="webp" src="/assets/img/australia.png" class="w-[22px]" width="22" height="15" alt="Australia" loading="lazy" />
                                                             <p>Australia</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:;" class="flex items-center gap-2" @click="switchLang('zh-ir')">
+                                                        <button aria-label="Iran" class="flex items-center gap-2" @click="switchLang('zh-ir')">
                                                             <nuxt-img format="webp" src="/assets/img/iran.png" class="w-[22px]" width="22" height="15" alt="Iran" loading="lazy" />
                                                             <p>Iran</p>
-                                                        </a>
+                                                        </button>
                                                     </li>
                                                 </ul>
                                             </li>

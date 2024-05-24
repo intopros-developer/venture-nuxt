@@ -32,6 +32,7 @@
                         }"
                         :alt="slide.attributes.title"
                         :style="{ backgroundImage: `url(${slide.attributes.slideImageUrl})` }"
+                        lazyload
                     />
 
                     <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4" :class="{ '': i === 0 }">
@@ -40,13 +41,7 @@
                             :class="{ 'full-slide-animation-after full-slide-animation-before': i === 0 }"
                         >
                             <div class="flex-1">
-                                <h1
-                                    v-if="i === 0"
-                                    class="slide-text-animation-before slide-text-animation-after max-w-[295px] !whitespace-normal text-[26px] font-extrabold uppercase leading-[42px] text-white sm:max-w-[430px] sm:text-[38px] md:whitespace-nowrap xl:max-w-[626px] xl:text-[50px] xl:leading-[53px]"
-                                    v-html="slide.attributes.title"
-                                ></h1>
                                 <h2
-                                    v-else
                                     class="slide-text-animation-before slide-text-animation-after max-w-[295px] !whitespace-normal text-[26px] font-extrabold uppercase leading-[42px] text-white sm:max-w-[430px] sm:text-[38px] md:whitespace-nowrap xl:max-w-[626px] xl:text-[50px] xl:leading-[53px]"
                                     v-html="slide.attributes.title"
                                 ></h2>
@@ -56,7 +51,15 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle + '-1'" loading="lazy" format="webp" />
+                                    <nuxt-img
+                                        src="/assets/img/Union-3@2x.png"
+                                        class="relative left-0 transition-all duration-300 group-hover:left-2"
+                                        :alt="slide.attributes.linkTitle + '-1'"
+                                        loading="lazy"
+                                        format="webp"
+                                        width="24"
+                                        height="13"
+                                    />
                                 </nuxt-link>
 
                                 <a
@@ -66,7 +69,15 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle + '-1'" loading="lazy" format="webp" />
+                                    <nuxt-img
+                                        src="/assets/img/Union-3@2x.png"
+                                        class="relative left-0 transition-all duration-300 group-hover:left-2"
+                                        :alt="slide.attributes.linkTitle + '-1'"
+                                        loading="lazy"
+                                        format="webp"
+                                        width="24"
+                                        height="13"
+                                    />
                                 </a>
 
                                 <p class="slide-text-animation-before slide-text-animation-after max-w-[377px] pt-4 text-[1.1rem] leading-[22px] text-[#FBFBFD] xl:max-w-[590px]" :class="{ 'mb-[46px] !pt-0': slide.attributes.buttonText }">
@@ -93,7 +104,15 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle + '-1'" loading="lazy" format="webp" />
+                                    <nuxt-img
+                                        src="/assets/img/Union-3@2x.png"
+                                        class="relative left-0 transition-all duration-300 group-hover:left-2"
+                                        :alt="slide.attributes.linkTitle + '-1'"
+                                        loading="lazy"
+                                        format="webp"
+                                        width="24"
+                                        height="13"
+                                    />
                                 </nuxt-link>
 
                                 <a
@@ -103,7 +122,15 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img src="/assets/img/Union-3@2x.png" class="relative left-0 transition-all duration-300 group-hover:left-2" :alt="slide.attributes.linkTitle + '-1'" loading="lazy" format="webp" />
+                                    <nuxt-img
+                                        src="/assets/img/Union-3@2x.png"
+                                        class="relative left-0 transition-all duration-300 group-hover:left-2"
+                                        :alt="slide.attributes.linkTitle + '-1'"
+                                        loading="lazy"
+                                        format="webp"
+                                        width="24"
+                                        height="13"
+                                    />
                                 </a>
                             </div>
                         </div>

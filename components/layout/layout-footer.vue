@@ -58,7 +58,7 @@
                             </svg>
                             <p class="text-[15px] font-medium leading-[18px] text-primary">Email Us</p>
                         </a>
-                        <a href="https://www.linkedin.com/company/31139649/" target="_blank" class="text-white transition-all duration-300 hover:text-[#008cc3]">
+                        <a href="https://www.linkedin.com/company/31139649/" aria-label="Linkedin" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#008cc3]">
                             <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
                                 <path
                                     fill="currentColor"
@@ -66,7 +66,7 @@
                                 ></path>
                             </svg>
                         </a>
-                        <a href="https://twitter.com/VenturePlans" target="_blank" class="text-white transition-all duration-300 hover:text-[#70c6ff]">
+                        <a href="https://twitter.com/VenturePlans" aria-label="Twitter" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#70c6ff]">
                             <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
                                 <path
                                     fill="currentColor"
@@ -74,7 +74,7 @@
                                 ></path>
                             </svg>
                         </a>
-                        <a href="https://www.facebook.com/ventureplans" target="_blank" class="text-white transition-all duration-300 hover:text-[#506cba]">
+                        <a href="https://www.facebook.com/ventureplans" aria-label="Facebook" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#506cba]">
                             <svg class="w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
                                 <path
                                     fill="currentColor"
@@ -82,7 +82,7 @@
                                 ></path>
                             </svg>
                         </a>
-                        <a href="https://www.youtube.com/channel/UC7S7GWpgiaFLt5nWeOgws4Q" target="_blank" class="text-white transition-all duration-300 hover:text-[#ef574a]">
+                        <a href="https://www.youtube.com/channel/UC7S7GWpgiaFLt5nWeOgws4Q" aria-label="Youtube" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#ef574a]">
                             <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
                                 <path
                                     fill="currentColor"
@@ -90,7 +90,7 @@
                                 ></path>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/ventureplans/" target="_blank" class="text-white transition-all duration-300 hover:text-[#d34c7b]">
+                        <a href="https://www.instagram.com/ventureplans/" aria-label="Instagram" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#d34c7b]">
                             <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
                                 <path
                                     fill="currentColor"
@@ -130,7 +130,7 @@
                     </form>
                     <div class="mt-3 block sm:hidden">
                         <div class="flex items-center justify-center gap-6">
-                            <a href="https://www.linkedin.com/company/31139649/" target="_blank" class="text-white transition-all duration-300 hover:text-[#008cc3]">
+                            <a href="https://www.linkedin.com/company/31139649/" aria-label="Linkedin" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#008cc3]">
                                 <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
                                     <path
                                         fill="currentColor"
@@ -138,7 +138,7 @@
                                     ></path>
                                 </svg>
                             </a>
-                            <a href="https://twitter.com/VenturePlans" target="_blank" class="text-white transition-all duration-300 hover:text-[#70c6ff]">
+                            <a href="https://twitter.com/VenturePlans" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#70c6ff]">
                                 <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
                                     <path
                                         fill="currentColor"
@@ -146,7 +146,7 @@
                                     ></path>
                                 </svg>
                             </a>
-                            <a href="https://www.facebook.com/ventureplans" target="_blank" class="text-white transition-all duration-300 hover:text-[#506cba]">
+                            <a href="https://www.facebook.com/ventureplans" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#506cba]">
                                 <svg class="w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
                                     <path
                                         fill="currentColor"
@@ -154,7 +154,7 @@
                                     ></path>
                                 </svg>
                             </a>
-                            <a href="https://www.youtube.com/channel/UC7S7GWpgiaFLt5nWeOgws4Q" target="_blank" class="text-white transition-all duration-300 hover:text-[#ef574a]">
+                            <a href="https://www.youtube.com/channel/UC7S7GWpgiaFLt5nWeOgws4Q" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#ef574a]">
                                 <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
                                     <path
                                         fill="currentColor"
@@ -162,7 +162,7 @@
                                     ></path>
                                 </svg>
                             </a>
-                            <a href="https://www.instagram.com/ventureplans/" target="_blank" class="text-white transition-all duration-300 hover:text-[#d34c7b]">
+                            <a href="https://www.instagram.com/ventureplans/" target="_blank" class="w-full text-white transition-all duration-300 hover:text-[#d34c7b]">
                                 <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
                                     <path
                                         fill="currentColor"

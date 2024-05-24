@@ -14,10 +14,10 @@
                     <div class="absolute inset-x-0 bottom-0 h-[24px] bg-[#FBFBFD]/80 backdrop-blur-sm" :class="{ hidden: isShowReadMore }"></div>
                 </div>
                 <div class="text-center">
-                    <a href="javascript:;" class="flex items-center justify-center gap-4 text-sm font-semibold text-primary xl:text-xl" @click="isShowReadMore = !isShowReadMore">
+                    <button :aria-label="$t('read_more')" class="flex items-center justify-center gap-4 text-sm font-semibold text-primary xl:text-xl" @click="isShowReadMore = !isShowReadMore">
                         <p class="text-base">{{ isShowReadMore ? $t('read_less') : $t('read_more') }}</p>
                         <icons-downarrow class="w-2 xl:w-[11px]" :class="{ 'rotate-180': isShowReadMore }" />
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

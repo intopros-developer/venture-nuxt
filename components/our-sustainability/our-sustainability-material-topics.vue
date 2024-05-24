@@ -10,14 +10,15 @@
                 <div class="overflow-x-auto border-b-2 border-[#cfcfcf] px-4 md:px-8">
                     <ul id="topic_header_tab" class="flex items-center gap-6 overflow-y-hidden text-[13px] font-medium -tracking-[-0.02px] text-black-700 xl:gap-8 xl:text-base xl:font-normal xl:leading-5 xl:-tracking-[-0.03px]">
                         <li v-for="(topic, i) in topicList" :key="i">
-                            <a
+                            <button
                                 :id="`topic_${$helper.toSnakeCase(topic)}`"
-                                href="javascript:;"
                                 class="inline-block whitespace-nowrap py-4"
                                 :class="{ 'relative before:absolute before:left-0 before:-bottom-[2px] before:h-[3px] before:w-full before:bg-primary': activeTab === topic }"
                                 @click="changeTab(topic)"
-                                >{{ topic }}</a
+                                :aria-label="topic"
                             >
+                                {{ topic }}
+                            </button>
                         </li>
                     </ul>
                 </div>

@@ -24,7 +24,8 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque est id congue suscipit. Pellentesque velren interdum est. Suspendisse potenti. Pellentesque sagittis accumsan lectus, vitae pretium lacus
                         bibendum vel.
                     </p>
-                    <img loading="lazy" src="/assets/img/finra.png" class="mx-auto w-[72px] sm:mx-0 xl:w-[105px]" />
+
+                    <nuxt-img format="webp" src="/assets/img/finra.png" alt="Our Finra" class="mx-auto w-[72px] sm:mx-0 xl:w-[105px]" loading="lazy" />
                 </div>
                 <div>
                     <div class="mx-auto mb-[25px] h-[295px] w-[295px] overflow-hidden rounded-full sm:h-[188px] sm:w-[188px] xl:mb-9 xl:h-[276px] xl:w-[276px]">
@@ -38,7 +39,8 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque est id congue suscipit. Pellentesque velren interdum est. Suspendisse potenti. Pellentesque sagittis accumsan lectus, vitae pretium lacus
                         bibendum vel.
                     </p>
-                    <img loading="lazy" src="/assets/img/logo-3.png" class="mx-auto w-[113px] sm:mx-0 xl:w-[150px]" />
+
+                    <nuxt-img format="webp" src="/assets/img/logo-3.png" alt="Logo-33" loading="lazy" class="mx-auto w-[113px] sm:mx-0 xl:w-[150px]" />
                 </div>
                 <div>
                     <div class="mx-auto mb-[25px] h-[295px] w-[295px] overflow-hidden rounded-full sm:h-[188px] sm:w-[188px] xl:mb-9 xl:h-[276px] xl:w-[276px]">
@@ -52,7 +54,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque est id congue suscipit. Pellentesque velren interdum est. Suspendisse potenti. Pellentesque sagittis accumsan lectus, vitae pretium lacus
                         bibendum vel.
                     </p>
-                    <img loading="lazy" src="/assets/img/logo-3.png" class="mx-auto w-[113px] sm:mx-0 xl:w-[150px]" />
+                    <nuxt-img format="webp" src="/assets/img/logo-3.png" alt="Logo-33" loading="lazy" class="mx-auto w-[113px] sm:mx-0 xl:w-[150px]" />
                 </div>
             </div>
         </div>

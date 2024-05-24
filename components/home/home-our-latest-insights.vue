@@ -26,7 +26,7 @@
                                 {{ insight.attributes.insightType }} | {{ $helper.formatInsightPublishDate(insight.attributes.date) }}
                             </button>
                             <div class="flex w-[50px] items-center divide-x divide-[#d5d5d5]">
-                                <button aria-label="Save"><icons-save class="mr-2 text-[#707070] hover:text-primary" /></button>
+                                <button aria-label="Save"><icons-save class="mr-2 h-6 w-6 text-[#707070] hover:text-primary" /></button>
                                 <common-share class="pl-1" popper-class="!top-0 !-right-1" :customLink="`/insights/${insight.attributes.singleInsightPageSlug}`" />
                             </div>
                         </div>

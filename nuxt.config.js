@@ -304,27 +304,32 @@ export default {
                 '/consulting/market-data-plans/etf-and-stock-market-reports',
                 '/consulting/market-data-plans/covid-19-market-reports',
             ];
+
             const apiUrl = process.env.STRAPI_URL;
             const authToken = process.env.STRAPI_TOKEN;
             const collectionEndpoint = `${apiUrl}/api/sitemaps`;
-            const response = await fetch(collectionEndpoint, {
-                method: 'GET',
-                headers: {
-                    Authorization: `Bearer ${authToken}`,
-                    'Content-Type': 'application/json',
-                },
-            });
-            if (!response.ok) {
-                console.log('Network response was not ok');
-                return routes;
-            }
-            const data = await response.json();
-            if (data && data.data && Array.isArray(data.data)) {
-                for (const dat of data.data) {
-                    if (!routes.includes(dat.attributes.url)) {
-                        routes.push(dat.attributes.url);
+            try {
+                const response = await fetch(collectionEndpoint, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: `Bearer ${authToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    console.log('Network response was not ok');
+                    return routes;
+                }
+                const data = await response.json();
+                if (data && data.data && Array.isArray(data.data)) {
+                    for (const dat of data.data) {
+                        if (!routes.includes(dat.attributes.url)) {
+                            routes.push(dat.attributes.url);
+                        }
                     }
                 }
+            } catch (error) {
+                console.error('Error fetching data:', error);
             }
             return routes;
         },
@@ -461,24 +466,28 @@ export default {
             const apiUrl = process.env.STRAPI_URL;
             const authToken = process.env.STRAPI_TOKEN;
             const collectionEndpoint = `${apiUrl}/api/sitemaps`;
-            const response = await fetch(collectionEndpoint, {
-                method: 'GET',
-                headers: {
-                    Authorization: `Bearer ${authToken}`,
-                    'Content-Type': 'application/json',
-                },
-            });
-            if (!response.ok) {
-                console.log('Network response was not ok');
-                return routes;
-            }
-            const data = await response.json();
-            if (data && data.data && Array.isArray(data.data)) {
-                for (const dat of data.data) {
-                    if (!routes.includes(dat.attributes.url)) {
-                        routes.push(dat.attributes.url);
+            try {
+                const response = await fetch(collectionEndpoint, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: `Bearer ${authToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    console.log('Network response was not ok');
+                    return routes;
+                }
+                const data = await response.json();
+                if (data && data.data && Array.isArray(data.data)) {
+                    for (const dat of data.data) {
+                        if (!routes.includes(dat.attributes.url)) {
+                            routes.push(dat.attributes.url);
+                        }
                     }
                 }
+            } catch (error) {
+                console.error('Error fetching data:', error);
             }
             return routes;
         },

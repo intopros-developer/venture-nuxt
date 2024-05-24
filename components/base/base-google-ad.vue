@@ -79,7 +79,7 @@
                                 :class="{ 'font-bold !text-primary': activeCategoryData.id == category.id }"
                                 @click="activeCategoryData = category"
                             >
-                                <a href="javascript:;" class="block rounded-md border border-transparent px-[11px] py-1 text-lg hover:border-primary">{{ category.attributes.title }}</a>
+                                <p class="block rounded-md border border-transparent px-[11px] py-1 text-lg hover:border-primary">{{ category.attributes.title }}</p>
                             </li>
                         </ul>
                     </div>
@@ -208,7 +208,7 @@
                                     <p v-if="activeProcessReadMore.includes(i)" class="overflow-hidden text-sm font-medium text-[#353535] xl:text-lg xl:leading-9">
                                         {{ process.attributes.description }}
                                     </p>
-                                    <a href="javascript:;" class="mt-3 flex items-center justify-start gap-4 text-sm font-semibold text-primary xl:text-xl" @click="toggleProcess(i)">
+                                    <button :aria-label="$t('read_more')" class="mt-3 flex items-center justify-start gap-4 text-sm font-semibold text-primary xl:text-xl" @click="toggleProcess(i)">
                                         <p class="text-base">{{ activeProcessReadMore.includes(i) ? $t('read_less') : $t('read_more') }}</p>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" class="h-1 w-2 xl:h-[6px] xl:w-[11px]" :class="{ 'rotate-180': activeProcessReadMore.includes(i) }">
                                             <g>
@@ -217,7 +217,7 @@
                                                 </g>
                                             </g>
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

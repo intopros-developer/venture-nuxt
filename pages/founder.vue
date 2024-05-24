@@ -67,7 +67,9 @@
                             <div class="bg-white px-5 py-6 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:min-h-[120px] lg:min-h-[192px] lg:px-[30px] xl:min-h-[144px]">
                                 <p class="text-[15px] leading-6 -tracking-[0.03]">{{ value.attributes.description }}</p>
                             </div>
-                            <div class="h-48 w-full md:h-32 lg:h-48"><img loading="lazy" :src="value.attributes.imgUrl" alt="" class="h-full w-full object-cover" /></div>
+                            <div class="h-48 w-full md:h-32 lg:h-48">
+                                <nuxt-img format="webp" :src="value.attributes.imgUrl" alt="RECOGNITIONS & AWARDS" loading="lazy" class="h-full w-full object-cover" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -78,7 +80,8 @@
             <div class="justify-content-center grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
                 <div class="justify-self-center">
                     <div class="flex flex-col items-center justify-center">
-                        <img loading="lazy" class="h-10 w-10" src="https://cdn-icons-png.flaticon.com/512/3621/3621464.png" />
+                        <nuxt-img format="webp" src="https://cdn-icons-png.flaticon.com/512/3621/3621464.png" alt="arleodordar" loading="lazy" class="h-10 w-10" />
+
                         <p>arleodordar</p>
                     </div>
                 </div>

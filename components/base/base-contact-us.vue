@@ -34,14 +34,14 @@
                             v-html="content.section1Description"
                         ></p>
                         <div class="!mt-[36px]">
-                            <a v-if="!isShowReadMore" href="javascript:;" class="flex items-center justify-center gap-4 font-semibold text-primary md:justify-start xl:text-xl" @click="isShowReadMore = true">
+                            <button v-if="!isShowReadMore" :aria-label="$t('read_more')" class="flex items-center justify-center gap-4 font-semibold text-primary md:justify-start xl:text-xl" @click="isShowReadMore = true">
                                 <p class="text-base">{{ $t('read_more') }}</p>
                                 <icons-downarrow class="w-2 xl:w-[11px]" />
-                            </a>
-                            <a v-else href="javascript:;" class="flex items-center justify-center gap-4 font-semibold text-primary md:justify-start xl:text-xl" @click="isShowReadMore = false">
+                            </button>
+                            <button v-else :aria-label="$t('read_less')" class="flex items-center justify-center gap-4 font-semibold text-primary md:justify-start xl:text-xl" @click="isShowReadMore = false">
                                 <p class="text-base">{{ $t('read_less') }}</p>
                                 <icons-downarrow class="w-2 rotate-180 xl:w-[11px]" />
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div class="mx-auto w-[271px] flex-none rounded-[42px] bg-[#F8F8F8] shadow-[0px_3px_6px_rgba(175,175,175,0.30)] lg:mr-0 xl:w-72">
@@ -92,9 +92,14 @@
                         >
 
                         <div class="mb-8"></div>
-                        <nuxt-link :to="`/cities/${data.attributes.cityPageSlug}`" class="nuxt-link-active mt-auto flex items-center gap-4 text-sm font-semibold leading-[14px] text-primary hover:text-primary-700"
-                            >{{ data.attributes.linkText }}<icons-selection-arrow class="h-3 w-3 -rotate-90"
-                        /></nuxt-link>
+                        <nuxt-link
+                            :aria-label="data.attributes.linkText"
+                            :to="`/cities/${data.attributes.cityPageSlug}`"
+                            class="nuxt-link-active mt-auto flex items-center gap-4 text-sm font-semibold leading-[14px] text-primary hover:text-primary-700"
+                        >
+                            {{ data.attributes.linkText }}
+                            <icons-selection-arrow class="h-3 w-3 -rotate-90" />
+                        </nuxt-link>
                     </div>
                     <div v-for="(data, i) in section3Data" :key="i" class="flex flex-col border-b border-[#d5d5d5] p-4 sm:border-r xl:p-14">
                         <h3 class="mb-5 text-lg font-semibold text-[#202a36] lg:mb-10 lg:text-[23px] lg:leading-9">{{ data.attributes.title }}</h3>
@@ -110,13 +115,23 @@
                         <nuxt-link
                             v-if="$helper.isInternalUrl(data.attributes.linkUrl)"
                             :to="data.attributes.linkUrl"
+                            :aria-label="data.attributes.linkText"
                             class="nuxt-link-active mt-auto flex items-center gap-4 text-sm font-semibold leading-[14px] text-primary hover:text-primary-700"
-                            >{{ data.attributes.linkText }}<icons-selection-arrow class="h-3 w-3 -rotate-90"
-                        /></nuxt-link>
+                        >
+                            {{ data.attributes.linkText }}
+                            <icons-selection-arrow class="h-3 w-3 -rotate-90" />
+                        </nuxt-link>
 
-                        <a v-else target="_blank" :href="data.attributes.linkUrl" class="nuxt-link-active mt-auto flex items-center gap-4 text-sm font-semibold leading-[14px] text-primary hover:text-primary-700"
-                            >{{ data.attributes.linkText }}<icons-selection-arrow class="h-3 w-3 -rotate-90"
-                        /></a>
+                        <a
+                            v-else
+                            target="_blank"
+                            :aria-label="data.attributes.linkText"
+                            :href="data.attributes.linkUrl"
+                            class="nuxt-link-active mt-auto flex items-center gap-4 text-sm font-semibold leading-[14px] text-primary hover:text-primary-700"
+                        >
+                            {{ data.attributes.linkText }}
+                            <icons-selection-arrow class="h-3 w-3 -rotate-90" />
+                        </a>
                     </div>
                 </div>
             </div>

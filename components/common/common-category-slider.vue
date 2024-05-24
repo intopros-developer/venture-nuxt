@@ -4,7 +4,8 @@
             <div class="swiper-wrapper">
                 <div v-for="(item, i) in activeCategorySampleData" :key="i" class="swiper-slide" @click="previewLatestWork(item.attributes)">
                     <div class="flex cursor-pointer flex-col justify-between rounded-2xl border border-[#dfdfdf] px-10 pt-[18px] pb-[9px] text-center duration-200 hover:shadow-[0px_1px_8px_rgba(0,0,0,0.12)]">
-                        <img loading="lazy" :src="item.attributes.thumbnailImgUrl || '/assets/img/indus_market_report_02.png'" alt="" class="min-h-40 mx-auto h-40 max-h-40 object-contain" />
+                        <nuxt-img format="webp" :src="item.attributes.thumbnailImgUrl || '/assets/img/indus_market_report_02.png'" alt="Preview" class="min-h-40 mx-auto h-40 max-h-40 object-contain" loading="lazy" />
+
                         <div class="pt-[5px]">
                             <button type="button" class="text-[15px] font-semibold leading-[22px] text-primary">
                                 Preview
@@ -70,7 +71,7 @@
                         el: '.business-pagination',
                         clickable: true,
                         renderBullet: (index, className) => {
-                            return `<a href="javascript:;" class="career-slider-bullet-icon ${className}"></a>`;
+                            return `<p aria-label="Bullet Icon" class="career-slider-bullet-icon ${className}"></p>`;
                         },
                     },
                     navigation: {

@@ -3,7 +3,7 @@
         <!-- Hero form -->
         <google-ad-heroform :main-text="content.bannerTitle" :sub-text="content.bannerPara" :services="bannerServices" />
         <section class="py-10 md:py-16 xl:pt-[100px] xl:pb-[115px]">
-            <h3 class="underlined-heading mb-5 inline-block w-full text-center text-xl md:text-2xl lg:text-3xl font-bold">{{ content.coreCustomSoftwareDev }}</h3>
+            <h3 class="underlined-heading mb-5 inline-block w-full text-center text-xl font-bold md:text-2xl lg:text-3xl">{{ content.coreCustomSoftwareDev }}</h3>
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-8 text-center lg:mb-16">
                     <p class="mx-auto max-w-[950px] lg:text-lg lg:leading-7">
@@ -24,7 +24,7 @@
         <section class="py-10 lg:pb-[120px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-10 flex items-center justify-center gap-[33px] text-center">
-                    <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold uppercase">{{ content.whyChooseHeading }}</h2>
+                    <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold uppercase md:text-2xl lg:text-3xl">{{ content.whyChooseHeading }}</h2>
                 </div>
                 <div class="mx-auto mb-10 max-w-[950px] text-center">
                     <p class="text-lg font-light leading-8 -tracking-[0.04px]">{{ content.whyChooseVenturePlansPara }}</p>
@@ -36,7 +36,7 @@
         <section class="py-10 md:py-16 xl:pt-[158px] xl:pb-[120px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-[30px] flex items-center justify-center gap-[33px] text-center">
-                    <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold uppercase">{{ content.toolsHeading }}</h2>
+                    <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold uppercase md:text-2xl lg:text-3xl">{{ content.toolsHeading }}</h2>
                 </div>
                 <div class="mx-auto mb-[73px] max-w-[950px] text-center">
                     <p class="text-lg font-light leading-8 -tracking-[0.03px]">
@@ -45,7 +45,8 @@
                 </div>
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
                     <div :key="k" v-for="(tools, k) in toolsAndTechnology" class="rounded-lg bg-white p-4 shadow-[0_1px_8px_rgba(0,161,241,0.08)] md:p-7 xl:col-span-2">
-                        <div class="mb-[15px] flex items-center gap-4 text-xl font-semibold"><img loading="lazy" :src="tools.svgIcon" alt="" /> {{ tools.title }}</div>
+                        <div class="mb-[15px] flex items-center gap-4 text-xl font-semibold"><nuxt-img format="webp" :src="tools.svgIcon" :alt="tools.title" loading="lazy" /> {{ tools.title }}</div>
+
                         <div>
                             <ul class="flex flex-wrap gap-2 text-base">
                                 <li :key="row" v-for="row in tools.technologies.split(',')" class="cursor-pointer rounded-full border-2 border-primary px-4 py-2 text-primary hover:bg-primary hover:text-white">{{ row }}</li>
@@ -57,7 +58,7 @@
         </section>
         <common-client-words :testimonials="testinominals">
             <template v-slot:customHeader>
-                <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold uppercase">Our Client Words</h2>
+                <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold uppercase md:text-2xl lg:text-3xl">Our Client Words</h2>
             </template>
         </common-client-words>
 
@@ -79,7 +80,7 @@
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-10 text-center md:mb-20">
                     <div class="mb-5 flex items-center justify-center gap-[33px] text-center">
-                        <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl md:text-2xl lg:text-3xl font-bold uppercase">COMPLETE Services catalogue</h2>
+                        <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold uppercase md:text-2xl lg:text-3xl">COMPLETE Services catalogue</h2>
                     </div>
                     <div class="mx-auto mb-10 max-w-[950px] text-center">
                         <p class="text-lg leading-8 -tracking-[0.04px] text-[#566378]">

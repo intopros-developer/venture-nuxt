@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div v-show="submitSuccess" class="flex-1">
-                    <img loading="lazy" src="/assets/img/congo-icon.svg" alt="" />
+                    <nuxt-img src="/assets/img/congo-icon.svg" alt="Icon Congo" loading="lazy" />
                     <div v-if="!isNoCapital">
                         <h2
                             class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
@@ -149,9 +149,11 @@
                     <button class="b-btn w-full max-w-none py-4 text-xs uppercase sm:max-w-xs sm:py-5" @click="backToHome()">{{ $t('back_to_home') }}</button>
                 </div>
                 <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-transparent md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                    <img loading="lazy" v-if="isNoCapital" src="/assets/img/que-9.jpg" class="h-full w-full object-cover" />
-                    <img loading="lazy" v-else-if="questions[currentQuestion - 1]" :src="questions[currentQuestion - 1].attributes.imgUrl || '/assets/img/grant-que-2.png'" class="h-full w-full object-cover" />
-                    <img loading="lazy" v-else src="/assets/img/grant-que-2.png" class="h-full w-full object-cover" />
+                    <nuxt-img v-if="isNoCapital" format="webp" src="/assets/img/que-9.jpg" alt="Question - 9" loading="lazy" class="h-full w-full object-cover" />
+
+                    <nuxt-img v-else-if="questions[currentQuestion - 1]" format="webp" :src="questions[currentQuestion - 1].attributes.imgUrl || '/assets/img/grant-que-2.png'" alt="Grant Que 2" class="h-full w-full object-cover" />
+
+                    <nuxt-img format="webp" v-else src="/assets/img/grant-que-2.png" alt="Grant Que 2" loading="lazy" class="h-full w-full object-cover" />
                 </div>
             </div>
         </div>

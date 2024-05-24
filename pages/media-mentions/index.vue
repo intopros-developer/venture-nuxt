@@ -20,7 +20,7 @@
             <div class="relative z-[1] mt-20 grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-2 lg:gap-y-[40px]">
                 <div v-for="(media, i) in mediaCatalogues" :key="i" class="mb-16 border-[#d5d5d5] lg:px-7" :class="{ 'md:border-r md:pr-7': i % 2 == 0, 'md:pl-7': i % 2 !== 0 }">
                     <div class="h-[242px] w-full lg:h-[277px]">
-                        <img loading="lazy" :src="media.attributes.imgUrl" class="h-full w-full object-cover" style="box-shadow: -2px -2px 15px 3px rgba(0, 0, 0, 0.25)" />
+                        <nuxt-img format="webp" :src="media.attributes.imgUrl" :alt="media.attributes.title" loading="lazy" class="h-full w-full object-cover" style="box-shadow: -2px -2px 15px 3px rgba(0, 0, 0, 0.25)" />
                     </div>
                     <div>
                         <div class="w-full lg:w-5/6">
@@ -42,9 +42,9 @@
                         </nuxt-link>
 
                         <div class="flex items-center justify-between">
-                            <a href="javascript:;" class="inline-block text-[14px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
+                            <p class="inline-block text-[14px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                 {{ media.attributes.newsType }} | {{ $helper.formatInsightPublishDate(media.attributes.date) }}
-                            </a>
+                            </p>
                             <button type="button">
                                 <common-share :is-show-save-btn="true" :insights="true" :customLink="`${media.attributes.singleMediaPageSlug}`" />
                             </button>
