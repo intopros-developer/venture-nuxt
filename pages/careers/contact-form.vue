@@ -45,8 +45,8 @@
                                         :placeholder="$t('your_email_address')"
                                         class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
                                         :class="{ error: $v.params.email.$error }"
-                                        @input="$v.params.email.$model = $event.target.value.trim()"
                                         autocomplete="on"
+                                        @input="$v.params.email.$model = $event.target.value.trim()"
                                     />
                                 </div>
                                 <div>
@@ -318,7 +318,7 @@
                         <nuxt-img src="/assets/img/congo-icon.svg" alt="icon" loading="lazy" />
 
                         <h2
-                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                             v-html="$t('congratulations_you_have_span_successfully_span_booked_your_interview')"
                         ></h2>
                         <p
@@ -338,8 +338,8 @@
 
 <script>
     import { required, email, minLength, maxLength } from 'vuelidate/lib/validators';
-    import { alphaNumericSpace } from '~/helper/custom-validations';
     import ClickOutside from 'vue-click-outside';
+    import { alphaNumericSpace } from '~/helper/custom-validations';
     export default {
         directives: {
             ClickOutside,

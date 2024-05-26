@@ -11,7 +11,7 @@
                             {{ talkInTitle }}
                         </p>
 
-                        <div v-click-outside="closeSearch" id="dropdown" class="relative w-full sm:max-w-[342px]">
+                        <div id="dropdown" v-click-outside="closeSearch" class="relative w-full sm:max-w-[342px]">
                             <div
                                 class="group relative flex w-full cursor-pointer items-center justify-between rounded-[4px] border-2 border-white bg-transparent px-9 py-[18px] text-[17px] font-semibold text-white transition-all duration-150 hover:!border-primary hover:!bg-primary hover:!text-white lg:py-[25px]"
                                 :class="{ 'bg-[#f9ecea] text-danger': $v.params.service.$error, 'rounded-b-none !border-primary !bg-primary !text-white': showService }"
@@ -73,9 +73,9 @@
                                 <div class="form-input-group">
                                     <input
                                         v-model="$v.params.phone.$model"
+                                        v-mask="$mask.phoneMask"
                                         name="phone"
                                         autocomplete="on"
-                                        v-mask="$mask.phoneMask"
                                         type="text"
                                         :placeholder="$t('phone_number')"
                                         class="form-input h-[50px] shadow-[0_3px_6px_rgba(0,0,0,0.16)]"

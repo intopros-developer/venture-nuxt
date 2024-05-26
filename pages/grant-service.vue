@@ -1,7 +1,7 @@
 <template>
     <div v-if="content">
         <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-10 pt-[166px] md:bg-left xl:pb-20" :style="{ backgroundImage: `url(${content.bannerImageUrl})` }">
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div>
@@ -9,7 +9,7 @@
                     <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px]">{{ content.bannerTitle }}</h1>
                     <div class="flex items-center gap-[10px]">
                         <div class="h-12 w-[5px] flex-none bg-primary sm:h-8 xl:h-10"></div>
-                        <p v-html="content.bannerDescription" class="font-normal leading-4 text-[#FBFBFD] md:whitespace-pre xl:leading-6"></p>
+                        <p class="font-normal leading-4 text-[#FBFBFD] md:whitespace-pre xl:leading-6" v-html="content.bannerDescription"></p>
                     </div>
                 </div>
             </div>
@@ -23,8 +23,8 @@
         <!-- Company overview -->
         <common-company-overview id="overview" :value="content.section1Paragraph" :title="content.section1Title" />
 
-        <div class="pt-10 text-center lg:pt-[102px]" v-if="content.CTA1ButtonText">
-            <nuxt-link :to="content.CTA1ButtonLink" v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">
+        <div v-if="content.CTA1ButtonText" class="pt-10 text-center lg:pt-[102px]">
+            <nuxt-link v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" :to="content.CTA1ButtonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">
                 {{ content.CTA1ButtonText }}
             </nuxt-link>
 
@@ -47,7 +47,7 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" :video-u-r-l="content.video1Url" :title="content.video1Title" />
 
         <!-- Start portfolio -->
         <section class="bg-white py-16 md:pb-[101px] md:pt-20 xl:pt-[92px]">
@@ -82,7 +82,7 @@
         <common-venture-plans id="whyVenturePlans" :title="content.section4Title" :data="section4Data" />
 
         <section id="featuredServices" class="bg-[#fbfbfd]">
-            <div class="container py-10 px-10 md:py-16 md:px-4 lg:px-[97px] lg:pt-0 xl:px-4">
+            <div class="container px-10 py-10 md:px-4 md:py-16 lg:px-[97px] lg:pt-0 xl:px-4">
                 <div class="mb-9 flex items-center justify-center gap-[33px] text-center md:mb-[67px]">
                     <div class="hidden h-px w-full bg-[#D5D5D5] sm:block"></div>
                     <h2 class="text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl [&>span]:text-primary" v-html="content.section5Title"></h2>
@@ -93,23 +93,23 @@
         </section>
 
         <home-private-placement
-            :featuredCompanies="section6Data"
-            :featuredTitle="content.section6Title"
-            :featuredInText="content.section6Title"
+            :featured-companies="section6Data"
+            :featured-title="content.section6Title"
+            :featured-in-text="content.section6Title"
             :description="content.CTA2Description"
             :title="content.CTA2Title"
-            :buttonText="content.CTA2ButtonText"
-            :buttonLink="content.CTA2ButtonLink"
+            :button-text="content.CTA2ButtonText"
+            :button-link="content.CTA2ButtonLink"
         />
 
-        <common-tell-more-about-projects :featuredCompanies="section6Data" :tellUsMoreData="section7Data" :tellUsMoreTitle="content.section7Title" :tellUseMoreSubtitle="content.section7Subtitle" :imageUrl="content.section7Img" />
+        <common-tell-more-about-projects :featured-companies="section6Data" :tell-us-more-data="section7Data" :tell-us-more-title="content.section7Title" :tell-use-more-subtitle="content.section7Subtitle" :image-url="content.section7Img" />
 
         <!-- Our Client -->
         <common-client-words id="ourClientsWords" :title="content.section8Title" :description="content.section8Description" :testimonials="section8Data" />
 
-        <common-contact-us :videoThumbnailURL="content.video2ThumbnailUrl" :buttonTitle="content.video2ButtonText" :buttonURL="content.video2ButtonLink" :videoURL="content.video2Url" :title="content.video2Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video2ThumbnailUrl" :button-title="content.video2ButtonText" :button-u-r-l="content.video2ButtonLink" :video-u-r-l="content.video2Url" :title="content.video2Title" />
 
-        <section class="py-10 lg:pt-[93px] lg:pb-[198px]">
+        <section class="py-10 lg:pb-[198px] lg:pt-[93px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div id="grantApplicationProcess" class="mb-4 flex items-center justify-center gap-[33px] text-center">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -157,12 +157,12 @@
 
         <common-interested-service
             id="buyGrantServices"
-            :backgroundImage="content.video3Url"
+            :background-image="content.video3Url"
             :subtitle="content.Video3MiniTitle"
             :title="content.video3Title"
             :description="content.video3Description"
-            :buttonLink="content.video3ButtonLink"
-            :buttonTitle="content.video3ButtonText"
+            :button-link="content.video3ButtonLink"
+            :button-title="content.video3ButtonText"
         />
 
         <!-- Our Team -->
@@ -187,11 +187,11 @@
         <!-- Ready To Talk -->
         <common-readytotalk
             id="readyToTalk"
-            :imgUrl="readyToTalkForm.imgUrl"
-            :serviceOptions="readyToTalkForm.services.data"
-            :aboutParagraph="readyToTalkForm.aboutParagraph"
+            :img-url="readyToTalkForm.imgUrl"
+            :service-options="readyToTalkForm.services.data"
+            :about-paragraph="readyToTalkForm.aboutParagraph"
             :title="readyToTalkForm.title"
-            :talkInTitle="readyToTalkForm.talkInTitle"
+            :talk-in-title="readyToTalkForm.talkInTitle"
         />
 
         <common-modal ref="previewModal" class="" width="1440" background="bg-[#fafafa]">
@@ -224,16 +224,16 @@
                     <div class="mb-5 flex flex-col items-center justify-between gap-4 md:flex-row">
                         <p class="text-base text-[#6c6c6c] md:max-w-[350px] lg:max-w-[527px]"><span class="block text-xs font-bold text-black">Description</span>{{ activeProductData.description }}</p>
 
-                        <nuxt-link v-if="$helper.isInternalUrl(activeProductData.buttonUrl)" :to="activeProductData.buttonUrl" class="b-btn w-auto rounded py-4 px-9 text-base" @click="$refs.previewModal.close()">{{
+                        <nuxt-link v-if="$helper.isInternalUrl(activeProductData.buttonUrl)" :to="activeProductData.buttonUrl" class="b-btn w-auto rounded px-9 py-4 text-base" @click="$refs.previewModal.close()">{{
                             activeProductData.buttonTitle
                         }}</nuxt-link>
-                        <a v-else target="_blank" :href="activeProductData.buttonUrl" class="b-btn w-auto rounded py-4 px-9 text-base" @click="$refs.previewModal.close()">{{ activeProductData.buttonTitle }}</a>
+                        <a v-else target="_blank" :href="activeProductData.buttonUrl" class="b-btn w-auto rounded px-9 py-4 text-base" @click="$refs.previewModal.close()">{{ activeProductData.buttonTitle }}</a>
                     </div>
 
                     <div v-if="activeProductData.descriptionMediaType === 'images'" v-swiper:brandLogo="slider_options" class="swiper relative bg-transparent" :cleanup-styles-on-destroy="false">
                         <div class="swiper-wrapper items-center !px-10">
                             <template v-if="activeProductData.images">
-                                <div :key="image.imgUrl" class="swiper-slide bg-white p-4" v-for="(image, index) in activeProductData.images">
+                                <div v-for="(image, index) in activeProductData.images" :key="image.imgUrl" class="swiper-slide bg-white p-4">
                                     <nuxt-img format="webp" :src="image.imgUrl" :alt="'Description Image - ' + index" loading="lazy" class="h-full w-full object-cover" />
                                 </div>
                             </template>

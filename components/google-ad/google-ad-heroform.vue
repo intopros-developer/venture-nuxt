@@ -1,6 +1,6 @@
 <template>
     <section class="contact-heroform relative h-[700px] bg-[url(/assets/img/software_google_ad_banner.webp)] bg-cover bg-[top_8%_center] bg-no-repeat py-[48px] md:h-[730px] md:py-[97px] xl:py-[100px]">
-        <div style="background: black; opacity: 35%" class="absolute top-0 left-0 z-0 h-full w-full"></div>
+        <div style="background: black; opacity: 35%" class="absolute left-0 top-0 z-0 h-full w-full"></div>
 
         <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
             <form id="google-ad-form" action="" @submit.prevent="onSubmit">
@@ -18,7 +18,7 @@
                                         class="inline-flex w-full flex-1 items-center rounded-lg border border-white p-[18px] pr-10 text-base font-bold leading-5 text-white duration-200 hover:border-primary hover:bg-primary focus:bg-primary focus:outline-none focus:ring-0 focus:ring-offset-0"
                                         :class="{
                                             'bg-[#f9ecea] text-danger': $v.params.service.$error,
-                                            'rounded-br-none rounded-bl-none !border-primary !bg-primary !text-white': showService,
+                                            'rounded-bl-none rounded-br-none !border-primary !bg-primary !text-white': showService,
                                             'border-none bg-primary': searchResult !== 'Select a Service',
                                         }"
                                         @click="openSearch()"
@@ -44,12 +44,12 @@
                                             @search-change="searchChange"
                                         >
                                             <template slot="caret">
-                                                <button type="submit" class="pointer-events-none absolute right-0 top-0 mt-3 mr-4 xl:mt-3">
+                                                <button type="submit" class="pointer-events-none absolute right-0 top-0 mr-4 mt-3 xl:mt-3">
                                                     <icons-search class="h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4" />
                                                 </button>
                                             </template>
                                             <template slot="clear">
-                                                <button v-if="isClearSearch" type="button" class="absolute right-0 top-0 mt-3 mr-11 xl:mt-3" @click.stop="params.service = ''">
+                                                <button v-if="isClearSearch" type="button" class="absolute right-0 top-0 mr-11 mt-3 xl:mt-3" @click.stop="params.service = ''">
                                                     <icons-close-time class="h-3 w-3 fill-current text-black xl:h-4 xl:w-4" />
                                                 </button>
                                             </template>
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="">
-                            <button type="submit" class="btn w-full py-4 px-16 hover:bg-primary-700 md:py-[16px] xl:px-20">SUBMIT</button>
+                            <button type="submit" class="btn w-full px-16 py-4 hover:bg-primary-700 md:py-[16px] xl:px-20">SUBMIT</button>
                         </div>
                         <div v-if="isSubmitted" class="mt-5 flex justify-center gap-3">
                             <icons-check-circle class="relative top-[2px] h-6 w-6 text-green" />

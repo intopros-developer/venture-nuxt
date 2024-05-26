@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <nuxt-link :to="buttonUrl" v-if="$helper.isInternalUrl(buttonUrl)" class="b-btn text-xs lg:max-w-[322px] lg:py-6">{{ buttonText }}</nuxt-link>
+                        <nuxt-link v-if="$helper.isInternalUrl(buttonUrl)" :to="buttonUrl" class="b-btn text-xs lg:max-w-[322px] lg:py-6">{{ buttonText }}</nuxt-link>
                         <a v-else target="_blank" :href="buttonUrl" class="b-btn text-xs lg:max-w-[322px] lg:py-6">{{ buttonText }}</a>
                     </div>
                 </div>

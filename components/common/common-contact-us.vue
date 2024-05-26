@@ -13,11 +13,11 @@
                     <div class="md:pr-2">
                         <p class="text-2xl font-bold -tracking-[0.09px] text-white sm:text-4xl lg:text-[40px] lg:leading-[56px]" v-html="title"></p>
                         <div class="mt-40 md:mt-[58px]">
-                            <nuxt-link :to="buttonURL" v-if="$helper.isInternalUrl(buttonURL)" class="outline-btn w-full py-[14px] px-11 text-center text-lg font-semibold leading-[21px] md:w-auto">
+                            <nuxt-link v-if="$helper.isInternalUrl(buttonURL)" :to="buttonURL" class="outline-btn w-full px-11 py-[14px] text-center text-lg font-semibold leading-[21px] md:w-auto">
                                 {{ buttonTitle }}
                             </nuxt-link>
 
-                            <a :href="buttonURL" v-else target="_blank" class="outline-btn w-full py-[14px] px-11 text-center text-lg font-semibold leading-[21px] md:w-auto">{{ buttonTitle }} </a>
+                            <a v-else :href="buttonURL" target="_blank" class="outline-btn w-full px-11 py-[14px] text-center text-lg font-semibold leading-[21px] md:w-auto">{{ buttonTitle }} </a>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                 ></iframe>
                 -->
             </div>
-            <button v-if="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] py-5 px-11 group-hover:bg-primary" @click="play()">
+            <button v-if="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] px-11 py-5 group-hover:bg-primary" @click="play()">
                 <icons-play />
             </button>
         </div>

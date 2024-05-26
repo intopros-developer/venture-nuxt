@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section class="pt-10 pb-6">
+        <section class="pb-6 pt-10">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <h1 class="text-[25px] font-bold uppercase">{{ content.title1 }}</h1>
                 <p class="pt-[24px] text-xs font-light leading-[14px]">{{ content.description1 }}</p>
@@ -22,13 +22,13 @@
                         <div>
                             <div class="space-y-[29px]">
                                 <div>
-                                    <input :class="{ error: $v.params.full_name.$error }" v-model="$v.params.full_name.$model" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Full Name" />
+                                    <input v-model="$v.params.full_name.$model" :class="{ error: $v.params.full_name.$error }" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Full Name" />
                                 </div>
                                 <div>
-                                    <input v-mask="$mask.phoneMask" :class="{ error: $v.params.phone.$error }" v-model="$v.params.phone.$model" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Phone" />
+                                    <input v-model="$v.params.phone.$model" v-mask="$mask.phoneMask" :class="{ error: $v.params.phone.$error }" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Phone" />
                                 </div>
                                 <div>
-                                    <input :class="{ error: $v.params.email.$error }" v-model="$v.params.email.$model" type="email" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Email" />
+                                    <input v-model="$v.params.email.$model" :class="{ error: $v.params.email.$error }" type="email" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Email" />
                                 </div>
 
                                 <div v-click-outside="closeRelationshipToVentureplansDropdown" class="group relative text-left">
@@ -60,7 +60,7 @@
                                                     @select="closeRelationshipToVentureplansDropdown"
                                                 >
                                                     <template slot="caret">
-                                                        <button type="submit" class="pointer-events-none absolute right-0 top-0 mt-4 mr-4 xl:mt-[18px]">
+                                                        <button type="submit" class="pointer-events-none absolute right-0 top-0 mr-4 mt-4 xl:mt-[18px]">
                                                             <icons-search class="h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4" />
                                                         </button>
                                                     </template>
@@ -71,7 +71,7 @@
                                 </div>
 
                                 <div :class="{ 'opacity-5': showRelationshipToVenturePlansDropdownOptions }">
-                                    <input :class="{ error: $v.params.jobtitle.$error }" v-model="$v.params.jobtitle.$model" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Job title" />
+                                    <input v-model="$v.params.jobtitle.$model" :class="{ error: $v.params.jobtitle.$error }" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Job title" />
                                 </div>
                             </div>
                         </div>
@@ -88,11 +88,11 @@
                         <div>
                             <div class="space-y-[29px]">
                                 <div>
-                                    <input :class="{ error: $v.params.company.$error }" v-model="$v.params.company.$model" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Company Name" />
+                                    <input v-model="$v.params.company.$model" :class="{ error: $v.params.company.$error }" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="Company Name" />
                                 </div>
 
                                 <div>
-                                    <input :class="{ error: $v.params.city.$error }" v-model="$v.params.city.$model" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="City" />
+                                    <input v-model="$v.params.city.$model" :class="{ error: $v.params.city.$error }" type="text" class="form-input shadow-[0_3px_6px_rgba(0,0,0,0.16)]" placeholder="City" />
                                 </div>
 
                                 <div v-click-outside="closeIndustryDropdown" class="group relative text-left">
@@ -124,7 +124,7 @@
                                                     @select="closeIndustryDropdown"
                                                 >
                                                     <template slot="caret">
-                                                        <button type="submit" class="pointer-events-none absolute right-0 top-0 mt-4 mr-4 xl:mt-[18px]">
+                                                        <button type="submit" class="pointer-events-none absolute right-0 top-0 mr-4 mt-4 xl:mt-[18px]">
                                                             <icons-search class="h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4" />
                                                         </button>
                                                     </template>
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
 
-                                <div :class="{ 'opacity-0': showIndustryDropdownOptions }" v-click-outside="closeCountryDropdown" class="group relative text-left">
+                                <div v-click-outside="closeCountryDropdown" :class="{ 'opacity-0': showIndustryDropdownOptions }" class="group relative text-left">
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.16] origin-top-right">
                                         <div role="none">
                                             <div
@@ -162,7 +162,7 @@
                                                     @select="closeCountryDropdown"
                                                 >
                                                     <template slot="caret">
-                                                        <button type="submit" class="pointer-events-none absolute right-0 top-0 mt-4 mr-4 xl:mt-[18px]">
+                                                        <button type="submit" class="pointer-events-none absolute right-0 top-0 mr-4 mt-4 xl:mt-[18px]">
                                                             <icons-search class="h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4" />
                                                         </button>
                                                     </template>
@@ -194,7 +194,7 @@
                         </div>
                         <div>
                             <div class="custom_check relative cursor-pointer">
-                                <input :checked="params.subscribe_to_newsletters" v-model="params.subscribe_to_newsletters" id="custom_check1" type="checkbox" name="custom_check" class="absolute opacity-0" />
+                                <input id="custom_check1" v-model="params.subscribe_to_newsletters" :checked="params.subscribe_to_newsletters" type="checkbox" name="custom_check" class="absolute opacity-0" />
                                 <label for="custom_check1" class="cursor-pointer rounded-md border-2 border-[#d5d5d5] p-px px-2 text-xs text-[#d5d5d5]">Subscribe</label>
                             </div>
                         </div>
@@ -219,10 +219,10 @@
                                     <div class="custom_check relative ml-auto md:pr-10">
                                         <input :id="topic" type="checkbox" name="custom_check" class="absolute opacity-0" />
                                         <label
-                                            v-on:click="toggleIndustryTopic(topic.attributes.title)"
                                             :for="topic.attributes.title"
                                             :class="selectedIndustryTopics.includes(topic.attributes.title) ? 'bg-primary' : 'border-2 border-[#d5d5d5] '"
                                             class="cursor-pointer rounded-md p-px px-2 text-xs text-[#d5d5d5]"
+                                            @click="toggleIndustryTopic(topic.attributes.title)"
                                             >Subscribe</label
                                         >
                                     </div>
@@ -236,10 +236,10 @@
                                     <div class="custom_check relative ml-auto md:pr-10">
                                         <input :id="topic" type="checkbox" name="custom_check" class="absolute opacity-0" />
                                         <label
-                                            v-on:click="toggleIndustryTopic(topic.attributes.title)"
                                             :for="topic.attributes.title"
                                             :class="selectedIndustryTopics.includes(topic.attributes.title) ? 'bg-primary' : 'border-2 border-[#d5d5d5] '"
                                             class="cursor-pointer rounded-md p-px px-2 text-xs text-[#d5d5d5]"
+                                            @click="toggleIndustryTopic(topic.attributes.title)"
                                             >Subscribe</label
                                         >
                                     </div>
@@ -259,10 +259,10 @@
                                     <div class="custom_check relative ml-auto md:pr-10">
                                         <input :id="topic" type="checkbox" name="custom_check" class="absolute opacity-0" />
                                         <label
-                                            v-on:click="toggleBusinessTopic(topic.attributes.title)"
                                             :for="topic.attributes.title"
                                             :class="selectedBusinessTopics.includes(topic.attributes.title) ? 'bg-primary' : 'border-2 border-[#d5d5d5] '"
                                             class="cursor-pointer rounded-md p-px px-2 text-xs text-[#d5d5d5]"
+                                            @click="toggleBusinessTopic(topic.attributes.title)"
                                             >Subscribe</label
                                         >
                                     </div>
@@ -276,10 +276,10 @@
                                     <div class="custom_check relative ml-auto md:pr-10">
                                         <input :id="topic" type="checkbox" name="custom_check" class="absolute opacity-0" />
                                         <label
-                                            v-on:click="toggleBusinessTopic(topic.attributes.title)"
                                             :for="topic.attributes.title"
                                             :class="selectedBusinessTopics.includes(topic.attributes.title) ? 'bg-primary' : 'border-2 border-[#d5d5d5] '"
                                             class="cursor-pointer rounded-md p-px px-2 text-xs text-[#d5d5d5]"
+                                            @click="toggleBusinessTopic(topic.attributes.title)"
                                             >Subscribe</label
                                         >
                                     </div>
@@ -290,7 +290,7 @@
                     <!-- privacy policy -->
                     <div class="mb-16 flex flex-col gap-2">
                         <div>
-                            <input v-model="params.termsAccepted" id="privacy_checkbox" type="checkbox" name="privacy_checkbox" class="h-4 w-4 rounded-none" />
+                            <input id="privacy_checkbox" v-model="params.termsAccepted" type="checkbox" name="privacy_checkbox" class="h-4 w-4 rounded-none" />
                             <label :class="{ error: $v.params.termsAccepted.$error }" for="privacy_checkbox" class="leading-none">I have read the Privacy Policy and agree to its terms.</label>
                         </div>
 
@@ -688,6 +688,18 @@
             };
         },
 
+        head() {
+            return {
+                title: 'Subscribe | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                ],
+            };
+        },
+
         computed: {
             industryDropdownTitle() {
                 return !this.$helper.isEmpty(this.params.industry) ? this.params.industry : 'Industry';
@@ -790,18 +802,6 @@
                     console.log(error);
                 }
             },
-        },
-
-        head() {
-            return {
-                title: 'Subscribe | Venture Plans',
-                meta: [
-                    {
-                        name: 'robots',
-                        content: 'index, all',
-                    },
-                ],
-            };
         },
     };
 </script>

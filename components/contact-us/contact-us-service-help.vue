@@ -28,12 +28,12 @@
                             @search-change="searchChange"
                         >
                             <template slot="caret">
-                                <button type="submit" class="pointer-events-none absolute right-0 top-0 mt-5 mr-4 xl:mt-7">
+                                <button type="submit" class="pointer-events-none absolute right-0 top-0 mr-4 mt-5 xl:mt-7">
                                     <icons-search class="h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4" />
                                 </button>
                             </template>
                             <template slot="clear">
-                                <button v-if="isClearSearch" type="button" class="absolute right-0 top-0 mt-5 mr-11 xl:mt-7" @click.stop="params.search = servicesList[0]">
+                                <button v-if="isClearSearch" type="button" class="absolute right-0 top-0 mr-11 mt-5 xl:mt-7" @click.stop="params.search = servicesList[0]">
                                     <icons-close-time class="h-3 w-3 fill-current text-black xl:h-4 xl:w-4" />
                                 </button>
                             </template>

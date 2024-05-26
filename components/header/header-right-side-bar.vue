@@ -48,10 +48,10 @@
                                                 <ul v-if="mainNav.navChildItems" class="text-[13px] font-normal leading-4 text-black">
                                                     <li v-for="(subNav, subInd) in mainNav.navChildItems" :key="subNav.url + subInd">
                                                         <button
-                                                            :aria-label="subNav.name"
                                                             v-if="subNav.navChildItems && subNav.navChildItems.length > 0"
-                                                            @click="showMobileMenu(subNav, 'level1', mainNav)"
+                                                            :aria-label="subNav.name"
                                                             class="rightmenu-link flex items-center justify-start gap-2 px-6 py-[10px]"
+                                                            @click="showMobileMenu(subNav, 'level1', mainNav)"
                                                         >
                                                             <p>{{ subNav.name }}</p>
                                                             <icons-right-menu-arrow class="text-primary" />
@@ -72,7 +72,7 @@
                                                                         <p class="text-[#BFBFBF]">{{ $t('back') }}</p>
                                                                     </button>
                                                                     <div class="mt-[22px]">
-                                                                        <nuxt-link :to="subNav.url" @click.native="$store.dispatch('nav/toggle')" class="block px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black">
+                                                                        <nuxt-link :to="subNav.url" class="block px-6 pb-[19px] text-[13px] font-semibold leading-4 text-black" @click.native="$store.dispatch('nav/toggle')">
                                                                             {{ subNav.name }}</nuxt-link
                                                                         >
                                                                         <ul class="text-[13px] font-normal leading-4 text-black">
@@ -318,6 +318,16 @@
             };
         },
 
+        watch: {
+            '$store.state.nav.open'(val) {
+                if (val) {
+                    document.querySelector('html').classList.add('overflow-hidden');
+                } else {
+                    document.querySelector('html').classList.remove('overflow-hidden');
+                }
+            },
+        },
+
         mounted() {
             const fetchNavigationURLs = async () => {
                 try {
@@ -330,16 +340,6 @@
                 } catch (err) {}
             };
             fetchNavigationURLs();
-        },
-
-        watch: {
-            '$store.state.nav.open'(val) {
-                if (val) {
-                    document.querySelector('html').classList.add('overflow-hidden');
-                } else {
-                    document.querySelector('html').classList.remove('overflow-hidden');
-                }
-            },
         },
 
         methods: {

@@ -11,7 +11,7 @@
                     <div>
                         <p class="text-2xl font-bold -tracking-[0.09px] text-white sm:text-4xl lg:text-[40px] lg:leading-[56px]">{{ value.description }}</p>
                         <div class="mt-36 sm:mt-40 md:mt-[58px]">
-                            <nuxt-link to="/book-consult" class="outline-btn w-full py-[14px] px-11 text-center text-lg font-semibold leading-[21px] md:w-auto">{{ value.buttonTitle }}</nuxt-link>
+                            <nuxt-link to="/book-consult" class="outline-btn w-full px-11 py-[14px] text-center text-lg font-semibold leading-[21px] md:w-auto">{{ value.buttonTitle }}</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                     image_resize="450"
                 ></iframe>
             </div>
-            <button v-if="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] py-5 px-11 group-hover:bg-primary" @click="play()">
+            <button v-if="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] px-11 py-5 group-hover:bg-primary" @click="play()">
                 <icons-play />
             </button>
         </div>

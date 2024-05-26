@@ -7,7 +7,7 @@
                 <div>
                     <p class="mb-[18px] border-l-[3px] border-primary pl-2.5 leading-5 text-[#FBFBFD]">{{ content.bannerSubtitle }}</p>
                     <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px] xl:leading-[53px]">{{ content.bannerTitle }}</h1>
-                    <p v-html="content.bannerDescription" class="max-w-[415px] font-normal leading-5 text-[#FBFBFD]"></p>
+                    <p class="max-w-[415px] font-normal leading-5 text-[#FBFBFD]" v-html="content.bannerDescription"></p>
                 </div>
             </div>
         </section>
@@ -56,9 +56,16 @@
             </div>
         </section>
 
-        <common-business-challenge :title="content.section3Title" :image="content.section3ImgUrl" :values="section3Data" :buttonText="content.CTA1ButtonText" :buttonUrl="content.CTA1ButtonLink" />
+        <common-business-challenge :title="content.section3Title" :image="content.section3ImgUrl" :values="section3Data" :button-text="content.CTA1ButtonText" :button-url="content.CTA1ButtonLink" />
 
-        <common-contact-us id="videoTestimonials" :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" />
+        <common-contact-us
+            id="videoTestimonials"
+            :video-thumbnail-u-r-l="content.video1ThumbnailUrl"
+            :button-title="content.video1ButtonText"
+            :button-u-r-l="content.video1ButtonLink"
+            :video-u-r-l="content.video1Url"
+            :title="content.video1Title"
+        />
 
         <!-- hidden for now -->
         <!-- <section class="py-10 md:pb-0 md:pt-16 lg:pt-[116px]">
@@ -77,18 +84,24 @@
 
         <home-about-client :title="content.section5Title" :testimonials="section5Data" />
 
-        <common-tell-more-about-projects :featuredCompanies="section6LogoUrls" :tellUsMoreData="section6Data" :tellUsMoreTitle="content.section6Title" :tellUseMoreSubtitle="content.section6Subtitle" :imageUrl="content.section6ImgUrl" />
+        <common-tell-more-about-projects
+            :featured-companies="section6LogoUrls"
+            :tell-us-more-data="section6Data"
+            :tell-us-more-title="content.section6Title"
+            :tell-use-more-subtitle="content.section6Subtitle"
+            :image-url="content.section6ImgUrl"
+        />
 
         <common-client-words :title="content.section7Title" :description="content.section7Description" :testimonials="section7Data" />
 
         <common-interested-service
             id="buyService"
-            :backgroundImage="content.section8ImgUrl"
+            :background-image="content.section8ImgUrl"
             :subtitle="content.section8Subtitle"
             :title="content.section8Title"
             :description="content.section8Description"
-            :buttonLink="content.section8ButtonLink"
-            :buttonTitle="content.section8ButtonText"
+            :button-link="content.section8ButtonLink"
+            :button-title="content.section8ButtonText"
         />
 
         <!-- our-team -->
@@ -98,7 +111,7 @@
 
         <common-faq :title="content.section10Title" :description="content.section10Description" :faqs="section10Data" />
 
-        <common-readytotalk :imgUrl="readyToTalkForm.imgUrl" :serviceOptions="readyToTalkForm.services.data" :aboutParagraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talkInTitle="readyToTalkForm.talkInTitle" />
+        <common-readytotalk :img-url="readyToTalkForm.imgUrl" :service-options="readyToTalkForm.services.data" :about-paragraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talk-in-title="readyToTalkForm.talkInTitle" />
 
         <common-brand-logo :logos="logoSlider" />
     </div>
@@ -150,39 +163,6 @@
                     },
                 ],
             };
-        },
-
-        computed: {
-            section3Data() {
-                return this.content?.section3Component?.data || [];
-            },
-            section4Data() {
-                return this.content?.section4Component?.data || [];
-            },
-            section5Data() {
-                return this.content?.section5Component?.data || [];
-            },
-            section6Data() {
-                return this.content?.section6Component?.data || [];
-            },
-            section6LogoUrls() {
-                return this.content?.section6LogoUrls?.data || [];
-            },
-            section7Data() {
-                return this.content?.section7Component?.data || [];
-            },
-            section9Data() {
-                return this.content?.section9Component?.data || [];
-            },
-            section10Data() {
-                return this.content?.section10Component?.data || [];
-            },
-            readyToTalkForm() {
-                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
-            },
-            logoSlider() {
-                return this.content?.logoSlider?.data?.attributes?.logoUrls || [];
-            },
         },
 
         head() {
@@ -250,6 +230,39 @@
                     },
                 ],
             };
+        },
+
+        computed: {
+            section3Data() {
+                return this.content?.section3Component?.data || [];
+            },
+            section4Data() {
+                return this.content?.section4Component?.data || [];
+            },
+            section5Data() {
+                return this.content?.section5Component?.data || [];
+            },
+            section6Data() {
+                return this.content?.section6Component?.data || [];
+            },
+            section6LogoUrls() {
+                return this.content?.section6LogoUrls?.data || [];
+            },
+            section7Data() {
+                return this.content?.section7Component?.data || [];
+            },
+            section9Data() {
+                return this.content?.section9Component?.data || [];
+            },
+            section10Data() {
+                return this.content?.section10Component?.data || [];
+            },
+            readyToTalkForm() {
+                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
+            },
+            logoSlider() {
+                return this.content?.logoSlider?.data?.attributes?.logoUrls || [];
+            },
         },
     };
 </script>

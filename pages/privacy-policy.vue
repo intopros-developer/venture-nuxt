@@ -1,7 +1,7 @@
 <template>
     <div>
-        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pt-[207px] pb-9 md:bg-left xl:pt-[291px] xl:pb-20" :style="{ backgroundImage: `url(${content.bannerPara})` }">
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-9 pt-[207px] md:bg-left xl:pb-20 xl:pt-[291px]" :style="{ backgroundImage: `url(${content.bannerPara})` }">
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div>
@@ -31,7 +31,7 @@
         </section>
 
         <!-- Ready to talk -->
-        <common-readytotalk :serviceOptions="serviceOptions" />
+        <common-readytotalk :service-options="serviceOptions" />
     </div>
 </template>
 

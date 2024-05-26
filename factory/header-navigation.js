@@ -1,10 +1,10 @@
 export default {
     navbarItems: [
         {
-            name:"",
-            url:"",
-            textRef:"",
-            payload:""
-        }
-    ]
-}
+            name: '',
+            url: '',
+            textRef: '',
+            payload: '',
+        },
+    ],
+};

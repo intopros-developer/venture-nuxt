@@ -30,7 +30,14 @@
             </section>
         </div>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" :lessPaddingTop="true" />
+        <common-contact-us
+            :video-thumbnail-u-r-l="content.video1ThumbnailUrl"
+            :button-title="content.video1ButtonText"
+            :button-u-r-l="content.video1ButtonLink"
+            :video-u-r-l="content.video1Url"
+            :title="content.video1Title"
+            :less-padding-top="true"
+        />
 
         <!-- featured in -->
         <section class="bg-white py-[60px]">

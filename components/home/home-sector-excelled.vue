@@ -20,7 +20,7 @@
                     <div v-swiper:sectorsSlider="sliderOptions" class="swiper" :cleanup-styles-on-destroy="false">
                         <div class="swiper-wrapper !max-h-[470px] lg:!max-h-[610px]">
                             <div v-for="(service, index) in data" :key="`service_${index}`" class="swiper-slide !h-auto py-[18px]">
-                                <button :aria-label="service.attributes.sectorName" @click="clickedSelector" class="ml-[150px] flex items-center gap-1 opacity-20 transition-all duration-300 hover:opacity-100">
+                                <button :aria-label="service.attributes.sectorName" class="ml-[150px] flex items-center gap-1 opacity-20 transition-all duration-300 hover:opacity-100" @click="clickedSelector">
                                     <div class="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white lg:h-12 lg:w-12">
                                         <icons-building v-if="index === 0" class="h-4 w-3 lg:h-5 lg:w-[25px]" />
                                         <icons-eduction v-else-if="index === 1" class="h-5 w-4 lg:h-[20px] lg:w-[34px]" />

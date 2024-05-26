@@ -26,9 +26,9 @@
                                 <nuxt-link
                                     :to="mainNav.url"
                                     class="home-header-text inline-block px-[9px] py-8 transition-all duration-300 hover:text-primary group-hover:text-primary"
+                                    :aria-label="mainNav.name"
                                     @mouseenter.native="$store.dispatch('nav/activeDropdown', mainNav)"
                                     @click.native="$store.dispatch('nav/deactiveDropdown', mainNav)"
-                                    :aria-label="mainNav.name"
                                 >
                                     {{ mainNav.name }}
                                 </nuxt-link>
@@ -36,14 +36,14 @@
                                     <template v-if="mainNav.navChildItems">
                                         <div v-for="(subNav, subId) in mainNav.navChildItems" :key="subNav.url + subId" class="bg-white px-10 py-6" :class="subNav.mainClass ? subNav.mainClass : ''">
                                             <div class="mb-6">
-                                                <nuxt-link :to="subNav.url" @click.native="$store.dispatch('nav/resetAllDesktopMenu', mainNav)" class="uppercase transition-all duration-300 hover:text-primary">{{ subNav.name }}</nuxt-link>
+                                                <nuxt-link :to="subNav.url" class="uppercase transition-all duration-300 hover:text-primary" @click.native="$store.dispatch('nav/resetAllDesktopMenu', mainNav)">{{ subNav.name }}</nuxt-link>
                                             </div>
                                             <div
                                                 v-if="subNav.navChildItems && Array.isArray(subNav.navChildItems) && subNav.navChildItems.length > 0 && Array.isArray(subNav.navChildItems[0])"
                                                 class="mb-2 gap-2"
                                                 :class="subNav.subClass ? subNav.subClass : 'grid grid-cols-5'"
                                             >
-                                                <ul :key="nvK" v-for="(navItems, nvK) in subNav.navChildItems" class="mb-2">
+                                                <ul v-for="(navItems, nvK) in subNav.navChildItems" :key="nvK" class="mb-2">
                                                     <li v-for="(childNav, childId) in navItems" :key="childNav.url + childId">
                                                         <nuxt-link :to="childNav.url" @click.native="$store.dispatch('nav/resetAllDesktopMenu', mainNav)">{{ childNav.name }}</nuxt-link>
                                                         <ul v-if="childNav.navChildItems" class="sub-sub-menu">
@@ -64,31 +64,31 @@
                         </ul>
                         <div class="flex flex-none items-center gap-[10px]">
                             <nuxt-link
-                                v-if="$helper.isInternalUrl(this.navigationButtons.navigationButton1Link)"
+                                v-if="$helper.isInternalUrl(navigationButtons.navigationButton1Link)"
                                 v-show="scrollPosition !== 'down'"
-                                :to="this.navigationButtons.navigationButton1Link"
+                                :to="navigationButtons.navigationButton1Link"
                                 class="hidden items-center gap-3 rounded bg-primary px-[15px] py-[7px] text-[10px] font-semibold leading-[11px] text-white transition-all duration-300 hover:bg-primary-700 md:flex xl:py-3 xl:text-xs xl:leading-4"
                             >
                                 <icons-calendar class="w-3 xl:w-[17px]" />
-                                <p>{{ this.navigationButtons.navigationButton1Text }}</p>
+                                <p>{{ navigationButtons.navigationButton1Text }}</p>
                             </nuxt-link>
                             <a
                                 v-else
                                 v-show="scrollPosition !== 'down'"
-                                :href="this.navigationButtons.navigationButton1Link"
+                                :href="navigationButtons.navigationButton1Link"
                                 target="_blank"
                                 class="hidden items-center gap-3 rounded bg-primary px-[15px] py-[7px] text-[10px] font-semibold leading-[11px] text-white transition-all duration-300 hover:bg-primary-700 md:flex xl:py-3 xl:text-xs xl:leading-4"
                             >
                                 <icons-calendar class="w-3 xl:w-[17px]" />
-                                <p>{{ this.navigationButtons.navigationButton1Text }}</p>
+                                <p>{{ navigationButtons.navigationButton1Text }}</p>
                             </a>
                             <a
                                 v-show="scrollPosition !== 'down'"
-                                :href="this.navigationButtons.NavigationButton2Link"
+                                :href="navigationButtons.NavigationButton2Link"
                                 class="hidden items-center gap-2 rounded bg-primary px-[15px] py-[7px] text-[10px] font-semibold leading-[11px] text-white transition-all duration-300 hover:bg-primary-700 md:flex md:pl-[35.79px] md:pr-[35.8px] lg:pl-[39.55px] lg:pr-[39.55px] xl:py-3 xl:text-xs xl:leading-4"
                             >
                                 <icons-phone class="h-[19px] w-3 xl:w-[17px]" />
-                                <p>{{ this.navigationButtons.navigationButton2Text }}</p>
+                                <p>{{ navigationButtons.navigationButton2Text }}</p>
                             </a>
                             <button aria-label="Search" class="home-header-text !text-primary" @click.stop="$store.dispatch('nav/activeLegacyDropdown', 'search')">
                                 <icons-search id="search-show" class="w-5" />
@@ -185,28 +185,25 @@
         </div>
         <div v-if="scrollPosition === null" class="flex items-center justify-center gap-1 py-2 md:hidden">
             <nuxt-link
-                v-if="$helper.isInternalUrl(this.navigationButtons.navigationButton1Link)"
-                :to="this.navigationButtons.navigationButton1Link"
+                v-if="$helper.isInternalUrl(navigationButtons.navigationButton1Link)"
+                :to="navigationButtons.navigationButton1Link"
                 class="flex w-[167px] items-center justify-center gap-3 rounded bg-primary px-4 py-[7px] text-[10px] leading-[11px] text-white transition-all duration-300 hover:bg-primary-700"
             >
                 <icons-calendar class="h-[19px] w-3 xl:w-[17px]" />
-                <p>{{ this.navigationButtons.navigationButton1Text }}</p>
+                <p>{{ navigationButtons.navigationButton1Text }}</p>
             </nuxt-link>
             <a
                 v-else
                 target="_blank"
-                :href="this.navigationButtons.navigationButton1Link"
+                :href="navigationButtons.navigationButton1Link"
                 class="flex w-[167px] items-center justify-center gap-3 rounded bg-primary px-4 py-[7px] text-[10px] leading-[11px] text-white transition-all duration-300 hover:bg-primary-700"
             >
                 <icons-calendar class="h-[19px] w-[17px]" />
-                <p>{{ this.navigationButtons.navigationButton1Text }}</p>
+                <p>{{ navigationButtons.navigationButton1Text }}</p>
             </a>
-            <a
-                :href="this.navigationButtons.NavigationButton2Link"
-                class="flex w-[167px] items-center justify-center gap-2 rounded bg-primary px-4 py-[7px] text-[10px] leading-[11px] text-white transition-all duration-300 hover:bg-primary-700"
-            >
+            <a :href="navigationButtons.NavigationButton2Link" class="flex w-[167px] items-center justify-center gap-2 rounded bg-primary px-4 py-[7px] text-[10px] leading-[11px] text-white transition-all duration-300 hover:bg-primary-700">
                 <icons-phone class="h-[19px] w-[13px]" />
-                <p>{{ this.navigationButtons.navigationButton2Text }}</p>
+                <p>{{ navigationButtons.navigationButton2Text }}</p>
             </a>
         </div>
     </div>

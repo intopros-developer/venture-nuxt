@@ -25,6 +25,14 @@
 
 <script>
     export default {
+        props: {
+            name: {
+                type: String,
+                default: () => {
+                    return 'about-page';
+                },
+            },
+        },
         async asyncData(context) {
             try {
                 const baseURL = await context.$strapiInstance.get(`${context.$config.strapi.url}/api/base-urls?populate=deep&filters[url][$eq]=${encodeURIComponent(context.route.path)}`);
@@ -41,7 +49,7 @@
                     baseURL.data.data[0].attributes.template.data.attributes &&
                     baseURL.data.data[0].attributes.template.data.attributes.identifier
                 ) {
-                    let currentPage = baseURL.data.data[0].attributes.template.data.attributes.identifier;
+                    const currentPage = baseURL.data.data[0].attributes.template.data.attributes.identifier;
                     let apiID = '';
                     if (currentPage === 'divisions') {
                         apiID = 'divisions-templates';
@@ -63,7 +71,7 @@
                     const data = await context.$strapiInstance.get(`${context.$config.strapi.url}/api/${apiID}?filters[slug][$eq]=${baseURL.data.data[0].attributes.slug}&populate=deep`);
                     return {
                         content: context.$helper.parseData(data.data.data[0]),
-                        currentPage: currentPage,
+                        currentPage,
                         baseURL: baseURL.data.data[0].attributes,
                     };
                 } else {
@@ -72,14 +80,6 @@
             } catch (e) {
                 context.error({ statusCode: 404, message: 'Page Not Found' });
             }
-        },
-        props: {
-            name: {
-                type: String,
-                default: () => {
-                    return 'about-page';
-                },
-            },
         },
         data() {
             return {

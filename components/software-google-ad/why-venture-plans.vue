@@ -2,12 +2,12 @@
     <div>
         <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
             <li v-for="(feature, i) in ventureFeatures" :key="i" class="group [perspective:1000px]">
-                <div class="relative h-full w-full bg-primary px-7 pt-[42px] pb-[63px] text-xl font-semibold text-white transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div class="relative h-full w-full bg-primary px-7 pb-[63px] pt-[42px] text-xl font-semibold text-white transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                     <div class="inset-0 flex flex-col items-center justify-center gap-4">
-                        <div v-html="feature.img" class="h-20" />
+                        <div class="h-20" v-html="feature.img" />
                         {{ feature.title }}
                     </div>
-                    <div class="absolute inset-0 h-full w-full bg-primary px-2 text-center text-white [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                    <div class="absolute inset-0 h-full w-full bg-primary px-2 text-center text-white [backface-visibility:hidden] [transform:rotateY(180deg)]">
                         <div class="flex min-h-full flex-col items-center justify-center">
                             <p class="mb-4 text-base text-white">
                                 {{ feature.description }}

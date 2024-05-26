@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="pt-10 pb-6">
+        <section class="pb-6 pt-10">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <h1 class="text-[40px] font-medium uppercase">Startup Form</h1>
                 <p class="text-md pt-[24px] font-light leading-[14px]">To enable us for better assessment please fill in all the required details below</p>

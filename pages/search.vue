@@ -86,10 +86,10 @@
                                                 </div>
                                                 <div class="container pb-4">
                                                     <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter1Data" :key="filter.id">
+                                                        <li v-for="filter in filter1Data" :key="filter.id" class="mb-2 break-inside-avoid pr-2">
                                                             <input-filter-checkbox :id="filter.filterCateogries" v-model="industryFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
-                                                            <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                                <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
+                                                            <ul v-if="filter.subCategories.length" class="mt-2 pr-2">
+                                                                <li v-for="subFilter in filter.subCategories" :key="subFilter.id" class="mb-2 break-inside-avoid pr-2">
                                                                     <input-filter-checkbox :id="subFilter.subCategories" v-model="industryFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                                 </li>
                                                             </ul>
@@ -132,10 +132,10 @@
                                                 </div>
                                                 <div class="container pb-4">
                                                     <ul class="mb-4 mt-2 block h-[calc(100vh-128px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter2Data" :key="filter.id">
+                                                        <li v-for="filter in filter2Data" :key="filter.id" class="mb-2 break-inside-avoid pr-2">
                                                             <input-filter-checkbox :id="filter.filterCateogries" v-model="servicesFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
-                                                            <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                                <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
+                                                            <ul v-if="filter.subCategories.length" class="mt-2 pr-2">
+                                                                <li v-for="subFilter in filter.subCategories" :key="subFilter.id" class="mb-2 break-inside-avoid pr-2">
                                                                     <input-filter-checkbox :id="subFilter.subCategories" v-model="servicesFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                                 </li>
                                                             </ul>
@@ -178,7 +178,7 @@
                                                 </div>
                                                 <div class="container pb-4">
                                                     <ul class="mb-4 mt-2 block max-h-[calc(100vh-128px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                        <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter3Data" :key="filter.id">
+                                                        <li v-for="filter in filter3Data" :key="filter.id" class="mb-2 break-inside-avoid pr-2">
                                                             <input-filter-checkbox :id="filter.filterCateogries" v-model="typeFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
                                                         </li>
                                                     </ul>
@@ -248,9 +248,9 @@
                                 <li class="my-6 inline-block">
                                     <div>
                                         <h5
-                                            @click="sortBy = 'Most Relevant'"
                                             :class="{ '!text-black': sortBy === 'Most Relevant' }"
                                             class="flex cursor-pointer items-center gap-2 text-base font-semibold leading-5 text-[#5f5f5f] hover:text-primary"
+                                            @click="sortBy = 'Most Relevant'"
                                         >
                                             Most Relevant
                                         </h5>
@@ -259,7 +259,7 @@
                                 <li class="h-[13px] w-[1px] bg-black/30 xl:h-4"></li>
                                 <li class="my-6 inline-block">
                                     <div>
-                                        <h5 @click="sortBy = 'Date'" :class="{ '!text-black': sortBy === 'Date' }" class="flex cursor-pointer items-center gap-2 text-base font-semibold leading-5 text-[#5f5f5f] hover:text-primary">Date</h5>
+                                        <h5 :class="{ '!text-black': sortBy === 'Date' }" class="flex cursor-pointer items-center gap-2 text-base font-semibold leading-5 text-[#5f5f5f] hover:text-primary" @click="sortBy = 'Date'">Date</h5>
                                     </div>
                                 </li>
                             </ul>
@@ -287,7 +287,7 @@
             <div class="container pb-[84px] md:pb-4 lg:pb-[97px] xl:pb-4" :class="{ 'has-overlay': activePopper != '' }">
                 <div class>
                     <p class="mb-6 text-[15px] leading-7 text-[#646464]/80">Showing {{ results.length }} results</p>
-                    <div :key="i" class="mb-14 space-y-4" v-for="(item, i) in results">
+                    <div v-for="(item, i) in results" :key="i" class="mb-14 space-y-4">
                         <div class="flex items-center gap-10 border-b border-[#707070]/50 py-4 xl:gap-32">
                             <p class="hidden flex-none text-[25px] font-semibold leading-8 text-[#202a36] sm:block">
                                 {{ i + 1 }}
@@ -315,7 +315,7 @@
 
             <p v-if="results.length === 0" class="my-20 text-center">No any results found!</p>
         </section>
-        <common-readytotalk :serviceOptions="serviceOptions" />
+        <common-readytotalk :service-options="serviceOptions" />
         <!-- Brand logo -->
         <common-brand-logo :logos="featuredLogos" />
     </div>
@@ -1044,7 +1044,7 @@
                 if (changeValue) {
                     this.search = this.$route.query.search;
                 }
-                clearTimeout(this.timeoutId); 
+                clearTimeout(this.timeoutId);
                 this.timeoutId = setTimeout(() => {
                     const hitSearch = async () => {
                         const results = await this.$axios.post(`${process.env.meiliSearchURL}/indexes/search-page/search`, {

@@ -12,7 +12,7 @@
                         {{ content.bannerSubtitle }}
                     </p>
                     <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px] xl:leading-[53px]">{{ content.bannerTitle }}</h1>
-                    <p v-html="content.bannerDescription" class="mb-[18px] border-l-[3px] border-primary pl-2.5 leading-5 text-[#FBFBFD]"></p>
+                    <p class="mb-[18px] border-l-[3px] border-primary pl-2.5 leading-5 text-[#FBFBFD]" v-html="content.bannerDescription"></p>
                     <a href="/book-consult" class="b-btn max-w-[250px] py-4 text-sm uppercase" style="/* display: none; */ max-width: 250px">Book a Consultation </a>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 <common-toggle-content :content="content.section1Description" />
             </div>
         </section>
-        <section class="py-10 md:pb-20 md:pt-20 lg:py-[80px]" id="ourServices">
+        <section id="ourServices" class="py-10 md:pb-20 md:pt-20 lg:py-[80px]">
             <div v-if="content.section2Title" class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-9 flex items-center justify-center gap-2 text-center sm:gap-[33px] md:mb-[67px]">
                     <div class="block h-px w-[15%] bg-[#d5d5d5] sm:w-full"></div>
@@ -63,12 +63,12 @@
         <section class="bg-[#ffffff]">
             <home-private-placement
                 v-if="section3LogoUrls && Array.isArray(section3LogoUrls) && section3LogoUrls.length > 0"
-                :featuredCompanies="section3LogoUrls"
-                :featuredInText="content.section3Title || ''"
+                :featured-companies="section3LogoUrls"
+                :featured-in-text="content.section3Title || ''"
                 :description="content.CTA1Description || ''"
                 :title="content.CTA1Title || ''"
-                :buttonText="content.CTA1ButtonText || ''"
-                :buttonLink="content.CTA1ButtonLink || ''"
+                :button-text="content.CTA1ButtonText || ''"
+                :button-link="content.CTA1ButtonLink || ''"
             />
         </section>
 
@@ -76,14 +76,14 @@
 
         <common-contact-us
             v-if="content.coverVideoThumbnailUrl && content.coverVideoTitle"
-            :videoThumbnailURL="content.coverVideoThumbnailUrl || ''"
-            :buttonTitle="content.coverVideoButtonText || ''"
-            :buttonURL="content.coverVideoButtonLink || ''"
-            :videoURL="content.coverVideoUrl || ''"
+            :video-thumbnail-u-r-l="content.coverVideoThumbnailUrl || ''"
+            :button-title="content.coverVideoButtonText || ''"
+            :button-u-r-l="content.coverVideoButtonLink || ''"
+            :video-u-r-l="content.coverVideoUrl || ''"
             :title="content.coverVideoTitle || ''"
         />
 
-        <section class="bg-[#ffffff] py-10 lg:pb-[120px] lg:pt-[93px]" id="consultationProcess">
+        <section id="consultationProcess" class="bg-[#ffffff] py-10 lg:pb-[120px] lg:pt-[93px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div id="grantApplicationProcess" class="mb-4 flex items-center justify-center gap-2 text-center sm:gap-[33px]">
                     <div class="block h-px w-full bg-[#d5d5d5]"></div>
@@ -116,9 +116,9 @@
                                     <common-toggle-content
                                         v-if="process.attributes.description"
                                         :content="process.attributes.description"
-                                        contentClass="text-sm font-medium text-[#353535] xl:text-lg xl:leading-9"
-                                        :showBlur="false"
-                                        readMoreClass="items-center justify-start"
+                                        content-class="text-sm font-medium text-[#353535] xl:text-lg xl:leading-9"
+                                        :show-blur="false"
+                                        read-more-class="items-center justify-start"
                                     ></common-toggle-content>
                                 </div>
                             </div>
@@ -128,26 +128,26 @@
             </div>
         </section>
 
-        <div class="bg-[#ffffff] pb-10 text-center lg:pb-[120px]" v-if="content.section4ButtonText">
+        <div v-if="content.section4ButtonText" class="bg-[#ffffff] pb-10 text-center lg:pb-[120px]">
             <nuxt-link v-if="$helper.isInternalUrl(content.section4ButtonLink)" :to="content.section4ButtonLink" class="b-btn text-xs lg:max-w-[322px] lg:py-6">{{ content.section4ButtonText }}</nuxt-link>
             <a v-else target="_blank" :href="content.section4ButtonLink" class="b-btn text-xs lg:max-w-[322px] lg:py-6">{{ content.section4ButtonText }}</a>
         </div>
 
         <common-interested-service
             v-if="content.serviceBannerImgUrl && content.ServiceBannerTitle"
-            :backgroundImage="content.serviceBannerImgUrl"
+            :background-image="content.serviceBannerImgUrl"
             :subtitle="content.serviceBannerSubtitle"
             :title="content.ServiceBannerTitle"
             :description="content.serviceBannerDescription"
-            :buttonLink="content.serviceBannerButtonLink"
-            :buttonTitle="content.serviceBannerButtonText"
+            :button-link="content.serviceBannerButtonLink"
+            :button-title="content.serviceBannerButtonText"
         />
 
         <common-faq id="faq" :title="content.section5Title" :description="content.section5Description" :faqs="section5Data" />
 
         <common-brand-logo :logos="logoSlider" />
 
-        <common-readytotalk :imgUrl="readyToTalkForm.imgUrl" :serviceOptions="readyToTalkForm.services.data" :aboutParagraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talkInTitle="readyToTalkForm.talkInTitle" />
+        <common-readytotalk :img-url="readyToTalkForm.imgUrl" :service-options="readyToTalkForm.services.data" :about-paragraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talk-in-title="readyToTalkForm.talkInTitle" />
     </div>
 </template>
 
@@ -185,55 +185,6 @@
                     },
                 ],
             };
-        },
-        mounted() {
-            if (this.content?.tabs && typeof this.content?.tabs === 'object') {
-                let count = 0;
-                delete this.content?.tabs['id'];
-                for (let value in this.content?.tabs) {
-                    this.tabs[count].title = this.content?.tabs[value];
-                    count += 1;
-                }
-            }
-        },
-
-        computed: {
-            section2Data() {
-                return this.content?.section2Component?.data || [];
-            },
-            section3Data() {
-                return this.content?.section3Component?.data || [];
-            },
-            section4Data() {
-                return this.content?.section4Component?.data || [];
-            },
-            section5Data() {
-                return this.content?.section5Component?.data || [];
-            },
-            section6Data() {
-                return this.content?.section6Component?.data || [];
-            },
-            section3LogoUrls() {
-                return this.content?.section3Component?.data || [];
-            },
-            section7Data() {
-                return this.content?.section7Component?.data || [];
-            },
-            section8Data() {
-                return this.content?.section8Component?.data || [];
-            },
-            section9Data() {
-                return this.content?.section9Component?.data || [];
-            },
-            section10Data() {
-                return this.content?.section10Component?.data || [];
-            },
-            readyToTalkForm() {
-                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
-            },
-            logoSlider() {
-                return this.content?.logoSlider?.data?.attributes?.logoUrls || [];
-            },
         },
 
         head() {
@@ -301,6 +252,55 @@
                     },
                 ],
             };
+        },
+
+        computed: {
+            section2Data() {
+                return this.content?.section2Component?.data || [];
+            },
+            section3Data() {
+                return this.content?.section3Component?.data || [];
+            },
+            section4Data() {
+                return this.content?.section4Component?.data || [];
+            },
+            section5Data() {
+                return this.content?.section5Component?.data || [];
+            },
+            section6Data() {
+                return this.content?.section6Component?.data || [];
+            },
+            section3LogoUrls() {
+                return this.content?.section3Component?.data || [];
+            },
+            section7Data() {
+                return this.content?.section7Component?.data || [];
+            },
+            section8Data() {
+                return this.content?.section8Component?.data || [];
+            },
+            section9Data() {
+                return this.content?.section9Component?.data || [];
+            },
+            section10Data() {
+                return this.content?.section10Component?.data || [];
+            },
+            readyToTalkForm() {
+                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
+            },
+            logoSlider() {
+                return this.content?.logoSlider?.data?.attributes?.logoUrls || [];
+            },
+        },
+        mounted() {
+            if (this.content?.tabs && typeof this.content?.tabs === 'object') {
+                let count = 0;
+                delete this.content?.tabs.id;
+                for (const value in this.content?.tabs) {
+                    this.tabs[count].title = this.content?.tabs[value];
+                    count += 1;
+                }
+            }
         },
 
         methods: {

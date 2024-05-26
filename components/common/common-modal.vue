@@ -69,39 +69,39 @@
         data() {
             return {
                 opened: false,
-            }
+            };
         },
         mounted() {
             if (this.isOpen) {
-                this.open()
+                this.open();
             }
         },
         methods: {
             scrollbarWidth() {
-                const scrollDiv = document.createElement('div')
-                scrollDiv.style.cssText = 'width:100px;height:100px;overflow:scroll !important;position:absolute;top:-9999px'
-                document.body.appendChild(scrollDiv)
-                const result = scrollDiv.offsetWidth - scrollDiv.clientWidth
-                document.body.removeChild(scrollDiv)
-                return result
+                const scrollDiv = document.createElement('div');
+                scrollDiv.style.cssText = 'width:100px;height:100px;overflow:scroll !important;position:absolute;top:-9999px';
+                document.body.appendChild(scrollDiv);
+                const result = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+                document.body.removeChild(scrollDiv);
+                return result;
             },
             open() {
-                document.querySelector('html').classList.add('overflow-hidden')
-                document.querySelector('html').style.marginRight = this.scrollbarWidth() + 'px'
-                this.opened = true
-                this.$emit('onopen')
+                document.querySelector('html').classList.add('overflow-hidden');
+                document.querySelector('html').style.marginRight = this.scrollbarWidth() + 'px';
+                this.opened = true;
+                this.$emit('onopen');
             },
             closeByBackdrop() {
                 if (!this.modal) {
-                    this.close()
+                    this.close();
                 }
             },
             close() {
-                document.querySelector('html').style.marginRight = ''
-                document.querySelector('html').classList.remove('overflow-hidden')
-                this.opened = false
-                this.$emit('onclose')
+                document.querySelector('html').style.marginRight = '';
+                document.querySelector('html').classList.remove('overflow-hidden');
+                this.opened = false;
+                this.$emit('onclose');
             },
         },
-    }
+    };
 </script>

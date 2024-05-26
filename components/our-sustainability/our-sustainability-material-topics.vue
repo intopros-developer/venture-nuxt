@@ -13,9 +13,9 @@
                             <button
                                 :id="`topic_${$helper.toSnakeCase(topic)}`"
                                 class="inline-block whitespace-nowrap py-4"
-                                :class="{ 'relative before:absolute before:left-0 before:-bottom-[2px] before:h-[3px] before:w-full before:bg-primary': activeTab === topic }"
-                                @click="changeTab(topic)"
+                                :class="{ 'relative before:absolute before:-bottom-[2px] before:left-0 before:h-[3px] before:w-full before:bg-primary': activeTab === topic }"
                                 :aria-label="topic"
+                                @click="changeTab(topic)"
                             >
                                 {{ topic }}
                             </button>

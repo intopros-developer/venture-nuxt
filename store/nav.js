@@ -2417,16 +2417,16 @@ export const actions = {
             if (!(navigations[l0]?.attributes?.navChildItems?.data && navigations[l0]?.attributes?.navChildItems?.data.length > 0)) {
                 continue;
             }
-            let l0NavItems = [];
-            for (let l1Obj of navigations[l0]?.attributes?.navChildItems?.data) {
+            const l0NavItems = [];
+            for (const l1Obj of navigations[l0]?.attributes?.navChildItems?.data) {
                 let l1Push = {};
                 if (!l1Obj?.attributes?.base_url?.data?.attributes) {
                     continue;
                 }
                 l1Push = l1Obj?.attributes?.base_url?.data?.attributes;
-                let l1NavItems = [];
+                const l1NavItems = [];
                 if (l1Obj?.attributes?.navChildItems?.data && l1Obj?.attributes?.navChildItems?.data.length > 0) {
-                    for (let l2ArrObj of l1Obj?.attributes?.navChildItems?.data) {
+                    for (const l2ArrObj of l1Obj?.attributes?.navChildItems?.data) {
                         l1NavItems.push(l2ArrObj?.attributes?.base_url?.data?.attributes);
                     }
                 }
@@ -2455,8 +2455,8 @@ export const actions = {
             if (!(navigations[l0]?.attributes?.navChildItems?.data && navigations[l0]?.attributes?.navChildItems?.data.length > 0)) {
                 continue;
             }
-            let l0NavItems = [];
-            for (let l1Obj of navigations[l0]?.attributes?.navChildItems?.data) {
+            const l0NavItems = [];
+            for (const l1Obj of navigations[l0]?.attributes?.navChildItems?.data) {
                 let l1Push = {};
                 if (!l1Obj?.attributes?.base_url?.data?.attributes) {
                     continue;
@@ -2467,21 +2467,21 @@ export const actions = {
                 if (!(l1Obj?.attributes?.navChildItems?.data && l1Obj?.attributes?.navChildItems?.data.length > 0)) {
                     continue;
                 }
-                let l1NavItems = [];
-                for (let l2ArrObj of l1Obj?.attributes?.navChildItems?.data) {
+                const l1NavItems = [];
+                for (const l2ArrObj of l1Obj?.attributes?.navChildItems?.data) {
                     if (!l2ArrObj?.attributes?.collections?.data && l2ArrObj?.attributes?.collections?.data.length > 0) {
                         continue;
                     }
-                    let eachCol = [];
-                    for (let l2Obj of l2ArrObj?.attributes?.collections?.data) {
+                    const eachCol = [];
+                    for (const l2Obj of l2ArrObj?.attributes?.collections?.data) {
                         let l2Push = {};
                         if (!l2Obj?.attributes?.base_url?.data?.attributes) {
                             continue;
                         }
                         l2Push = l2Obj?.attributes?.base_url?.data?.attributes;
                         if (l2Obj?.attributes?.navChildItems?.data && l2Obj?.attributes?.navChildItems?.data.length > 0) {
-                            let l3Col = [];
-                            for (let l3Obj of l2Obj?.attributes?.navChildItems?.data) {
+                            const l3Col = [];
+                            for (const l3Obj of l2Obj?.attributes?.navChildItems?.data) {
                                 l3Col.push(l3Obj?.attributes?.base_url?.data?.attributes);
                             }
                             l2Push.navChildItems = l3Col;

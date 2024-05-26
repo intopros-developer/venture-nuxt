@@ -4,7 +4,7 @@
             <div class="items-start justify-between gap-5 lg:flex xl:gap-[107px]">
                 <div class="relative">
                     <div class="absolute -inset-5 m-auto h-full w-full bg-black/30 blur-2xl"></div>
-                    <div class="relative z-[1]" v-if="tellUsMoreData.length">
+                    <div v-if="tellUsMoreData.length" class="relative z-[1]">
                         <h3
                             class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[36px] sm:leading-[52px] lg:pt-0 [&>br]:hidden md:[&>br]:block [&>span]:border-b-[5px] [&>span]:border-primary"
                             v-html="tellUsMoreTitle"
@@ -12,24 +12,24 @@
                         <p class="text-white">{{ tellUseMoreSubtitle }}</p>
                         <ul class="mb-6 flex flex-wrap items-start gap-y-3 pt-8 text-white sm:gap-5 md:mb-[55px] lg:grid lg:grid-cols-2 xl:flex">
                             <template v-if="tellUsMoreData.slice(0, -3).length">
-                                <li :key="content.attributes.sectionName" v-for="content in tellUsMoreData.slice(0, -3)" class="w-1/2 grow text-3xl font-bold sm:w-auto md:text-[40px] md:leading-[55px]">
+                                <li v-for="content in tellUsMoreData.slice(0, -3)" :key="content.attributes.sectionName" class="w-1/2 grow text-3xl font-bold sm:w-auto md:text-[40px] md:leading-[55px]">
                                     {{ content.attributes.sectionDescription }} <span class="block text-base font-normal">{{ content.attributes.sectionName }}</span>
                                 </li>
                             </template>
                         </ul>
                         <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                            <div class="text-white" v-if="tellUsMoreData[tellUsMoreData.length - 3]">
+                            <div v-if="tellUsMoreData[tellUsMoreData.length - 3]" class="text-white">
                                 <h3 class="text-[40px] font-bold leading-[31px]">{{ tellUsMoreData[tellUsMoreData.length - 3].attributes.sectionName }}</h3>
                                 <p class="mt-4">{{ tellUsMoreData[tellUsMoreData.length - 3].attributes.sectionDescription }}</p>
                             </div>
-                            <div class="text-white" v-if="tellUsMoreData[tellUsMoreData.length - 2]">
+                            <div v-if="tellUsMoreData[tellUsMoreData.length - 2]" class="text-white">
                                 <h3 class="text-[40px] font-bold leading-[31px]">{{ tellUsMoreData[tellUsMoreData.length - 2].attributes.sectionName }}</h3>
                                 <p class="mt-4">{{ tellUsMoreData[tellUsMoreData.length - 2].attributes.sectionDescription }}</p>
                             </div>
                         </div>
 
                         <div class="mt-[55px] pb-6 md:mb-5">
-                            <p class="mb-5 text-[15px] leading-[47px] text-[#f7f4f4]" v-if="tellUsMoreData[tellUsMoreData.length - 1]">{{ tellUsMoreData[tellUsMoreData.length - 1].attributes.sectionName }}</p>
+                            <p v-if="tellUsMoreData[tellUsMoreData.length - 1]" class="mb-5 text-[15px] leading-[47px] text-[#f7f4f4]">{{ tellUsMoreData[tellUsMoreData.length - 1].attributes.sectionName }}</p>
                             <div class="flex items-center gap-2">
                                 <div
                                     v-for="(company, i) in featuredCompanies"

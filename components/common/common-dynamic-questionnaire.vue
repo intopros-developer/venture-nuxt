@@ -6,20 +6,20 @@
                     <nuxt-img format="webp" src="/assets/img/congo-icon.svg" alt="Congo Icon Svg" loading="lazy" />
 
                     <h2
-                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                         v-html="finalExitDetails.title"
                     ></h2>
                     <p class="mb-6 text-sm font-medium -tracking-[0.04px] text-[#586376] lg:text-base xl:leading-[27px]" v-html="finalExitDetails.subTitle"></p>
                 </div>
                 <div class="flex gap-2">
-                    <button @click="resetGoToHome" class="b-btn w-full max-w-none py-4 text-xs uppercase sm:max-w-xs sm:py-5">Go To Home</button>
+                    <button class="b-btn w-full max-w-none py-4 text-xs uppercase sm:max-w-xs sm:py-5" @click="resetGoToHome">Go To Home</button>
                 </div>
             </div>
             <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-transparent md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
                 <nuxt-img format="webp" :src="finalExitDetails.image" alt="Exit Details Img" loading="lazy" class="h-full w-full object-cover" />
             </div>
         </div>
-        <div id="question-box" v-else class="flex flex-col items-start justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
+        <div v-else id="question-box" class="flex flex-col items-start justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
             <div v-if="!isformCompleted && !questionnaireComplete" class="order-2 flex-1 md:order-1 lg:mx-auto lg:max-w-[490px]" :class="mainContainerClass">
                 <p class="mb-4 text-base font-bold text-[#707070] lg:max-w-[470px] lg:text-[22px] lg:leading-[31px]">
                     {{ data.questionnaireHeader ? data.questionnaireHeader : "Your trusted partner in navigating through uncertain times. Let's accelerate your growth." }}
@@ -33,18 +33,18 @@
                 </div>
                 <div :class="currentStep === 1 ? 'grid grid-cols-2 gap-[3px] sm:grid-cols-3 md:gap-2' : 'flex flex-wrap gap-[3px] md:gap-2'">
                     <template v-for="(ans, index) in currentQuestion.answers.data">
-                        <button :key="ans.attributes.label + index" v-if="currentQuestion.showAllOption || index < 6" @pointerup="goToNextWithDelay(ans.attributes, currentStep)" class="home-question w-auto min-w-[100px] px-[12px] sm:px-4">
+                        <button v-if="currentQuestion.showAllOption || index < 6" :key="ans.attributes.label + index" class="home-question w-auto min-w-[100px] px-[12px] sm:px-4" @pointerup="goToNextWithDelay(ans.attributes, currentStep)">
                             <p>{{ ans.attributes.label }}</p>
                         </button>
                     </template>
 
                     <button
+                        v-if="!currentQuestion.showAllOption && currentQuestion.answers.data.length > 6"
                         :class="{ 'overflow-hidden': activePopper }"
                         Search
                         results
-                        @click="currentQuestion.showAllOption = true"
-                        v-if="!currentQuestion.showAllOption && currentQuestion.answers.data.length > 6"
                         class="float-right ml-auto flex items-end border-b border-[#586376] text-base font-medium leading-4 text-[#586376]"
+                        @click="currentQuestion.showAllOption = true"
                     >
                         See All
                     </button>
@@ -58,7 +58,7 @@
                     <p class="text-[16px] leading-[28px] text-[#586376] sm:whitespace-nowrap">Contact Information</p>
                 </div>
                 <div id="questionaire-form" class="grid w-full gap-[15px] sm:max-w-[485px] md:gap-[30px]">
-                    <div v-if="this.selectedAnswers.includes('yes-show-grant-link')" class="form-input-group">
+                    <div v-if="selectedAnswers.includes('yes-show-grant-link')" class="form-input-group">
                         <input
                             v-model="$v.contactInfo.grant_link.$model"
                             type="text"
@@ -70,7 +70,7 @@
                         />
                     </div>
 
-                    <div v-if="this.selectedAnswers.includes('Yes-rfp')" class="form-input-group">
+                    <div v-if="selectedAnswers.includes('Yes-rfp')" class="form-input-group">
                         <input
                             v-model="$v.contactInfo.grant_link.$model"
                             type="text"
@@ -135,7 +135,7 @@
                     <p class="whitespace-pre text-base text-lightgrey">Question {{ linearCurrentStep }} / {{ linearCurrentStep }}</p>
                 </div>
                 <div class="grid grid-cols-2 gap-[3px] md:gap-2">
-                    <button @click="openFinalPage(cta.attributes.url)" v-for="(cta, index) in data.navigation_buttons.data ? data.navigation_buttons.data : finalCTAs" :key="index" class="home-question">
+                    <button v-for="(cta, index) in data.navigation_buttons.data ? data.navigation_buttons.data : finalCTAs" :key="index" class="home-question" @click="openFinalPage(cta.attributes.url)">
                         <p>{{ cta.attributes.label }}</p>
                     </button>
                 </div>

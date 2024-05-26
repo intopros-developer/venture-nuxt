@@ -12,7 +12,7 @@
                     <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px]">{{ content.bannerTitle }}</h1>
                     <div class="flex items-center gap-[10px]">
                         <div class="absolute -left-4 h-[95%] w-[5px] bg-primary"></div>
-                        <p v-html="content.bannerDescription" class="font-normal leading-4 text-[#FBFBFD] xl:leading-6"></p>
+                        <p class="font-normal leading-4 text-[#FBFBFD] xl:leading-6" v-html="content.bannerDescription"></p>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px]">{{ content.bannerTitle }}</h1>
                     <div class="relative flex items-center gap-[10px]">
                         <div class="absolute -left-4 h-[95%] w-[5px] bg-primary"></div>
-                        <p v-html="content.bannerDescription" class="font-normal leading-5 text-[#FBFBFD] xl:leading-6"></p>
+                        <p class="font-normal leading-5 text-[#FBFBFD] xl:leading-6" v-html="content.bannerDescription"></p>
                     </div>
                 </div>
             </div>
@@ -41,8 +41,8 @@
         <!-- Company overview -->
         <common-company-overview id="overview" :value="content.section1Paragraph" :title="content.section1Title" />
 
-        <div class="pt-10 text-center lg:pt-[102px]" v-if="content.CTA1ButtonText">
-            <nuxt-link :to="content.CTA1ButtonLink" v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">
+        <div v-if="content.CTA1ButtonText" class="pt-10 text-center lg:pt-[102px]">
+            <nuxt-link v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" :to="content.CTA1ButtonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">
                 {{ content.CTA1ButtonText }}
             </nuxt-link>
 
@@ -65,7 +65,7 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" :video-u-r-l="content.video1Url" :title="content.video1Title" />
 
         <!-- Start portfolio -->
         <section class="bg-white py-16 md:pb-[101px] md:pt-20 xl:pt-[92px]">
@@ -112,21 +112,21 @@
         </section>
 
         <home-private-placement
-            :featuredCompanies="section6Data"
-            :featuredTitle="content.section6Title"
-            :featuredInText="content.section6Title"
+            :featured-companies="section6Data"
+            :featured-title="content.section6Title"
+            :featured-in-text="content.section6Title"
             :description="content.CTA2Description"
             :title="content.CTA2Title"
-            :buttonText="content.CTA2ButtonText"
-            :buttonLink="content.CTA2ButtonLink"
+            :button-text="content.CTA2ButtonText"
+            :button-link="content.CTA2ButtonLink"
         />
 
-        <common-tell-more-about-projects :featuredCompanies="section6Data" :tellUsMoreData="section7Data" :tellUsMoreTitle="content.section7Title" :tellUseMoreSubtitle="content.section7Subtitle" :imageUrl="content.section7Img" />
+        <common-tell-more-about-projects :featured-companies="section6Data" :tell-us-more-data="section7Data" :tell-us-more-title="content.section7Title" :tell-use-more-subtitle="content.section7Subtitle" :image-url="content.section7Img" />
 
         <!-- Our Client -->
         <common-client-words id="ourClientsWords" :title="content.section8Title" :description="content.section8Description" :testimonials="section8Data" />
 
-        <common-contact-us :videoThumbnailURL="content.video2ThumbnailUrl" :buttonTitle="content.video2ButtonText" :buttonURL="content.video2ButtonLink" :videoURL="content.video2Url" :title="content.video2Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video2ThumbnailUrl" :button-title="content.video2ButtonText" :button-u-r-l="content.video2ButtonLink" :video-u-r-l="content.video2Url" :title="content.video2Title" />
 
         <section class="py-10 lg:pb-[198px] lg:pt-[93px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
@@ -153,9 +153,9 @@
                                     <common-toggle-content
                                         v-if="process.attributes.description"
                                         :content="process.attributes.description"
-                                        contentClass="text-sm font-medium text-[#353535] xl:text-lg xl:leading-9"
-                                        :showBlur="false"
-                                        readMoreClass="items-center justify-start"
+                                        content-class="text-sm font-medium text-[#353535] xl:text-lg xl:leading-9"
+                                        :show-blur="false"
+                                        read-more-class="items-center justify-start"
                                     ></common-toggle-content>
                                 </div>
                             </div>
@@ -167,12 +167,12 @@
 
         <common-interested-service
             id="buyGrantServices"
-            :backgroundImage="content.video3Url"
+            :background-image="content.video3Url"
             :subtitle="content.Video3MiniTitle"
             :title="content.video3Title"
             :description="content.video3Description"
-            :buttonLink="content.video3ButtonLink"
-            :buttonTitle="content.video3ButtonText"
+            :button-link="content.video3ButtonLink"
+            :button-title="content.video3ButtonText"
         />
 
         <!-- Our Team -->
@@ -197,11 +197,11 @@
         <!-- Ready To Talk -->
         <common-readytotalk
             id="readyToTalk"
-            :imgUrl="readyToTalkForm.imgUrl"
-            :serviceOptions="readyToTalkForm.services.data"
-            :aboutParagraph="readyToTalkForm.aboutParagraph"
+            :img-url="readyToTalkForm.imgUrl"
+            :service-options="readyToTalkForm.services.data"
+            :about-paragraph="readyToTalkForm.aboutParagraph"
             :title="readyToTalkForm.title"
-            :talkInTitle="readyToTalkForm.talkInTitle"
+            :talk-in-title="readyToTalkForm.talkInTitle"
         />
 
         <common-modal ref="previewModal" class="" width="1440" background="bg-[#fafafa]">
@@ -452,8 +452,8 @@
             this.activeCategoryData = this.content?.section3Component?.data[0]?.attributes?.sampleWorks?.data[0] || {};
             if (this.content?.tabs && typeof this.content?.tabs === 'object') {
                 let count = 0;
-                delete this.content?.tabs['id'];
-                for (let value in this.content?.tabs) {
+                delete this.content?.tabs.id;
+                for (const value in this.content?.tabs) {
                     this.tabs[count].title = this.content?.tabs[value];
                     count += 1;
                 }

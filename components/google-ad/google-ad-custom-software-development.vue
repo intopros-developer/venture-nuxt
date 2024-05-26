@@ -1,5 +1,5 @@
 <template>
-    <section class="py-10 md:pt-16 md:pb-0 xl:pt-[86px] xl:pb-10">
+    <section class="py-10 md:pb-0 md:pt-16 xl:pb-10 xl:pt-[86px]">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex items-center justify-start gap-[33px] text-start">
                 <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold md:text-2xl lg:text-3xl">{{ heading }}</h2>
@@ -10,8 +10,8 @@
                         <!--Force commit again-->
                         {{ $props.subParagraph }}
                     </p>
-                    <div class="mb-[53px] divide-y divide-[#e6e6e6] border-t border-b border-[#e6e6e6]">
-                        <div :key="service.title" v-for="service in customServices" class="py-2.5">
+                    <div class="mb-[53px] divide-y divide-[#e6e6e6] border-b border-t border-[#e6e6e6]">
+                        <div v-for="service in customServices" :key="service.title" class="py-2.5">
                             <div
                                 class="flex cursor-pointer items-center gap-4 text-lg font-light leading-[47px] -tracking-[0.04px]"
                                 :class="{ 'text-primary': openTab === service.title }"
@@ -35,8 +35,8 @@
                 <div class="h-[400px] sm:h-auto lg:mt-40">
                     <ul class="relative top-28 mx-auto h-[295px] max-w-[295px] rounded-full border-[5px] border-primary/10 sm:top-24 sm:h-[365px] sm:max-w-[365px] lg:top-0 lg:mr-0 xl:h-[438px] xl:max-w-[438px]">
                         <li
-                            @click="openTab = openTab === customServices[0].title ? '' : customServices[0].title"
                             class="group relative -left-3 -top-4 float-left flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:left-3 sm:top-0 xl:left-5"
+                            @click="openTab = openTab === customServices[0].title ? '' : customServices[0].title"
                         >
                             <div class="transition-all ease-linear group-hover:mb-[10px] group-hover:mt-[-10px]" :class="{ 'mb-[10px] mt-[-10px]': openTab === customServices[0].title }">{{ customServices[0].title }}</div>
                             <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -45,8 +45,8 @@
                             </span>
                         </li>
                         <li
-                            @click="openTab = openTab === customServices[1].title ? '' : customServices[1].title"
                             class="group relative -top-20 left-10 float-left flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:left-20 xl:left-28"
+                            @click="openTab = openTab === customServices[1].title ? '' : customServices[1].title"
                         >
                             <div class="transition-all ease-linear group-hover:mb-[10px] group-hover:mt-[-10px]" :class="{ 'mb-[10px] mt-[-10px]': openTab === customServices[1].title }">{{ customServices[1].title }}</div>
                             <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -55,8 +55,8 @@
                             </span>
                         </li>
                         <li
+                            class="group relative -top-5 right-0 float-right flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:top-0 xl:right-6"
                             @click="openTab = openTab === customServices[2].title ? '' : customServices[2].title"
-                            class="group relative right-0 -top-5 float-right flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:top-0 xl:right-6"
                         >
                             <div class="transition-all ease-linear group-hover:mb-[10px] group-hover:mt-[-10px]" :class="{ 'mb-[10px] mt-[-10px]': openTab === customServices[2].title }">{{ customServices[2].title }}</div>
                             <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -65,8 +65,8 @@
                             </span>
                         </li>
                         <li
-                            @click="openTab = openTab === customServices[3].title ? '' : customServices[3].title"
                             class="group relative -right-6 top-5 float-right clear-both flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:-right-8 sm:top-16"
+                            @click="openTab = openTab === customServices[3].title ? '' : customServices[3].title"
                         >
                             <div class="transition-all ease-linear group-hover:mb-[10px] group-hover:mt-[-10px]" :class="{ 'mb-[10px] mt-[-10px]': openTab === customServices[3].title }">{{ customServices[3].title }}</div>
                             <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -75,8 +75,8 @@
                             </span>
                         </li>
                         <li
-                            @click="openTab = openTab === customServices[4].title ? '' : customServices[4].title"
                             class="group relative right-16 top-0 float-right clear-both flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:top-16 xl:top-32"
+                            @click="openTab = openTab === customServices[4].title ? '' : customServices[4].title"
                         >
                             <div class="transition-all ease-linear group-hover:mb-[10px] group-hover:mt-[-10px]" :class="{ 'mb-[10px] mt-[-10px]': openTab === customServices[4].title }">{{ customServices[4].title }}</div>
                             <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -85,8 +85,8 @@
                             </span>
                         </li>
                         <li
+                            class="group relative -top-24 left-10 float-left clear-both flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:-top-7 sm:left-16 xl:top-5"
                             @click="openTab = openTab === customServices[5].title ? '' : customServices[5].title"
-                            class="group relative left-10 -top-24 float-left clear-both flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:left-16 sm:-top-7 xl:top-5"
                         >
                             <div class="transition-all ease-linear group-hover:mb-[10px] group-hover:mt-[-10px]" :class="{ 'mb-[10px] mt-[-10px]': openTab === customServices[5].title }">{{ customServices[5].title }}</div>
                             <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -95,8 +95,8 @@
                             </span>
                         </li>
                         <li
-                            @click="openTab = openTab === customServices[6].title ? '' : customServices[6].title"
                             class="group relative -left-8 bottom-72 float-left clear-both flex cursor-pointer flex-col gap-3 text-lg font-semibold -tracking-[0.04px] text-primary transition-all ease-linear sm:-left-8 sm:bottom-56"
+                            @click="openTab = openTab === customServices[6].title ? '' : customServices[6].title"
                         >
                             <div class="transition-all ease-linear group-hover:mb-[10px] group-hover:mt-[-10px]" :class="{ 'mb-[10px] mt-[-10px]': openTab === customServices[6].title }">{{ customServices[6].title }}</div>
                             <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
@@ -113,11 +113,6 @@
 
 <script>
     export default {
-        data() {
-            return {
-                openTab: '',
-            };
-        },
         props: {
             bottomLogo: {
                 type: String,
@@ -179,6 +174,11 @@
                     ];
                 },
             },
+        },
+        data() {
+            return {
+                openTab: '',
+            };
         },
     };
 </script>

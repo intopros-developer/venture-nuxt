@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pt-[287px] pb-9 lg:bg-left-top xl:pt-[166px] xl:pb-[95px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-9 pt-[287px] lg:bg-left-top xl:pb-[95px] xl:pt-[166px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div>
@@ -8,16 +8,16 @@
                         {{ content.bannerSubtitle }}
                     </p>
                     <h1 class="mb-4 text-[28px] font-bold leading-8 text-white md:text-[40px] md:leading-[53px]">{{ content.bannerTitle }}</h1>
-                    <p v-html="content.bannerDescription" class="w-full text-sm font-normal leading-5 text-[#FBFBFD] sm:max-w-[377px] md:max-w-[458px] md:text-base md:leading-[26px]"></p>
+                    <p class="w-full text-sm font-normal leading-5 text-[#FBFBFD] sm:max-w-[377px] md:max-w-[458px] md:text-base md:leading-[26px]" v-html="content.bannerDescription"></p>
                 </div>
             </div>
         </section>
 
         <career-banner-tab />
 
-        <common-dynamic-questionnaire mainContainerClass="!max-w-[520px]" @changeQue1="assignQueAns1" :data="questionnaires"></common-dynamic-questionnaire>
+        <common-dynamic-questionnaire main-container-class="!max-w-[520px]" :data="questionnaires" @changeQue1="assignQueAns1"></common-dynamic-questionnaire>
 
-        <common-questionnaire-content :currentQuestion="currentFirstCareerQuestion" />
+        <common-questionnaire-content :current-question="currentFirstCareerQuestion" />
 
         <section class="pt-20 md:pt-28">
             <div id="careersAtVenturePlans" class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
@@ -47,7 +47,7 @@
             </div>
         </section>
 
-        <career-join-event :title="content.section4Description" :imageUrl="content.section4ImgUrl" />
+        <career-join-event :title="content.section4Description" :image-url="content.section4ImgUrl" />
 
         <career-professional-functional :title="content.section5Title" :professionals-and-positions="section5Data" />
 
@@ -61,24 +61,24 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" :video-u-r-l="content.video1Url" :title="content.video1Title" />
 
         <common-work-at-the-best-place
-            class="py-10 md:py-16 xl:pt-20 xl:pb-[85px]"
-            :imgUrl="content.CTA2ImgUrl"
+            class="py-10 md:py-16 xl:pb-[85px] xl:pt-20"
+            :img-url="content.CTA2ImgUrl"
             :title="content.CTA2Title"
             :description="content.CTA2Description"
-            :buttonTitle="content.CTA2ButtonText"
-            :buttonUrl="content.CTA2ButtonLink"
+            :button-title="content.CTA2ButtonText"
+            :button-url="content.CTA2ButtonLink"
         />
 
         <common-readytotalk
             page="careers"
-            :imgUrl="readyToTalkForm.imgUrl"
-            :serviceOptions="readyToTalkForm.services.data"
-            :aboutParagraph="readyToTalkForm.aboutParagraph"
+            :img-url="readyToTalkForm.imgUrl"
+            :service-options="readyToTalkForm.services.data"
+            :about-paragraph="readyToTalkForm.aboutParagraph"
             :title="readyToTalkForm.title"
-            :talkInTitle="readyToTalkForm.talkInTitle"
+            :talk-in-title="readyToTalkForm.talkInTitle"
         />
 
         <common-faq :title="content.section7Title" :description="content.section7Description" :faqs="section7Data" />
@@ -102,30 +102,6 @@
                 question1Ans: '',
                 currentFirstCareerQuestion: 'MBA Candidate',
             };
-        },
-
-        computed: {
-            questionnaires() {
-                return this.content?.dynamicQuestionnaries?.data[0]?.attributes || [];
-            },
-            careerQuestions() {
-                return this.content?.questionnaires?.data || [];
-            },
-            section1Data() {
-                return this.content?.section1Component?.data || [];
-            },
-            section3Data() {
-                return this.content?.section3Component?.data || [];
-            },
-            section5Data() {
-                return this.content?.section5Component?.data || [];
-            },
-            readyToTalkForm() {
-                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
-            },
-            section7Data() {
-                return this.content?.section7Component?.data || [];
-            },
         },
 
         head() {
@@ -193,6 +169,30 @@
                     },
                 ],
             };
+        },
+
+        computed: {
+            questionnaires() {
+                return this.content?.dynamicQuestionnaries?.data[0]?.attributes || [];
+            },
+            careerQuestions() {
+                return this.content?.questionnaires?.data || [];
+            },
+            section1Data() {
+                return this.content?.section1Component?.data || [];
+            },
+            section3Data() {
+                return this.content?.section3Component?.data || [];
+            },
+            section5Data() {
+                return this.content?.section5Component?.data || [];
+            },
+            readyToTalkForm() {
+                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
+            },
+            section7Data() {
+                return this.content?.section7Component?.data || [];
+            },
         },
 
         methods: {

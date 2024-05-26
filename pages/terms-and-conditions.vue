@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="relative bg-[url('/assets/img/terms-and-conditions-top.png')] bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]">
-            <div class="absolute top-0 left-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+            <div class="absolute left-0 top-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[246px]"></div>
             <div class="container relative z-10 lg:px-[97px] xl:px-4">
                 <div>
@@ -11,7 +11,7 @@
             </div>
         </section>
 
-        <section class="container mt-24 mb-60 lg:px-[97px] xl:px-4">
+        <section class="container mb-60 mt-24 lg:px-[97px] xl:px-4">
             <div v-for="(data, i) in content" :key="i" class="max-w-4xl" :class="{ 'mb-6': i !== content.length - 1 }">
                 <h5 class="mb-8 text-xl font-bold">{{ data.title }}</h5>
                 <p>{{ data.description }}</p>

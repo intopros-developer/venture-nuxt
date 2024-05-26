@@ -79,10 +79,10 @@
         </div>
 
         <div class="px-10 text-center md:px-4 lg:px-[97px] xl:px-4 xl:pt-5">
-            <button type="button" v-if="!buttonUrl" class="outline-btn border-[#000]/[0.08] px-14 py-[23px] text-sm uppercase -tracking-[-0.03px] text-[#00ADFF]" @click="viewAll = !viewAll">
+            <button v-if="!buttonUrl" type="button" class="outline-btn border-[#000]/[0.08] px-14 py-[23px] text-sm uppercase -tracking-[-0.03px] text-[#00ADFF]" @click="viewAll = !viewAll">
                 {{ viewAll ? 'View less Reviews' : buttonText }}
             </button>
-            <a :href="buttonUrl" v-else class="outline-btn border-[#000]/[0.08] px-14 py-[23px] text-sm uppercase -tracking-[-0.03px] text-[#00ADFF]">{{ buttonText }}</a>
+            <a v-else :href="buttonUrl" class="outline-btn border-[#000]/[0.08] px-14 py-[23px] text-sm uppercase -tracking-[-0.03px] text-[#00ADFF]">{{ buttonText }}</a>
         </div>
     </section>
 </template>
@@ -159,6 +159,7 @@
                 slider_data: [],
             };
         },
+        computed: {},
 
         mounted() {
             [...this.testimonials].forEach((da) => {
@@ -166,7 +167,6 @@
             });
             this.aboutClient.init();
         },
-        computed: {},
 
         methods: {
             truncateString(text) {

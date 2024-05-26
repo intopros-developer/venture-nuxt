@@ -41,9 +41,9 @@
                                         <p class="cursor-pointer !border-b-0 !leading-5 duration-150 hover:text-primary">{{ $t('industries') }}</p>
                                     </div>
                                     <div class="grid grid-cols-4 divide-x divide-[#707070]/20">
-                                        <ul class="self-stretch pr-12" :class="{ 'self-stretch px-12': mInd > 0 }" v-for="(mainIndNav, mInd) in $store.state.nav.industries" :key="mInd + mainIndNav.attributes.name">
+                                        <ul v-for="(mainIndNav, mInd) in $store.state.nav.industries" :key="mInd + mainIndNav.attributes.name" class="self-stretch pr-12" :class="{ 'self-stretch px-12': mInd > 0 }">
                                             <li v-for="(subIndNav, sInd) in mainIndNav.attributes.collections.data" :key="sInd + subIndNav.attributes.base_url.data.attributes.url">
-                                                <nuxt-link @click.native="$store.dispatch('nav/deactiveAllDropdown')" :to="subIndNav.attributes.base_url.data.attributes.url">{{
+                                                <nuxt-link :to="subIndNav.attributes.base_url.data.attributes.url" @click.native="$store.dispatch('nav/deactiveAllDropdown')">{{
                                                     subIndNav.attributes.base_url.data.attributes.name
                                                 }}</nuxt-link>
                                             </li>

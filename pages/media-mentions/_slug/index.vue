@@ -1,7 +1,7 @@
 <template>
     <div v-if="content">
         <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-10 pt-[166px] md:bg-left xl:pb-20" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
-            <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+            <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div>
@@ -9,12 +9,12 @@
                         {{ content.bannerSubtitle }}
                     </p>
                     <h1 class="mb-4 text-[38px] font-bold leading-[42px] text-white xl:text-[40px]">{{ content.bannerTitle }}</h1>
-                    <p v-html="content.bannerDescription" class="font-normal leading-5 text-[#FBFBFD] md:whitespace-pre xl:leading-6"></p>
+                    <p class="font-normal leading-5 text-[#FBFBFD] md:whitespace-pre xl:leading-6" v-html="content.bannerDescription"></p>
                 </div>
             </div>
         </section>
 
-        <section class="container mt-24 mb-24 lg:mb-20 lg:px-[97px] xl:px-4">
+        <section class="container mb-24 mt-24 lg:mb-20 lg:px-[97px] xl:px-4">
             <p class="max-w-4xl">{{ content.section1Description }}</p>
 
             <div class="relative z-[1] mt-20 grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-2 lg:gap-y-[40px]">
@@ -24,11 +24,11 @@
                     </div>
                     <div>
                         <div class="w-full lg:w-5/6">
-                            <p class="line-clamp-1 my-5 text-sm font-semibold text-primary">{{ media.attributes.mediaSource }}</p>
+                            <p class="my-5 line-clamp-1 text-sm font-semibold text-primary">{{ media.attributes.mediaSource }}</p>
                             <div>
-                                <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="line-clamp-2 mb-5 block text-[24px] font-bold">{{ media.attributes.title }}</nuxt-link>
+                                <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="mb-5 line-clamp-2 block text-[24px] font-bold">{{ media.attributes.title }}</nuxt-link>
                             </div>
-                            <p class="line-clamp-3 mb-7 text-base text-[#202A36]">{{ media.attributes.paragraph }}</p>
+                            <p class="mb-7 line-clamp-3 text-base text-[#202A36]">{{ media.attributes.paragraph }}</p>
                         </div>
 
                         <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="mb-10 flex w-[110px] items-center justify-center gap-2 rounded-md bg-primary py-[10px] text-[14px] text-white md:hover:bg-blue-500">
@@ -46,7 +46,7 @@
                                 {{ media.attributes.newsType }} | {{ $helper.formatInsightPublishDate(media.attributes.date) }}
                             </p>
                             <button type="button">
-                                <common-share :is-show-save-btn="true" :insights="true" :customLink="`${media.attributes.singleMediaPageSlug}`" />
+                                <common-share :is-show-save-btn="true" :insights="true" :custom-link="`${media.attributes.singleMediaPageSlug}`" />
                             </button>
                         </div>
                     </div>
@@ -65,12 +65,6 @@
                     content: context.$helper.parseData(data.data),
                 };
             } catch {}
-        },
-
-        computed: {
-            mediaCatalogues() {
-                return this?.content?.mediaCatalogues?.data || [];
-            },
         },
 
         head() {
@@ -138,6 +132,12 @@
                     },
                 ],
             };
+        },
+
+        computed: {
+            mediaCatalogues() {
+                return this?.content?.mediaCatalogues?.data || [];
+            },
         },
     };
 </script>

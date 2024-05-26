@@ -1,6 +1,6 @@
 <template>
     <section class="contact-heroform hero-ultra-wide-height relative h-[770px] bg-cover bg-[center_top_25%] bg-no-repeat md:h-[730px] xl:h-[835px]" :style="{ backgroundImage: `url(${image})` }">
-        <div class="absolute top-0 left-0 z-0 h-full w-[70%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+        <div class="absolute left-0 top-0 z-0 h-full w-[70%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
         <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[307px]"></div>
         <div class="container relative content-center px-10 lg:px-[97px] xl:px-4">
             <form id="contact-us-hero-form" action="" @submit.prevent="onSubmit">
@@ -99,12 +99,12 @@
                                             @select="onSelect"
                                         >
                                             <template slot="caret">
-                                                <button type="submit" class="pointer-events-none absolute right-0 top-0 mt-4 mr-4 xl:mt-[18px]">
+                                                <button type="submit" class="pointer-events-none absolute right-0 top-0 mr-4 mt-4 xl:mt-[18px]">
                                                     <icons-search class="h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4" />
                                                 </button>
                                             </template>
                                             <template slot="clear">
-                                                <button v-if="isClearSearch" type="button" class="absolute right-0 top-0 mt-4 mr-11 xl:mt-[18px]" @click.stop="params.inquiry_reason = ''">
+                                                <button v-if="isClearSearch" type="button" class="absolute right-0 top-0 mr-11 mt-4 xl:mt-[18px]" @click.stop="params.inquiry_reason = ''">
                                                     <icons-close-time class="h-3 w-3 fill-current text-black xl:h-4 xl:w-4" />
                                                 </button>
                                             </template>
@@ -118,7 +118,7 @@
                             <div v-if="captchaError" class="captcha-error">Please verify reCaptcha.</div>
                         </div>
                         <div class="">
-                            <button type="submit" class="btn ml-auto mr-0 !w-auto !max-w-max py-4 px-16 uppercase hover:bg-primary-700 xl:py-5 xl:px-20">{{ $t('submit') }}</button>
+                            <button type="submit" class="btn ml-auto mr-0 !w-auto !max-w-max px-16 py-4 uppercase hover:bg-primary-700 xl:px-20 xl:py-5">{{ $t('submit') }}</button>
                         </div>
                         <div v-if="isSubmitted" class="mt-5 flex justify-center gap-3">
                             <icons-check-circle class="relative top-[2px] h-6 w-6 text-green" />

@@ -22,9 +22,9 @@
                             {{ buttonTitle }}
                         </nuxt-link>
                         <a
+                            v-else
                             target="_blank"
                             :href="buttonLink"
-                            v-else
                             class="b-btn border-white bg-white px-14 py-[19px] text-xs uppercase text-[#14c8f6] hover:border-primary hover:bg-primary hover:text-white lg:max-w-[322px] lg:py-6 xl:px-[67px]"
                         >
                             {{ buttonTitle }}

@@ -16,7 +16,7 @@
         </section>
 
         <!-- tabs-options -->
-        <common-banner-tab :tabs="tabs" :isShowSaveBtn="true" />
+        <common-banner-tab :tabs="tabs" :is-show-save-btn="true" />
 
         <!-- leadership overview -->
         <section class="py-10 lg:pb-[90px] lg:pt-20 xl:pt-[100px]">
@@ -32,7 +32,14 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" :lessPaddingTop="true" />
+        <common-contact-us
+            :video-thumbnail-u-r-l="content.video1ThumbnailUrl"
+            :button-title="content.video1ButtonText"
+            :button-u-r-l="content.video1ButtonLink"
+            :video-u-r-l="content.video1Url"
+            :title="content.video1Title"
+            :less-padding-top="true"
+        />
 
         <!-- our-team -->
         <div>
@@ -66,27 +73,33 @@
                         v-html="content.CTA1Description"
                     ></p>
                     <nuxt-link v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" :to="content.CTA1ButtonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ content.CTA1ButtonText }}</nuxt-link>
-                    <a target="_blank" v-else :href="buttonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ content.CTA1ButtonText }}</a>
+                    <a v-else target="_blank" :href="buttonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ content.CTA1ButtonText }}</a>
                 </div>
             </div>
         </section>
 
         <section id="employmentOpportunities">
-            <common-tell-more-about-projects :featuredCompanies="section3Data" :tellUsMoreData="section4Data" :tellUsMoreTitle="content.section4Title" :tellUseMoreSubtitle="content.section4Subtitle" :imageUrl="content.section4ImgUrl" />
+            <common-tell-more-about-projects
+                :featured-companies="section3Data"
+                :tell-us-more-data="section4Data"
+                :tell-us-more-title="content.section4Title"
+                :tell-use-more-subtitle="content.section4Subtitle"
+                :image-url="content.section4ImgUrl"
+            />
         </section>
 
         <!-- work at best place -->
         <section>
-            <common-work-at-the-best-place :imgUrl="content.CTA2ImgUrl" :title="content.CTA2Title" :description="content.CTA2Description" :buttonTitle="content.CTA2ButtonText" :buttonUrl="content.CTA2ButtonLink" />
+            <common-work-at-the-best-place :img-url="content.CTA2ImgUrl" :title="content.CTA2Title" :description="content.CTA2Description" :button-title="content.CTA2ButtonText" :button-url="content.CTA2ButtonLink" />
         </section>
 
         <common-interested-service
-            :backgroundImage="content.section5ImgUrl"
+            :background-image="content.section5ImgUrl"
             :subtitle="content.section5Subtitle"
             :title="content.section5Title"
             :description="content.section5Description"
-            :buttonLink="content.section5ButtonLink"
-            :buttonTitle="content.section5ButtonText"
+            :button-link="content.section5ButtonLink"
+            :button-title="content.section5ButtonText"
         />
 
         <common-faq :title="content.section6Title" :description="content.section6Description" :faqs="section6Data" />
@@ -96,11 +109,11 @@
 
         <common-readytotalk
             id="readyToTalk"
-            :imgUrl="readyToTalkForm.imgUrl"
-            :serviceOptions="readyToTalkForm.services.data"
-            :aboutParagraph="readyToTalkForm.aboutParagraph"
+            :img-url="readyToTalkForm.imgUrl"
+            :service-options="readyToTalkForm.services.data"
+            :about-paragraph="readyToTalkForm.aboutParagraph"
             :title="readyToTalkForm.title"
-            :talkInTitle="readyToTalkForm.talkInTitle"
+            :talk-in-title="readyToTalkForm.talkInTitle"
         />
     </div>
 </template>

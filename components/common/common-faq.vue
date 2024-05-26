@@ -117,6 +117,21 @@
             },
         },
 
+        watch: {
+            openFaq: {
+                handler() {
+                    setTimeout(() => {
+                        let domRect = document.querySelector(`#faq-${this.openFaq}`);
+                        if (domRect !== null) {
+                            domRect = document.querySelector(`#faq-${this.openFaq}`).getBoundingClientRect();
+                            window.scrollTo({ top: domRect.top + document.documentElement.scrollTop - 130, behavior: 'smooth' });
+                        }
+                    }, 100);
+                },
+                deep: true,
+            },
+        },
+
         methods: {
             generateSchema(data) {
                 return {
@@ -131,21 +146,6 @@
                         },
                     })),
                 };
-            },
-        },
-
-        watch: {
-            openFaq: {
-                handler() {
-                    setTimeout(() => {
-                        let domRect = document.querySelector(`#faq-${this.openFaq}`);
-                        if (domRect !== null) {
-                            domRect = document.querySelector(`#faq-${this.openFaq}`).getBoundingClientRect();
-                            window.scrollTo({ top: domRect.top + document.documentElement.scrollTop - 130, behavior: 'smooth' });
-                        }
-                    }, 100);
-                },
-                deep: true,
             },
         },
     };

@@ -5,10 +5,10 @@
         <lazy-common-dynamic-questionnaire :data="questionnaires"></lazy-common-dynamic-questionnaire>
 
         <lazy-common-contact-us
-            :videoThumbnailURL="content.video1ThumbnailUrl"
-            :buttonTitle="content.video1ButtonText"
-            :buttonURL="content.video1ButtonLink"
-            :videoURL="content.video1Url"
+            :video-thumbnail-u-r-l="content.video1ThumbnailUrl"
+            :button-title="content.video1ButtonText"
+            :button-u-r-l="content.video1ButtonLink"
+            :video-u-r-l="content.video1Url"
             :title="content.video1Title"
             description="for consulting services"
         />
@@ -26,35 +26,35 @@
             </div>
         </section>
 
-        <lazy-home-about-client :buttonText="content.section3ButtonText" :buttonUrl="content.section3ButtonLink" :title="content.section3Title" :testimonials="section3Data" />
+        <lazy-home-about-client :button-text="content.section3ButtonText" :button-url="content.section3ButtonLink" :title="content.section3Title" :testimonials="section3Data" />
 
         <lazy-common-readytotalk
             id="readyToTalk"
-            :imgUrl="readyToTalkForm.imgUrl"
-            :serviceOptions="readyToTalkForm.services.data"
-            :aboutParagraph="readyToTalkForm.aboutParagraph"
+            :img-url="readyToTalkForm.imgUrl"
+            :service-options="readyToTalkForm.services.data"
+            :about-paragraph="readyToTalkForm.aboutParagraph"
             :title="readyToTalkForm.title"
-            :talkInTitle="readyToTalkForm.talkInTitle"
+            :talk-in-title="readyToTalkForm.talkInTitle"
         />
 
         <lazy-home-private-placement
-            :buttonLink="content.CTA1ButtonLink"
-            :buttonText="content.CTA1ButtonText"
+            :button-link="content.CTA1ButtonLink"
+            :button-text="content.CTA1ButtonText"
             :title="content.CTA1Title"
             :description="content.CTA1Description"
-            :featuredInText="content.section4Title"
-            :featuredCompanies="section4Data"
+            :featured-in-text="content.section4Title"
+            :featured-companies="section4Data"
         />
 
         <lazy-home-sector-excelled :title="content.section5Title" :description="content.section5Description" :data="section5Data" />
 
-        <lazy-common-work-at-the-best-place :imgUrl="content.CTA2ImgUrl" :title="content.CTA2Title" :description="content.CTA2Description" :buttonTitle="content.CTA2ButtonText" :buttonUrl="content.CTA2ButtonLink" />
+        <lazy-common-work-at-the-best-place :img-url="content.CTA2ImgUrl" :title="content.CTA2Title" :description="content.CTA2Description" :button-title="content.CTA2ButtonText" :button-url="content.CTA2ButtonLink" />
 
         <lazy-home-our-latest-insights :insights="section6Data" :title="content.section6Title" />
 
-        <lazy-home-subscribe :imageUrl="content.section7ImgUrl" :title="content.section7Title" :description="content.section7Description" />
+        <lazy-home-subscribe :image-url="content.section7ImgUrl" :title="content.section7Title" :description="content.section7Description" />
 
-        <lazy-home-career :buttonLink="content.section8ButtonLink" :buttonText="content.section8ButtonText" :title="content.section8Title" :subtitle="content.section8Subtitle" :image="content.section8ImgUrl" />
+        <lazy-home-career :button-link="content.section8ButtonLink" :button-text="content.section8ButtonText" :title="content.section8Title" :subtitle="content.section8Subtitle" :image="content.section8ImgUrl" />
 
         <lazy-common-brand-logo :logos="logoSlider" />
     </div>

@@ -1,11 +1,11 @@
 <template>
-    <section class="container bg-white py-8 antialiased dark:bg-gray-900 lg:py-16">
+    <section class="container bg-white py-8 antialiased lg:py-16 dark:bg-gray-900">
         <div class="mx-auto max-w-2xl">
             <div class="mb-6 flex items-center justify-between">
-                <h2 class="text-lg font-bold text-gray-900 dark:text-white lg:text-2xl">Discussion (20)</h2>
+                <h2 class="text-lg font-bold text-gray-900 lg:text-2xl dark:text-white">Discussion (20)</h2>
             </div>
             <form class="mb-6">
-                <div class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4 dark:border-gray-700 dark:bg-gray-800">
+                <div class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white px-4 py-2 dark:border-gray-700 dark:bg-gray-800">
                     <label for="comment" class="sr-only">Your comment</label>
                     <textarea
                         id="comment"
@@ -15,7 +15,7 @@
                         required
                     ></textarea>
                 </div>
-                <button type="submit" class="focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 inline-flex items-center rounded-lg bg-primary-700 py-2.5 px-4 text-center text-xs font-medium text-white focus:ring-4">
+                <button type="submit" class="focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 inline-flex items-center rounded-lg bg-primary-700 px-4 py-2.5 text-center text-xs font-medium text-white focus:ring-4">
                     Post comment
                 </button>
             </form>
@@ -42,13 +42,13 @@
                     <div id="dropdownComment1" class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
                             <li>
-                                <button aria-label="Edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
+                                <button aria-label="Edit" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
                             </li>
                             <li>
-                                <button aria-label="Remove" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
+                                <button aria-label="Remove" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
                             </li>
                             <li>
-                                <button aria-label="Report" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
+                                <button aria-label="Report" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
                             </li>
                         </ul>
                     </div>
@@ -65,7 +65,7 @@
                     </button>
                 </div>
             </article>
-            <article class="mb-3 ml-6 rounded-lg bg-white p-6 text-base dark:bg-gray-900 lg:ml-12">
+            <article class="mb-3 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12 dark:bg-gray-900">
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
@@ -88,13 +88,13 @@
                     <div id="dropdownComment2" class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
                             <li>
-                                <button aria-label="Edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
+                                <button aria-label="Edit" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
                             </li>
                             <li>
-                                <button aria-label="Remove" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
+                                <button aria-label="Remove" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
                             </li>
                             <li>
-                                <button aria-label="Report" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
+                                <button aria-label="Report" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
                             </li>
                         </ul>
                     </div>
@@ -132,13 +132,13 @@
                     <div id="dropdownComment3" class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
                             <li>
-                                <button aria-label="Edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
+                                <button aria-label="Edit" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
                             </li>
                             <li>
-                                <button aria-label="Remove" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
+                                <button aria-label="Remove" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
                             </li>
                             <li>
-                                <button aria-label="Report" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
+                                <button aria-label="Report" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
                             </li>
                         </ul>
                     </div>
@@ -175,13 +175,13 @@
                     <div id="dropdownComment4" class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
                             <li>
-                                <button aria-label="Edit" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
+                                <button aria-label="Edit" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</button>
                             </li>
                             <li>
-                                <button aria-label="Remove" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
+                                <button aria-label="Remove" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Remove</button>
                             </li>
                             <li>
-                                <button aria-label="Report" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
+                                <button aria-label="Report" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</button>
                             </li>
                         </ul>
                     </div>

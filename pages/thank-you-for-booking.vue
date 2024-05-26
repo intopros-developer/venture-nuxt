@@ -129,8 +129,8 @@
 
                     <!-- Force rebuild-->
                     <nuxt-link
-                        to="/book-consult"
                         v-else
+                        to="/book-consult"
                         type="submit"
                         class="b-btn mx-auto flex items-center justify-center gap-3 rounded py-4 text-sm text-white transition-all duration-300 hover:bg-primary-700 md:hidden md:text-xs lg:max-w-[322px] lg:py-6 xl:py-3 xl:text-xs xl:leading-4"
                     >
@@ -172,8 +172,8 @@
                 gtag('event', 'conversion', { send_to: 'AW-11266175330/wIt9CJKovf0YEOLikPwp' });
             }
             function gtag_report_conversion(url) {
-                var callback = function () {
-                    if (typeof url != 'undefined') {
+                const callback = function () {
+                    if (typeof url !== 'undefined') {
                         window.location = url;
                     }
                 };

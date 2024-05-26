@@ -20,13 +20,13 @@
 
                         <div
                             v-if="questions[currentQuestion - 1]"
+                            v-show="questions[currentQuestion - 1].attributes.options.data.length"
                             class="flex flex-row flex-wrap gap-[3px] md:gap-2"
                             :class="{ 'grid grid-cols-2 gap-[3px] sm:grid-cols-3 md:gap-2': currentQuestion == 1 }"
-                            v-show="questions[currentQuestion - 1].attributes.options.data.length"
                         >
                             <button
-                                v-show="showAllOf.includes(currentQuestion) || index <= 5"
                                 v-for="(ans, index) in questions[currentQuestion - 1].attributes.options.data"
+                                v-show="showAllOf.includes(currentQuestion) || index <= 5"
                                 :key="index"
                                 class="home-question w-auto px-4"
                                 :class="{ 'px-12': typeof ans.attributes.title === 'string' && ans.attributes.title.length < 5 }"
@@ -37,7 +37,7 @@
                         </div>
                         <button
                             v-show="!showAllOf.includes(currentQuestion) && questions[currentQuestion - 1] && questions[currentQuestion - 1].attributes.options.data.length > 6"
-                            class="float-right mt-3 ml-auto flex items-end border-b border-[#586376] text-base font-medium leading-4 text-[#586376]"
+                            class="float-right ml-auto mt-3 flex items-end border-b border-[#586376] text-base font-medium leading-4 text-[#586376]"
                             @click="showAllOf.push(currentQuestion)"
                         >
                             {{ $t('see_all') }}
@@ -122,7 +122,7 @@
                     <nuxt-img src="/assets/img/congo-icon.svg" alt="Icon Congo" loading="lazy" />
                     <div v-if="!isNoCapital">
                         <h2
-                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                             v-html="$t('congratulations_you_have_span_successfully_span_br_answered_all_the_questions')"
                         ></h2>
                         <p
@@ -136,7 +136,7 @@
                     </div>
                     <div v-else>
                         <h2
-                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                         >
                             We are sorry all of our clients require <br /><span>working capital</span> in order to qualify
                         </h2>
@@ -153,7 +153,7 @@
 
                     <nuxt-img v-else-if="questions[currentQuestion - 1]" format="webp" :src="questions[currentQuestion - 1].attributes.imgUrl || '/assets/img/grant-que-2.png'" alt="Grant Que 2" class="h-full w-full object-cover" />
 
-                    <nuxt-img format="webp" v-else src="/assets/img/grant-que-2.png" alt="Grant Que 2" loading="lazy" class="h-full w-full object-cover" />
+                    <nuxt-img v-else format="webp" src="/assets/img/grant-que-2.png" alt="Grant Que 2" loading="lazy" class="h-full w-full object-cover" />
                 </div>
             </div>
         </div>

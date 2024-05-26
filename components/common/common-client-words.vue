@@ -5,7 +5,7 @@
                 <div class="pb-[50px]">
                     <div id="ourClientsWords" class="mb-5 flex items-center justify-center gap-2.5 text-center">
                         <slot v-if="hasCustomHeaderSlot" name="customHeader">
-                            <h2 v-html="title" class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold md:text-2xl lg:text-3xl"></h2>
+                            <h2 class="inline-block border-b-[7px] border-primary pb-2 text-xl font-bold md:text-2xl lg:text-3xl" v-html="title"></h2>
                         </slot>
                         <template v-else>
                             <div class="block h-px w-full bg-[#d5d5d5]"></div>
@@ -98,11 +98,6 @@
                 ],
             },
         },
-        computed: {
-            hasCustomHeaderSlot() {
-                return !!this.$slots.customHeader;
-            },
-        },
         data() {
             return {
                 isShowReadMore: false,
@@ -129,6 +124,11 @@
                 },
                 slider_data: [],
             };
+        },
+        computed: {
+            hasCustomHeaderSlot() {
+                return !!this.$slots.customHeader;
+            },
         },
 
         mounted() {

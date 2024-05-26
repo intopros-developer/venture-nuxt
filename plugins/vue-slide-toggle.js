@@ -1,4 +1,4 @@
-import Vue from 'vue'
-import VueSlideToggle from 'vue-slide-toggle'
+import Vue from 'vue';
+import VueSlideToggle from 'vue-slide-toggle';
 
-Vue.use(VueSlideToggle)
+Vue.use(VueSlideToggle);

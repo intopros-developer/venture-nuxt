@@ -9,14 +9,14 @@
 
                 <nuxt-link v-if="$helper.isInternalUrl(buttonLink)" :to="buttonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ buttonText }}</nuxt-link>
 
-                <a target="_blank" v-else :href="buttonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ buttonText }}</a>
+                <a v-else target="_blank" :href="buttonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ buttonText }}</a>
 
                 <h3 class="py-9 text-2xl font-medium text-[#0B3A02] md:text-[31px] lg:pb-[43px] lg:pt-[169px]" v-html="featuredInText"></h3>
 
                 <div class="flex flex-wrap items-center justify-center gap-4 lg:gap-[50px]">
                     <div
-                        :key="i"
                         v-for="(company, i) in featuredCompanies"
+                        :key="i"
                         :index="i"
                         class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white p-5 px-[17px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[126px] xl:w-[126px]"
                     >

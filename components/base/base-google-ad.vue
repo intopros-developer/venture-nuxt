@@ -21,7 +21,7 @@
                                     {{ content.bannerDescription }}
                                 </p>
                                 <ul class="mb-7 flex flex-wrap items-start gap-y-3 pt-8 text-white sm:gap-4 md:max-w-[491px] lg:grid lg:grid-cols-2 xl:flex">
-                                    <li v-for="data in bannerData" class="w-1/2 grow text-center text-3xl font-bold sm:w-auto md:text-[45px] md:leading-[50px]">
+                                    <li v-for="(data, index) in bannerData" :key="index" class="w-1/2 grow text-center text-3xl font-bold sm:w-auto md:text-[45px] md:leading-[50px]">
                                         {{ data.attributes.sectionDescription }} <span class="block text-[15px] font-normal">{{ data.attributes.sectionName }}</span>
                                     </li>
                                 </ul>
@@ -57,7 +57,7 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" :video-u-r-l="content.video1Url" :title="content.video1Title" />
 
         <!-- Start portfolio -->
         <section class="bg-white py-16 md:pb-[101px] md:pt-20 xl:pt-[92px]">
@@ -108,12 +108,12 @@
 
         <!-- Buy your business plan today -->
         <home-private-placement
-            :featuredCompanies="section4Data"
-            :featuredInText="content.section4Title"
+            :featured-companies="section4Data"
+            :featured-in-text="content.section4Title"
             :description="content.CTA1Description"
             :title="content.CTA1Title"
-            :buttonText="content.CTA1ButtonText"
-            :buttonLink="content.CTA1ButtonLink"
+            :button-text="content.CTA1ButtonText"
+            :button-link="content.CTA1ButtonLink"
         />
 
         <!-- Featured Services -->
@@ -139,7 +139,7 @@
                     </p>
                 </div>
                 <div class="grid grid-cols-1 gap-7 space-y-4 pt-8 md:grid-cols-2 md:space-y-0 md:pt-[78px]">
-                    <div class="flex flex-col justify-between" v-for="item in section6Data">
+                    <div v-for="(item, index) in section6Data" :key="index" class="flex flex-col justify-between">
                         <nuxt-img format="webp" :src="item.attributes.imgUrl" class="mx-auto max-w-full md:max-w-[360px]" :alt="item.attributes.title" loading="lazy" />
                         <div class="mt-4 text-center">
                             <button type="button" class="text-[15px] font-semibold text-primary" @click="$refs.previewModal.open(), previewSelectedMarketReport(item.attributes.marketReports)">
@@ -171,14 +171,14 @@
                     </div>
                     <div class="pt-[76px] text-center">
                         <nuxt-link v-if="$helper.isInternalUrl(content.section7ButtonLink)" :to="content.section7ButtonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ content.section7ButtonText }}</nuxt-link>
-                        <a target="_blank" :href="content.section7ButtonLink" v-else :to="content.section7ButtonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ content.section7ButtonText }}</a>
+                        <a v-else target="_blank" :href="content.section7ButtonLink" :to="content.section7ButtonLink" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">{{ content.section7ButtonText }}</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- common-business-challenge -->
-        <common-business-challenge :title="content.section8Title" :image="content.section8ImgUrl" :values="section8Data" :buttonText="content.section8ButtonText" :buttonUrl="content.section8ButtonLink" />
+        <common-business-challenge :title="content.section8Title" :image="content.section8ImgUrl" :values="section8Data" :button-text="content.section8ButtonText" :button-url="content.section8ButtonLink" />
 
         <section class="py-10 lg:pb-[198px] lg:pt-[93px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
@@ -229,12 +229,12 @@
         <!-- Interested Service -->
         <!-- <common-interested-service :value="content.buyService.fields" /> -->
         <common-interested-service
-            :backgroundImage="content.section10ImgUrl"
+            :background-image="content.section10ImgUrl"
             :subtitle="content.section10Subtitle"
             :title="content.section10Title"
             :description="content.section10Description"
-            :buttonLink="content.section10ButtonLink"
-            :buttonTitle="content.section10ButtonText"
+            :button-link="content.section10ButtonLink"
+            :button-title="content.section10ButtonText"
         />
 
         <!-- Our Client -->
@@ -245,7 +245,13 @@
         <home-sector-excelled :title="content.section12Title" :description="content.section12Description" :data="section12Data" />
 
         <section class="py-10">
-            <common-tell-more-about-projects :featuredCompanies="section4Data" :tellUsMoreData="section13Data" :tellUsMoreTitle="content.section13Title" :tellUseMoreSubtitle="content.section13Subtitle" :imageUrl="content.section13ImgUrl" />
+            <common-tell-more-about-projects
+                :featured-companies="section4Data"
+                :tell-us-more-data="section13Data"
+                :tell-us-more-title="content.section13Title"
+                :tell-use-more-subtitle="content.section13Subtitle"
+                :image-url="content.section13ImgUrl"
+            />
         </section>
 
         <!-- our-team -->
@@ -259,7 +265,7 @@
         <common-brand-logo :logos="logoSliders" />
 
         <!-- Ready To Talk -->
-        <common-readytotalk :imgUrl="readyToTalkForm.imgUrl" :serviceOptions="readyToTalkForm.services.data" :aboutParagraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talkInTitle="readyToTalkForm.talkInTitle" />
+        <common-readytotalk :img-url="readyToTalkForm.imgUrl" :service-options="readyToTalkForm.services.data" :about-paragraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talk-in-title="readyToTalkForm.talkInTitle" />
 
         <common-modal ref="previewModal" class="" width="1440" background="bg-[#fafafa]">
             <div>
@@ -297,16 +303,16 @@
                                 activeProductData.buttonTitle
                             }}</nuxt-link>
                             <a v-else target="_blank" :href="activeProductData.buttonUrl" class="b-btn w-full rounded px-9 py-4 text-base md:w-auto" @click="$refs.previewModal.close()">{{ activeProductData.buttonTitle }}</a>
-                            <nuxt-link v-if="$helper.isInternalUrl(activeProductData.pdfUrlField)" :to="activeProductData.pdfUrlField" class="b-btn w-full rounded px-9 py-4 text-base md:w-auto" @click="$refs.previewModal.close()"
-                                >View Document</nuxt-link
-                            >
+                            <nuxt-link v-if="$helper.isInternalUrl(activeProductData.pdfUrlField)" :to="activeProductData.pdfUrlField" class="b-btn w-full rounded px-9 py-4 text-base md:w-auto" @click="$refs.previewModal.close()">
+                                View Document
+                            </nuxt-link>
                             <a v-else target="_blank" :href="activeProductData.pdfUrlField" class="b-btn w-full rounded px-9 py-4 text-base md:w-auto" @click="$refs.previewModal.close()">View Document</a>
                         </div>
                     </div>
 
                     <div v-if="activeProductData.descriptionMediaType === 'images'" v-swiper:brandLogo="slider_options" class="swiper relative bg-transparent" :cleanup-styles-on-destroy="false">
                         <div class="swiper-wrapper items-center !px-10">
-                            <div v-if="activeProductData.images" class="swiper-slide bg-white p-4" v-for="(image, i) in activeProductData.images">
+                            <div v-for="(image, i) in activeProductData.images" v-if="activeProductData.images" class="swiper-slide bg-white p-4">
                                 <nuxt-img format="webp" :src="image.imgUrl" class="h-full w-full object-cover" :alt="'swiper-slide' + i" loading="lazy" />
                             </div>
                         </div>
@@ -327,6 +333,9 @@
     import { alphaNumericSpace } from '~/helper/custom-validations';
 
     export default {
+        directives: {
+            ClickOutside,
+        },
         props: {
             content: {
                 type: Object,
@@ -334,9 +343,6 @@
                     return null;
                 },
             },
-        },
-        directives: {
-            ClickOutside,
         },
         data() {
             return {

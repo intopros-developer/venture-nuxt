@@ -8,7 +8,7 @@
             </div>
             <div v-if="hasReadMore && showBlur" :class="!expanded ? 'toggle-gradient' : ''"></div>
         </div>
-        <button v-if="hasReadMore" @click="toggleContentShow" class="mt-[25px] flex gap-3.5 text-base font-semibold text-primary" :class="readMoreClass">
+        <button v-if="hasReadMore" class="mt-[25px] flex gap-3.5 text-base font-semibold text-primary" :class="readMoreClass" @click="toggleContentShow">
             read {{ expanded ? 'less' : 'more' }}
             <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" class="h-1 w-2 xl:h-[6px] xl:w-[11px]">
                 <g>
@@ -68,6 +68,13 @@
                 updateBox: 1,
             };
         },
+        mounted() {
+            this.textBoxContent = this.content;
+            this.textBoxFullContent = this.content;
+            this.hideCustomContent();
+            // this.perLineHeight = parseInt(getComputedStyle(this.$refs.customToggleContainer.$el).lineHeight);
+            // console.log(this.$refs.customToggleContainer.$el.firstChild)
+        },
         methods: {
             hideCustomContent() {
                 const customContainerElement = this.$refs.dummyComp;
@@ -91,13 +98,6 @@
                 }
                 this.updateBox += 1;
             },
-        },
-        mounted() {
-            this.textBoxContent = this.content;
-            this.textBoxFullContent = this.content;
-            this.hideCustomContent();
-            // this.perLineHeight = parseInt(getComputedStyle(this.$refs.customToggleContainer.$el).lineHeight);
-            // console.log(this.$refs.customToggleContainer.$el.firstChild)
         },
     };
 </script>

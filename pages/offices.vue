@@ -9,8 +9,8 @@
             <div v-for="(arr, i) in offices" :key="i" class="col-span-12 flex flex-col gap-4 md:col-span-6 lg:col-span-4">
                 <div :key="arr.link + i">
                     <nuxt-link :to="arr.link" class="text-lg font-medium text-black transition hover:text-primary">{{ arr.name }}</nuxt-link>
-                    <ul class="pl-3" v-if="arr.subLinks && Array.isArray(arr.subLinks)">
-                        <li class="py-1" v-for="(subNav, subInd) in arr.subLinks" :key="subNav.link + subInd">
+                    <ul v-if="arr.subLinks && Array.isArray(arr.subLinks)" class="pl-3">
+                        <li v-for="(subNav, subInd) in arr.subLinks" :key="subNav.link + subInd" class="py-1">
                             <nuxt-link :to="subNav.link" class="text-base font-medium text-grey-500 transition hover:text-primary">{{ subNav.name }}</nuxt-link>
                             <ul v-if="subNav.subLinks && Array.isArray(subNav.subLinks)" class="ml-5">
                                 <li v-for="(childNav, childInd) in subNav.subLinks" :key="childNav.link + childInd" class="py-1">
@@ -26,22 +26,6 @@
 </template>
 <script>
     export default {
-        head() {
-            return {
-                title: 'Offices | Venture Plans',
-                meta: [
-                    {
-                        name: 'robots',
-                        content: 'index, all',
-                    },
-                    {
-                        hid: 'keywords',
-                        property: 'keywords',
-                        content: 'Venture Plans Offices, venture plans offices',
-                    },
-                ],
-            };
-        },
         data() {
             return {
                 splitArray: [],
@@ -524,13 +508,29 @@
                 ],
             };
         },
+        head() {
+            return {
+                title: 'Offices | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                    {
+                        hid: 'keywords',
+                        property: 'keywords',
+                        content: 'Venture Plans Offices, venture plans offices',
+                    },
+                ],
+            };
+        },
         mounted() {
-            var subarrays = [];
-            let arr = this.$store.state.nav.mobileNavbar;
-            var subarraySize = Math.floor(arr.length / 3);
+            const subarrays = [];
+            const arr = this.$store.state.nav.mobileNavbar;
+            const subarraySize = Math.floor(arr.length / 3);
 
-            for (var i = 0; i < arr.length; i += subarraySize) {
-                var subarray = arr.slice(i, i + subarraySize);
+            for (let i = 0; i < arr.length; i += subarraySize) {
+                const subarray = arr.slice(i, i + subarraySize);
                 subarrays.push(subarray);
             }
             this.splitArray = subarrays;

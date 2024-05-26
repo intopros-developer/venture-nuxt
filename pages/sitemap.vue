@@ -9,8 +9,8 @@
             <div v-for="(arr, i) in splitArray" :key="i" class="col-span-12 flex flex-col gap-4 md:col-span-6 lg:col-span-4">
                 <div v-for="(mainNav, mainInd) in arr" :key="mainNav.url + mainInd">
                     <nuxt-link :to="mainNav.url" class="text-lg font-medium text-black transition hover:text-primary">{{ mainNav.name }}</nuxt-link>
-                    <ul class="pl-3" v-if="mainNav.navChildItems && Array.isArray(mainNav.navChildItems)">
-                        <li class="py-1" v-for="(subNav, subInd) in mainNav.navChildItems" :key="subNav.url + subInd">
+                    <ul v-if="mainNav.navChildItems && Array.isArray(mainNav.navChildItems)" class="pl-3">
+                        <li v-for="(subNav, subInd) in mainNav.navChildItems" :key="subNav.url + subInd" class="py-1">
                             <nuxt-link :to="subNav.url" class="text-base font-medium text-grey-500 transition hover:text-primary">{{ subNav.name }}</nuxt-link>
                             <ul v-if="subNav.navChildItems && Array.isArray(subNav.navChildItems)" class="ml-5">
                                 <li v-for="(childNav, childInd) in subNav.navChildItems" :key="childNav.url + childInd" class="py-1">
@@ -26,6 +26,11 @@
 </template>
 <script>
     export default {
+        data() {
+            return {
+                splitArray: [],
+            };
+        },
         head() {
             return {
                 title: 'Sitemap | Venture Plans',
@@ -42,18 +47,13 @@
                 ],
             };
         },
-        data() {
-            return {
-                splitArray: [],
-            };
-        },
         mounted() {
-            var subarrays = [];
-            let arr = this.$store.state.nav.mobileNavbar;
-            var subarraySize = Math.floor(arr.length / 3);
+            const subarrays = [];
+            const arr = this.$store.state.nav.mobileNavbar;
+            const subarraySize = Math.floor(arr.length / 3);
 
-            for (var i = 0; i < arr.length; i += subarraySize) {
-                var subarray = arr.slice(i, i + subarraySize);
+            for (let i = 0; i < arr.length; i += subarraySize) {
+                const subarray = arr.slice(i, i + subarraySize);
                 subarrays.push(subarray);
             }
             this.splitArray = subarrays;

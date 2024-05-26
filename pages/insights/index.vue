@@ -6,7 +6,7 @@
             <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div>
                     <h1 class="mb-4 text-[28px] font-bold leading-8 text-white md:text-[40px] md:leading-[53px]">{{ content.bannerTitle }}</h1>
-                    <p v-html="content.bannerDescription" class="mb-5 border-l-[3px] border-primary pl-2.5 text-sm text-[#FBFBFD] md:text-base"></p>
+                    <p class="mb-5 border-l-[3px] border-primary pl-2.5 text-sm text-[#FBFBFD] md:text-base" v-html="content.bannerDescription"></p>
                 </div>
             </div>
         </section>
@@ -67,10 +67,10 @@
                                             </div>
                                             <div class="container pb-4">
                                                 <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter1Data" :key="filter.id">
+                                                    <li v-for="filter in filter1Data" :key="filter.id" class="mb-2 break-inside-avoid pr-2">
                                                         <input-filter-checkbox :id="filter.filterCateogries" v-model="industryFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
-                                                        <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
+                                                        <ul v-if="filter.subCategories.length" class="mt-2 pr-2">
+                                                            <li v-for="subFilter in filter.subCategories" :key="subFilter.id" class="mb-2 break-inside-avoid pr-2">
                                                                 <input-filter-checkbox :id="subFilter.subCategories" v-model="industryFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                             </li>
                                                         </ul>
@@ -113,10 +113,10 @@
                                             </div>
                                             <div class="container pb-4">
                                                 <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter2Data" :key="filter.id">
+                                                    <li v-for="filter in filter2Data" :key="filter.id" class="mb-2 break-inside-avoid pr-2">
                                                         <input-filter-checkbox :id="filter.filterCateogries" v-model="servicesFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
-                                                        <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
+                                                        <ul v-if="filter.subCategories.length" class="mt-2 pr-2">
+                                                            <li v-for="subFilter in filter.subCategories" :key="subFilter.id" class="mb-2 break-inside-avoid pr-2">
                                                                 <input-filter-checkbox :id="subFilter.subCategories" v-model="servicesFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                             </li>
                                                         </ul>
@@ -159,10 +159,10 @@
                                             </div>
                                             <div class="container pb-4">
                                                 <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter3Data" :key="filter.id">
+                                                    <li v-for="filter in filter3Data" :key="filter.id" class="mb-2 break-inside-avoid pr-2">
                                                         <input-filter-checkbox :id="filter.filterCateogries" v-model="typeFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
-                                                        <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
+                                                        <ul v-if="filter.subCategories.length" class="mt-2 pr-2">
+                                                            <li v-for="subFilter in filter.subCategories" :key="subFilter.id" class="mb-2 break-inside-avoid pr-2">
                                                                 <input-filter-checkbox :id="subFilter.subCategories" v-model="typeFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                             </li>
                                                         </ul>
@@ -204,10 +204,10 @@
                                             </div>
                                             <div class="container pb-4">
                                                 <ul class="block max-h-[calc(100vh-120px)] overflow-auto xl:h-auto xl:flex-grow xl:columns-3 xl:pt-6">
-                                                    <li class="mb-2 break-inside-avoid pr-2" v-for="filter in filter4Data" :key="filter.id">
+                                                    <li v-for="filter in filter4Data" :key="filter.id" class="mb-2 break-inside-avoid pr-2">
                                                         <input-filter-checkbox :id="filter.filterCateogries" v-model="mediaFilterOption[filter.filterCateogries]" :label="filter.filterCateogries" />
-                                                        <ul class="mt-2 pr-2" v-if="filter.subCategories.length">
-                                                            <li class="mb-2 break-inside-avoid pr-2" v-for="subFilter in filter.subCategories" :key="subFilter.id">
+                                                        <ul v-if="filter.subCategories.length" class="mt-2 pr-2">
+                                                            <li v-for="subFilter in filter.subCategories" :key="subFilter.id" class="mb-2 break-inside-avoid pr-2">
                                                                 <input-filter-checkbox :id="subFilter.subCategories" v-model="mediaFilterOption[subFilter.subCategories]" :label="subFilter.subCategories" :is-child="true" />
                                                             </li>
                                                         </ul>
@@ -246,7 +246,7 @@
             <section class="pt-[59px] md:pb-[134px]">
                 <div class="container">
                     <div class="lg:-mx-7 lg:flex">
-                        <div v-for="insight in insightCatalogue1" class="mb-8 w-full lg:max-w-[670px] lg:px-7" :key="insight.id">
+                        <div v-for="insight in insightCatalogue1" :key="insight.id" class="mb-8 w-full lg:max-w-[670px] lg:px-7">
                             <div>
                                 <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" :title="insight.attributes.title">
                                     <nuxt-img format="webp" :src="insight.attributes.imgUrl" :alt="insight.attributes.title" loading="lazy" class="h-72 w-full object-cover" />
@@ -254,10 +254,10 @@
                             </div>
                             <div class="flex h-[calc(100%-125px)] flex-col justify-between py-3 xl:h-[calc(100%-340px)] xl:py-4">
                                 <div>
-                                    <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                    <p class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                         {{ insight.attributes.Insightsource }}
                                     </p>
-                                    <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="line-clamp-1 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
+                                    <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-1 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
                                     <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                         {{ insight.attributes.paragraph }}
                                     </p>
@@ -267,7 +267,7 @@
                                         {{ insight.attributes.insightType }} | {{ $helper.formatInsightPublishDate(insight.attributes.date) }}
                                     </p>
                                     <span>
-                                        <common-share :is-show-save-btn="true" :customLink="`/${insight.attributes.singleInsightPageSlug}`" />
+                                        <common-share :is-show-save-btn="true" :custom-link="`/${insight.attributes.singleInsightPageSlug}`" />
                                     </span>
                                 </div>
                             </div>
@@ -313,11 +313,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -328,7 +328,7 @@
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
                                             </p>
                                             <span>
-                                                <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
+                                                <common-share :is-show-save-btn="true" :custom-link="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
                                         </div>
                                     </div>
@@ -351,11 +351,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -366,7 +366,7 @@
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
                                             </p>
                                             <span>
-                                                <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
+                                                <common-share :is-show-save-btn="true" :custom-link="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
                                         </div>
                                     </div>
@@ -376,7 +376,7 @@
                     </div>
 
                     <!-- section 1 -->
-                    <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" />
+                    <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" :video-u-r-l="content.video1Url" :title="content.video1Title" />
 
                     <!-- third row -->
                     <!-- <section class="pt-[92px] pb-[119px]"> -->
@@ -391,11 +391,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -406,7 +406,7 @@
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
                                             </p>
                                             <span>
-                                                <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
+                                                <common-share :is-show-save-btn="true" :custom-link="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
                                         </div>
                                     </div>
@@ -431,11 +431,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -446,7 +446,7 @@
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
                                             </p>
                                             <span>
-                                                <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
+                                                <common-share :is-show-save-btn="true" :custom-link="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
                                         </div>
                                     </div>
@@ -464,7 +464,7 @@
                                     <h4 class="text-2xl font-bold uppercase leading-9" v-html="content.CTA1Title"></h4>
                                     <p class="pb-8 pt-2.5">{{ content.CTA1Description }}</p>
 
-                                    <nuxt-link class="btn" v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" :to="content.CTA1ButtonLink">{{ content.CTA1ButtonText }}</nuxt-link>
+                                    <nuxt-link v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" class="btn" :to="content.CTA1ButtonLink">{{ content.CTA1ButtonText }}</nuxt-link>
                                     <a v-else target="_blank" :href="content.CTA1ButtonLink" class="btn">{{ content.CTA1ButtonText }}</a>
                                 </div>
                                 <div class="relative order-1 h-80 bg-cover bg-center lg:order-2 lg:h-full" :style="{ backgroundImage: `url(${content.CTA1ImgUrl})` }"></div>
@@ -487,11 +487,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -502,7 +502,7 @@
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
                                             </p>
                                             <span>
-                                                <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
+                                                <common-share :is-show-save-btn="true" :custom-link="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
                                         </div>
                                     </div>
@@ -525,11 +525,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
                                                 }}</nuxt-link>
                                             </div>
@@ -542,7 +542,7 @@
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
                                             </p>
                                             <span>
-                                                <common-share :is-show-save-btn="true" :customLink="`/insights/${item.attributes.singleInsightPageSlug}`" />
+                                                <common-share :is-show-save-btn="true" :custom-link="`/insights/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
                                         </div>
                                     </div>
@@ -554,16 +554,16 @@
 
                     <!-- section 3 -->
                     <common-interested-service
-                        :backgroundImage="content.section2ImgUrl"
+                        :background-image="content.section2ImgUrl"
                         :subtitle="content.section2Subtitle"
                         :title="content.section2Title"
                         :description="content.section2Description"
-                        :buttonLink="content.section2ButtonLink"
-                        :buttonTitle="content.section2ButtonText"
+                        :button-link="content.section2ButtonLink"
+                        :button-title="content.section2ButtonText"
                     />
 
                     <div v-if="insightCatalogue5.length > 0" class="mt-32 py-10 md:py-16 lg:pb-[54px] lg:pt-0">
-                        <div class="container" v-if="insightCatalogue5.slice(0, 3).length > 0">
+                        <div v-if="insightCatalogue5.slice(0, 3).length > 0" class="container">
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue5.slice(0, 3)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0 lg:col-span-2': i === 2, 'md:border-r': i % 2 == 0 }">
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
@@ -573,11 +573,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
                                                 }}</nuxt-link>
                                             </div>
@@ -590,7 +590,7 @@
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
                                             </p>
                                             <span>
-                                                <common-share :is-show-save-btn="true" :customLink="`/${item.attributes.singleInsightPageSlug}`" />
+                                                <common-share :is-show-save-btn="true" :custom-link="`/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
                                         </div>
                                     </div>
@@ -598,7 +598,7 @@
                             </div>
                         </div>
 
-                        <div class="container mt-16" v-if="insightCatalogue5.slice(3).length > 0">
+                        <div v-if="insightCatalogue5.slice(3).length > 0" class="container mt-16">
                             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-4 lg:gap-y-[76px]">
                                 <div v-for="(item, i) in insightCatalogue5.slice(3)" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7 lg:border-r" :class="{ '!border-0': i === 3, 'md:border-r': i % 2 == 0 }">
                                     <div class="relative">
@@ -610,11 +610,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -625,7 +625,7 @@
                                                 {{ item.attributes.insightType }} | {{ $helper.formatInsightPublishDate(item.attributes.date) }}
                                             </p>
                                             <span>
-                                                <common-share :is-show-save-btn="true" :customLink="`/insights/${item.attributes.singleInsightPageSlug}`" />
+                                                <common-share :is-show-save-btn="true" :custom-link="`/insights/${item.attributes.singleInsightPageSlug}`" />
                                             </span>
                                         </div>
                                     </div>
@@ -640,7 +640,7 @@
         <common-our-team class="!pb-10 !pt-0 md:!pb-0" :title="content.section3Title" :description="content.section3Description" :teams="section3Data" />
 
         <!-- Ready To Talk -->
-        <common-readytotalk :imgUrl="readyToTalkForm.imgUrl" :serviceOptions="readyToTalkForm.services.data" :aboutParagraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talkInTitle="readyToTalkForm.talkInTitle" />
+        <common-readytotalk :img-url="readyToTalkForm.imgUrl" :service-options="readyToTalkForm.services.data" :about-paragraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talk-in-title="readyToTalkForm.talkInTitle" />
 
         <common-brand-logo :logos="logoSliders" />
     </div>

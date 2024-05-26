@@ -8,7 +8,7 @@
             </div>
 
             <div class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-7 lg:grid-cols-3 lg:gap-y-[76px]">
-                <section :key="i" v-for="(data, i) in content" :id="i" class="relative mb-8 border-[#d5d5d5] md:px-7">
+                <section v-for="(data, i) in content" :id="i" :key="i" class="relative mb-8 border-[#d5d5d5] md:px-7">
                     <nuxt-img format="webp" :src="data.img" :alt="data.title" class="h-32 w-full object-cover" loading="lazy" />
 
                     <p class="my-4 text-sm font-bold text-primary">{{ data.subTitle }}</p>

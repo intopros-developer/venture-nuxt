@@ -63,8 +63,8 @@
                                 </nuxt-link>
 
                                 <a
-                                    target="_blank"
                                     v-else-if="slide.attributes.buttonText"
+                                    target="_blank"
                                     :href="slide.attributes.linkUrl"
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
@@ -92,8 +92,8 @@
                                 >
 
                                 <a
-                                    target="_blank"
                                     v-else-if="slide.attributes.buttonText"
+                                    target="_blank"
                                     :href="slide.attributes.buttonUrl"
                                     class="outline-btn slide-text-animation-before slide-text-animation-after px-10 py-3 text-[13px] font-semibold uppercase leading-4 xl:px-16 xl:py-[22px]"
                                     >{{ slide.attributes.buttonText }}</a
@@ -116,8 +116,8 @@
                                 </nuxt-link>
 
                                 <a
-                                    target="_blank"
                                     v-else-if="!slide.attributes.buttonText"
+                                    target="_blank"
                                     :href="slide.attributes.linkUrl"
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
@@ -140,7 +140,7 @@
 
             <div class="xl:container-fluid container relative -top-[100px] z-10 !pr-0 pl-10 md:pl-4 md:pr-0 lg:-top-[60px] lg:pl-[97px] xl:px-0">
                 <div id="slider-bottom-navigation" class="flex justify-start gap-6 overflow-auto text-white md:justify-center md:gap-8">
-                    <div :key="slide.attributes.paginationTitle" v-for="(slide, ind) in slider" :data-ind="ind" class="self-slide shrink-0 pb-4 font-bold">
+                    <div v-for="(slide, ind) in slider" :key="slide.attributes.paginationTitle" :data-ind="ind" class="self-slide shrink-0 pb-4 font-bold">
                         {{ slide.attributes.paginationTitle }}<span class="hero__slide-nav-progress"></span>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
         </div>
         <div class="absolute bottom-10 right-20 z-20 hidden animate-bounce text-white lg:block">
             <p class="mb-2 pl-1 text-sm text-white">Scroll</p>
-            <button @click="scrollToNextSection()" class="rounded-full border border-white p-2" aria-label="Scroll Next Section">
+            <button class="rounded-full border border-white p-2" aria-label="Scroll Next Section" @click="scrollToNextSection()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="fill-whi mx-auto h-6 w-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
@@ -200,7 +200,6 @@
                 anotherTimer: null,
                 slider_options: {
                     noSwipingSelector: '#slider-bottom-navigation',
-                    autoplay: false,
                     effect: 'fade',
                     speed: 100,
                     autoplay: {
@@ -242,7 +241,7 @@
                     findAllSlides[sl].querySelector('span').classList.remove('play-transition');
                     if (parseInt(findAllSlides[sl].dataset.ind) === this.currentSlide) {
                         findAllSlides[sl].classList.add('active');
-                        let vm = this;
+                        const vm = this;
                         setTimeout(function () {
                             findAllSlides[sl].querySelector('span').classList.add('play-transition');
                             vm.heroSlider.autoplay.start();

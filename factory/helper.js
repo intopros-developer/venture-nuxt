@@ -7,12 +7,10 @@ export default (context) => ({
         return this.validateDateTime(date) ? context.$dayjs.utc(date).format('MMMM DD, YYYY') : date;
     },
 
-    isInternalUrl(url){
-        if(typeof url !== 'string') return false;
-        else {
-            if(url.slice(0,1)==='/') return true
-            else return false;
-        }
+    isInternalUrl(url) {
+        if (typeof url !== 'string') return false;
+        else if (url.slice(0, 1) === '/') return true;
+        else return false;
     },
 
     // getDayJsLocale() {

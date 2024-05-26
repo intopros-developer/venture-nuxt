@@ -4,12 +4,12 @@
             <div class="container">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="pb-[46px] pt-7 md:pt-[136px]">
-                        <p class="font-[1.2rem] mb-5 border-l-[3px] border-primary pl-2.5 text-sm font-normal leading-3 text-[#030303] md:text-base md:leading-5">Insights</p>
+                        <p class="mb-5 border-l-[3px] border-primary pl-2.5 text-sm font-[1.2rem] font-normal leading-3 text-[#030303] md:text-base md:leading-5">Insights</p>
                         <h4 class="text-[50px] font-bold leading-[44px] text-[#030303]">{{ content.bannerTitle }}</h4>
-                        <p class="font-[1.3rem] mt-4 leading-[26px] text-[#030303]">{{ content.bannerSubtitle }}</p>
+                        <p class="mt-4 font-[1.3rem] leading-[26px] text-[#030303]">{{ content.bannerSubtitle }}</p>
                     </div>
                     <div class="relative bottom-0 left-[-50vw] top-0 ml-[50%] h-80 w-[100vw] max-w-none md:absolute md:left-[calc(50%+2.5rem)] md:ml-0 md:mt-0 md:h-full md:w-[calc(50vw-2.5rem)]">
-                        <nuxt-img format="webp" :src="content.bannerImgUrl" alt="" class="h-full w-full object-cover" :alt="content.bannerTitle" loading="lazy" />
+                        <nuxt-img format="webp" :src="content.bannerImgUrl" class="h-full w-full object-cover" :alt="content.bannerTitle" loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <div class="grid grid-cols-1 gap-7 md:gap-[59px] lg:grid-cols-5">
                     <div>
                         <div class="flex flex-wrap items-end gap-5 pb-5 lg:block lg:pb-0">
-                            <div v-for="(author, i) in section1Column1Data" class="shrink-0 border-[#e8e8e8] lg:border-t" :class="{ 'lg:pt-[29px]': i !== 0 }">
+                            <div v-for="(author, i) in section1Column1Data" :key="i" class="shrink-0 border-[#e8e8e8] lg:border-t" :class="{ 'lg:pt-[29px]': i !== 0 }">
                                 <h4 v-if="i === 0" class="pt-8 font-semibold leading-[22px]">{{ content.section1Column1Title }}</h4>
                                 <div class="mt-[5px]">
                                     <nuxt-img format="webp" :src="author.attributes.imageUrl" class="h-24 w-24 rounded-[5px] object-cover shadow-[0_3px_6px_rgba(0,0,0,0.44)]" :alt="author.attributes.authorName" loading="lazy" />
@@ -45,7 +45,7 @@
 
                     <div class="lg:col-span-3">
                         <div class="pb-[5px]">To listen to the article press play</div>
-                        <audio controls class="w-full" v-if="content.audioFileUrl">
+                        <audio v-if="content.audioFileUrl" controls class="w-full">
                             <source :src="content.audioFileUrl" type="audio/ogg" />
                             <source :src="content.audioFileUrl" type="audio/mpeg" />
                         </audio>
@@ -53,8 +53,8 @@
                         <div>
                             <h4 class="font-semibold">{{ content.section1Column2Title }}</h4>
                         </div>
-                        <div class="mt-4 space-y-[29px]" v-if="typeof content.section1Column2Description === 'string'">
-                            <div class="flex items-start gap-[15px]" v-for="(section, i) in content.section1Column2Description.split(`\n\n`)" :key="i">
+                        <div v-if="typeof content.section1Column2Description === 'string'" class="mt-4 space-y-[29px]">
+                            <div v-for="(section, i) in content.section1Column2Description.split(`\n\n`)" :key="i" class="flex items-start gap-[15px]">
                                 <div>
                                     <icons-arrow-up class="inline-block rotate-90 text-primary" />
                                 </div>
@@ -103,12 +103,12 @@
                         <div class="mt-[58px]">
                             <p v-if="content.publishedAt" class="font-medium text-[#707070]">{{ content.section1Column3InfoLeft }} | {{ content.section1Column3InfoRight }}</p>
                         </div>
-                        <div class="mt-[51px]" v-if="insightPost1">
+                        <div v-if="insightPost1" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost1.Insightsource }}</p>
                                 <nuxt-img format="webp" :src="insightPost1.imgUrl" :alt="insightPost1.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost1.title }}</p>
+                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost1.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost1.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost1.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
@@ -121,7 +121,7 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :videoURL="content.video1Url" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :title="content.video1Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :video-u-r-l="content.video1Url" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" :title="content.video1Title" />
 
         <section class="bg-white pb-[90px] pt-[66px]">
             <div class="container">
@@ -150,14 +150,14 @@
                         </div>
                     </div>
                     <div>
-                        <div class="mt-[51px]" v-if="insightPost2">
+                        <div v-if="insightPost2" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost2.Insightsource }}</p>
 
                                 <nuxt-img format="webp" :src="insightPost2.imgUrl" :alt="insightPost2.title" loading="lazy" />
 
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost2.title }}</p>
+                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost2.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost2.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost2.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
@@ -188,12 +188,12 @@
                         </div>
                     </div>
                     <div>
-                        <div class="mt-[51px]" v-if="insightPost3">
+                        <div v-if="insightPost3" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost3.Insightsource }}</p>
                                 <nuxt-img format="webp" :src="insightPost3.imgUrl" :alt="insightPost3.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost3.title }}</p>
+                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost3.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost3.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost3.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
@@ -225,12 +225,12 @@
         </section>
 
         <common-interested-service
-            :backgroundImage="content.CTA2ImgUrl"
+            :background-image="content.CTA2ImgUrl"
             :subtitle="content.CTA2Subtitle"
             :title="content.CTA2Title"
             :description="content.CTA2Description"
-            :buttonLink="content.CTA2ButtonLink"
-            :buttonTitle="content.CTA2ButtonText"
+            :button-link="content.CTA2ButtonLink"
+            :button-title="content.CTA2ButtonText"
         />
 
         <section class="bg-white pb-[95px] pt-[58px]">
@@ -258,12 +258,12 @@
                         <common-custom-strapi-display v-if="content.Section16Description" classes="mt-4 leading-[30px] -tracking-[0.03px] text-lg" :data="content.Section16Description"></common-custom-strapi-display>
                     </div>
                     <div>
-                        <div class="mt-[51px]" v-if="insightPost4">
+                        <div v-if="insightPost4" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost4.Insightsource }}</p>
                                 <nuxt-img format="webp" :src="insightPost4.imgUrl" :alt="insightPost4.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost4.title }}</p>
+                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost4.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost4.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost4.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
@@ -276,7 +276,7 @@
             </div>
         </section>
 
-        <common-readytotalk :imgUrl="readyToTalkForm.imgUrl" :serviceOptions="readyToTalkForm.services.data" :aboutParagraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talkInTitle="readyToTalkForm.talkInTitle" />
+        <common-readytotalk :img-url="readyToTalkForm.imgUrl" :service-options="readyToTalkForm.services.data" :about-paragraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talk-in-title="readyToTalkForm.talkInTitle" />
     </div>
 </template>
 

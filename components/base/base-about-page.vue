@@ -9,7 +9,7 @@
                         {{ content.bannerSubTitle }}
                     </p>
                     <h1 class="mb-4 text-[28px] font-bold leading-8 text-white md:text-[40px] md:leading-[53px]">{{ content.bannerTitle }}</h1>
-                    <p v-html="content.bannerDescription" class="w-full text-sm font-normal leading-5 text-[#FBFBFD] sm:max-w-[377px] md:max-w-[458px] md:text-base md:leading-[26px]"></p>
+                    <p class="w-full text-sm font-normal leading-5 text-[#FBFBFD] sm:max-w-[377px] md:max-w-[458px] md:text-base md:leading-[26px]" v-html="content.bannerDescription"></p>
                 </div>
             </div>
         </section>
@@ -30,7 +30,7 @@
         </section>
 
         <!-- common-business-challenge -->
-        <common-business-challenge :title="content.section2Title" :image="content.section2imgUrl" :values="section2Data" :buttonText="content.CTA1ButtonText" :buttonUrl="content.CTA1ButtonLink" />
+        <common-business-challenge :title="content.section2Title" :image="content.section2imgUrl" :values="section2Data" :button-text="content.CTA1ButtonText" :button-url="content.CTA1ButtonLink" />
 
         <!-- diverseEnvironment -->
         <section class="py-10">
@@ -48,7 +48,7 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" :video-u-r-l="content.video1Url" :title="content.video1Title" />
 
         <!-- driveForResults -->
         <section class="py-10 xl:py-32">
@@ -108,19 +108,25 @@
         <common-interested-service
             :title="content.section6Title"
             :subtitle="content.section6Subtitle"
-            :backgroundImage="content.section6ImgUrl"
+            :background-image="content.section6ImgUrl"
             :description="content.section6Description"
-            :buttonTitle="content.section6ButtonText"
-            :buttonLink="content.section6ButtonLink"
+            :button-title="content.section6ButtonText"
+            :button-link="content.section6ButtonLink"
         />
 
         <!-- work at best place -->
         <section>
-            <common-work-at-the-best-place :imgUrl="content.CTA3ImgUrl" :title="content.CTA3Title" :description="content.CTA3Description" :buttonTitle="content.CTA3ButtonText" :buttonUrl="content.CTA3ButtonLink" />
+            <common-work-at-the-best-place :img-url="content.CTA3ImgUrl" :title="content.CTA3Title" :description="content.CTA3Description" :button-title="content.CTA3ButtonText" :button-url="content.CTA3ButtonLink" />
         </section>
 
         <section>
-            <common-readytotalk :imgUrl="readyToTalkForm.imgUrl" :title="readyToTalkForm.title" :talkInTitle="readyToTalkForm.talkInTitle" :aboutParagraph="readyToTalkForm.aboutParagraph" :serviceOptions="readyToTalkForm.services.data" />
+            <common-readytotalk
+                :img-url="readyToTalkForm.imgUrl"
+                :title="readyToTalkForm.title"
+                :talk-in-title="readyToTalkForm.talkInTitle"
+                :about-paragraph="readyToTalkForm.aboutParagraph"
+                :service-options="readyToTalkForm.services.data"
+            />
         </section>
     </div>
 </template>
@@ -177,21 +183,6 @@
                     },
                 ],
             };
-        },
-
-        computed: {
-            section2Data() {
-                return this.content?.section2Component?.data || [];
-            },
-            section4Data() {
-                return this.content?.section4Component?.data || [];
-            },
-            section5Data() {
-                return this.content?.section5Component?.data || [];
-            },
-            readyToTalkForm() {
-                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
-            },
         },
 
         head() {
@@ -261,6 +252,21 @@
                     },
                 ],
             };
+        },
+
+        computed: {
+            section2Data() {
+                return this.content?.section2Component?.data || [];
+            },
+            section4Data() {
+                return this.content?.section4Component?.data || [];
+            },
+            section5Data() {
+                return this.content?.section5Component?.data || [];
+            },
+            readyToTalkForm() {
+                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
+            },
         },
     };
 </script>

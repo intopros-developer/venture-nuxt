@@ -1,9 +1,8 @@
 <template>
-    <p v-if="data" class="custom-html-data" :class="classes" v-html="data">
-    </p>
+    <p v-if="data" class="custom-html-data" :class="classes" v-html="data"></p>
 </template>
 <script>
- export default {
+    export default {
         props: {
             data: {
                 type: String,
@@ -11,8 +10,8 @@
             },
             classes: {
                 type: String,
-                default: ""
-            }
-        }
-    }
+                default: '',
+            },
+        },
+    };
 </script>

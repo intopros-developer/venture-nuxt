@@ -18,7 +18,7 @@
                                     :id="`tab_${tab.id}`"
                                     :href="`#${tab.id}`"
                                     class="scrollactive-item inline-block whitespace-nowrap py-4 hover:text-primary"
-                                    :class="{ 'relative text-primary before:absolute before:left-0 before:-bottom-[2px] before:h-[3px] before:w-full before:bg-primary': activeId === tab.id }"
+                                    :class="{ 'relative text-primary before:absolute before:-bottom-[2px] before:left-0 before:h-[3px] before:w-full before:bg-primary': activeId === tab.id }"
                                 >
                                     {{ tab.title }}
                                 </a>

@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <contact-us-heroform :title="content.bannerTitle" :sub-title="content.bannerSubTitle" :para="content.bannerDescription" :image="content.bannerImgUrl" :inquiryReasonOptions="reasonForInquiries" />
+        <contact-us-heroform :title="content.bannerTitle" :sub-title="content.bannerSubTitle" :para="content.bannerDescription" :image="content.bannerImgUrl" :inquiry-reason-options="reasonForInquiries" />
 
         <section class="relative -mt-[42px]" :class="{ 'z-[1]': isOpenShare }">
             <div class="container relative px-10 lg:px-[97px] xl:px-4">
@@ -28,13 +28,13 @@
                         </ul>
                     </div>
                     <div class="w-5 pb-1">
-                        <common-share :textWhite="true" />
+                        <common-share :text-white="true" />
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-10 md:py-20 xl:pt-28 xl:pb-[70px]">
+        <section class="py-10 md:py-20 xl:pb-[70px] xl:pt-28">
             <div class="container px-10 lg:px-[97px] xl:px-4">
                 <div class="mb-5 flex items-center justify-center gap-[5px] text-center md:mb-8 md:gap-8 xl:mb-16">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -60,10 +60,10 @@
                         </div>
                     </div>
                     <div class="mx-auto w-[271px] flex-none rounded-[42px] bg-[#F8F8F8] shadow-[0px_3px_6px_rgba(175,175,175,0.30)] lg:mr-0 xl:w-72">
-                        <p class="border-b-2 border-[#ebebeb] pt-[29px] pb-[11px] text-center text-[19px] font-bold text-[#919191]">
+                        <p class="border-b-2 border-[#ebebeb] pb-[11px] pt-[29px] text-center text-[19px] font-bold text-[#919191]">
                             {{ content.miniCardTitle }}
                         </p>
-                        <div class="px-10 pt-[22px] pb-[34px] md:px-11 xl:px-12">
+                        <div class="px-10 pb-[34px] pt-[22px] md:px-11 xl:px-12">
                             <a :href="`tel:${content.miniCardNumber}`" class="mb-3 flex items-center gap-3 text-base font-bold text-primary md:gap-5">
                                 <icons-phone class="h-4 w-4" />
                                 <p>{{ content.miniCardNumber }}</p>
@@ -152,7 +152,7 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :videoURL="content.video1Url" :title="content.video1Title" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :video-u-r-l="content.video1Url" :title="content.video1Title" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" />
 
         <section class="py-10 md:py-16 lg:pb-[74px] lg:pt-[222px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
@@ -181,12 +181,12 @@
 
         <!-- Interested Service -->
         <common-interested-service
-            :backgroundImage="content.section5ImgUrl"
+            :background-image="content.section5ImgUrl"
             :subtitle="content.section5Subtitle"
             :title="content.section5Title"
             :description="content.section5Description"
-            :buttonLink="content.section5ButtonLink"
-            :buttonTitle="content.section5ButtonText"
+            :button-link="content.section5ButtonLink"
+            :button-title="content.section5ButtonText"
         />
 
         <!-- As seen on -->
@@ -231,7 +231,7 @@
         </section>
 
         <!-- Ready To Talk -->
-        <common-readytotalk :imgUrl="readyToTalkForm.imgUrl" :serviceOptions="readyToTalkForm.services.data" :aboutParagraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talkInTitle="readyToTalkForm.talkInTitle" />
+        <common-readytotalk :img-url="readyToTalkForm.imgUrl" :service-options="readyToTalkForm.services.data" :about-paragraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talk-in-title="readyToTalkForm.talkInTitle" />
     </div>
 </template>
 
@@ -239,6 +239,7 @@
     import nuxtConfig from '~/nuxt.config';
 
     export default {
+        components: { nuxtConfig },
         async asyncData(context) {
             try {
                 const data = await context.$strapiInstance.get(`${context.$config.strapi.url}/api/city-page?populate=deep`);
@@ -351,7 +352,6 @@
                 this.$refs?.share?.doClose();
             });
         },
-        components: { nuxtConfig },
     };
 </script>
 

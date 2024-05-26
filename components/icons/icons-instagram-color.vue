@@ -1,19 +1,7 @@
 <template>
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
-        viewBox="0 0 26 26"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
         <defs>
-            <linearGradient
-                id="ugyma"
-                x1="22.05"
-                x2="5.74"
-                y1="6.12"
-                y2="20.04"
-                gradientUnits="userSpaceOnUse"
-            >
+            <linearGradient id="ugyma" x1="22.05" x2="5.74" y1="6.12" y2="20.04" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stop-color="#cc9518" />
                 <stop offset=".71" stop-color="#a82d54" />
                 <stop offset="1" stop-color="#822da8" />

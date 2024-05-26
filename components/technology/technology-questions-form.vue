@@ -133,9 +133,9 @@
                 if (this.$v.params.$invalid || this.$v.params.$error) {
                     return false;
                 }
-                try {
-                    const token = await this.$recaptcha.getResponse();
-                } catch (error) {}
+                // try {
+                //     const token = await this.$recaptcha.getResponse();
+                // } catch (error) {}
 
                 const data = await this.$hubspot.contactUsBannerForm({ ...this.params });
                 if (!data) {

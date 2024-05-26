@@ -2,7 +2,7 @@
     <section class="container">
         <div v-swiper:dynamicSlider="sliderOptions" class="swiper">
             <div class="swiper-wrapper sm:min-h-full">
-                <div v-for="(consultant, i) in currentContents" :key="i" class="swiper-slide flex flex-col bg-white px-6 pt-4 pb-[46px] sm:min-h-full sm:justify-between">
+                <div v-for="(consultant, i) in currentContents" :key="i" class="swiper-slide flex flex-col bg-white px-6 pb-[46px] pt-4 sm:min-h-full sm:justify-between">
                     <h5 class="min-h-[42px] font-semibold capitalize leading-[18px] tracking-[0.42px] text-[#030303]">{{ consultant.title }}</h5>
                     <div class="mt-[9px] h-[151px] overflow-hidden shadow-[0_3px_6px_rgba(180,180,180,0.44)]">
                         <nuxt-img :src="consultant.image" :alt="consultant.title" loading="lazy" class="h-full w-full object-cover object-top" />

@@ -92,9 +92,9 @@
                             <div class="form-input-group">
                                 <input
                                     v-model="$v.params.phone.$model"
+                                    v-mask="$mask.phoneMask"
                                     name="phone"
                                     autocomplete="on"
-                                    v-mask="$mask.phoneMask"
                                     type="text"
                                     :placeholder="$t('phone_number')"
                                     class="form-input h-[50px] shadow-[0_3px_6px_rgba(0,0,0,0.16)]"
@@ -186,6 +186,29 @@
                 isSubmitting: false,
             };
         },
+
+        head() {
+            return {
+                title: 'Book a free consultation | Venture Plans',
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                    {
+                        hid: 'keywords',
+                        property: 'keywords',
+                        content: 'Venture Plans Book Consulation, venture plans free consultation',
+                    },
+                ],
+                link: [
+                    {
+                        rel: 'canonical',
+                        href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                ],
+            };
+        },
         // pre fell after ready to talk submitted
 
         computed: {
@@ -246,7 +269,7 @@
         methods: {
             gtag_report_conversion(url) {
                 const callback = function () {
-                    if (typeof url != 'undefined') {
+                    if (typeof url !== 'undefined') {
                         window.location = url;
                     }
                 };
@@ -325,29 +348,6 @@
                     this.$router.push({ path: '/' });
                 }
             },
-        },
-
-        head() {
-            return {
-                title: 'Book a free consultation | Venture Plans',
-                meta: [
-                    {
-                        name: 'robots',
-                        content: 'index, all',
-                    },
-                    {
-                        hid: 'keywords',
-                        property: 'keywords',
-                        content: 'Venture Plans Book Consulation, venture plans free consultation',
-                    },
-                ],
-                link: [
-                    {
-                        rel: 'canonical',
-                        href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
-                    },
-                ],
-            };
         },
     };
 </script>

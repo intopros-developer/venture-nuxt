@@ -15,15 +15,6 @@
     import baseGoogleAd from '~/components/base/base-google-ad.vue';
     export default {
         components: { baseGoogleAd },
-        async asyncData(context) {
-            try {
-                let baseURL = await this.$store.dispatch('nav/findBaseURL', window.location.pathname);
-                const data = await context.$strapiInstance.get(`${context.$config.strapi.url}/api/about-us-page?populate=deep`);
-                return {
-                    content: context.$helper.parseData(data.data),
-                };
-            } catch {}
-        },
         props: {
             name: {
                 type: String,
@@ -31,6 +22,14 @@
                     return 'about-page';
                 },
             },
+        },
+        async asyncData(context) {
+            try {
+                const data = await context.$strapiInstance.get(`${context.$config.strapi.url}/api/about-us-page?populate=deep`);
+                return {
+                    content: context.$helper.parseData(data.data),
+                };
+            } catch {}
         },
         data() {
             return {

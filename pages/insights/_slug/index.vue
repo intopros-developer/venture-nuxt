@@ -3,7 +3,7 @@
         <section class="relative bg-white">
             <div class="container">
                 <div class="grid grid-cols-1 md:grid-cols-2">
-                    <div class="pt-7 pb-[46px] md:pt-[136px]">
+                    <div class="pb-[46px] pt-7 md:pt-[136px]">
                         <p class="mb-5 border-l-[3px] border-primary pl-2.5 text-sm font-normal leading-3 text-[#030303] md:text-base md:leading-5">Insights</p>
                         <h1 class="text-[40px] font-bold leading-[44px] text-[#030303]">{{ content.bannerTitle }}</h1>
                         <p class="mt-4 leading-[26px] text-[#030303]">{{ content.bannerSubtitle }}</p>
@@ -14,19 +14,19 @@
                 </div>
             </div>
         </section>
-        <section class="bg-white pt-[53px] pb-[90px]">
+        <section class="bg-white pb-[90px] pt-[53px]">
             <div class="container">
                 <div class="grid grid-cols-1 gap-7 md:gap-[59px] lg:grid-cols-5">
                     <div>
                         <div class="flex flex-wrap items-end gap-5 pb-5 lg:block lg:pb-0">
-                            <div v-for="(author, i) in section1Column1Data" class="shrink-0 border-[#e8e8e8] lg:border-t" :class="{ 'lg:pt-[29px]': i !== 0 }">
+                            <div v-for="(author, i) in section1Column1Data" :key="i" class="shrink-0 border-[#e8e8e8] lg:border-t" :class="{ 'lg:pt-[29px]': i !== 0 }">
                                 <p v-if="i === 0" class="pt-8 font-semibold leading-[22px]">{{ content.section1Column1Title }}</p>
                                 <div class="mt-[5px]">
                                     <nuxt-img format="webp" :src="author.attributes.imageUrl" class="h-24 w-24 rounded-[5px] object-cover shadow-[0_3px_6px_rgba(0,0,0,0.44)]" :alt="author.attributes.authorName" loading="lazy" />
                                 </div>
                                 <p class="mt-3 leading-[22px]">{{ author.attributes.authorName }}</p>
                                 <p class="mt-[3px] text-sm leading-[13px] text-[#707070]">{{ author.attributes.authorDesignation }}</p>
-                                <ul class="mt-1 mb-[5px] flex items-center gap-[6px]">
+                                <ul class="mb-[5px] mt-1 flex items-center gap-[6px]">
                                     <li>
                                         <a target="_blank" :href="author.attributes.linkedinUrl" class="flex h-6 w-6 items-center rounded-full bg-[#f4f5f7]"><icons-linkedin class="mx-auto h-[15px] w-[15px] text-primary" /></a>
                                     </li>
@@ -43,16 +43,16 @@
                         </div>
                     </div>
                     <div class="lg:col-span-3">
-                        <audio controls class="w-full" v-if="content.audioFileUrl">
+                        <audio v-if="content.audioFileUrl" controls class="w-full">
                             <source :src="content.audioFileUrl" type="audio/ogg" />
                             <source :src="content.audioFileUrl" type="audio/mpeg" />
                         </audio>
-                        <div class="mt-[37px] mb-[17px] block h-[2px] w-full bg-primary"></div>
+                        <div class="mb-[17px] mt-[37px] block h-[2px] w-full bg-primary"></div>
                         <div>
                             <p class="font-semibold">{{ content.section1Column2Title }}</p>
                         </div>
-                        <div class="mt-4 space-y-[29px]" v-if="typeof content.section1Column2Description === 'string'">
-                            <div class="flex items-start gap-[15px]" v-for="(section, i) in content.section1Column2Description.split(`\n\n`)" :key="i">
+                        <div v-if="typeof content.section1Column2Description === 'string'" class="mt-4 space-y-[29px]">
+                            <div v-for="(section, i) in content.section1Column2Description.split(`\n\n`)" :key="i" class="flex items-start gap-[15px]">
                                 <div>
                                     <icons-arrow-up class="inline-block rotate-90 text-primary" />
                                 </div>
@@ -73,7 +73,7 @@
                             <common-custom-strapi-display classes="text-base leading-[30px] -tracking-[0.03px] text-black" :data="content.section2Paragraph"></common-custom-strapi-display>
                         </div>
                         <div v-if="content.img1Url" class="block h-10 w-full bg-[#e8e8e8]"></div>
-                        <div v-if="content.img1Url" class="my-[18px] mt-[18px] border-t-2 border-b-2 border-[#e8e8e8] py-[17px]">
+                        <div v-if="content.img1Url" class="my-[18px] mt-[18px] border-b-2 border-t-2 border-[#e8e8e8] py-[17px]">
                             <div class="px-[23px]">
                                 <div class="flex items-center justify-between">
                                     <p class="text-[14px] leading-[22px] -tracking-[0.03px] text-primary">Figure 1</p>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="space-y-4 border-t border-b border-[#e8e8e8] pb-[45px] pt-4">
+                        <div class="space-y-4 border-b border-t border-[#e8e8e8] pb-[45px] pt-4">
                             <p class="font-semibold leading-[22px] -tracking-[0.03px]">{{ content.section1Column3Title }}</p>
                             <p class="leading-[22px] -tracking-[0.03px]">{{ content.section1Column3Description }}</p>
                         </div>
@@ -102,7 +102,7 @@
                         <div class="mt-[58px]">
                             <p v-if="content.publishedAt" class="font-medium text-[#707070]">{{ content.section1Column3InfoLeft }} | {{ content.section1Column3InfoRight }}</p>
                         </div>
-                        <div class="mt-[51px]" v-if="insightPost1">
+                        <div v-if="insightPost1" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost1.Insightsource }}</p>
                                 <nuxt-img format="webp" :src="insightPost1.imgUrl" :alt="insightPost1.title" loading="lazy" />
@@ -120,9 +120,9 @@
             </div>
         </section>
 
-        <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :videoURL="content.video1Url" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :title="content.video1Title" />
+        <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :video-u-r-l="content.video1Url" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" :title="content.video1Title" />
 
-        <section class="bg-white pt-[66px] pb-[90px]">
+        <section class="bg-white pb-[90px] pt-[66px]">
             <div class="container">
                 <div class="grid grid-cols-1 gap-7 md:gap-[59px] lg:grid-cols-5">
                     <div></div>
@@ -131,7 +131,7 @@
                             <common-custom-strapi-display classes="text-base leading-[30px] -tracking-[0.03px] text-black" :data="content.section5Paragraph"></common-custom-strapi-display>
                         </div>
                         <div v-if="content.img2Url" class="block h-10 w-full bg-[#e8e8e8]"></div>
-                        <div v-if="content.img2Url" class="my-[18px] mt-[18px] border-t-2 border-b-2 border-[#e8e8e8] py-[17px]">
+                        <div v-if="content.img2Url" class="my-[18px] mt-[18px] border-b-2 border-t-2 border-[#e8e8e8] py-[17px]">
                             <div class="px-[23px]">
                                 <div class="flex items-center justify-between">
                                     <p class="text-[14px] leading-[22px] -tracking-[0.03px] text-primary">Figure 2</p>
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="mt-[51px]" v-if="insightPost2">
+                        <div v-if="insightPost2" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost2.Insightsource }}</p>
 
@@ -171,7 +171,7 @@
                     <div></div>
                     <div class="lg:col-span-3">
                         <div v-if="content.img3Url" class="block h-10 w-full bg-[#e8e8e8]"></div>
-                        <div v-if="content.img3Url" class="my-[18px] mt-[18px] border-t-2 border-b-2 border-[#e8e8e8] py-[17px]">
+                        <div v-if="content.img3Url" class="my-[18px] mt-[18px] border-b-2 border-t-2 border-[#e8e8e8] py-[17px]">
                             <div class="px-[23px]">
                                 <div class="flex items-center justify-between">
                                     <p class="text-[14px] leading-[22px] -tracking-[0.03px] text-primary">Figure 3</p>
@@ -189,7 +189,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="mt-[51px]" v-if="insightPost3">
+                        <div v-if="insightPost3" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost3.Insightsource }}</p>
 
@@ -211,7 +211,7 @@
 
         <common-client-words :title="content.section9Title" :description="content.section9Description" :testimonials="section9Data" />
 
-        <section class="bg-white pt-[83px] pb-[206px]">
+        <section class="bg-white pb-[206px] pt-[83px]">
             <div class="container">
                 <div class="grid grid-cols-1 gap-7 md:gap-[59px] lg:grid-cols-5">
                     <div></div>
@@ -228,15 +228,15 @@
         </section>
 
         <common-interested-service
-            :backgroundImage="content.CTA2ImgUrl"
+            :background-image="content.CTA2ImgUrl"
             :subtitle="content.CTA2Subtitle"
             :title="content.CTA2Title"
             :description="content.CTA2Description"
-            :buttonLink="content.CTA2ButtonLink"
-            :buttonTitle="content.CTA2ButtonText"
+            :button-link="content.CTA2ButtonLink"
+            :button-title="content.CTA2ButtonText"
         />
 
-        <section class="bg-white pt-[58px] pb-10">
+        <section class="bg-white pb-10 pt-[58px]">
             <div class="container">
                 <div class="grid grid-cols-1 items-center gap-7 md:gap-[59px] lg:grid-cols-5">
                     <div></div>
@@ -261,7 +261,7 @@
                         <common-custom-strapi-display v-if="content.Section16Description" classes="mt-4 leading-[30px] -tracking-[0.03px]" :data="content.Section16Description"></common-custom-strapi-display>
                     </div>
                     <div>
-                        <div class="mt-[51px]" v-if="insightPost4">
+                        <div v-if="insightPost4" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost4.Insightsource }}</p>
 
@@ -285,7 +285,7 @@
             <common-comments></common-comments>
         </section>
 
-        <common-readytotalk :imgUrl="readyToTalkForm.imgUrl" :serviceOptions="readyToTalkForm.services.data" :aboutParagraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talkInTitle="readyToTalkForm.talkInTitle" />
+        <common-readytotalk :img-url="readyToTalkForm.imgUrl" :service-options="readyToTalkForm.services.data" :about-paragraph="readyToTalkForm.aboutParagraph" :title="readyToTalkForm.title" :talk-in-title="readyToTalkForm.talkInTitle" />
     </div>
 </template>
 

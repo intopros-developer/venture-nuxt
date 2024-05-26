@@ -1,9 +1,9 @@
 <template>
     <div class="bg-[#FBFBFD] font-proximanova text-base font-normal text-black antialiased">
-        <div v-if="$store.state.nav.isDropdownOpen" class="fixed top-0 left-0 z-20 h-full w-full bg-transparent" @click="$store.dispatch('nav/deactiveAllDropdown')"></div>
+        <div v-if="$store.state.nav.isDropdownOpen" class="fixed left-0 top-0 z-20 h-full w-full bg-transparent" @click="$store.dispatch('nav/deactiveAllDropdown')"></div>
 
-        <div v-show="$store.state.nav.open" class="sidebar-left-overlay fixed top-0 left-0 z-50 h-full w-full cursor-pointer bg-black/30 transition-all duration-300" @click="$store.dispatch('nav/toggle')"></div>
-        <div v-show="$store.state.nav.isMenuBarSearchExpanded" class="sidebar-left-overlay fixed top-0 left-0 z-30 h-full w-full cursor-pointer bg-black/30" @click="$store.dispatch('nav/deactiveLegacyDropdown', 'search')"></div>
+        <div v-show="$store.state.nav.open" class="sidebar-left-overlay fixed left-0 top-0 z-50 h-full w-full cursor-pointer bg-black/30 transition-all duration-300" @click="$store.dispatch('nav/toggle')"></div>
+        <div v-show="$store.state.nav.isMenuBarSearchExpanded" class="sidebar-left-overlay fixed left-0 top-0 z-30 h-full w-full cursor-pointer bg-black/30" @click="$store.dispatch('nav/deactiveLegacyDropdown', 'search')"></div>
 
         <layout-header @changeScrollPosition="changeScrollPosition" />
 
@@ -35,6 +35,14 @@
             return {
                 isIndexPage: false,
                 scrollPosition: null,
+            };
+        },
+
+        head() {
+            // const currentPath = this.$route.path;
+            const canonicalUrl = (process.env.baseUrl ? process.env.baseUrl : 'https://www.ventureplans.us') + this.$route.path;
+            return {
+                link: [{ hid: 'canonical', rel: 'canonical', href: canonicalUrl }],
             };
         },
 
@@ -84,14 +92,6 @@
                     });
                 }
             },
-        },
-
-        head() {
-            const currentPath = this.$route.path;
-            const canonicalUrl = (process.env.baseUrl ? process.env.baseUrl : 'https://www.ventureplans.us') + this.$route.path;
-            return {
-                link: [{ hid: 'canonical', rel: 'canonical', href: canonicalUrl }],
-            };
         },
     };
 </script>

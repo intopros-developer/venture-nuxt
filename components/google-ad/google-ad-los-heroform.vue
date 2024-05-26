@@ -1,6 +1,6 @@
 <template>
     <section class="contact-heroform relative bg-[url(/assets/img/los_angeles_banner.jpg)] bg-cover bg-[top_8%_center] bg-no-repeat py-[65px] md:pb-[100px] xl:pt-[150px]">
-        <div class="absolute top-0 left-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
+        <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
         <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
             <form id="google-ad-los-form" action="" @submit.prevent="onSubmit">
                 <div class="flex flex-col gap-7 md:flex-row xl:gap-20">
@@ -39,12 +39,12 @@
                                             @search-change="searchChange"
                                         >
                                             <template slot="caret">
-                                                <button type="submit" class="pointer-events-none absolute right-0 top-0 mt-3 mr-4 xl:mt-3">
+                                                <button type="submit" class="pointer-events-none absolute right-0 top-0 mr-4 mt-3 xl:mt-3">
                                                     <icons-search class="h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4" />
                                                 </button>
                                             </template>
                                             <template slot="clear">
-                                                <button v-if="isClearSearch" type="button" class="absolute right-0 top-0 mt-5 mr-11 xl:mt-7" @click.stop="params.service = ''">
+                                                <button v-if="isClearSearch" type="button" class="absolute right-0 top-0 mr-11 mt-5 xl:mt-7" @click.stop="params.service = ''">
                                                     <icons-close-time class="h-3 w-3 fill-current text-black xl:h-4 xl:w-4" />
                                                 </button>
                                             </template>
@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="">
-                            <button type="submit" class="btn w-full py-4 px-16 hover:bg-primary-700 xl:py-6 xl:px-20">SUBMIT</button>
+                            <button type="submit" class="btn w-full px-16 py-4 hover:bg-primary-700 xl:px-20 xl:py-6">SUBMIT</button>
                         </div>
                         <div v-if="isSubmitted" class="mt-5 flex justify-center gap-3">
                             <icons-check-circle class="relative top-[2px] h-6 w-6 text-green" />
