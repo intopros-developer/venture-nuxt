@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 export default {
     server: {
         // host: 0,
