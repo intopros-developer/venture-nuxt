@@ -13,10 +13,9 @@
         <div v-else class="nuxt-error">
             <section class="item-center flex min-h-[calc(100vh-530px)] flex-col justify-center">
                 <div class="container py-20 text-center">
-                    <h1 v-if="error.statusCode === 404" class="text-8xl font-bold text-black/70">404</h1>
-                    <h1 v-else class="text-3xl font-bold text-black/70">An error occurred</h1>
-                    <p class="my-5">{{ error.message || 'Page not found' }}</p>
-                    <nuxt-link class="text-primary" :to="localePath('/')">Home page</nuxt-link>
+                    <h1 class="text-8xl font-bold text-black/70">404</h1>
+                    <p class="my-5">An error occurred</p>
+                    <nuxt-link class="text-primary hover:underline" :to="localePath('/')">Home page</nuxt-link>
                 </div>
             </section>
         </div>
@@ -75,15 +74,32 @@
                         baseURL: baseURL.data.data[0].attributes,
                     };
                 } else {
-                    context.error({ statusCode: 404, message: 'Page Not Found' });
+                    return {
+                        content: null,
+                        currentPage: '',
+                    };
                 }
             } catch (e) {
-                context.error({ statusCode: 404, message: 'Page Not Found' });
+                console.error('Error', e);
             }
         },
         data() {
             return {
                 baseTemplates: ['about-page', 'contact-us', 'divisions', 'founders-bio', 'google-ad', 'our-team', 'service-pages', 'single-insights'],
+            };
+        },
+        head() {
+            return {
+                title: this.content ? 'Venture Plans' : '404 | Page not found',
+                meta: this.content
+                    ? []
+                    : [
+                          {
+                              hid: 'robots',
+                              name: 'robots',
+                              content: 'noindex',
+                          },
+                      ],
             };
         },
     };

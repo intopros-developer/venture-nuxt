@@ -111,10 +111,6 @@ export default {
 
     css: ['~/assets/css/tailwind.css'],
 
-    router: {
-        middleware: 'route',
-    },
-
     plugins: [
         { src: '~/plugins/axios.js' },
         { src: '~/plugins/vue-awesome-swiper.js' },
@@ -150,7 +146,7 @@ export default {
             {
                 UserAgent: '*',
                 Disallow: '',
-                Sitemap: (req) => `https://${req.headers.host}/sitemap.xml`,
+                Sitemap: (req) => `${process.env.STRAPI_URL}/sitemap.xml`,
             },
         ],
     ],
@@ -199,6 +195,7 @@ export default {
             baseURL: '/static/assets/img',
         },
         domains: ['fs1.hubspotusercontent-na1.net'],
+        provider: 'ipx',
     },
 
     generate: {
