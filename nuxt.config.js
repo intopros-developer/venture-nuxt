@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 export default {
     server: {
         // host: 0,
@@ -16,20 +14,21 @@ export default {
             {
                 hid: 'description',
                 property: 'description',
-                content: 'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
+                content:'Venture Plans is a global management consulting firm with a sophisticated team of diverse industry-specific consultants with deep expertise in finance, legal advisory and digital innovation. Our executive-level consultants are ivy league trained with institutional-caliber capabilities. We enable the best possible outcomes through value-based methodologies that succinctly capture the maximum value of your principals, intellectual property, business performance, markets, and outlook.',
             },
             {
                 hid: 'keywords',
                 property: 'keywords',
-                content: 'Venture Plans, ventureplans',
+                content: 'Venturefund',
             },
             {
                 hid: 'og:description',
                 property: 'og:description',
-                content: 'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
+                content:
+                    'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
             },
             { name: 'format-detection', content: 'telephone=no' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
 
             { hid: 'og:type', property: 'og:type', content: 'website' },
             { hid: 'og:site_name', property: 'og:site_name', content: 'Venture Plans' },
@@ -111,6 +110,10 @@ export default {
 
     css: ['~/assets/css/tailwind.css'],
 
+    router: {
+        middleware: 'route',
+    },
+
     plugins: [
         { src: '~/plugins/axios.js' },
         { src: '~/plugins/vue-awesome-swiper.js' },
@@ -144,9 +147,10 @@ export default {
         [
             '@nuxtjs/robots',
             {
+                /* module options */
                 UserAgent: '*',
                 Disallow: '',
-                Sitemap: (req) => `${process.env.STRAPI_URL}/sitemap.xml`,
+                Sitemap: (req) => `https://${req.headers.host}/sitemap.xml`,
             },
         ],
     ],
@@ -345,6 +349,32 @@ export default {
                     }
                 }
             }
+            if (data.meta.pagination.pageCount > 1) {
+                for (let page = 2; page <= data.meta.pagination.pageCount; page++) {
+                    const apiUrl = process.env.STRAPI_URL;
+                    const authToken = process.env.STRAPI_TOKEN;
+                    const collectionEndpoint = `${apiUrl}/api/base-urls?pagination[pageSize]=100&pagination[page]=` + page;
+                    const response = await fetch(collectionEndpoint, {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Bearer ${authToken}`,
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                    if (!response.ok) {
+                        console.log('Network response was not ok');
+                        return routes;
+                    }
+                    const data = await response.json();
+                    if (data && data.data && Array.isArray(data.data)) {
+                        for (const dat of data.data) {
+                            if (!routes.includes(dat.attributes.url)) {
+                                routes.push(dat.attributes.url);
+                            }
+                        }
+                    }
+                }
+            }
             return routes;
         },
         cacheTime: 7200000,
@@ -499,6 +529,32 @@ export default {
                     }
                 }
             }
+            if (data.meta.pagination.pageCount > 1) {
+                for (let page = 2; page <= data.meta.pagination.pageCount; page++) {
+                    const apiUrl = process.env.STRAPI_URL;
+                    const authToken = process.env.STRAPI_TOKEN;
+                    const collectionEndpoint = `${apiUrl}/api/base-urls?pagination[pageSize]=100&pagination[page]=` + page;
+                    const response = await fetch(collectionEndpoint, {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Bearer ${authToken}`,
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                    if (!response.ok) {
+                        console.log('Network response was not ok');
+                        return routes;
+                    }
+                    const data = await response.json();
+                    if (data && data.data && Array.isArray(data.data)) {
+                        for (const dat of data.data) {
+                            if (!routes.includes(dat.attributes.url)) {
+                                routes.push(dat.attributes.url);
+                            }
+                        }
+                    }
+                }
+            }
             return routes;
         },
         cacheTime: 7200000,
@@ -506,7 +562,7 @@ export default {
             // Filter out the i18n routes from the sitemap
             const locales = ['en', 'pt-br', 'es', 'es-ar', 'es-co', 'es-cl', 'fr', 'de-ch', 'it', 'es', 'ru', 'zh', 'ko', 'ja', 'zh-tw', 'zh-hk'];
             return routes.filter((route) => {
-                for (let locale of locales) {
+                for (const locale of locales) {
                     if (route.path && (route.path.includes('/' + locale + '/') || route.path.endsWith('/' + locale))) {
                         return false;
                     } else if (route.url && (route.url.includes('/' + locale + '/') || route.url.endsWith('/' + locale))) {
