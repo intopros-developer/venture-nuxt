@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 export default {
     buildDir: 'nuxt-dist',
     server: {
