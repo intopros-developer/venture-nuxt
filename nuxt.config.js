@@ -14,7 +14,8 @@ export default {
             {
                 hid: 'description',
                 property: 'description',
-                content:'Venture Plans is a global management consulting firm with a sophisticated team of diverse industry-specific consultants with deep expertise in finance, legal advisory and digital innovation. Our executive-level consultants are ivy league trained with institutional-caliber capabilities. We enable the best possible outcomes through value-based methodologies that succinctly capture the maximum value of your principals, intellectual property, business performance, markets, and outlook.',
+                content:
+                    'Venture Plans is a global management consulting firm with a sophisticated team of diverse industry-specific consultants with deep expertise in finance, legal advisory and digital innovation. Our executive-level consultants are ivy league trained with institutional-caliber capabilities. We enable the best possible outcomes through value-based methodologies that succinctly capture the maximum value of your principals, intellectual property, business performance, markets, and outlook.',
             },
             {
                 hid: 'keywords',
@@ -24,8 +25,7 @@ export default {
             {
                 hid: 'og:description',
                 property: 'og:description',
-                content:
-                    'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
+                content: 'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
             },
             { name: 'format-detection', content: 'telephone=no' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
@@ -110,10 +110,6 @@ export default {
 
     css: ['~/assets/css/tailwind.css'],
 
-    router: {
-        middleware: 'route',
-    },
-
     plugins: [
         { src: '~/plugins/axios.js' },
         { src: '~/plugins/vue-awesome-swiper.js' },
@@ -150,7 +146,7 @@ export default {
                 /* module options */
                 UserAgent: '*',
                 Disallow: '',
-                Sitemap: (req) => `https://${req.headers.host}/sitemap.xml`,
+                Sitemap: (req) => `https://${process.env.STRAPI_URL}/sitemap.xml`,
             },
         ],
     ],
