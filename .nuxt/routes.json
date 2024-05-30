@@ -1,0 +1,424 @@
+[
+  {
+    "name": "book-consult___en___default",
+    "path": "/book-consult",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\book-consult.vue",
+    "chunkName": "pages/book-consult",
+    "url": "/book-consult",
+    "_name": "_1752bff5"
+  },
+  {
+    "name": "careers___en___default",
+    "path": "/careers",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\careers\\\\index.vue",
+    "chunkName": "pages/careers/index",
+    "url": "/careers",
+    "_name": "_74c5fa2a"
+  },
+  {
+    "name": "cities___en___default",
+    "path": "/cities",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\cities\\\\index.vue",
+    "chunkName": "pages/cities/index",
+    "url": "/cities",
+    "_name": "_32762368"
+  },
+  {
+    "name": "index___en",
+    "path": "/en",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "url": "/en",
+    "_name": "_473e1096"
+  },
+  {
+    "name": "founder___en___default",
+    "path": "/founder",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\founder.vue",
+    "chunkName": "pages/founder",
+    "url": "/founder",
+    "_name": "_3898bd52"
+  },
+  {
+    "name": "grant-service___en___default",
+    "path": "/grant-service",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\grant-service.vue",
+    "chunkName": "pages/grant-service",
+    "url": "/grant-service",
+    "_name": "_254f79e7"
+  },
+  {
+    "name": "industries___en___default",
+    "path": "/industries",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\industries\\\\index.vue",
+    "chunkName": "pages/industries/index",
+    "url": "/industries",
+    "_name": "_5155bb39"
+  },
+  {
+    "name": "insights___en___default",
+    "path": "/insights",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\insights\\\\index.vue",
+    "chunkName": "pages/insights/index",
+    "url": "/insights",
+    "_name": "_8d9c488c"
+  },
+  {
+    "name": "media___en___default",
+    "path": "/media",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\media.vue",
+    "chunkName": "pages/media",
+    "url": "/media",
+    "_name": "_e7d13472"
+  },
+  {
+    "name": "media-mentions___en___default",
+    "path": "/media-mentions",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\media-mentions\\\\index.vue",
+    "chunkName": "pages/media-mentions/index",
+    "url": "/media-mentions",
+    "_name": "_a29bf93a"
+  },
+  {
+    "name": "offices___en___default",
+    "path": "/offices",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\offices.vue",
+    "chunkName": "pages/offices",
+    "url": "/offices",
+    "_name": "_1c64f24c"
+  },
+  {
+    "name": "privacy-policy___en___default",
+    "path": "/privacy-policy",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\privacy-policy.vue",
+    "chunkName": "pages/privacy-policy",
+    "url": "/privacy-policy",
+    "_name": "_1eaebd78"
+  },
+  {
+    "name": "refund-policy___en___default",
+    "path": "/refund-policy",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\refund-policy.vue",
+    "chunkName": "pages/refund-policy",
+    "url": "/refund-policy",
+    "_name": "_24c57a8a"
+  },
+  {
+    "name": "reviews___en___default",
+    "path": "/reviews",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\reviews.vue",
+    "chunkName": "pages/reviews",
+    "url": "/reviews",
+    "_name": "_ee066084"
+  },
+  {
+    "name": "search___en___default",
+    "path": "/search",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\search.vue",
+    "chunkName": "pages/search",
+    "url": "/search",
+    "_name": "_5b7cd855"
+  },
+  {
+    "name": "sitemap___en___default",
+    "path": "/sitemap",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\sitemap.vue",
+    "chunkName": "pages/sitemap",
+    "url": "/sitemap",
+    "_name": "_af12a950"
+  },
+  {
+    "name": "startup-form___en___default",
+    "path": "/startup-form",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\startup-form.vue",
+    "chunkName": "pages/startup-form",
+    "url": "/startup-form",
+    "_name": "_6e082b01"
+  },
+  {
+    "name": "subscribe___en___default",
+    "path": "/subscribe",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\subscribe.vue",
+    "chunkName": "pages/subscribe",
+    "url": "/subscribe",
+    "_name": "_b335daa6"
+  },
+  {
+    "name": "terms-and-conditions___en___default",
+    "path": "/terms-and-conditions",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\terms-and-conditions.vue",
+    "chunkName": "pages/terms-and-conditions",
+    "url": "/terms-and-conditions",
+    "_name": "_347f1561"
+  },
+  {
+    "name": "thank-you-for-booking___en___default",
+    "path": "/thank-you-for-booking",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\thank-you-for-booking.vue",
+    "chunkName": "pages/thank-you-for-booking",
+    "url": "/thank-you-for-booking",
+    "_name": "_0082b1a7"
+  },
+  {
+    "name": "careers-contact-form___en___default",
+    "path": "/careers/contact-form",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\careers\\\\contact-form.vue",
+    "chunkName": "pages/careers/contact-form",
+    "url": "/careers/contact-form",
+    "_name": "_080ab0a9"
+  },
+  {
+    "name": "book-consult___en",
+    "path": "/en/book-consult",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\book-consult.vue",
+    "chunkName": "pages/book-consult",
+    "url": "/en/book-consult",
+    "_name": "_1752bff5"
+  },
+  {
+    "name": "careers___en",
+    "path": "/en/careers",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\careers\\\\index.vue",
+    "chunkName": "pages/careers/index",
+    "url": "/en/careers",
+    "_name": "_74c5fa2a"
+  },
+  {
+    "name": "cities___en",
+    "path": "/en/cities",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\cities\\\\index.vue",
+    "chunkName": "pages/cities/index",
+    "url": "/en/cities",
+    "_name": "_32762368"
+  },
+  {
+    "name": "founder___en",
+    "path": "/en/founder",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\founder.vue",
+    "chunkName": "pages/founder",
+    "url": "/en/founder",
+    "_name": "_3898bd52"
+  },
+  {
+    "name": "grant-service___en",
+    "path": "/en/grant-service",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\grant-service.vue",
+    "chunkName": "pages/grant-service",
+    "url": "/en/grant-service",
+    "_name": "_254f79e7"
+  },
+  {
+    "name": "industries___en",
+    "path": "/en/industries",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\industries\\\\index.vue",
+    "chunkName": "pages/industries/index",
+    "url": "/en/industries",
+    "_name": "_5155bb39"
+  },
+  {
+    "name": "insights___en",
+    "path": "/en/insights",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\insights\\\\index.vue",
+    "chunkName": "pages/insights/index",
+    "url": "/en/insights",
+    "_name": "_8d9c488c"
+  },
+  {
+    "name": "media___en",
+    "path": "/en/media",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\media.vue",
+    "chunkName": "pages/media",
+    "url": "/en/media",
+    "_name": "_e7d13472"
+  },
+  {
+    "name": "media-mentions___en",
+    "path": "/en/media-mentions",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\media-mentions\\\\index.vue",
+    "chunkName": "pages/media-mentions/index",
+    "url": "/en/media-mentions",
+    "_name": "_a29bf93a"
+  },
+  {
+    "name": "offices___en",
+    "path": "/en/offices",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\offices.vue",
+    "chunkName": "pages/offices",
+    "url": "/en/offices",
+    "_name": "_1c64f24c"
+  },
+  {
+    "name": "privacy-policy___en",
+    "path": "/en/privacy-policy",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\privacy-policy.vue",
+    "chunkName": "pages/privacy-policy",
+    "url": "/en/privacy-policy",
+    "_name": "_1eaebd78"
+  },
+  {
+    "name": "refund-policy___en",
+    "path": "/en/refund-policy",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\refund-policy.vue",
+    "chunkName": "pages/refund-policy",
+    "url": "/en/refund-policy",
+    "_name": "_24c57a8a"
+  },
+  {
+    "name": "reviews___en",
+    "path": "/en/reviews",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\reviews.vue",
+    "chunkName": "pages/reviews",
+    "url": "/en/reviews",
+    "_name": "_ee066084"
+  },
+  {
+    "name": "search___en",
+    "path": "/en/search",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\search.vue",
+    "chunkName": "pages/search",
+    "url": "/en/search",
+    "_name": "_5b7cd855"
+  },
+  {
+    "name": "sitemap___en",
+    "path": "/en/sitemap",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\sitemap.vue",
+    "chunkName": "pages/sitemap",
+    "url": "/en/sitemap",
+    "_name": "_af12a950"
+  },
+  {
+    "name": "startup-form___en",
+    "path": "/en/startup-form",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\startup-form.vue",
+    "chunkName": "pages/startup-form",
+    "url": "/en/startup-form",
+    "_name": "_6e082b01"
+  },
+  {
+    "name": "subscribe___en",
+    "path": "/en/subscribe",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\subscribe.vue",
+    "chunkName": "pages/subscribe",
+    "url": "/en/subscribe",
+    "_name": "_b335daa6"
+  },
+  {
+    "name": "terms-and-conditions___en",
+    "path": "/en/terms-and-conditions",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\terms-and-conditions.vue",
+    "chunkName": "pages/terms-and-conditions",
+    "url": "/en/terms-and-conditions",
+    "_name": "_347f1561"
+  },
+  {
+    "name": "thank-you-for-booking___en",
+    "path": "/en/thank-you-for-booking",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\thank-you-for-booking.vue",
+    "chunkName": "pages/thank-you-for-booking",
+    "url": "/en/thank-you-for-booking",
+    "_name": "_0082b1a7"
+  },
+  {
+    "name": "technology-software-google-ad___en___default",
+    "path": "/technology/software-google-ad",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\technology\\\\software-google-ad.vue",
+    "chunkName": "pages/technology/software-google-ad",
+    "url": "/technology/software-google-ad",
+    "_name": "_9097596c"
+  },
+  {
+    "name": "careers-contact-form___en",
+    "path": "/en/careers/contact-form",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\careers\\\\contact-form.vue",
+    "chunkName": "pages/careers/contact-form",
+    "url": "/en/careers/contact-form",
+    "_name": "_080ab0a9"
+  },
+  {
+    "name": "technology-software-google-ad___en",
+    "path": "/en/technology/software-google-ad",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\technology\\\\software-google-ad.vue",
+    "chunkName": "pages/technology/software-google-ad",
+    "url": "/en/technology/software-google-ad",
+    "_name": "_9097596c"
+  },
+  {
+    "name": "insights-slug___en",
+    "path": "/en/insights/:slug",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\insights\\\\_slug\\\\index.vue",
+    "chunkName": "pages/insights/_slug/index",
+    "_name": "_40e7d5d0"
+  },
+  {
+    "name": "media-mentions-slug___en",
+    "path": "/en/media-mentions/:slug",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\media-mentions\\\\_slug\\\\index.vue",
+    "chunkName": "pages/media-mentions/_slug/index",
+    "_name": "_063723f2"
+  },
+  {
+    "name": "slug___en",
+    "path": "/en/:slug",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\_slug\\\\index.vue",
+    "chunkName": "pages/_slug/index",
+    "_name": "_d7494d16"
+  },
+  {
+    "name": "insights-slug___en___default",
+    "path": "/insights/:slug",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\insights\\\\_slug\\\\index.vue",
+    "chunkName": "pages/insights/_slug/index",
+    "_name": "_40e7d5d0"
+  },
+  {
+    "name": "media-mentions-slug___en___default",
+    "path": "/media-mentions/:slug",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\media-mentions\\\\_slug\\\\index.vue",
+    "chunkName": "pages/media-mentions/_slug/index",
+    "_name": "_063723f2"
+  },
+  {
+    "name": "slug-slug1___en",
+    "path": "/en/:slug/:slug1",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\_slug\\\\_slug1\\\\index.vue",
+    "chunkName": "pages/_slug/_slug1/index",
+    "_name": "_5bf04eae"
+  },
+  {
+    "name": "slug-slug1-slug2___en",
+    "path": "/en/:slug/:slug1/:slug2",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\_slug\\\\_slug1\\\\_slug2\\\\index.vue",
+    "chunkName": "pages/_slug/_slug1/_slug2/index",
+    "_name": "_4ea2bf74"
+  },
+  {
+    "name": "index___en___default",
+    "path": "/",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "url": "/",
+    "_name": "_473e1096"
+  },
+  {
+    "name": "slug___en___default",
+    "path": "/:slug",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\_slug\\\\index.vue",
+    "chunkName": "pages/_slug/index",
+    "_name": "_d7494d16"
+  },
+  {
+    "name": "slug-slug1___en___default",
+    "path": "/:slug/:slug1",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\_slug\\\\_slug1\\\\index.vue",
+    "chunkName": "pages/_slug/_slug1/index",
+    "_name": "_5bf04eae"
+  },
+  {
+    "name": "slug-slug1-slug2___en___default",
+    "path": "/:slug/:slug1/:slug2",
+    "component": "C:\\\\Users\\\\USER\\\\Documents\\\\venture-nuxt\\\\pages\\\\_slug\\\\_slug1\\\\_slug2\\\\index.vue",
+    "chunkName": "pages/_slug/_slug1/_slug2/index",
+    "_name": "_4ea2bf74"
+  }
+]

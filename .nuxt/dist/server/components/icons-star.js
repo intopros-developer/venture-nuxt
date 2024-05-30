@@ -1,0 +1,44 @@
+exports.ids = [111];
+exports.modules = {
+
+/***/ 234:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/unplugin/dist/webpack/loaders/transform.js??ref--13-0!./components/icons/icons-star.vue?vue&type=template&id=c35bdaa2&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"xmlns":"http://www.w3.org/2000/svg","width":"23","height":"22","viewBox":"0 0 23 22"}},[_vm._ssrNode("<g><g><path fill=\"currentColor\" d=\"M17.303 13.473l4.8-3.956c.678-.562.327-1.662-.563-1.709l-6.18-.374a.97.97 0 0 1-.843-.61l-2.27-5.805a.968.968 0 0 0-1.803 0l-2.27 5.783a.97.97 0 0 1-.844.608l-6.203.375c-.89.047-1.241 1.147-.562 1.709l4.799 3.933c.28.234.421.632.328.983l-1.569 6.016c-.21.843.702 1.522 1.452 1.054l5.22-3.348a.918.918 0 0 1 1.03 0l5.244 3.348c.75.468 1.662-.211 1.451-1.054l-1.568-5.993a.962.962 0 0 1 .351-.96z\"></path></g></g>")])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/icons/icons-star.vue?vue&type=template&id=c35bdaa2&
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(3);
+
+// CONCATENATED MODULE: ./components/icons/icons-star.vue
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  "2e12ad32"
+  
+)
+
+/* harmony default export */ var icons_star = __webpack_exports__["default"] = (component.exports);
+
+/***/ })
+
+};;
+//# sourceMappingURL=icons-star.js.map

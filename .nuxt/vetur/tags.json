@@ -1,0 +1,425 @@
+{
+  "CareerBannerTab": {
+    "description": "Auto imported from components/career/career-banner-tab.vue"
+  },
+  "CareerCompanyOverview": {
+    "description": "Auto imported from components/career/career-company-overview.vue"
+  },
+  "CareerConsultant": {
+    "description": "Auto imported from components/career/career-consultant.vue"
+  },
+  "CareerJoinEvent": {
+    "description": "Auto imported from components/career/career-join-event.vue"
+  },
+  "CareerOurTeam": {
+    "description": "Auto imported from components/career/career-our-team.vue"
+  },
+  "CareerProfessionalFunctional": {
+    "description": "Auto imported from components/career/career-professional-functional.vue"
+  },
+  "CareerQuestion": {
+    "description": "Auto imported from components/career/career-question.vue"
+  },
+  "BusinessPlanGoogleAdQuestionForm": {
+    "description": "Auto imported from components/business-plan-google-ad/business-plan-google-ad-question-form.vue"
+  },
+  "BaseAboutPage": {
+    "description": "Auto imported from components/base/base-about-page.vue"
+  },
+  "BaseContactUs": {
+    "description": "Auto imported from components/base/base-contact-us.vue"
+  },
+  "BaseDivisions": {
+    "description": "Auto imported from components/base/base-divisions.vue"
+  },
+  "BaseFoundersBio": {
+    "description": "Auto imported from components/base/base-founders-bio.vue"
+  },
+  "BaseGoogleAd": {
+    "description": "Auto imported from components/base/base-google-ad.vue"
+  },
+  "BaseOurTeam": {
+    "description": "Auto imported from components/base/base-our-team.vue"
+  },
+  "BaseServicePages": {
+    "description": "Auto imported from components/base/base-service-pages.vue"
+  },
+  "BaseSingleInsights": {
+    "description": "Auto imported from components/base/base-single-insights.vue"
+  },
+  "CommonAsSeenOn": {
+    "description": "Auto imported from components/common/common-as-seen-on.vue"
+  },
+  "CommonBannerTab": {
+    "description": "Auto imported from components/common/common-banner-tab.vue"
+  },
+  "CommonBaseTemplate": {
+    "description": "Auto imported from components/common/common-base-template.vue"
+  },
+  "CommonBrandLogo": {
+    "description": "Auto imported from components/common/common-brand-logo.vue"
+  },
+  "CommonBusinessChallenge": {
+    "description": "Auto imported from components/common/common-business-challenge.vue"
+  },
+  "CommonCategorySlider": {
+    "description": "Auto imported from components/common/common-category-slider.vue"
+  },
+  "CommonClientWords": {
+    "description": "Auto imported from components/common/common-client-words.vue"
+  },
+  "CommonComments": {
+    "description": "Auto imported from components/common/common-comments.vue"
+  },
+  "CommonCompanyOverview": {
+    "description": "Auto imported from components/common/common-company-overview.vue"
+  },
+  "CommonConsultation": {
+    "description": "Auto imported from components/common/common-consultation.vue"
+  },
+  "CommonContactUs": {
+    "description": "Auto imported from components/common/common-contact-us.vue"
+  },
+  "CommonCustomStrapiDisplay": {
+    "description": "Auto imported from components/common/common-custom-strapi-display.vue"
+  },
+  "CommonDistinctQualities": {
+    "description": "Auto imported from components/common/common-distinct-qualities.vue"
+  },
+  "CommonDynamicQuestionnaire": {
+    "description": "Auto imported from components/common/common-dynamic-questionnaire.vue"
+  },
+  "CommonFaq": {
+    "description": "Auto imported from components/common/common-faq.vue"
+  },
+  "CommonFeaturedServices": {
+    "description": "Auto imported from components/common/common-featured-services.vue"
+  },
+  "CommonInterestedService": {
+    "description": "Auto imported from components/common/common-interested-service.vue"
+  },
+  "CommonModal": {
+    "description": "Auto imported from components/common/common-modal.vue"
+  },
+  "CommonOurTeam": {
+    "description": "Auto imported from components/common/common-our-team.vue"
+  },
+  "CommonOurWork": {
+    "description": "Auto imported from components/common/common-our-work.vue"
+  },
+  "CommonQuestionnaireContent": {
+    "description": "Auto imported from components/common/common-questionnaire-content.vue"
+  },
+  "CommonQuestionsForm": {
+    "description": "Auto imported from components/common/common-questions-form.vue"
+  },
+  "CommonReadytotalk": {
+    "description": "Auto imported from components/common/common-readytotalk.vue"
+  },
+  "CommonShare": {
+    "description": "Auto imported from components/common/common-share.vue"
+  },
+  "CommonTellMoreAboutProjects": {
+    "description": "Auto imported from components/common/common-tell-more-about-projects.vue"
+  },
+  "CommonToggleContent": {
+    "description": "Auto imported from components/common/common-toggle-content.vue"
+  },
+  "CommonVenturePlans": {
+    "description": "Auto imported from components/common/common-venture-plans.vue"
+  },
+  "CommonWorkAtTheBestPlace": {
+    "description": "Auto imported from components/common/common-work-at-the-best-place.vue"
+  },
+  "ConsultingOurPortfolio": {
+    "description": "Auto imported from components/consulting/consulting-our-portfolio.vue"
+  },
+  "ContactFeaturedServices": {
+    "description": "Auto imported from components/contact-us/contact-featured-services.vue"
+  },
+  "ContactPrivatePlacement": {
+    "description": "Auto imported from components/contact-us/contact-private-placement.vue"
+  },
+  "ContactUsHeroform": {
+    "description": "Auto imported from components/contact-us/contact-us-heroform.vue"
+  },
+  "ContactUsServiceHelp": {
+    "description": "Auto imported from components/contact-us/contact-us-service-help.vue"
+  },
+  "GoogleAdCustomSoftwareDevelopment": {
+    "description": "Auto imported from components/google-ad/google-ad-custom-software-development.vue"
+  },
+  "GoogleAdHeroform": {
+    "description": "Auto imported from components/google-ad/google-ad-heroform.vue"
+  },
+  "GoogleAdLosHeroform": {
+    "description": "Auto imported from components/google-ad/google-ad-los-heroform.vue"
+  },
+  "GoogleAdProjectInfoSubmit": {
+    "description": "Auto imported from components/google-ad/google-ad-project-info-submit.vue"
+  },
+  "HeaderMenuBar": {
+    "description": "Auto imported from components/header/header-menu-bar.vue"
+  },
+  "HeaderRightSideBar": {
+    "description": "Auto imported from components/header/header-right-side-bar.vue"
+  },
+  "HeaderTopBar": {
+    "description": "Auto imported from components/header/header-top-bar.vue"
+  },
+  "HomeAboutClient": {
+    "description": "Auto imported from components/home/home-about-client.vue"
+  },
+  "HomeCareer": {
+    "description": "Auto imported from components/home/home-career.vue"
+  },
+  "HomeHeroSlider": {
+    "description": "Auto imported from components/home/home-hero-slider.vue"
+  },
+  "HomeOurLatestInsights": {
+    "description": "Auto imported from components/home/home-our-latest-insights.vue"
+  },
+  "HomePrivatePlacement": {
+    "description": "Auto imported from components/home/home-private-placement.vue"
+  },
+  "HomeSectorChart": {
+    "description": "Auto imported from components/home/home-sector-chart.vue"
+  },
+  "HomeSectorExcelled": {
+    "description": "Auto imported from components/home/home-sector-excelled.vue"
+  },
+  "HomeSubscribe": {
+    "description": "Auto imported from components/home/home-subscribe.vue"
+  },
+  "IconsAproach": {
+    "description": "Auto imported from components/icons/icons-aproach.vue"
+  },
+  "IconsArrowRightThin": {
+    "description": "Auto imported from components/icons/icons-arrow-right-thin.vue"
+  },
+  "IconsArrowUpThin": {
+    "description": "Auto imported from components/icons/icons-arrow-up-thin.vue"
+  },
+  "IconsArrowUp": {
+    "description": "Auto imported from components/icons/icons-arrow-up.vue"
+  },
+  "IconsAttach": {
+    "description": "Auto imported from components/icons/icons-attach.vue"
+  },
+  "IconsBachelorCandidate": {
+    "description": "Auto imported from components/icons/icons-bachelor-candidate.vue"
+  },
+  "IconsBitcoin": {
+    "description": "Auto imported from components/icons/icons-bitcoin.vue"
+  },
+  "IconsBrokerage": {
+    "description": "Auto imported from components/icons/icons-brokerage.vue"
+  },
+  "IconsBuilding": {
+    "description": "Auto imported from components/icons/icons-building.vue"
+  },
+  "IconsCalendar": {
+    "description": "Auto imported from components/icons/icons-calendar.vue"
+  },
+  "IconsCannabis": {
+    "description": "Auto imported from components/icons/icons-cannabis.vue"
+  },
+  "IconsCentricity": {
+    "description": "Auto imported from components/icons/icons-centricity.vue"
+  },
+  "IconsCheckCircle": {
+    "description": "Auto imported from components/icons/icons-check-circle.vue"
+  },
+  "IconsCleanTech": {
+    "description": "Auto imported from components/icons/icons-clean-tech.vue"
+  },
+  "IconsCloseMenu": {
+    "description": "Auto imported from components/icons/icons-close-menu.vue"
+  },
+  "IconsCloseSearch": {
+    "description": "Auto imported from components/icons/icons-close-search.vue"
+  },
+  "IconsCloseTime": {
+    "description": "Auto imported from components/icons/icons-close-time.vue"
+  },
+  "IconsClose": {
+    "description": "Auto imported from components/icons/icons-close.vue"
+  },
+  "IconsConsumer": {
+    "description": "Auto imported from components/icons/icons-consumer.vue"
+  },
+  "IconsDomain": {
+    "description": "Auto imported from components/icons/icons-domain.vue"
+  },
+  "IconsDownBorder": {
+    "description": "Auto imported from components/icons/icons-down-border.vue"
+  },
+  "IconsDownarrow": {
+    "description": "Auto imported from components/icons/icons-downarrow.vue"
+  },
+  "IconsEduction": {
+    "description": "Auto imported from components/icons/icons-eduction.vue"
+  },
+  "IconsFacebook": {
+    "description": "Auto imported from components/icons/icons-facebook.vue"
+  },
+  "IconsFinacial": {
+    "description": "Auto imported from components/icons/icons-finacial.vue"
+  },
+  "IconsGoogleIcon": {
+    "description": "Auto imported from components/icons/icons-google-icon.vue"
+  },
+  "IconsHamburger": {
+    "description": "Auto imported from components/icons/icons-hamburger.vue"
+  },
+  "IconsHeartCare": {
+    "description": "Auto imported from components/icons/icons-heart-care.vue"
+  },
+  "IconsIcon1": {
+    "description": "Auto imported from components/icons/icons-icon1.vue"
+  },
+  "IconsIcon2": {
+    "description": "Auto imported from components/icons/icons-icon2.vue"
+  },
+  "IconsIcon3": {
+    "description": "Auto imported from components/icons/icons-icon3.vue"
+  },
+  "IconsIcon4": {
+    "description": "Auto imported from components/icons/icons-icon4.vue"
+  },
+  "IconsIcon5": {
+    "description": "Auto imported from components/icons/icons-icon5.vue"
+  },
+  "IconsIcon6": {
+    "description": "Auto imported from components/icons/icons-icon6.vue"
+  },
+  "IconsIcon7": {
+    "description": "Auto imported from components/icons/icons-icon7.vue"
+  },
+  "IconsInstagramColor": {
+    "description": "Auto imported from components/icons/icons-instagram-color.vue"
+  },
+  "IconsInstagram": {
+    "description": "Auto imported from components/icons/icons-instagram.vue"
+  },
+  "IconsLinkedin": {
+    "description": "Auto imported from components/icons/icons-linkedin.vue"
+  },
+  "IconsLocation": {
+    "description": "Auto imported from components/icons/icons-location.vue"
+  },
+  "IconsLogo": {
+    "description": "Auto imported from components/icons/icons-logo.vue"
+  },
+  "IconsManufacturing": {
+    "description": "Auto imported from components/icons/icons-manufacturing.vue"
+  },
+  "IconsMarket": {
+    "description": "Auto imported from components/icons/icons-market.vue"
+  },
+  "IconsMbaCandidate": {
+    "description": "Auto imported from components/icons/icons-mba-candidate.vue"
+  },
+  "IconsMdCandidate": {
+    "description": "Auto imported from components/icons/icons-md-candidate.vue"
+  },
+  "IconsMinus": {
+    "description": "Auto imported from components/icons/icons-minus.vue"
+  },
+  "IconsPhone": {
+    "description": "Auto imported from components/icons/icons-phone.vue"
+  },
+  "IconsPlay": {
+    "description": "Auto imported from components/icons/icons-play.vue"
+  },
+  "IconsPlus": {
+    "description": "Auto imported from components/icons/icons-plus.vue"
+  },
+  "IconsProfessional": {
+    "description": "Auto imported from components/icons/icons-professional.vue"
+  },
+  "IconsResidential": {
+    "description": "Auto imported from components/icons/icons-residential.vue"
+  },
+  "IconsRightMenuArrow": {
+    "description": "Auto imported from components/icons/icons-right-menu-arrow.vue"
+  },
+  "IconsSave": {
+    "description": "Auto imported from components/icons/icons-save.vue"
+  },
+  "IconsSearch": {
+    "description": "Auto imported from components/icons/icons-search.vue"
+  },
+  "IconsSelectionArrow": {
+    "description": "Auto imported from components/icons/icons-selection-arrow.vue"
+  },
+  "IconsShareIcon": {
+    "description": "Auto imported from components/icons/icons-share-icon.vue"
+  },
+  "IconsStar": {
+    "description": "Auto imported from components/icons/icons-star.vue"
+  },
+  "IconsTeam": {
+    "description": "Auto imported from components/icons/icons-team.vue"
+  },
+  "IconsTiktok": {
+    "description": "Auto imported from components/icons/icons-tiktok.vue"
+  },
+  "IconsTopmenuarrow": {
+    "description": "Auto imported from components/icons/icons-topmenuarrow.vue"
+  },
+  "IconsTwitter": {
+    "description": "Auto imported from components/icons/icons-twitter.vue"
+  },
+  "IconsUpload": {
+    "description": "Auto imported from components/icons/icons-upload.vue"
+  },
+  "IconsWhiteLogo": {
+    "description": "Auto imported from components/icons/icons-white-logo.vue"
+  },
+  "IconsWifi": {
+    "description": "Auto imported from components/icons/icons-wifi.vue"
+  },
+  "IconsYelpIcon": {
+    "description": "Auto imported from components/icons/icons-yelp-icon.vue"
+  },
+  "IconsYoutube": {
+    "description": "Auto imported from components/icons/icons-youtube.vue"
+  },
+  "InputFilterCheckbox": {
+    "description": "Auto imported from components/input/input-filter-checkbox.vue"
+  },
+  "OurSustainabilityCardWithImage": {
+    "description": "Auto imported from components/our-sustainability/our-sustainability-card-with-image.vue"
+  },
+  "OurSustainabilityMaterialTopics": {
+    "description": "Auto imported from components/our-sustainability/our-sustainability-material-topics.vue"
+  },
+  "LayoutFooter": {
+    "description": "Auto imported from components/layout/layout-footer.vue"
+  },
+  "LayoutHeader": {
+    "description": "Auto imported from components/layout/layout-header.vue"
+  },
+  "SoftwareDevelopmentServices": {
+    "description": "Auto imported from components/software-google-ad/software-development-services.vue"
+  },
+  "SoftwareGoogleAdWhyVenturePlans": {
+    "description": "Auto imported from components/software-google-ad/why-venture-plans.vue"
+  },
+  "TechnologyQuestionsForm": {
+    "description": "Auto imported from components/technology/technology-questions-form.vue"
+  },
+  "AboutOurLeadershipVideoSection": {
+    "description": "Auto imported from components/about/our-leadership/about-our-leadership-video-section.vue"
+  },
+  "CommonBusinessPlanAbout": {
+    "description": "Auto imported from components/common/business-plan/common-business-plan-about.vue"
+  },
+  "HeaderRightSideBarMenuLanguageEnglish": {
+    "description": "Auto imported from components/header/header-right-side-bar-menu/header-right-side-bar-menu-language-english.vue"
+  },
+  "HeaderRightSideBarMenuOffices": {
+    "description": "Auto imported from components/header/header-right-side-bar-menu/header-right-side-bar-menu-offices.vue"
+  }
+}

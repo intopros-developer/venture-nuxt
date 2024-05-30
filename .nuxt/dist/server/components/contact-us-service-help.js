@@ -1,0 +1,196 @@
+exports.ids = [51,78];
+exports.modules = {
+
+/***/ 181:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/unplugin/dist/webpack/loaders/transform.js??ref--13-0!./components/icons/icons-close-time.vue?vue&type=template&id=baee35ee&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"xmlns":"http://www.w3.org/2000/svg","width":"10","height":"10","viewBox":"0 0 10 10"}},[_vm._ssrNode("<g><g><g><g><path d=\"M.494 4.816a4.306 4.306 0 1 1 8.612 0 4.306 4.306 0 0 1-8.612 0z\"></path></g> <g><g transform=\"rotate(-45 5 4.5)\"><path fill=\"#fff\" d=\"M4.231 1.746l.99.059.334 5.638-.99-.06z\"></path></g> <g transform=\"rotate(45 5 4.5)\"><path fill=\"#fff\" d=\"M4.566 1.805l.99-.059-.335 5.638-.99.059z\"></path></g></g></g></g></g>")])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/icons/icons-close-time.vue?vue&type=template&id=baee35ee&
+
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(3);
+
+// CONCATENATED MODULE: ./components/icons/icons-close-time.vue
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  "27036a52"
+  
+)
+
+/* harmony default export */ var icons_close_time = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ 309:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/unplugin/dist/webpack/loaders/transform.js??ref--13-0!./components/contact-us/contact-us-service-help.vue?vue&type=template&id=66eab21e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',{staticClass:"pb-10 md:pb-28"},[_vm._ssrNode("<div class=\"container px-10 md:px-4 lg:px-[97px] xl:px-4\">","</div>",[_vm._ssrNode("<div class=\"text-left\"><h2 class=\"mb-8 inline-block border-b-[5px] border-primary pb-2 text-[22px] font-bold leading-[27px] text-black xl:border-b-8 xl:text-[31px] xl:leading-[60px]\">"+_vm._ssrEscape("\n                "+_vm._s(_vm.$t('thanks_for_your_interest'))+" ")+"<span class=\"text-primary\">"+_vm._ssrEscape(_vm._s(_vm.$t('select_the_service_you_need_help_with')))+"</span></h2></div> <div class=\"mb-10 space-y-5 text-sm font-medium leading-6 -tracking-[0.03px] text-black-700 md:mb-[100px] xl:text-xl xl:leading-9 xl:-tracking-[0.04px]\"><p>"+_vm._ssrEscape("\n                "+_vm._s(_vm.servicesPara)+"\n            ")+"</p></div> "),_vm._ssrNode("<div class=\"flex flex-col gap-5 md:flex-row lg:gap-16 xl:gap-[100px]\">","</div>",[_vm._ssrNode("<div class=\"mx-auto w-full max-w-[332px] flex-none xl:max-w-[462px]\">","</div>",[_vm._ssrNode("<div class=\"mb-10 shadow-[0px_1px_8px_rgba(0,0,0,0.1)] md:mb-[63px]\">","</div>",[_c('multiselect',{ref:"serviceMultiSelect",staticClass:"custom-multiselect option-position-reletive w-full bg-white text-xs leading-[15px] text-[#586376] focus:outline-none xl:text-[17px] xl:leading-[21px]",attrs:{"max-height":412,"option-height":58,"options":_vm.servicesList,"show-no-results":false,"close-on-select":true,"show-labels":false,"placeholder":"Search"},on:{"search-change":_vm.searchChange},model:{value:(_vm.params.search),callback:function ($$v) {_vm.$set(_vm.params, "search", $$v)},expression:"params.search"}},[_c('template',{slot:"caret"},[_c('button',{staticClass:"pointer-events-none absolute right-0 top-0 mr-4 mt-5 xl:mt-7",attrs:{"type":"submit"}},[_c('icons-search',{staticClass:"h-3 w-3 fill-current text-[#586376] xl:h-4 xl:w-4"})],1)]),_vm._v(" "),_c('template',{slot:"clear"},[(_vm.isClearSearch)?_c('button',{staticClass:"absolute right-0 top-0 mr-11 mt-5 xl:mt-7",attrs:{"type":"button"},on:{"click":function($event){$event.stopPropagation();_vm.params.search = _vm.servicesList[0]}}},[_c('icons-close-time',{staticClass:"h-3 w-3 fill-current text-black xl:h-4 xl:w-4"})],1):_vm._e()])],2)],1),_vm._ssrNode(" "),_c('nuxt-link',{staticClass:"b-btn",attrs:{"to":"book-consult"}},[_vm._v(_vm._s(_vm.$t('book_a_consultation')))])],2),_vm._ssrNode(" "),(_vm.serviceDescription)?_vm._ssrNode("<div class=\"float-1\">","</div>",[_vm._ssrNode("<div class=\"mb-[34px] w-full bg-black/10 shadow-[0_3px_6px_rgba(0,0,0,0.75)] xl:h-[474px]\">","</div>",[(_vm.serviceDescription.fields.descriptionMediaType === 'image')?_c('nuxt-img',{staticClass:"h-full w-full object-cover",attrs:{"format":"webp","src":("" + (_vm.serviceDescription.fields.descriptionMedia.fields.file.url)),"alt":_vm.serviceDescription.fields.descriptionPara,"loading":"lazy"}}):_c('div',{domProps:{"innerHTML":_vm._s(_vm.serviceDescription.fields.videoScript)}})],1),_vm._ssrNode(" <p class=\"text-sm font-light leading-6 text-black xl:text-[23px] xl:leading-[48px]\">"+_vm._ssrEscape("\n                    "+_vm._s(_vm.serviceDescription.fields.descriptionPara)+"\n                ")+"</p>")],2):_vm._e()],2)],2)])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/contact-us/contact-us-service-help.vue?vue&type=template&id=66eab21e&
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--3-0!./node_modules/@nuxt/components/dist/loader.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/unplugin/dist/webpack/loaders/transform.js??ref--13-0!./components/contact-us/contact-us-service-help.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var contact_us_service_helpvue_type_script_lang_js_ = ({
+  props: {
+    servicesList: {
+      type: Array,
+      default: () => []
+    },
+    servicesDetail: {
+      type: Array,
+      default: () => []
+    },
+    servicesPara: {
+      type: String,
+      default: 'We bring a fresh perspective and infectious energy to every client relationship. Our emphasis on teamwork, trust and tolerance for diverging opinions helps clients focus on their opportunities, build their capabilities and win the future. Together, we achieve results that bridge what is with what can be.'
+    }
+  },
+  data() {
+    return {
+      params: {
+        search: this.servicesList[0]
+      },
+      isClearSearch: false
+    };
+  },
+  computed: {
+    serviceDescription() {
+      return this.servicesDetail.find(service => service.fields.title === this.params.search);
+    }
+  },
+  methods: {
+    searchChange(searchQuery, id) {
+      if (!this.$helper.isEmpty(searchQuery)) {
+        this.isClearSearch = true;
+      } else {
+        this.isClearSearch = false;
+      }
+    }
+  }
+});
+// CONCATENATED MODULE: ./components/contact-us/contact-us-service-help.vue?vue&type=script&lang=js&
+ /* harmony default export */ var contact_us_contact_us_service_helpvue_type_script_lang_js_ = (contact_us_service_helpvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(3);
+
+// CONCATENATED MODULE: ./components/contact-us/contact-us-service-help.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  contact_us_contact_us_service_helpvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  "699a5fca"
+  
+)
+
+/* harmony default export */ var contact_us_service_help = __webpack_exports__["default"] = (component.exports);
+
+/* nuxt-component-imports */
+installComponents(component, {IconsSearch: __webpack_require__(70).default,IconsCloseTime: __webpack_require__(181).default})
+
+
+/***/ })
+
+};;
+//# sourceMappingURL=contact-us-service-help.js.map
