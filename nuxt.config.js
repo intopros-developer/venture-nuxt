@@ -620,6 +620,7 @@ export default {
 
     build: {
         extend(config) {
+            config.performance.hints = false;
             config.resolve.alias['node-fetch-native'] = require.resolve('node-fetch');
         },
         postcss: {
