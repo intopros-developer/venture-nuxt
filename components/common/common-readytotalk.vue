@@ -1,5 +1,5 @@
 <template>
-    <section id="readyToTalk" class="bg-cover py-10 md:py-16 xl:py-32" :style="{ backgroundImage: `url(${imgUrl})` }">
+    <section id="readyToTalk" ref="readyToTalk" class="bg-cover py-10 md:py-16 xl:py-32" :style="{ backgroundColor: bgColor, backgroundImage: backgroundImage }">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <form id="ready-to-talk-form" action="" @submit.prevent="onSubmit">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
@@ -173,6 +173,8 @@
                 captchaError: false,
                 widgetId: null,
                 isSubmitting: false,
+                bgColor: '#444',
+                backgroundImage: 'none',
             };
         },
 
@@ -202,6 +204,8 @@
                 });
                 this.widgetId = id;
             } catch (e) {}
+
+            this.setupIntersectionObserver();
         },
 
         validations() {
@@ -216,6 +220,26 @@
         },
 
         methods: {
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            this.loadBackgroundImage();
+                            observer.unobserve(this.$refs.readyToTalk);
+                        }
+                    });
+                });
+                observer.observe(this.$refs.readyToTalk);
+            },
+
+            loadBackgroundImage() {
+                const highResImage = new Image();
+                highResImage.src = this.imgUrl;
+                highResImage.onload = () => {
+                    this.backgroundImage = `url(${this.imgUrl})`;
+                };
+            },
+
             openSearch() {
                 this.showService = !this.showService;
                 if (this.showService) {

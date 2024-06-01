@@ -3,7 +3,7 @@
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="mb-10 flex flex-col gap-10 sm:flex-row sm:justify-between xl:mb-[85px]">
                 <div>
-                    <nuxt-link :to="localePath('/')">
+                    <nuxt-link :to="localePath('/')" aria-label="Venture Plans">
                         <svg xmlns="http://www.w3.org/2000/svg" width="129" height="31" viewBox="0 0 129 31">
                             <g>
                                 <g><path fill="#00ADFF" d="M98.717 30.443V.353h29.406z" /></g>

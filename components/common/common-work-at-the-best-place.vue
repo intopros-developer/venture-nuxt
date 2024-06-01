@@ -3,7 +3,7 @@
         <div id="employmentAtVenturePlan" class="container max-w-[990px] px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="grid w-full grid-cols-1 gap-6 bg-white p-5 shadow-[0px_1px_8px_rgba(0,0,0,0.12)] sm:gap-6 md:grid-cols-2 md:px-8 md:py-20 xl:gap-20 xl:pb-[97px] xl:pl-[72px] xl:pr-11 xl:pt-[71px]">
                 <div>
-                    <h3 class="mb-2.5 text-center text-[22px] font-bold uppercase leading-[30px] text-black md:text-left md:leading-[39px] xl:text-[28px] [&>span>br]:block [&>span>br]:md:hidden [&>span]:text-primary" v-html="title"></h3>
+                    <h3 class="mb-2.5 text-center text-[22px] font-bold uppercase leading-[30px] text-black md:text-left md:leading-[39px] xl:text-[28px] [&>span]:text-primary [&>span>br]:block [&>span>br]:md:hidden" v-html="title"></h3>
                     <p class="mb-7 text-xs font-normal leading-5 -tracking-[0.03px] text-[#353535] md:mb-11 lg:max-w-sm lg:text-sm xl:text-base xl:leading-[24px]">
                         {{ description }}
                     </p>

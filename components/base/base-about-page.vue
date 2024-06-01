@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-no-repeat pb-8 pt-[250px] md:pb-[69px] md:pt-[166px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+        <section ref="bannerSection" class="relative bg-cover bg-no-repeat pb-8 pt-[250px] md:pb-[69px] md:pt-[166px]" :style="{ backgroundImage: bannerBackgroundImage }">
             <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-90 xl:h-[307px]"></div>
             <div class="container relative z-10 px-10 lg:px-[97px] xl:px-4">
@@ -152,6 +152,7 @@
         data() {
             return {
                 isShowReadMore: false,
+                bannerBackgroundImage: '',
                 tabs: [
                     {
                         id: 'aboutUs',
@@ -267,6 +268,20 @@
             readyToTalkForm() {
                 return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
             },
+        },
+
+        mounted() {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        this.bannerBackgroundImage = `url(${this.content.bannerImgUrl})`;
+                        observer.unobserve(this.$refs.bannerSection);
+                    }
+                },
+                { rootMargin: '0px 0px 50px 0px' }
+            );
+
+            observer.observe(this.$refs.bannerSection);
         },
     };
 </script>

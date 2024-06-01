@@ -13,7 +13,7 @@
                 <div class="relative">
                     <span class="absolute -inset-5 -z-[1] m-auto bg-black/30 blur-2xl"></span>
                     <p
-                        class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[32px] sm:leading-[52px] lg:pt-0 [&>br]:hidden md:[&>br]:block [&>span]:border-b-[5px] [&>span]:border-primary"
+                        class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[32px] sm:leading-[52px] lg:pt-0 [&>span]:border-b-[5px] [&>span]:border-primary [&>br]:hidden md:[&>br]:block"
                         v-html="content.title2"
                     ></p>
                     <ul class="mb-6 flex flex-wrap items-start gap-y-3 pt-4 text-white sm:gap-5 md:mb-[68px] lg:grid lg:grid-cols-2 xl:flex">

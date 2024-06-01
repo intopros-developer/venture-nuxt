@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 
 export default {
+    buildDir: 'nuxt-dist',
     server: {
         // host: 0,
     },
@@ -144,9 +145,10 @@ export default {
         [
             '@nuxtjs/robots',
             {
+                /* module options */
                 UserAgent: '*',
-                Disallow: '',
-                Sitemap: (req) => `${process.env.STRAPI_URL}/sitemap.xml`,
+                Disallow: ['/_ipx/', '/search*/'],
+                Sitemap: (req) => `${process.env.FE_BASE_URL}/sitemap.xml`,
             },
         ],
     ],
@@ -200,7 +202,7 @@ export default {
 
     generate: {
         routes: async () => {
-            let routes = [
+            const routes = [
                 '/about-us',
                 '/about-us/what-we-do',
                 '/about-us/our-team',
@@ -342,6 +344,32 @@ export default {
                 for (const dat of data.data) {
                     if (!routes.includes(dat.attributes.url)) {
                         routes.push(dat.attributes.url);
+                    }
+                }
+            }
+            if (data.meta.pagination.pageCount > 1) {
+                for (let page = 2; page <= data.meta.pagination.pageCount; page++) {
+                    const apiUrl = process.env.STRAPI_URL;
+                    const authToken = process.env.STRAPI_TOKEN;
+                    const collectionEndpoint = `${apiUrl}/api/base-urls?pagination[pageSize]=100&pagination[page]=` + page;
+                    const response = await fetch(collectionEndpoint, {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Bearer ${authToken}`,
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                    if (!response.ok) {
+                        console.log('Network response was not ok');
+                        return routes;
+                    }
+                    const data = await response.json();
+                    if (data && data.data && Array.isArray(data.data)) {
+                        for (const dat of data.data) {
+                            if (!routes.includes(dat.attributes.url)) {
+                                routes.push(dat.attributes.url);
+                            }
+                        }
                     }
                 }
             }
@@ -354,7 +382,7 @@ export default {
         hostname: 'https://ventureplans.us',
         gzip: true,
         routes: async () => {
-            let routes = [
+            const routes = [
                 '/about-us',
                 '/about-us/what-we-do',
                 '/about-us/our-team',
@@ -499,6 +527,32 @@ export default {
                     }
                 }
             }
+            if (data.meta.pagination.pageCount > 1) {
+                for (let page = 2; page <= data.meta.pagination.pageCount; page++) {
+                    const apiUrl = process.env.STRAPI_URL;
+                    const authToken = process.env.STRAPI_TOKEN;
+                    const collectionEndpoint = `${apiUrl}/api/base-urls?pagination[pageSize]=100&pagination[page]=` + page;
+                    const response = await fetch(collectionEndpoint, {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Bearer ${authToken}`,
+                            'Content-Type': 'application/json',
+                        },
+                    });
+                    if (!response.ok) {
+                        console.log('Network response was not ok');
+                        return routes;
+                    }
+                    const data = await response.json();
+                    if (data && data.data && Array.isArray(data.data)) {
+                        for (const dat of data.data) {
+                            if (!routes.includes(dat.attributes.url)) {
+                                routes.push(dat.attributes.url);
+                            }
+                        }
+                    }
+                }
+            }
             return routes;
         },
         cacheTime: 7200000,
@@ -506,7 +560,7 @@ export default {
             // Filter out the i18n routes from the sitemap
             const locales = ['en', 'pt-br', 'es', 'es-ar', 'es-co', 'es-cl', 'fr', 'de-ch', 'it', 'es', 'ru', 'zh', 'ko', 'ja', 'zh-tw', 'zh-hk'];
             return routes.filter((route) => {
-                for (let locale of locales) {
+                for (const locale of locales) {
                     if (route.path && (route.path.includes('/' + locale + '/') || route.path.endsWith('/' + locale))) {
                         return false;
                     } else if (route.url && (route.url.includes('/' + locale + '/') || route.url.endsWith('/' + locale))) {
@@ -568,6 +622,7 @@ export default {
 
     build: {
         extend(config) {
+            config.performance.hints = false;
             config.resolve.alias['node-fetch-native'] = require.resolve('node-fetch');
         },
         postcss: {

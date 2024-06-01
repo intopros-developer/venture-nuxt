@@ -4,7 +4,7 @@
             <div class="text-center">
                 <div class="mb-9 flex items-center justify-center gap-2 text-center sm:gap-[33px]">
                     <div class="h-px w-1/5 bg-[#D5D5D5]"></div>
-                    <h2 class="max-w-[90%] text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl [&>br]:inline-block sm:[&>br]:hidden [&>span]:text-primary" v-html="title"></h2>
+                    <h2 class="max-w-[90%] text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl [&>span]:text-primary [&>br]:inline-block sm:[&>br]:hidden" v-html="title"></h2>
                     <div class="h-px w-1/5 bg-[#D5D5D5]"></div>
                 </div>
                 <p class="text-[15px] font-medium leading-[18px] -tracking-[0.04px] text-[#707070] xl:text-[20px] xl:leading-[23px]">

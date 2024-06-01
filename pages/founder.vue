@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="relative h-[400px] bg-cover bg-[right_32%_top] bg-no-repeat pb-12 md:bg-[center_top_8%] lg:h-[800px] xl:bg-[center_top_12%] xl:pb-[67px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+        <section ref="bannerSection" class="relative h-[400px] bg-cover bg-[right_32%_top] bg-no-repeat pb-12 md:bg-[center_top_8%] lg:h-[800px] xl:bg-[center_top_12%] xl:pb-[67px]" :style="{ backgroundImage: bannerBackgroundImage }">
             <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[500px]"></div>
             <div class="container relative z-10 flex h-full items-center lg:px-[97px] xl:pl-20">
@@ -115,6 +115,7 @@
                 ],
             },
             title: String,
+            bannerBackgroundImage: '',
         },
 
         async asyncData(context) {
@@ -222,6 +223,19 @@
             // readyToTalkForm() {
             //     return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } }
             // }
+        },
+        mounted() {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        this.bannerBackgroundImage = `url(${this.content.bannerImgUrl})`;
+                        observer.unobserve(this.$refs.bannerSection);
+                    }
+                },
+                { rootMargin: '0px 0px 50px 0px' }
+            );
+
+            observer.observe(this.$refs.bannerSection);
         },
     };
 </script>

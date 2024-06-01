@@ -137,7 +137,7 @@
                 <div v-show="currentQuestion === 8" class="order-2 flex-1 md:order-1">
                     <nuxt-img format="webp" src="/assets/img/congo-icon.svg" alt="Congo Icon" loading="lazy" />
                     <h2
-                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
+                        class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
                         v-html="$t('congratulations_you_have_br_span_successfully_span_booked_your_consultation')"
                     ></h2>
                     <p class="mb-6 text-sm font-medium -tracking-[0.04px] text-[#586376] lg:text-base xl:leading-[27px]" v-html="$t('one_of_our_human_resources_representatives_will_be_in_touch_with_you_soon_thank_you')"></p>

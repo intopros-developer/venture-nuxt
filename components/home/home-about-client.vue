@@ -36,7 +36,7 @@
                                 <div class="block pb-2 pr-7 pt-[18px] md:hidden md:pb-0">
                                     <div v-if="!data.attributes.readMoreOn" class="line-clamp-6 text-sm font-light leading-[22px] text-[#333333]">{{ truncateString(data.attributes.description) }}</div>
                                     <div v-else class="line-clamp-6 text-sm font-light leading-[22px] text-[#333333]">{{ data.attributes.description }}</div>
-                                    <p v-if="data.attributes.description.length > 100" class="text-md mt-5 line-clamp-6 cursor-pointer font-bold leading-[22px] text-[#333333]" @click="toggleReadMore(data)">
+                                    <p v-if="data.attributes.description.length > 100" class="text-md line-clamp-6 mt-5 cursor-pointer font-bold leading-[22px] text-[#333333]" @click="toggleReadMore(data)">
                                         {{ data.attributes.readMoreOn ? 'Read Less' : 'Read More' }}
                                     </p>
                                 </div>

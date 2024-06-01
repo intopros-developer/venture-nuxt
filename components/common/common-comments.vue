@@ -1,8 +1,8 @@
 <template>
-    <section class="container bg-white py-8 antialiased lg:py-16 dark:bg-gray-900">
+    <section class="container bg-white py-8 antialiased dark:bg-gray-900 lg:py-16">
         <div class="mx-auto max-w-2xl">
             <div class="mb-6 flex items-center justify-between">
-                <h2 class="text-lg font-bold text-gray-900 lg:text-2xl dark:text-white">Discussion (20)</h2>
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white lg:text-2xl">Discussion (20)</h2>
             </div>
             <form class="mb-6">
                 <div class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white px-4 py-2 dark:border-gray-700 dark:bg-gray-800">
@@ -65,7 +65,7 @@
                     </button>
                 </div>
             </article>
-            <article class="mb-3 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12 dark:bg-gray-900">
+            <article class="mb-3 ml-6 rounded-lg bg-white p-6 text-base dark:bg-gray-900 lg:ml-12">
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">

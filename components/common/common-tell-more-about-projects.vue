@@ -6,7 +6,7 @@
                     <div class="absolute -inset-5 m-auto h-full w-full bg-black/30 blur-2xl"></div>
                     <div v-if="tellUsMoreData.length" class="relative z-[1]">
                         <h3
-                            class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[36px] sm:leading-[52px] lg:pt-0 [&>br]:hidden md:[&>br]:block [&>span]:border-b-[5px] [&>span]:border-primary"
+                            class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[36px] sm:leading-[52px] lg:pt-0 [&>span]:border-b-[5px] [&>span]:border-primary [&>br]:hidden md:[&>br]:block"
                             v-html="tellUsMoreTitle"
                         ></h3>
                         <p class="text-white">{{ tellUseMoreSubtitle }}</p>

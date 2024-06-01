@@ -254,10 +254,10 @@
                             </div>
                             <div class="flex h-[calc(100%-125px)] flex-col justify-between py-3 xl:h-[calc(100%-340px)] xl:py-4">
                                 <div>
-                                    <p class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                    <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                         {{ insight.attributes.Insightsource }}
                                     </p>
-                                    <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-1 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
+                                    <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" class="line-clamp-1 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ insight.attributes.title }}</nuxt-link>
                                     <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                         {{ insight.attributes.paragraph }}
                                     </p>
@@ -313,11 +313,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -351,11 +351,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -391,11 +391,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -431,11 +431,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -487,11 +487,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}
@@ -525,11 +525,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
                                                 }}</nuxt-link>
                                             </div>
@@ -573,11 +573,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
                                                 }}</nuxt-link>
                                             </div>
@@ -610,11 +610,11 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="mb-3 line-clamp-1 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
                                             </h4>
                                             <div class="md:min-h-[56px]">
-                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="mb-3 line-clamp-2 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
+                                                <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
                                             <p class="mb-5 text-sm font-medium leading-6 -tracking-[0.03px] text-[#202A36] lg:mb-[54px] lg:text-base">
                                                 {{ item.attributes.paragraph }}

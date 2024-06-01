@@ -1,5 +1,5 @@
 <template>
-    <section class="overflow-y-hidden bg-cover bg-[top_36%_center] py-10 xl:pb-[75px] xl:pt-20" :style="{ backgroundImage: `url(${imageUrl})` }">
+    <section id="careerJoinEvent" ref="careerJoinEvent" class="overflow-y-hidden bg-cover bg-[top_36%_center] py-10 xl:pb-[75px] xl:pt-20" :style="{ backgroundColor: bgColor, backgroundImage: backgroundImage }">
         <div class="container">
             <div class="grid grid-cols-1">
                 <div class="relative max-w-[637px] md:pt-[140px]">
@@ -64,6 +64,8 @@
                 params: {
                     email: '',
                 },
+                bgColor: '#444',
+                backgroundImage: 'none',
             };
         },
 
@@ -73,6 +75,7 @@
             } else {
                 this.placeholder = 'enter_your_email_to_join_events';
             }
+            this.setupIntersectionObserver();
         },
 
         validations() {
@@ -84,6 +87,25 @@
         },
 
         methods: {
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            this.loadBackgroundImage();
+                            observer.unobserve(this.$refs.careerJoinEvent);
+                        }
+                    });
+                });
+                observer.observe(this.$refs.careerJoinEvent);
+            },
+
+            loadBackgroundImage() {
+                const highResImage = new Image();
+                highResImage.src = this.$props.imageUrl;
+                highResImage.onload = () => {
+                    this.backgroundImage = `url(${this.$props.imageUrl})`;
+                };
+            },
             async onSubmit() {
                 this.$v.params.$touch();
                 if (this.$v.params.$invalid || this.$v.params.$error) {

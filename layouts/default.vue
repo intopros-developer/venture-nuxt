@@ -38,14 +38,6 @@
             };
         },
 
-        head() {
-            // const currentPath = this.$route.path;
-            const canonicalUrl = (process.env.baseUrl ? process.env.baseUrl : 'https://www.ventureplans.us') + this.$route.path;
-            return {
-                link: [{ hid: 'canonical', rel: 'canonical', href: canonicalUrl }],
-            };
-        },
-
         mounted() {
             document.querySelector('html').classList.add('overflow-x-hidden');
             // AOS.init();

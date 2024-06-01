@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+        <section ref="bannerSection" class="relative bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]" :style="{ backgroundImage: bannerBackgroundImage }">
             <div class="absolute left-0 top-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[246px]"></div>
             <div class="container relative z-10 lg:px-[97px] xl:px-4">
@@ -131,6 +131,7 @@
         data() {
             return {
                 isLoadingMoreConsultants: false,
+                bannerBackgroundImage: '',
                 isShowReadMore: false,
                 tabs: [
                     {
@@ -263,6 +264,19 @@
             logoSlider() {
                 return this.content?.logoSlider?.data?.attributes?.logoUrls || [];
             },
+        },
+        mounted() {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        this.bannerBackgroundImage = `url(${this.content.bannerImgUrl})`;
+                        observer.unobserve(this.$refs.bannerSection);
+                    }
+                },
+                { rootMargin: '0px 0px 50px 0px' }
+            );
+
+            observer.observe(this.$refs.bannerSection);
         },
     };
 </script>

@@ -138,9 +138,6 @@
         },
 
         computed: {
-            baseURL() {
-                return process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us';
-            },
             questionnaires() {
                 return this.content?.dynamicQuestionnaires?.data?.attributes || [];
             },
