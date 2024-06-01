@@ -57,13 +57,13 @@
                                             <common-custom-strapi-display classes="pt-5 text-lg font-normal text-[#4D4D4D]" :data="serviceDescription.attributes.descriptionPara"></common-custom-strapi-display>
                                             <nuxt-link
                                                 v-if="$helper.isInternalUrl(serviceDescription.attributes.descriptionLinkUrl)"
-                                                :aria-label="`Learn More ${index}`"
+                                                aria-label="Explore Further"
                                                 :to="serviceDescription.attributes.descriptionLinkUrl"
                                                 class="block pt-6 font-semibold text-[#0DA1F1]"
                                             >
                                                 {{ serviceDescription.attributes.descriptionLink }}
                                             </nuxt-link>
-                                            <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" :aria-label="`Learn More ${index}`" class="block pt-6 font-semibold text-[#0DA1F1]">
+                                            <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Explore Further" class="block pt-6 font-semibold text-[#0DA1F1]">
                                                 {{ serviceDescription.attributes.descriptionLink }}</a
                                             >
                                         </div>
@@ -114,10 +114,15 @@
                 <div class="pt-5 md:pt-[29px]">
                     <p v-if="serviceDescription.attributes.descriptionTitle" class="text-xl -tracking-[-0.06px] text-[#2F2F2F] md:text-2xl lg:text-[32px]">{{ serviceDescription.attributes.descriptionTitle }}</p>
                     <common-custom-strapi-display classes="pt-[15px] text-lg leading-6 -tracking-[-0.03px] text-[#4D4D4D]" :data="serviceDescription.attributes.descriptionPara"></common-custom-strapi-display>
-                    <nuxt-link v-if="$helper.isInternalUrl(serviceDescription.attributes.descriptionLinkUrl)" aria-label="Learn More" :to="serviceDescription.attributes.descriptionLinkUrl" class="block pt-6 font-semibold text-[#0DA1F1]">
+                    <nuxt-link
+                        v-if="$helper.isInternalUrl(serviceDescription.attributes.descriptionLinkUrl)"
+                        aria-label="Explore Further"
+                        :to="serviceDescription.attributes.descriptionLinkUrl"
+                        class="block pt-6 font-semibold text-[#0DA1F1]"
+                    >
                         {{ serviceDescription.attributes.descriptionLink }}
                     </nuxt-link>
-                    <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Learn More" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.attributes.descriptionLink }}</a>
+                    <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Explore Further" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.attributes.descriptionLink }}</a>
                 </div>
             </div>
         </div>

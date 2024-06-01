@@ -59,7 +59,7 @@
                                 See where you're strong, where you lag, and what the savings potential can be when you improve specific elements of your performance and capability. Our benchmarking database of 250+ plants across a wide
                                 variety of industries captures today's most relevant KPIs, allowing you to visualize your current state, spot areas of opportunity and prioritize the actions that will vault you ahead of your competitors.
                             </p>
-                            <button aria-label="Learn More" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</button>
+                            <button aria-label="Explore Further" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Explore Further</button>
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@
                                 See where you're strong, where you lag, and what the savings potential can be when you improve specific elements of your performance and capability. Our benchmarking database of 250+ plants across a wide
                                 variety of industries captures today's most relevant KPIs, allowing you to visualize your current state, spot areas of opportunity and prioritize the actions that will vault you ahead of your competitors.
                             </p>
-                            <button aria-label="Learn More" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</button>
+                            <button aria-label="Explore Further" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Explore Further</button>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
                                 See where you're strong, where you lag, and what the savings potential can be when you improve specific elements of your performance and capability. Our benchmarking database of 250+ plants across a wide
                                 variety of industries captures today's most relevant KPIs, allowing you to visualize your current state, spot areas of opportunity and prioritize the actions that will vault you ahead of your competitors.
                             </p>
-                            <button aria-label="Learn More" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</button>
+                            <button aria-label="Explore Further" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Explore Further</button>
                         </div>
                     </div>
 
@@ -101,7 +101,7 @@
                                 See where you're strong, where you lag, and what the savings potential can be when you improve specific elements of your performance and capability. Our benchmarking database of 250+ plants across a wide
                                 variety of industries captures today's most relevant KPIs, allowing you to visualize your current state, spot areas of opportunity and prioritize the actions that will vault you ahead of your competitors.
                             </p>
-                            <button aria-label="Learn More" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Learn More</button>
+                            <button aria-label="Explore Further" class="inline-block pt-6 font-semibold leading-[23px] text-[#0da1f1]">Explore Further</button>
                         </div>
                     </div>
                 </div>

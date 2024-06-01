@@ -126,7 +126,7 @@
                             descriptionTitle: 'Take your business to the next level',
                             descriptionPara:
                                 'Our management consultants primarily engage companies as a long term trusted adviser. Our experts consultants assist with collecting information and data in order to make impactful strategic decisions.  We partner with  corporations and their leaders to discover and resolve some of their most critical business challenges. Our consultants enjoy what they do and really value their work.\n',
-                            descriptionLink: 'Learn More',
+                            descriptionLink: 'Explore Further',
                             descriptionMediaType: 'video',
                             videoThumbnailImage: {
                                 fields: {

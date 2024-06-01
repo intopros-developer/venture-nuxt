@@ -15,7 +15,7 @@
                     <h5 class="text-lg font-bold">{{ data.title }}</h5>
                     <p>{{ data.description.length > 200 ? data.description.slice(0, 200) + '...' : data.description }}</p>
                     <button class="mt-5 flex items-center gap-2 font-bold text-primary">
-                        Learn More
+                        Explore Further
                         <svg width="6" height="8" viewBox="0 0 6 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 4L-3.26266e-07 7.4641L-2.34249e-08 0.535898L6 4Z" fill="#00ADFF" />
                         </svg>

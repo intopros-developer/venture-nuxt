@@ -9,8 +9,8 @@
                     </div>
                     <p class="pb-5 pt-[26px] text-sm leading-[26px] -tracking-[0.04px] text-[#202a36]">{{ consultant.description }}</p>
                     <div class="mt-auto">
-                        <button aria-label="Learn more" class="flex items-center gap-4 text-primary">
-                            <p class="text-sm font-semibold leading-[13px] -tracking-[0.03px]">Learn more</p>
+                        <button aria-label="Explore Further" class="flex items-center gap-4 text-primary">
+                            <p class="text-sm font-semibold leading-[13px] -tracking-[0.03px]">Explore Further</p>
                             <icons-downarrow class="-rotate-90" />
                         </button>
                     </div>
