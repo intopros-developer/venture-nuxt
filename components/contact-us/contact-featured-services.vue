@@ -58,7 +58,7 @@
                                         <p class="pt-5 text-sm text-[#4D4D4D]">
                                             {{ serviceDescription.fields.descriptionPara }}
                                         </p>
-                                        <p aria-label="Consulting" class="block pt-6 font-semibold text-[#0DA1F1]">{{ serviceDescription.fields.descriptionLink }}</p>
+                                        <p aria-label="Explore Further" class="block pt-6 font-semibold text-[#0DA1F1]">Explore Further</p>
                                     </div>
                                 </div>
                             </div>

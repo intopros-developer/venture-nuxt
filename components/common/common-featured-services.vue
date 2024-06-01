@@ -61,11 +61,9 @@
                                                 :to="serviceDescription.attributes.descriptionLinkUrl"
                                                 class="block pt-6 font-semibold text-[#0DA1F1]"
                                             >
-                                                {{ serviceDescription.attributes.descriptionLink }}
+                                                Explore Further
                                             </nuxt-link>
-                                            <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Explore Further" class="block pt-6 font-semibold text-[#0DA1F1]">
-                                                {{ serviceDescription.attributes.descriptionLink }}</a
-                                            >
+                                            <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Explore Further" class="block pt-6 font-semibold text-[#0DA1F1]"> Explore Further</a>
                                         </div>
                                     </div>
                                 </div>
@@ -120,9 +118,9 @@
                         :to="serviceDescription.attributes.descriptionLinkUrl"
                         class="block pt-6 font-semibold text-[#0DA1F1]"
                     >
-                        {{ serviceDescription.attributes.descriptionLink }}
+                    Explore Further
                     </nuxt-link>
-                    <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Explore Further" class="block pt-6 font-semibold text-[#0DA1F1]"> {{ serviceDescription.attributes.descriptionLink }}</a>
+                    <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Explore Further" class="block pt-6 font-semibold text-[#0DA1F1]">Explore Further</a>
                 </div>
             </div>
         </div>
