@@ -53,6 +53,7 @@
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
                                         src="/assets/img/Union-3@2x.png"
+                                        sizes="(max-width: 600px) 100vw, 50vw"
                                         class="relative left-0 transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -71,6 +72,7 @@
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
                                         src="/assets/img/Union-3@2x.png"
+                                        sizes="(max-width: 600px) 100vw, 50vw"
                                         class="relative left-0 transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -106,6 +108,7 @@
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
                                         src="/assets/img/Union-3@2x.png"
+                                        sizes="(max-width: 600px) 100vw, 50vw"
                                         class="relative left-0 transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -124,6 +127,7 @@
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
                                         src="/assets/img/Union-3@2x.png"
+                                        sizes="(max-width: 600px) 100vw, 50vw"
                                         class="relative left-0 transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"

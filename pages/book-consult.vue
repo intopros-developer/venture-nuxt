@@ -6,7 +6,7 @@
                     <button type="button" class="inline-block" @click="goBackHome()"><icons-close class="!h-6 !w-6 text-white hover:text-primary lg:h-[30px] lg:w-[30px]" /></button>
                 </div>
                 <div class="pt-[50px] text-white lg:pt-5 xl:pt-0">
-                    <nuxt-link :to="localePath('/')">
+                    <nuxt-link :to="localePath('/')" aria-label="Venture Plans">
                         <icons-logo />
                     </nuxt-link>
                 </div>

@@ -12,7 +12,7 @@
                 <nav class="left-right-animation relative left-0 h-auto" :class="{ '!-left-full': $store.state.nav.isLevel1Open, '!-left-[200%]': $store.state.nav.isLevel2Open }">
                     <div class="">
                         <div class="ml-0">
-                            <nuxt-link :to="localePath('/')" class="block w-full cursor-pointer px-5 py-4" @click.native="$store.dispatch('nav/toggle')">
+                            <nuxt-link :to="localePath('/')" aria-label="Venture Plans" class="block w-full cursor-pointer px-5 py-4" @click.native="$store.dispatch('nav/toggle')">
                                 <nuxt-img format="webp" src="/assets/img/logo-black.svg" alt="Logo" class="h-[23px] w-[93px]" loading="lazy" />
                             </nuxt-link>
                         </div>
