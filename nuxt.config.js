@@ -192,13 +192,13 @@ export default {
         },
     },
 
-    image: {
-        strapi: {
-            baseURL: '/static/assets/img',
-        },
-        domains: ['fs1.hubspotusercontent-na1.net'],
-        provider: 'ipx',
-    },
+    // image: {
+    //     strapi: {
+    //         baseURL: '/static/assets/img',
+    //     },
+    //     domains: ['fs1.hubspotusercontent-na1.net'],
+    //     provider: 'ipx',
+    // },
 
     generate: {
         routes: async () => {
