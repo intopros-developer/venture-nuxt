@@ -273,25 +273,25 @@
     .apexchart-tooltip {
         @apply !border-0 border-white bg-white px-1 py-0.5 text-black;
     }
-    .sectors-slider .swiper .swiper-slide.swiper-slide-active a {
+    .sectors-slider .swiper .swiper-slide.swiper-slide-active button {
         @apply flex items-center gap-[18px] rounded-full bg-gradient-to-r from-white to-[#fbfbfd] py-5 pl-5 opacity-100;
     }
-    .sectors-slider .swiper .swiper-slide.swiper-slide-active a > div {
+    .sectors-slider .swiper .swiper-slide.swiper-slide-active button > div {
         @apply h-10 w-10 lg:h-[76px] lg:w-[76px];
     }
-    .sectors-slider .swiper .swiper-slide.swiper-slide-active a > div > svg {
+    .sectors-slider .swiper .swiper-slide.swiper-slide-active button > div > svg {
         @apply scale-125 lg:scale-[1.75];
     }
-    .sectors-slider .swiper .swiper-slide.swiper-slide-active a > p {
+    .sectors-slider .swiper .swiper-slide.swiper-slide-active button > p {
         @apply max-w-[200px] text-base leading-[18px] -tracking-[-0.03px];
     }
-    .sectors-slider .swiper .swiper-slide > a.inside-1 {
+    .sectors-slider .swiper .swiper-slide > button.inside-1 {
         @apply ml-14;
     }
-    .sectors-slider .swiper .swiper-slide > a.inside-2 {
+    .sectors-slider .swiper .swiper-slide > button.inside-2 {
         @apply ml-24;
     }
-    .sectors-slider .swiper .swiper-slide > a.inside-3 {
+    .sectors-slider .swiper .swiper-slide > button.inside-3 {
         @apply ml-[136px];
     }
     .career-slider-bullet-icon {

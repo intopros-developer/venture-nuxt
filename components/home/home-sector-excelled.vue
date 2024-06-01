@@ -16,11 +16,10 @@
             <div class="flex flex-col gap-11 md:flex-row md:items-center md:justify-between md:gap-5 lg:gap-10">
                 <section class="sectors-slider relative overflow-hidden">
                     <nuxt-img format="webp" src="/assets/img/top-overlay.png" class="absolute -top-16 z-10" alt="Sectors we excelled in" loading="lazy" />
-
                     <div v-swiper:sectorsSlider="sliderOptions" class="swiper" :cleanup-styles-on-destroy="false">
                         <div class="swiper-wrapper !max-h-[470px] lg:!max-h-[610px]">
                             <div v-for="(service, index) in data" :key="`service_${index}`" class="swiper-slide !h-auto py-[18px]">
-                                <button :aria-label="service.attributes.sectorName" class="ml-[150px] flex items-center gap-1 opacity-20 transition-all duration-300 hover:opacity-100" @click="clickedSelector">
+                                <button :aria-label="service.attributes.sectorName" class="d-inline ml-[150px] flex w-auto items-center gap-1 opacity-20 transition-all duration-300 hover:opacity-100" @click="clickedSelector">
                                     <div class="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white lg:h-12 lg:w-12">
                                         <icons-building v-if="index === 0" class="h-4 w-3 lg:h-5 lg:w-[25px]" />
                                         <icons-eduction v-else-if="index === 1" class="h-5 w-4 lg:h-[20px] lg:w-[34px]" />
@@ -441,16 +440,16 @@
                 // console.log('Clicked');
             },
             changeSlide() {
-                document.querySelectorAll('.sectors-slider .swiper .swiper-slide a').forEach((el) => {
+                document.querySelectorAll('.sectors-slider .swiper .swiper-slide button').forEach((el) => {
                     el.classList.remove('inside-1');
                 });
-                document.querySelectorAll('.sectors-slider .swiper .swiper-slide a').forEach((el) => {
+                document.querySelectorAll('.sectors-slider .swiper .swiper-slide button').forEach((el) => {
                     el.classList.remove('inside-2');
                 });
-                document.querySelectorAll('.sectors-slider .swiper .swiper-slide a').forEach((el) => {
+                document.querySelectorAll('.sectors-slider .swiper .swiper-slide button').forEach((el) => {
                     el.classList.remove('inside-3');
                 });
-                document.querySelectorAll('.sectors-slider .swiper .swiper-slide a').forEach((el) => {
+                document.querySelectorAll('.sectors-slider .swiper .swiper-slide button').forEach((el) => {
                     el.classList.remove('!ml-0');
                 });
 
@@ -459,12 +458,12 @@
                     const activeSlideIndex = parseInt(activeSlide.getAttribute('data-swiper-slide-index'));
 
                     this.slideInsideClasses[activeSlideIndex].forEach((data) => {
-                        document.querySelectorAll(`.sectors-slider .swiper [data-swiper-slide-index="${data.index}"] > a`).forEach((el) => {
+                        document.querySelectorAll(`.sectors-slider .swiper [data-swiper-slide-index="${data.index}"] > button`).forEach((el) => {
                             el.classList.add(data.class);
                         });
                     });
 
-                    document.querySelectorAll(`.sectors-slider .swiper [data-swiper-slide-index="${activeSlideIndex}"] > a`).forEach((el) => {
+                    document.querySelectorAll(`.sectors-slider .swiper [data-swiper-slide-index="${activeSlideIndex}"] > button`).forEach((el) => {
                         el.classList.add('!ml-0');
                     });
                     this.$refs.sectorChart.updateChart(this.data[activeSlideIndex]);
