@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div>
-                        <nuxt-img format="webp" :src="bottomLogo" alt="Bottom Logo" loading="lazy" class="mx-auto" />
+                        <nuxt-img format="webp" src="/assets/img/software_icon_img.png" alt="Bottom Logo" loading="lazy" class="mx-auto" />
                     </div>
                 </div>
                 <div class="h-[400px] sm:h-auto lg:mt-40">
@@ -114,12 +114,6 @@
 <script>
     export default {
         props: {
-            bottomLogo: {
-                type: String,
-                default: () => {
-                    return '/assets/img/software_icon_img.png';
-                },
-            },
             heading: {
                 type: String,
                 default: () => {

@@ -7,7 +7,7 @@
                         <nuxt-img format="webp" src="/assets/img/bg-blur-subcribe.png" alt="Subscribe" loading="lazy" />
                     </div>
                     <div class="relative z-[1]">
-                        <h5 class="text-center text-2xl font-bold uppercase leading-8 text-[#f7f4f4] md:text-left md:leading-10 [&>br]:md:hidden" v-html="title"></h5>
+                        <p class="text-center text-2xl font-bold uppercase leading-8 text-[#f7f4f4] md:text-left md:leading-10 [&>br]:md:hidden" v-html="title"></p>
                         <form id="career-join-form" action="" @submit.prevent="onSubmit">
                             <div class="mx-auto mt-[13px] max-w-[498px] items-stretch md:ml-0 xl:max-w-[624px]">
                                 <div class="flex">

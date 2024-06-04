@@ -5,7 +5,7 @@
                 <div class="grid grid-cols-1">
                     <div class="w-full rounded-full bg-white">
                         <div
-                            class="rounded-full bg-primary p-0.5 text-center text-xs font-medium leading-none text-blue-100 text-white transition-all duration-300"
+                            class="rounded-full bg-primary p-0.5 text-center text-xs font-medium leading-none text-white transition-all duration-300"
                             :class="{ 'bg-green': completedForm === 100, 'px-0': completedForm === 0 }"
                             :style="{ width: `${completedForm}%` }"
                         >

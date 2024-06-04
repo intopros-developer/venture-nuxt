@@ -32,7 +32,14 @@
                 meta: [
                     {
                         name: 'robots',
-                        content: 'noindex',
+                        content: 'index',
+                    },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        name: 'description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
                     },
                     {
                         hid: 'keywords',
@@ -46,6 +53,11 @@
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                    {
+                        rel: 'preload',
+                        href: '/assets/img/refund-policy-top.png',
+                        as: 'image',
                     },
                 ],
             };

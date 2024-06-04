@@ -25,10 +25,11 @@
                         ref="search"
                         v-model="search"
                         type="text"
-                        placeholder
+                        placeholder="Search query"
+                        aria-label="Search query"
                         class="form-input absolute w-full rounded-none border-b-[3px] border-primary bg-transparent px-8 text-lg font-semibold focus:border-b-[3px] focus:border-primary md:text-[26px]"
                     />
-                    <button class="relative z-10" @click="search = ''">
+                    <button class="relative z-10" aria-label="Clear" @click="search = ''">
                         <svg xmlns="http://www.w3.org/2000/svg" width="57" height="56" viewBox="0 0 57 56">
                             <g>
                                 <g>
@@ -48,8 +49,8 @@
                 <div class="container">
                     <div class="flex flex-col justify-between xl:flex-row xl:flex-nowrap xl:gap-4">
                         <div class="flex flex-col border-b-2 border-[#cfcfcf]/60 xl:flex-row xl:items-center xl:border-b-0">
-                            <h5 class="mr-10 hidden flex-initial whitespace-nowrap text-base font-medium text-[#5f5f5f] xl:block">Filter by:</h5>
-                            <h5 class="flex flex-1 items-center justify-between py-6 text-base font-medium text-[#5f5f5f] xl:hidden">
+                            <p class="mr-10 hidden flex-initial whitespace-nowrap text-base font-medium text-[#5f5f5f] xl:block">Filter by:</p>
+                            <p class="flex flex-1 items-center justify-between py-6 text-base font-medium text-[#5f5f5f] xl:hidden">
                                 Filter Insights
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" @click="showMobileFilter = !showMobileFilter">
                                     <path
@@ -58,7 +59,7 @@
                                         d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
                                     />
                                 </svg>
-                            </h5>
+                            </p>
                             <client-only>
                                 <ul class="mb-6 hidden flex-1 flex-col gap-6 pl-5 xl:mb-0 xl:flex xl:flex-row xl:items-center xl:pl-0" :class="{ '!block': showMobileFilter }">
                                     <li class="pb-5 xl:my-6 xl:inline-block xl:pb-0">
@@ -243,23 +244,23 @@
                             </client-only>
                         </div>
                         <div class="float-none flex items-center border-b-2 border-[#cfcfcf]/60 xl:border-b-0">
-                            <h5 class="mr-5 flex-initial whitespace-nowrap text-base font-thin text-[#5f5f5f]">Sort by:</h5>
+                            <p class="mr-5 flex-initial whitespace-nowrap text-base font-thin text-[#5f5f5f]">Sort by:</p>
                             <ul class="flex items-center gap-3">
                                 <li class="my-6 inline-block">
                                     <div>
-                                        <h5
+                                        <p
                                             :class="{ '!text-black': sortBy === 'Most Relevant' }"
                                             class="flex cursor-pointer items-center gap-2 text-base font-semibold leading-5 text-[#5f5f5f] hover:text-primary"
                                             @click="sortBy = 'Most Relevant'"
                                         >
                                             Most Relevant
-                                        </h5>
+                                        </p>
                                     </div>
                                 </li>
                                 <li class="h-[13px] w-[1px] bg-black/30 xl:h-4"></li>
                                 <li class="my-6 inline-block">
                                     <div>
-                                        <h5 :class="{ '!text-black': sortBy === 'Date' }" class="flex cursor-pointer items-center gap-2 text-base font-semibold leading-5 text-[#5f5f5f] hover:text-primary" @click="sortBy = 'Date'">Date</h5>
+                                        <p :class="{ '!text-black': sortBy === 'Date' }" class="flex cursor-pointer items-center gap-2 text-base font-semibold leading-5 text-[#5f5f5f] hover:text-primary" @click="sortBy = 'Date'">Date</p>
                                     </div>
                                 </li>
                             </ul>
@@ -948,6 +949,13 @@
             return {
                 title: `Search Results for "${searchQuery}" | Venture Plans`,
                 meta: [
+                    { hid: 'og:title', property: 'og:title', content: `Search Results for "${searchQuery}" | Venture Plans` },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
+                    },
                     {
                         name: 'robots',
                         content: 'noindex',

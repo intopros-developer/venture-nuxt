@@ -4,7 +4,7 @@
         <div class="container relative lg:px-[97px] xl:px-4">
             <div class="flex items-center justify-between gap-2">
                 <div id="banner_header_tab" class="w-[940px] overflow-x-auto overflow-y-hidden lg:overflow-visible">
-                    <ul class="pb-0.5 lg:pb-0">
+                    <div class="pb-0.5 lg:pb-0">
                         <scrollactive
                             class="my-nav flex items-center gap-6 text-[11px] font-medium leading-[13px] -tracking-[-0.02px] text-[#353535] xl:gap-8 xl:text-[13px] xl:leading-5 xl:-tracking-[-0.03px]"
                             :modify-url="false"
@@ -13,7 +13,7 @@
                             :exact="true"
                             @itemchanged="onItemChanged"
                         >
-                            <li>
+                            <div>
                                 <popper
                                     ref="role"
                                     trigger="click"
@@ -82,8 +82,8 @@
                                         <icons-downarrow class="ml-1 rotate-0 text-primary" :class="{ '!rotate-180': isOpenFindRole }" />
                                     </button>
                                 </popper>
-                            </li>
-                            <li v-for="tab in tabs" :key="tab.id">
+                            </div>
+                            <div v-for="tab in tabs" :key="tab.id">
                                 <a
                                     :id="`tab_${tab.id}`"
                                     :href="`#${tab.id}`"
@@ -92,9 +92,9 @@
                                 >
                                     {{ $t(tab.title) }}
                                 </a>
-                            </li>
+                            </div>
                         </scrollactive>
-                    </ul>
+                    </div>
                 </div>
                 <common-share :is-show-save-btn="true" />
             </div>

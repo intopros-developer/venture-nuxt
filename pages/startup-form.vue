@@ -28,7 +28,20 @@
                 meta: [
                     {
                         name: 'robots',
-                        content: 'index, all',
+                        content: 'noindex',
+                    },
+                    { hid: 'og:title', property: 'og:title', content: 'Start Up Form | Venture Plans' },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
+                    },
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
                     },
                 ],
             };

@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section ref="bannerSection" class="relative bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]" :style="{ backgroundImage: bannerBackgroundImage }">
+        <section class="relative bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
             <div class="absolute left-0 top-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[246px]"></div>
             <div class="container relative z-10 lg:px-[97px] xl:px-4">
@@ -19,17 +19,17 @@
                 <div class="flex flex-col items-center justify-between gap-10 md:flex-row">
                     <div class="grid flex-1 grid-cols-1">
                         <div>
-                            <h3 class="border- inline-block border-b-[6px] border-primary text-[30px] font-bold uppercase leading-[47px] [&>span]:text-primary" v-html="content.section1Title"></h3>
+                            <p class="border- inline-block border-b-[6px] border-primary text-[30px] font-bold uppercase leading-[47px] [&>span]:text-primary" v-html="content.section1Title"></p>
                         </div>
                         <div class="mt-8 flex gap-2 md:gap-9">
                             <span class="flex-none">
-                                <nuxt-img src="/assets/img/quote-one.png" alt="QuoteOne" loading="lazy" format="webp" />
+                                <nuxt-img src="/assets/img/quote-one.png" alt="QuoteOne" loading="lazy" class="object-contain" />
                             </span>
                             <p class="max-w-[377px] text-lg italic leading-[28px] -tracking-[0.04px] text-[#707070]">
                                 {{ content.section1Description }}
                             </p>
                             <span class="flex-none self-end">
-                                <nuxt-img src="/assets/img/quote-two.png" alt="QuoteTwo" loading="lazy" format="webp" />
+                                <nuxt-img src="/assets/img/quote-two.png" alt="QuoteTwo" loading="lazy" class="object-contain" />
                             </span>
                         </div>
                         <div class="mt-20 lg:mt-[204px]">
@@ -131,7 +131,6 @@
         data() {
             return {
                 isLoadingMoreConsultants: false,
-                bannerBackgroundImage: '',
                 isShowReadMore: false,
                 tabs: [
                     {
@@ -175,6 +174,11 @@
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                    {
+                        rel: 'preload',
+                        href: this.content?.bannerImgUrl,
+                        as: 'image',
                     },
                 ],
                 meta: [
@@ -264,19 +268,6 @@
             logoSlider() {
                 return this.content?.logoSlider?.data?.attributes?.logoUrls || [];
             },
-        },
-        mounted() {
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        this.bannerBackgroundImage = `url(${this.content.bannerImgUrl})`;
-                        observer.unobserve(this.$refs.bannerSection);
-                    }
-                },
-                { rootMargin: '0px 0px 50px 0px' }
-            );
-
-            observer.observe(this.$refs.bannerSection);
         },
     };
 </script>

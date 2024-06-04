@@ -9,7 +9,7 @@
                         <p class="mt-4 leading-[26px] text-[#030303]">{{ content.bannerSubtitle }}</p>
                     </div>
                     <div class="relative bottom-0 left-[-50vw] top-0 ml-[50%] h-80 w-[100vw] max-w-none md:absolute md:left-[calc(50%+2.5rem)] md:ml-0 md:mt-0 md:h-full md:w-[calc(50vw-2.5rem)]">
-                        <nuxt-img format="webp" :src="content.bannerImgUrl" :alt="content.bannerTitle" loading="lazy" class="h-full w-full object-cover" />
+                        <nuxt-img format="webp" :src="content.bannerImgUrl" :alt="content.bannerTitle" class="h-full w-full object-cover" />
                     </div>
                 </div>
             </div>
@@ -28,10 +28,14 @@
                                 <p class="mt-[3px] text-sm leading-[13px] text-[#707070]">{{ author.attributes.authorDesignation }}</p>
                                 <ul class="mb-[5px] mt-1 flex items-center gap-[6px]">
                                     <li>
-                                        <a target="_blank" :href="author.attributes.linkedinUrl" class="flex h-6 w-6 items-center rounded-full bg-[#f4f5f7]"><icons-linkedin class="mx-auto h-[15px] w-[15px] text-primary" /></a>
+                                        <a target="_blank" aria-label="Linkedin" :href="author.attributes.linkedinUrl" class="flex h-6 w-6 items-center rounded-full bg-[#f4f5f7]"
+                                            ><icons-linkedin class="mx-auto h-[15px] w-[15px] text-primary"
+                                        /></a>
                                     </li>
                                     <li>
-                                        <a target="_blank" :href="author.attributes.instagramUrl" class="flex h-6 w-6 items-center rounded-full bg-[#f4f5f7]"><icons-instagram class="mx-auto h-[15px] w-[15px] text-primary" /></a>
+                                        <a target="_blank" aria-label="Instagram" :href="author.attributes.instagramUrl" class="flex h-6 w-6 items-center rounded-full bg-[#f4f5f7]"
+                                            ><icons-instagram class="mx-auto h-[15px] w-[15px] text-primary"
+                                        /></a>
                                     </li>
                                 </ul>
                             </div>
@@ -110,7 +114,7 @@
                                     <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost1.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost1.paragraph }}</p>
                                     <div class="mt-2">
-                                        <nuxt-link :to="`/insights/${insightPost1.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
+                                        <nuxt-link :to="`/insights/${insightPost1.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700" aria-label="Read Further">Read Further</nuxt-link>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +164,7 @@
                                     <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost2.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost2.paragraph }}</p>
                                     <div class="mt-2">
-                                        <nuxt-link :to="`/insights/${insightPost2.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
+                                        <nuxt-link :to="`/insights/${insightPost2.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700" aria-label="Read Further">Read Further</nuxt-link>
                                     </div>
                                 </div>
                             </div>
@@ -199,7 +203,7 @@
                                     <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost3.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost3.paragraph }}</p>
                                     <div class="mt-2">
-                                        <nuxt-link :to="`/insights/${insightPost3.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
+                                        <nuxt-link :to="`/insights/${insightPost3.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700" aria-label="Read Further">Read Further</nuxt-link>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +275,7 @@
                                     <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost4.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost4.paragraph }}</p>
                                     <div class="mt-2">
-                                        <nuxt-link :to="`/insights/${insightPost4.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700">More</nuxt-link>
+                                        <nuxt-link :to="`/insights/${insightPost4.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700" aria-label="Read Further">Read Further</nuxt-link>
                                     </div>
                                 </div>
                             </div>
@@ -313,6 +317,12 @@
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                    {
+                        rel: 'preload',
+                        href: this.content?.bannerImgUrl,
+                        as: 'image',
+                        fetchpriority: 'high',
                     },
                 ],
                 meta: [

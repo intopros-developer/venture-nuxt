@@ -233,10 +233,12 @@
             },
 
             loadBackgroundImage() {
+                const _imageUrl = this.imgUrl ? this.imgUrl : '/assets/img/group-1.png';
+
                 const highResImage = new Image();
-                highResImage.src = this.imgUrl;
+                highResImage.src = _imageUrl;
                 highResImage.onload = () => {
-                    this.backgroundImage = `url(${this.imgUrl})`;
+                    this.backgroundImage = `url(${_imageUrl})`;
                 };
             },
 

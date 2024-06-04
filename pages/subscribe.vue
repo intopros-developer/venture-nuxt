@@ -17,7 +17,7 @@
                 <div class="container px-10 pt-11 md:px-4 lg:px-[97px] xl:px-4">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div>
-                            <h3 class="mb-4 text-sm font-medium -tracking-[0.03px]">About you</h3>
+                            <p class="mb-4 text-sm font-medium -tracking-[0.03px]">About you</p>
                         </div>
                         <div>
                             <div class="space-y-[29px]">
@@ -83,7 +83,7 @@
                 <div class="container px-10 pt-11 md:px-4 lg:px-[97px] xl:px-4">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div>
-                            <h3 class="mb-4 text-sm font-medium -tracking-[0.03px]">About your business</h3>
+                            <p class="mb-4 text-sm font-medium -tracking-[0.03px]">About your business</p>
                         </div>
                         <div>
                             <div class="space-y-[29px]">
@@ -189,7 +189,7 @@
                     <p class="my-5 text-xl font-medium">{{ component.attributes.title }}</p>
                     <div class="flex justify-between">
                         <div class="flex-1">
-                            <h3 class="mb-3.5 text-lg font-semibold">{{ component.attributes.subTitle }}</h3>
+                            <p class="mb-3.5 text-lg font-semibold">{{ component.attributes.subTitle }}</p>
                             <p class="mb-4 max-w-[430px]">{{ component.attributes.description }}</p>
                         </div>
                         <div>
@@ -209,7 +209,7 @@
                     <p class="mb-5 max-w-[430px]">{{ component.attributes.subTitle }}.</p>
                     <!-- industry topic -->
                     <div v-for="(sub_component, jdx) in [component.attributes.subComponent.data[0]]" :key="jdx">
-                        <h3 class="mb-3.5 text-lg font-semibold">{{ sub_component.attributes.title }}</h3>
+                        <p class="mb-3.5 text-lg font-semibold">{{ sub_component.attributes.title }}</p>
                         <div class="mb-5 grid grid-cols-1 md:grid-cols-2">
                             <div>
                                 <div v-for="topic in sub_component.attributes.items.data.slice(0, 12)" :key="topic.attributes.title" class="flex items-center justify-between border-b border-[#646464]/25 py-3">
@@ -223,8 +223,9 @@
                                             :class="selectedIndustryTopics.includes(topic.attributes.title) ? 'bg-primary' : 'border-2 border-[#d5d5d5] '"
                                             class="cursor-pointer rounded-md p-px px-2 text-xs text-[#d5d5d5]"
                                             @click="toggleIndustryTopic(topic.attributes.title)"
-                                            >Subscribe</label
                                         >
+                                            Subscribe
+                                        </label>
                                     </div>
                                 </div>
                             </div>

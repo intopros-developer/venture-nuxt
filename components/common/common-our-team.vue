@@ -20,9 +20,9 @@
                             <nuxt-img format="webp" :src="`${team.attributes.imgUrl}`" :alt="team.attributes.name" loading="lazy" />
                         </div>
                         <div class="text-center">
-                            <h5 class="text-[20px] font-bold leading-6 -tracking-[0.04px] text-[#586376] xl:-tracking-[0.05px]">
+                            <p class="text-[20px] font-bold leading-6 -tracking-[0.04px] text-[#586376] xl:-tracking-[0.05px]">
                                 {{ team.attributes.name }}
-                            </h5>
+                            </p>
                             <p class="mt-2 text-[20px] font-normal leading-5 -tracking-[0.04px] text-[#586376] xl:-tracking-[0.06px]">
                                 {{ team.attributes.position }}
                             </p>

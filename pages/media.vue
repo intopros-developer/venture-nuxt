@@ -105,7 +105,7 @@
                                 <nuxt-img format="webp" :src="media.attributes.iconUrl" :alt="media.attributes.title" loading="lazy" />
                             </div>
                             <div class="max-w-2xl pt-1 lg:pt-0">
-                                <h4 class="text-xl font-semibold -tracking-[0.05px] text-[#030303] lg:text-[25px]">{{ media.attributes.title }}</h4>
+                                <p class="text-xl font-semibold -tracking-[0.05px] text-[#030303] lg:text-[25px]">{{ media.attributes.title }}</p>
                                 <p class="text-base -tracking-[0.03px] text-[#030303]">{{ media.attributes.description }}</p>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                                 <nuxt-img format="webp" :src="release.attributes.iconUrl" :alt="release.attributes.title" loading="lazy" />
                             </div>
                             <div class="max-w-2xl pt-1 lg:pt-0">
-                                <h4 class="text-xl font-semibold -tracking-[0.05px] text-[#030303] lg:text-[25px]">{{ release.attributes.title }}</h4>
+                                <p class="text-xl font-semibold -tracking-[0.05px] text-[#030303] lg:text-[25px]">{{ release.attributes.title }}</p>
                                 <p class="text-base -tracking-[0.03px] text-[#030303]">{{ release.attributes.description }}</p>
                             </div>
                         </div>

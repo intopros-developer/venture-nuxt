@@ -96,7 +96,7 @@
                             <div class="text-[15px] leading-6 -tracking-[0.03px] text-[#202a36]">
                                 <div v-if="data.attributes.locationAddress" class="mb-6 min-h-[72px]" v-html="data.attributes.locationAddress"></div>
                             </div>
-                            <a v-if="data.attributes.locationAddress" :href="`http://maps.google.com/maps?q=${data.attributes.locationAddress.replace(/(<|&lt;)br\s*\/*(>|&gt;)/g, '')}`" target="_blank">
+                            <a aria-label="Google Maps" v-if="data.attributes.locationAddress" :href="`http://maps.google.com/maps?q=${data.attributes.locationAddress.replace(/(<|&lt;)br\s*\/*(>|&gt;)/g, '')}`" target="_blank">
                                 <icons-location class="h-5 w-4 text-primary" />
                             </a>
                         </div>
@@ -271,7 +271,7 @@
                 meta: [
                     {
                         name: 'robots',
-                        content: 'index, all',
+                        content: 'index',
                     },
                     {
                         hid: 'og:title',
@@ -290,6 +290,7 @@
                     },
                     {
                         hid: 'description',
+                        name: 'description',
                         property: 'description',
                         content: this.content?.metaFields[0]?.description,
                     },

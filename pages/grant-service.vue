@@ -54,8 +54,8 @@
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="grid grid-cols-1">
                     <div id="ourPortfolio">
-                        <h5 class="mb-4 text-[23px] uppercase text-[#030303]">{{ content.section3Subtitle }}</h5>
-                        <h5 class="text-[26px] font-bold uppercase leading-[36px] text-[#030303]">{{ content.section3Title }}</h5>
+                        <p class="mb-4 text-[23px] uppercase text-[#030303]">{{ content.section3Subtitle }}</p>
+                        <p class="text-[26px] font-bold uppercase leading-[36px] text-[#030303]">{{ content.section3Title }}</p>
                         <p class="pt-[27px] text-xs font-bold uppercase leading-9 tracking-[1.2px] text-[#030303]">{{ content.section3Description }}</p>
                     </div>
                 </div>
@@ -224,10 +224,15 @@
                     <div class="mb-5 flex flex-col items-center justify-between gap-4 md:flex-row">
                         <p class="text-base text-[#6c6c6c] md:max-w-[350px] lg:max-w-[527px]"><span class="block text-xs font-bold text-black">Description</span>{{ activeProductData.description }}</p>
 
-                        <nuxt-link v-if="$helper.isInternalUrl(activeProductData.buttonUrl)" :to="activeProductData.buttonUrl" class="b-btn w-auto rounded px-9 py-4 text-base" @click="$refs.previewModal.close()">{{
-                            activeProductData.buttonTitle
-                        }}</nuxt-link>
-                        <a v-else target="_blank" :href="activeProductData.buttonUrl" class="b-btn w-auto rounded px-9 py-4 text-base" @click="$refs.previewModal.close()">{{ activeProductData.buttonTitle }}</a>
+                        <nuxt-link
+                            v-if="$helper.isInternalUrl(activeProductData.buttonUrl)"
+                            :to="activeProductData.buttonUrl"
+                            class="b-btn w-auto rounded px-9 py-4 text-base"
+                            :aria-label="activeProductData.buttonTitle"
+                            @click="$refs.previewModal.close()"
+                        >
+                            {{ activeProductData.buttonTitle }}
+                        </nuxt-link>
                     </div>
 
                     <div v-if="activeProductData.descriptionMediaType === 'images'" v-swiper:brandLogo="slider_options" class="swiper relative bg-transparent" :cleanup-styles-on-destroy="false">
@@ -332,6 +337,12 @@
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+
+                    {
+                        rel: 'preload',
+                        href: this.content?.bannerImageUrl,
+                        as: 'image',
                     },
                 ],
                 meta: [

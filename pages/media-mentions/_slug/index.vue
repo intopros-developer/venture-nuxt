@@ -45,9 +45,7 @@
                             <p class="inline-block text-[14px] font-medium leading-[14px] -tracking-[0.03px] text-[#646464] transition-all duration-300 xl:leading-[23px]">
                                 {{ media.attributes.newsType }} | {{ $helper.formatInsightPublishDate(media.attributes.date) }}
                             </p>
-                            <button type="button">
-                                <common-share :is-show-save-btn="true" :insights="true" :custom-link="`${media.attributes.singleMediaPageSlug}`" />
-                            </button>
+                            <common-share :is-show-save-btn="true" :insights="true" :custom-link="`${media.attributes.singleMediaPageSlug}`" />
                         </div>
                     </div>
                 </div>
@@ -76,6 +74,11 @@
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                    {
+                        rel: 'preload',
+                        href: this.content.bannerImgUrl,
+                        as: 'image',
                     },
                 ],
                 meta: [

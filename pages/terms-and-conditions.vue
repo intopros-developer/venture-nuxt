@@ -13,7 +13,7 @@
 
         <section class="container mb-60 mt-24 lg:px-[97px] xl:px-4">
             <div v-for="(data, i) in content" :key="i" class="max-w-4xl" :class="{ 'mb-6': i !== content.length - 1 }">
-                <h5 class="mb-8 text-xl font-bold">{{ data.title }}</h5>
+                <p class="mb-8 text-xl font-bold">{{ data.title }}</p>
                 <p>{{ data.description }}</p>
             </div>
             <p>{{ copyrightText }}</p>
@@ -54,10 +54,10 @@
                     {
                         title: 'Fees',
                         description: `For the following services, VENTURE PLANS WILL charge a fee:
-Customers who do not pay their balance owed will be charged a $200 late fee Revisions past the given time frame will incur a $400 fee per the new draft Missing a scheduled meeting without rescheduling at least 24 hours in advance;
-will incur a $600 fee
-; If a client prefers to see us and have a face-to-face discussion at our office about their business plan, it will cost a $600/hour fee.
-If a client requires one of the Venture Plans Management Consultants to visit clients in a different city, state, or country will incur a day rate of $4500 plus all accommodation and airfare fees.`,
+    Customers who do not pay their balance owed will be charged a $200 late fee Revisions past the given time frame will incur a $400 fee per the new draft Missing a scheduled meeting without rescheduling at least 24 hours in advance;
+    will incur a $600 fee
+    ; If a client prefers to see us and have a face-to-face discussion at our office about their business plan, it will cost a $600/hour fee.
+    If a client requires one of the Venture Plans Management Consultants to visit clients in a different city, state, or country will incur a day rate of $4500 plus all accommodation and airfare fees.`,
                     },
                     {
                         title: 'Accuracy, Completeness, and Timeliness of Information',
@@ -67,8 +67,8 @@ If a client requires one of the Venture Plans Management Consultants to visit cl
                     {
                         title: 'LICENSE AND SITE ACCESS',
                         description: `Venture Plans provides you a limited license to browse and use this site for personal purposes only; you may not download or change it, or any portion of it, except with our express written consent. Without our company’s express written authorization, this site or any component of this site may not be reproduced, duplicated, copied, sold, resold, visited, or otherwise exploited for any commercial purpose.
-The right to visit our corporate website excludes any resale or commercial use of the site or its contents, as well as the ability to download or copy account information for the advantage of another merchant.
-The authorization or license granted by Venture Plans will be revoked if any unlawful use is made.`,
+    The right to visit our corporate website excludes any resale or commercial use of the site or its contents, as well as the ability to download or copy account information for the advantage of another merchant.
+    The authorization or license granted by Venture Plans will be revoked if any unlawful use is made.`,
                     },
                     {
                         title: 'SERVICE PRICING & DESCRIPTIONS',
@@ -82,8 +82,8 @@ The authorization or license granted by Venture Plans will be revoked if any unl
                     {
                         title: 'LINKS & FRAMINGS',
                         description: `
-Without Venture Plans express written permission, you may not use our company logo or other intellectual assets to reference to our Site. Furthermore, without our prior written approval, you may not frame any trademark, logo, or other private material, including the Images and Content.
-Venture plans makes no claim or representation about, and accept no responsibility for, the quality, content, nature, or reliability of third-party websites accessible via hyperlink from the Site, or websites linking to the Site, and we make no claim or representation about, and accept no responsibility for, directly or indirectly, the quality, content, nature, or reliability of third-party websites accessible via hyperlink from the Site. Such sites are not under our control, and we disclaim all responsibility for the contents of any connected site or any link contained in a linked site, as well as any reviews, changes, or updates to such sites. You accept that we are not responsible for the availability of such such websites or resources, their content, including any links contained in such material, or any changes or additions to such information. If you choose to access links to third-party Web sites, you do so at your own risk.`,
+    Without Venture Plans express written permission, you may not use our company logo or other intellectual assets to reference to our Site. Furthermore, without our prior written approval, you may not frame any trademark, logo, or other private material, including the Images and Content.
+    Venture plans makes no claim or representation about, and accept no responsibility for, the quality, content, nature, or reliability of third-party websites accessible via hyperlink from the Site, or websites linking to the Site, and we make no claim or representation about, and accept no responsibility for, directly or indirectly, the quality, content, nature, or reliability of third-party websites accessible via hyperlink from the Site. Such sites are not under our control, and we disclaim all responsibility for the contents of any connected site or any link contained in a linked site, as well as any reviews, changes, or updates to such sites. You accept that we are not responsible for the availability of such such websites or resources, their content, including any links contained in such material, or any changes or additions to such information. If you choose to access links to third-party Web sites, you do so at your own risk.`,
                     },
                     {
                         title: 'DISCLAIMERS',
@@ -107,7 +107,7 @@ Venture plans makes no claim or representation about, and accept no responsibili
                     {
                         title: 'NON-Waiver',
                         description: `Venture Plans failure to insist on strict performance of any of the terms, conditions, or commitments hereof shall not be construed as a surrender or waiver of any rights or remedies we may have, nor shall it be construed as a waiver of any subsequent breach of the terms, conditions, or covenants hereof, which terms, conditions, and contractual obligations shall remain in full force and effect.
-Any waiver by either party of a breach of any term of this Agreement shall not be construed as a waiver of any future or previous violation of the same or any other provision.`,
+    Any waiver by either party of a breach of any term of this Agreement shall not be construed as a waiver of any future or previous violation of the same or any other provision.`,
                     },
                     {
                         title: 'Severability of Terms',
@@ -129,16 +129,30 @@ Any waiver by either party of a breach of any term of this Agreement shall not b
 
         head() {
             return {
-                title: 'Terms & Conditions',
+                title: 'Terms & Conditions | Venture Plans',
                 meta: [
                     {
                         name: 'robots',
-                        content: 'noindex',
+                        content: 'index',
+                    },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        name: 'description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
                     },
                     {
                         hid: 'keywords',
                         property: 'keywords',
                         content: 'Venture Plans Terms and Conditions, venture plans terms and conditions',
+                    },
+                ],
+                link: [
+                    {
+                        rel: 'preload',
+                        href: '/assets/img/terms-and-conditions-top.png',
+                        as: 'image',
                     },
                 ],
             };

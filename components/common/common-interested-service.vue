@@ -1,5 +1,5 @@
 <template>
-    <section class="relative bg-cover bg-no-repeat" style="background-position: 90% 0" :style="{ backgroundImage: `url(${backgroundImage ? backgroundImage : '/assets/img/buy-xl.webp'})` }">
+    <section ref="bannerSection" class="relative bg-cover bg-no-repeat" :style="{ backgroundImage: backgroundImg }">
         <div class="z-1 absolute top-0 h-full w-full bg-black opacity-30"></div>
         <div class="container relative z-10 px-10 py-[80px] md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex flex-col items-center justify-between gap-5 md:flex-row">
@@ -63,6 +63,37 @@
                 type: String,
                 default: '/book-consult',
             },
+        },
+        data() {
+            return {
+                bgColor: '#444',
+                backgroundImg: 'none',
+            };
+        },
+        methods: {
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            this.loadBackgroundImage();
+                            observer.unobserve(this.$refs.bannerSection);
+                        }
+                    });
+                });
+                observer.observe(this.$refs.bannerSection);
+            },
+
+            loadBackgroundImage() {
+                const _backgroundImage = this.$props.backgroundImage ? this.$props.backgroundImage : '/assets/img/buy-xl.webp';
+                const highResImage = new Image();
+                highResImage.src = _backgroundImage;
+                highResImage.onload = () => {
+                    this.backgroundImg = `url(${_backgroundImage})`;
+                };
+            },
+        },
+        mounted() {
+            this.setupIntersectionObserver();
         },
     };
 </script>

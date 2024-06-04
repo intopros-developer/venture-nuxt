@@ -196,9 +196,6 @@
                 deep: true,
             },
         },
-        mounted() {
-            console.log(this.services);
-        },
 
         validations() {
             return {

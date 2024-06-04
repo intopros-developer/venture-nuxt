@@ -2,7 +2,7 @@
     <div class="container mx-auto py-16">
         <div>
             <h1 class="text-[2.5rem] font-bold leading-10">Sitemap</h1>
-            <h3 class="mt-4 text-xl text-primary">About Venture Plans</h3>
+            <p class="mt-4 text-xl text-primary">About Venture Plans</p>
         </div>
 
         <div class="mt-12 grid grid-cols-12 gap-5">
@@ -38,6 +38,19 @@
                     {
                         name: 'robots',
                         content: 'index, all',
+                    },
+                    { hid: 'og:title', property: 'og:title', content: 'Sitemap | Venture Plans' },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
+                    },
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
                     },
                     {
                         hid: 'keywords',

@@ -69,7 +69,7 @@
                         </nuxt-link>
                         <h4 class="text-md pb-2 text-[#353535] lg:text-sm xl:text-base xl:leading-[24px]">Stay Connected with Venture Plans:</h4>
                         <div class="flex flex-wrap items-center justify-start gap-6 pl-2">
-                            <a href="https://www.linkedin.com/company/31139649/" target="_blank" class="text-[#008cc3] transition-all duration-300 hover:text-[#353535]">
+                            <a href="https://www.linkedin.com/company/31139649/" aria-label="Linkedin" target="_blank" class="text-[#008cc3] transition-all duration-300 hover:text-[#353535]">
                                 <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
                                     <path
                                         fill="currentColor"
@@ -109,7 +109,7 @@
                                     ></path>
                                 </svg>
                             </a>
-                            <a href="mailto:info@ventureplans.us" class="flex items-center gap-2 text-[#353535]">
+                            <a href="mailto:info@ventureplans.us" aria-label="Mail" class="flex items-center gap-2 text-[#353535]">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-[25px] w-[25px]" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
@@ -160,6 +160,20 @@
                     {
                         name: 'robots',
                         content: 'noindex',
+                    },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        name: 'description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
+                    },
+                ],
+                link: [
+                    {
+                        rel: 'preload',
+                        href: 'https://images.ctfassets.net/koyrlvjc3wvc/4tyXkBS5yBBWxIucd0xDLs/c95a6fb1c7db45141872da1dc2dcd8ce/iStock-1191132586.jpg',
+                        as: 'image',
                     },
                 ],
             };

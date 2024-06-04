@@ -249,7 +249,7 @@
                         <div v-for="insight in insightCatalogue1" :key="insight.id" class="mb-8 w-full lg:max-w-[670px] lg:px-7">
                             <div>
                                 <nuxt-link :to="`/insights/${insight.attributes.singleInsightPageSlug}`" :title="insight.attributes.title">
-                                    <nuxt-img format="webp" :src="insight.attributes.imgUrl" class="h-72 w-full object-cover" :alt="insight.attributes.title" loading="lazy" />
+                                    <nuxt-img format="webp" :src="insight.attributes.imgUrl" :alt="insight.attributes.title" loading="lazy" class="h-72 w-full object-cover" />
                                 </nuxt-link>
                             </div>
                             <div class="flex h-[calc(100%-125px)] flex-col justify-between py-3 xl:h-[calc(100%-340px)] xl:py-4">
@@ -274,7 +274,7 @@
                         </div>
                         <div class="flex-1 border-[#d5d5d5] lg:border-l lg:px-7">
                             <div class="block h-[2px] w-full bg-primary"></div>
-                            <h4 class="mt-7 text-[21px] font-bold leading-7 text-primary">{{ content.section1Column2Title }}</h4>
+                            <p class="mt-7 text-[21px] font-bold leading-7 text-primary">{{ content.section1Column2Title }}</p>
                             <div class="mt-5 space-y-[19px] divide-y divide-[#707070]/50 lg:mt-[58px]">
                                 <div v-for="(data, i) in section1Column2Data" :key="data.id" class="items-center gap-10 space-y-3 md:flex md:space-y-0 xl:gap-[83px]" :class="{ 'space-y-3 pt-[19px]': i > 0 }">
                                     <div>
@@ -308,14 +308,14 @@
                                 >
                                     <div class="shadow-[0px_3px_6px_rgba(0,0,0,0.6)]">
                                         <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" :title="item.attributes.title">
-                                            <nuxt-img format="webp" :src="item.attributes.imgUrl" class="h-[229px] w-full object-cover" :alt="item.attributes.title" loading="lazy" :class="{ '!h-72': i === 2 }" />
+                                            <nuxt-img format="webp" :src="item.attributes.imgUrl" :alt="item.attributes.title" loading="lazy" class="h-[229px] w-full object-cover" :class="{ '!h-72': i === 2 }" />
                                         </nuxt-link>
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
-                                            </h4>
+                                            </p>
                                             <div class="md:min-h-[56px]">
                                                 <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
@@ -351,9 +351,9 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
-                                            </h4>
+                                            </p>
                                             <div class="md:min-h-[56px]">
                                                 <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
@@ -391,9 +391,9 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
-                                            </h4>
+                                            </p>
                                             <div class="md:min-h-[56px]">
                                                 <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
@@ -431,9 +431,9 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
-                                            </h4>
+                                            </p>
                                             <div class="md:min-h-[56px]">
                                                 <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
@@ -461,13 +461,13 @@
                         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                             <div class="grid grid-cols-1 items-center justify-between border border-[#d5d5d5] lg:grid-cols-2">
                                 <div class="order-2 px-2.5 py-9 md:py-14 md:pl-9 lg:order-1 lg:max-w-[500px]">
-                                    <h4 class="text-2xl font-bold uppercase leading-9" v-html="content.CTA1Title"></h4>
+                                    <p class="text-2xl font-bold uppercase leading-9" v-html="content.CTA1Title"></p>
                                     <p class="pb-8 pt-2.5">{{ content.CTA1Description }}</p>
 
                                     <nuxt-link v-if="$helper.isInternalUrl(content.CTA1ButtonLink)" class="btn" :to="content.CTA1ButtonLink">{{ content.CTA1ButtonText }}</nuxt-link>
                                     <a v-else target="_blank" :href="content.CTA1ButtonLink" class="btn">{{ content.CTA1ButtonText }}</a>
                                 </div>
-                                <div class="relative order-1 h-80 bg-cover bg-center lg:order-2 lg:h-full" :style="{ backgroundImage: `url(${content.CTA1ImgUrl})` }"></div>
+                                <nuxt-img format="webp" :src="content.CTA1ImgUrl" alt="CTA" class="relative order-1 h-80 w-full bg-cover bg-center object-cover lg:order-2 lg:h-full" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -487,9 +487,9 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
-                                            </h4>
+                                            </p>
                                             <div class="md:min-h-[56px]">
                                                 <nuxt-link :to="`/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
@@ -525,9 +525,9 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
-                                            </h4>
+                                            </p>
                                             <div class="md:min-h-[56px]">
                                                 <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
@@ -573,9 +573,9 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
-                                            </h4>
+                                            </p>
                                             <div class="md:min-h-[56px]">
                                                 <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36] md:min-h-[56px]">{{
                                                     item.attributes.title
@@ -610,9 +610,9 @@
                                     </div>
                                     <div class="flex flex-col justify-between py-3 xl:py-[34px]">
                                         <div class="mb-5">
-                                            <h4 class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
+                                            <p class="line-clamp-1 mb-3 text-sm font-semibold tracking-[0.31px] text-primary xl:mb-4 xl:-tracking-[0.03px]">
                                                 {{ item.attributes.Insightsource }}
-                                            </h4>
+                                            </p>
                                             <div class="md:min-h-[56px]">
                                                 <nuxt-link :to="`/insights/${item.attributes.singleInsightPageSlug}`" class="line-clamp-2 mb-3 block text-[21px] font-semibold leading-7 text-[#202A36]">{{ item.attributes.title }}</nuxt-link>
                                             </div>
@@ -701,6 +701,11 @@
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                    {
+                        rel: 'preload',
+                        href: this.content.bannerImgUrl,
+                        as: 'image',
                     },
                 ],
                 meta: [

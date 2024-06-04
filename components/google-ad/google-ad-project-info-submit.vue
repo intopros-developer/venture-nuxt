@@ -223,6 +223,33 @@
                 this.params.file = file;
             },
 
+            onSubmit() {
+                this.$v.params.$touch();
+                if (this.$v.params.$invalid || this.$v.params.$error) {
+                    return false;
+                }
+
+                // const data = await this.$hubspot.readyToTalkForm(this.params);
+                // if (!data) {
+                //     return false;
+                // }
+
+                this.isSubmitted = true;
+                this.$v.params.$reset();
+                this.params = {
+                    first_name: '',
+                    last_name: '',
+                    phone: '',
+                    email: '',
+                    company: '',
+                    country: '',
+                    project_description: '',
+                    send_nda: false,
+                    file: null,
+                    service: '',
+                };
+            },
+
             async onSubmit() {
                 try {
                     this.$v.params.$touch();

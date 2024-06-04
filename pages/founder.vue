@@ -20,7 +20,7 @@
                 <div id="about" class="px-10 md:px-4 lg:px-[97px] xl:px-4">
                     <div class="mb-8 flex items-center justify-center gap-[33px] text-center">
                         <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
-                        <h3 class="text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl [&>span]:text-primary" v-html="content.section2Title"></h3>
+                        <p class="inline-block text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl [&>span]:text-primary" v-html="content.section2Title"></p>
                         <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
                     </div>
                     <div class="container">
@@ -43,7 +43,7 @@
         <section class="bg-white py-[60px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="grid grid-cols-1">
-                    <h3 class="pb-[43px] text-center text-2xl font-medium text-[#0B3A02] md:text-[31px]" v-html="content.section3Title"></h3>
+                    <h2 class="pb-[43px] text-center text-2xl font-medium text-[#0B3A02] md:text-[31px]" v-html="content.section3Title"></h2>
                     <div class="flex flex-wrap items-center justify-center gap-4 lg:gap-[50px]">
                         <div v-for="(logo, i) in section3Data" :key="i" class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white p-5 px-[17px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[126px] xl:w-[126px]">
                             <nuxt-img :src="logo.attributes.iconUrl" :alt="'icon_' + i" loading="lazy" />
@@ -137,11 +137,16 @@
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
                     },
+                    {
+                        rel: 'preload',
+                        href: this.content?.bannerImgUrl,
+                        as: 'image',
+                    },
                 ],
                 meta: [
                     {
                         name: 'robots',
-                        content: 'noindex',
+                        content: 'index',
                     },
                     {
                         hid: 'og:title',

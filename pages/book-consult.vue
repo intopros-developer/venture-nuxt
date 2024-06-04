@@ -3,7 +3,7 @@
         <div class="bottom-0 left-0 top-0 w-full bg-[url(/assets/img/book-consult-girl.webp)] bg-cover bg-right-top lg:fixed lg:h-[100vh] lg:w-2/5">
             <div class="relative flex w-full flex-col justify-around overflow-hidden px-10 lg:h-[100vh] xl:pl-[65px]">
                 <div class="fixed left-2.5 top-2.5 lg:left-3 lg:top-3 xl:left-7 xl:top-7">
-                    <button type="button" class="inline-block" @click="goBackHome()"><icons-close class="!h-6 !w-6 text-white hover:text-primary lg:h-[30px] lg:w-[30px]" /></button>
+                    <button type="button" aria-label="Close" class="inline-block" @click="goBackHome()"><icons-close class="!h-6 !w-6 text-white hover:text-primary lg:h-[30px] lg:w-[30px]" /></button>
                 </div>
                 <div class="pt-[50px] text-white lg:pt-5 xl:pt-0">
                     <nuxt-link :to="localePath('/')" aria-label="Venture Plans">
@@ -193,7 +193,14 @@
                 meta: [
                     {
                         name: 'robots',
-                        content: 'index, all',
+                        content: 'index',
+                    },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        name: 'description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
                     },
                     {
                         hid: 'keywords',
@@ -205,6 +212,11 @@
                     {
                         rel: 'canonical',
                         href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                    {
+                        rel: 'preload',
+                        href: '/assets/img/book-consult-girl.webp',
+                        as: 'image',
                     },
                 ],
             };

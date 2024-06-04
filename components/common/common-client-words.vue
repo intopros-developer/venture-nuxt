@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[url(/assets/img/our_client_bg.png)] bg-cover bg-[right_20%_top] bg-no-repeat py-14 pb-24 md:py-16 lg:bg-center xl:pb-20 xl:pt-[162px]">
+    <div ref="clientWords" class="bg-cover bg-[right_20%_top] bg-no-repeat py-14 pb-24 md:py-16 lg:bg-center xl:pb-20 xl:pt-[162px]" :style="{ backgroundImage: backgroundImage }">
         <section class="relative">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="pb-[50px]">
@@ -101,6 +101,7 @@
         data() {
             return {
                 isShowReadMore: false,
+                backgroundImage: 'none',
                 slider_options: {
                     autoPlay: false,
                     loop: true,
@@ -133,9 +134,30 @@
 
         mounted() {
             this.aboutClient.init();
+            this.setupIntersectionObserver();
         },
 
-        created() {},
+        methods: {
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            this.loadBackgroundImage();
+                            observer.unobserve(this.$refs.clientWords);
+                        }
+                    });
+                });
+                observer.observe(this.$refs.clientWords);
+            },
+
+            loadBackgroundImage() {
+                const highResImage = new Image();
+                highResImage.src = '/assets/img/our_client_bg.png';
+                highResImage.onload = () => {
+                    this.backgroundImage = `url(/assets/img/our_client_bg.png)`;
+                };
+            },
+        },
     };
 </script>
 

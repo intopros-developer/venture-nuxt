@@ -18,22 +18,10 @@
                     <div class="absolute bottom-0 left-0 z-0 h-[89px] w-full bg-gradient-to-t from-[#202A36] opacity-80"></div>
                     <div v-if="slide.attributes.slideVideoUrl">
                         <video class="force-video-reload responsive-slide-video absolute inset-0 -z-10 h-full w-full object-cover" :style="videoHeight" autoplay loop muted playsinline>
-                            <source :src="slide.attributes.slideVideoUrl" type="video/mp4" />
+                            <source :src="slide.attributes.slideVideoUrl" type="video/mp4" loading="lazy" />
                         </video>
                     </div>
-                    <img
-                        v-else
-                        loading="lazy"
-                        class="slider-img absolute -z-10 h-full w-full bg-cover object-cover md:bg-top"
-                        :class="{
-                            'img-slider-six-responsive bg-[position:-410px_-10px] md:bg-[position:center_70px] lg:bg-center': i === 5,
-                            'bg-[position:center]': i === 3 || i === 2,
-                            'bg-[position:-500px_0px]': i === 1,
-                        }"
-                        :alt="slide.attributes.title"
-                        :style="{ backgroundImage: `url(${slide.attributes.slideImageUrl})` }"
-                        lazyload
-                    />
+                    <nuxt-img v-else loading="lazy" class="slider-img absolute -z-10 h-full w-full object-cover md:bg-top" format="webp" :alt="slide.attributes.title" :src="slide.attributes.slideImageUrl" />
 
                     <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4" :class="{ '': i === 0 }">
                         <div
@@ -53,15 +41,13 @@
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
                                         src="/assets/img/Union-3@2x.png"
-                                        class="relative left-0 transition-all duration-300 group-hover:left-2"
+                                        class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
-                                        format="webp"
                                         width="24"
                                         height="13"
                                     />
                                 </nuxt-link>
-
                                 <a
                                     v-else-if="slide.attributes.buttonText"
                                     target="_blank"
@@ -71,10 +57,9 @@
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
                                         src="/assets/img/Union-3@2x.png"
-                                        class="relative left-0 transition-all duration-300 group-hover:left-2"
+                                        class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
-                                        format="webp"
                                         width="24"
                                         height="13"
                                     />
@@ -106,10 +91,9 @@
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
                                         src="/assets/img/Union-3@2x.png"
-                                        class="relative left-0 transition-all duration-300 group-hover:left-2"
+                                        class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
-                                        format="webp"
                                         width="24"
                                         height="13"
                                     />
@@ -124,10 +108,9 @@
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
                                         src="/assets/img/Union-3@2x.png"
-                                        class="relative left-0 transition-all duration-300 group-hover:left-2"
+                                        class="object-fit relative left-0 transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
-                                        format="webp"
                                         width="24"
                                         height="13"
                                     />
@@ -225,6 +208,14 @@
             };
         },
 
+        head() {
+            const preloadLinks = this.generatePreloadLinks();
+
+            return {
+                link: [...preloadLinks],
+            };
+        },
+
         mounted() {
             this.init_slider();
         },
@@ -234,6 +225,29 @@
         },
 
         methods: {
+            generatePreloadLinks() {
+                const preloadLinks = [];
+                this.$props.slider.forEach((slide) => {
+                    if (slide.attributes.slideImageUrl) {
+                        preloadLinks.push({
+                            rel: 'preload',
+                            href: slide.attributes.slideImageUrl,
+                            as: 'image',
+                            fetchpriority: 'high',
+                        });
+                    }
+                    if (slide.attributes.slideVideoUrl) {
+                        preloadLinks.push({
+                            rel: 'preload',
+                            href: slide.attributes.slideVideoUrl,
+                            as: 'video',
+                            fetchpriority: 'high',
+                        });
+                    }
+                });
+                return preloadLinks;
+            },
+
             resetAndSelectSlider() {
                 const findAllSlides = document.querySelectorAll('#slider-bottom-navigation .self-slide');
                 for (let sl = 0; sl < findAllSlides.length; sl++) {

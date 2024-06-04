@@ -183,6 +183,19 @@
             };
         },
 
+        head() {
+            return {
+                link: [
+                    {
+                        rel: 'preload',
+                        href: this.$props.image,
+                        as: 'image',
+                        fetchpriority: 'high',
+                    },
+                ],
+            };
+        },
+
         computed: {
             searchResult() {
                 return !this.$helper.isEmpty(this.params.inquiry_reason) ? this.params.inquiry_reason : 'Reason for inquiry';

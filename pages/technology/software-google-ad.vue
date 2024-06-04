@@ -101,7 +101,7 @@
                             <icons-plus v-else class="w-4 flex-none text-black/30 md:w-auto" />
                         </div>
                         <div v-if="activeFaq === faq.title" class="mt-4">
-                            <ul class="flex flex-wrap gap-3 text-base">
+                            <ul v-if="faq.services" class="flex flex-wrap gap-3 text-base">
                                 <li v-for="feature in faq.services.split(',')" :key="feature" class="cursor-pointer rounded-full border-2 border-primary px-4 py-1 text-primary hover:bg-primary hover:text-white">{{ feature }}</li>
                             </ul>
                         </div>
@@ -145,7 +145,14 @@
                 meta: [
                     {
                         name: 'robots',
-                        content: 'noindex',
+                        content: 'index',
+                    },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        name: 'description',
+                        content:
+                            'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
                     },
                     {
                         hid: 'keywords',
@@ -159,6 +166,12 @@
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                    {
+                        rel: 'preload',
+                        href: `${process.env.FE_BASE_URL}/assets/img/software_google_ad_banner.webp`,
+                        as: 'image',
+                        fetchpriority: 'high',
                     },
                 ],
             };
