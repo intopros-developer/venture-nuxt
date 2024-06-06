@@ -2,7 +2,7 @@
     <div>
         <section class="align-center relative flex h-[477px] justify-center overflow-hidden pb-24 pt-[289px]">
             <video class="force-video-reload absolute inset-0 mt-0 h-full w-full object-cover" autoplay loop muted playsinline>
-                <source src="https://videos.ctfassets.net/koyrlvjc3wvc/5Eke5W5guSg2OEDmm5TKtB/86fa202e97192c590b4acdd8e484c24a/global_search.mp4" type="video/mp4" />
+                <source src="/videos/video-1.mp4" type="video/mp4" loading="lazy" />
             </video>
 
             <div class="absolute -left-1/3 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746]"></div>
@@ -375,22 +375,22 @@
                 filterText: '',
                 featuredLogos: [
                     {
-                        logoUrl: 'https://venturefund.vercel.app/assets/img/logos/stanford.png',
+                        logoUrl: '/images/logos/stanford.webp',
                     },
                     {
-                        logoUrl: 'https://venturefund.vercel.app/assets/img/logos/finra.png',
+                        logoUrl: '/images/logos/finra.webp',
                     },
                     {
-                        logoUrl: 'https://venturefund.vercel.app/assets/img/logos/hbs.png',
+                        logoUrl: '/images/logos/hbs.webp',
                     },
                     {
-                        logoUrl: 'https://venturefund.vercel.app/assets/img/logos/yale.png',
+                        logoUrl: '/images/logos/yale.webp',
                     },
                     {
-                        logoUrl: 'https://venturefund.vercel.app/assets/img/logos/cbv.png',
+                        logoUrl: '/images/logos/cbv.webp',
                     },
                     {
-                        logoUrl: 'https://venturefund.vercel.app/assets/img/logos/cfi.png',
+                        logoUrl: '/images/logos/cfi.webp',
                     },
                 ],
                 regionFilterOption: {},

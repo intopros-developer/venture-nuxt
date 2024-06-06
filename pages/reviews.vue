@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+        <section class="relative bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]" v-lazyload-bg="content.bannerImgUrl">
             <div class="absolute left-0 top-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[246px]"></div>
             <div class="container relative z-10 lg:px-[97px] xl:px-4">
@@ -23,19 +23,19 @@
                         </div>
                         <div class="mt-8 flex gap-2 md:gap-9">
                             <span class="flex-none">
-                                <nuxt-img src="/assets/img/quote-one.png" alt="QuoteOne" loading="lazy" class="object-contain" />
+                                <nuxt-img src="/images/icons/quote-one.webp" alt="QuoteOne" loading="lazy" class="object-contain" />
                             </span>
                             <p class="max-w-[377px] text-lg italic leading-[28px] -tracking-[0.04px] text-[#707070]">
                                 {{ content.section1Description }}
                             </p>
                             <span class="flex-none self-end">
-                                <nuxt-img src="/assets/img/quote-two.png" alt="QuoteTwo" loading="lazy" class="object-contain" />
+                                <nuxt-img src="/images/icons/quote-two.webp" alt="QuoteTwo" loading="lazy" class="object-contain" />
                             </span>
                         </div>
                         <div class="mt-20 lg:mt-[204px]">
                             <p class="text-[21px] italic leading-[42px] -tracking-[0.04px] text-[#707070]">{{ content.section1Subtitle }}</p>
 
-                            <nuxt-img :src="content.section1DescriptionImgUrl || '/assets/img/review_image.png'" alt="Review Img" class="mt-6" loading="lazy" format="webp" />
+                            <nuxt-img :src="content.section1DescriptionImgUrl || '/images/review-img.webp'" alt="Review Img" class="mt-6" loading="lazy" format="webp" />
                         </div>
                     </div>
                     <div>
@@ -66,21 +66,6 @@
             :video-u-r-l="content.video1Url"
             :title="content.video1Title"
         />
-
-        <!-- hidden for now -->
-        <!-- <section class="py-10 md:pb-0 md:pt-16 lg:pt-[116px]">
-            <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
-                <div class="mb-9 flex items-center justify-center gap-[33px] text-center md:mb-[67px]">
-                    <div class="hidden h-px w-full bg-[#D5D5D5] sm:block"></div>
-                    <h2 class="text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl [&>span]:text-primary"
-                        v-html="content.section4Title"></h2>
-                    <div class="hidden h-px w-full bg-[#D5D5D5] sm:block"></div>
-                </div>
-                <common-featured-services :services="section4Data" />
-            </div>
-        </section>
-
-        -->
 
         <home-about-client :title="content.section5Title" :testimonials="section5Data" />
 

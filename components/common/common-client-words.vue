@@ -1,5 +1,5 @@
 <template>
-    <div ref="clientWords" class="bg-cover bg-[right_20%_top] bg-no-repeat py-14 pb-24 md:py-16 lg:bg-center xl:pb-20 xl:pt-[162px]" :style="{ backgroundImage: backgroundImage }">
+    <div ref="clientWords" class="bg-cover bg-[right_20%_top] bg-no-repeat py-14 pb-24 md:py-16 lg:bg-center xl:pb-20 xl:pt-[162px]" :style="{ backgroundImage: 'url(/images/bg-transparent.webp)' }">
         <section class="relative">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="pb-[50px]">
@@ -26,7 +26,7 @@
                                 <div class="mb-10 flex flex-col items-center gap-10 md:flex-row md:items-start lg:mb-[106px]">
                                     <div class="flex-1">
                                         <div class="mb-4">
-                                            <nuxt-img src="/assets/img/icon_quote.png" alt="Quote" loading="lazy" />
+                                            <nuxt-img src="/images/icons/quote.webp" alt="Quote" loading="lazy" />
                                         </div>
                                         <div class="space-y-5 font-bold -tracking-[0.04px] text-[#707070] lg:text-lg">
                                             <p class="max-w-[633px]">
@@ -83,7 +83,7 @@
                         attributes: {
                             name: 'Gurvinder H',
                             description: 'They are experienced in cognitive computing, automation, ICO, big data, and artificial intelligence.',
-                            profileImgUrl: 'https://images.ctfassets.net/koyrlvjc3wvc/1QhlKfFBmyMf7qsZbPooEY/2afda1f2a33ee4828212b84ab9ae41ce/gurvinder.png',
+                            profileImgUrl: '/images/clients/gurvinder.webp',
                         },
                     },
                     {
@@ -92,7 +92,7 @@
                             name: 'Jason F. - SVP & Founder Digital Niche Agency',
                             description:
                                 'Arleo and his team are a pleasure to work with. He is smart talented leader who leverages his professionalism and problem-solving abilities in all conversations. Arleo hand picks the best projects to invest his time into and we were lucky to be involved.',
-                            profileImgUrl: 'https://images.ctfassets.net/koyrlvjc3wvc/7A2MGgPAdroU37d5aTw8IZ/8052483e50c83ff31283bafcdc3f5c27/testimonial_01.png',
+                            profileImgUrl: '/images/clients/jason.webp',
                         },
                     },
                 ],
@@ -134,36 +134,13 @@
 
         mounted() {
             this.aboutClient.init();
-            this.setupIntersectionObserver();
-        },
-
-        methods: {
-            setupIntersectionObserver() {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            this.loadBackgroundImage();
-                            observer.unobserve(this.$refs.clientWords);
-                        }
-                    });
-                });
-                observer.observe(this.$refs.clientWords);
-            },
-
-            loadBackgroundImage() {
-                const highResImage = new Image();
-                highResImage.src = '/assets/img/our_client_bg.png';
-                highResImage.onload = () => {
-                    this.backgroundImage = `url(/assets/img/our_client_bg.png)`;
-                };
-            },
         },
     };
 </script>
 
 <style scoped>
     .client-words .swiper-button-prev.swiper-button-prev1 {
-        background-image: url('static/assets/img/prev-arrow.png') !important;
+        background-image: url('/images/icons/prev-arrow.png') !important;
         background: no-repeat;
         background-position: center;
         background-color: #00adff;
@@ -180,7 +157,7 @@
     }
 
     .client-words .swiper-button-next.swiper-button-next1 {
-        background-image: url('static/assets/img/next-arrow.png') !important;
+        background-image: url('/images/icons/next-arrow.png') !important;
         background: no-repeat;
         background-position: center;
         background-color: #00adff;

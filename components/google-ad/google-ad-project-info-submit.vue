@@ -1,5 +1,5 @@
 <template>
-    <section class="overflow-hidden bg-[url(/assets/img/mobile_image_16.jpg)] bg-cover pb-8 pt-96 md:bg-[url(/assets/img/image_16.jpg)] md:py-20">
+    <section class="overflow-hidden bg-[url(/images/bg-mobile.webp)] bg-cover pb-8 pt-96 md:bg-[url(/images/que-9.webp)] md:py-20">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="grid grid-cols-1 items-start gap-5 md:grid-cols-2">
                 <div class="relative z-[1] flex flex-col justify-center xl:pl-10 xl:pt-5">
@@ -61,7 +61,7 @@
                         <div class="form-input-group">
                             <select
                                 v-model="$v.params.service.$model"
-                                class="form-select w-full max-w-full rounded-[10px] bg-white bg-[url(/assets/img/selection-arrow-dark.svg)] p-4 text-sm text-black"
+                                class="form-select w-full max-w-full rounded-[10px] bg-white bg-[url(/images/selection-arrow-dark.svg)] p-4 text-sm text-black"
                                 :class="{ error: $v.params.service.$error, 'text-[#A5A5A5]': params.service === '' }"
                             >
                                 <option value="" disabled class="text-[#A5A5A5]">Select Service</option>
@@ -164,7 +164,7 @@
                     {
                         id: 1,
                         attributes: {
-                            iconUrl: 'https://venturefund.vercel.app/assets/img/placement-logo-3.png',
+                            iconUrl: '/images/placement-logo-3.webp',
                         },
                     },
                 ],

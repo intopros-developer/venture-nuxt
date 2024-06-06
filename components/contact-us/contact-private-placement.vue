@@ -28,7 +28,7 @@
                         attributes: {
                             title: null,
                             description: null,
-                            iconUrl: 'https://venturefund.vercel.app/assets/img/logo-9.png',
+                            iconUrl: '/images/logos/stanford.webp',
                         },
                     },
                     {
@@ -36,7 +36,7 @@
                         attributes: {
                             title: null,
                             description: null,
-                            iconUrl: '/assets/img/placement-logo-5.png',
+                            iconUrl: '/images/logos/cbv.webp',
                         },
                     },
                     {
@@ -44,7 +44,7 @@
                         attributes: {
                             title: null,
                             description: null,
-                            iconUrl: '/assets/img/placement-logo-3.png',
+                            iconUrl: '/images/logos/harvard.webp',
                         },
                     },
                 ],

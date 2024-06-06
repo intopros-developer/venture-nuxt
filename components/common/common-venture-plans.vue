@@ -36,7 +36,7 @@
                             sectionName: '1',
                             title: 'Rapid Execution',
                             description: 'Choose from 5-day standard and expedited options. Deadlines met.',
-                            imgUrl: 'https://images.ctfassets.net/koyrlvjc3wvc/36a92TGHdSkErGnPlM7V1y/4d07d453d834a871ea453530c84cb037/rapid.png',
+                            imgUrl: '/images/rapid-execution.webp',
                         },
                     },
                 ],

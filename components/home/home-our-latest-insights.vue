@@ -56,7 +56,7 @@
                             title: 'new Insight',
                             paragraph: "New tools and strategies boost year-on-year growth and reenergize the company's sales pipeline",
                             Insightsource: 'How wealthy individuals can contribute to the overall economic growth Cycle.',
-                            imgUrl: 'https://images.ctfassets.net/koyrlvjc3wvc/54ZDQZoRfyqhu4DD56Bg86/92091c33e63115387cb9fb5ccb93d59c/image_1.jpg',
+                            imgUrl: '/images/latest-insight.webp',
                             insightType: 'infographic',
                             date: '2023-04-04',
                             singleInsightPageSlug: 'new-insight',

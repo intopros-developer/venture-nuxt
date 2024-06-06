@@ -135,7 +135,7 @@
                 </div>
 
                 <div v-show="currentQuestion === 8" class="order-2 flex-1 md:order-1">
-                    <nuxt-img format="webp" src="/assets/img/congo-icon.svg" alt="Congo Icon" loading="lazy" />
+                    <nuxt-img format="webp" src="/images/congo-icon.svg" alt="Congo Icon" loading="lazy" />
                     <h2
                         class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
                         v-html="$t('congratulations_you_have_br_span_successfully_span_booked_your_consultation')"
@@ -146,7 +146,7 @@
                 </div>
 
                 <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-black/50 md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                    <nuxt-img format="webp" :src="`/assets/img/career-que-${currentQuestion}.jpg`" alt="Career QUestion Icon" loading="lazy" class="h-full w-full object-cover" />
+                    <nuxt-img format="webp" :src="`/images/que-${currentQuestion}.webp`" alt="Career QUestion Icon" loading="lazy" class="h-full w-full object-cover" />
                 </div>
             </div>
         </div>

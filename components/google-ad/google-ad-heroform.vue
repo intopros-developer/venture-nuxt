@@ -1,5 +1,5 @@
 <template>
-    <section class="contact-heroform relative h-[700px] bg-[url(/assets/img/software_google_ad_banner.webp)] bg-cover bg-[top_8%_center] bg-no-repeat py-[48px] md:h-[730px] md:py-[97px] xl:py-[100px]">
+    <section class="contact-heroform relative h-[700px] bg-[url(/images/google-ad-banner.webp)] bg-cover bg-[top_8%_center] bg-no-repeat py-[48px] md:h-[730px] md:py-[97px] xl:py-[100px]">
         <div style="background: black; opacity: 35%" class="absolute left-0 top-0 z-0 h-full w-full"></div>
 
         <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">

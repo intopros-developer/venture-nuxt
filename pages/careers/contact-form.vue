@@ -20,7 +20,7 @@
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div v-if="currentStep <= 2" class="justify-between gap-5 md:flex lg:gap-[103px]">
                     <div class="grow">
-                        <nuxt-img format="webp" src="/assets/img/img-12.png" class="mx-auto md:ml-0" alt="contact" loading="lazy" />
+                        <nuxt-img format="webp" src="/images/contact-img.webp" class="mx-auto md:ml-0" alt="contact" loading="lazy" />
                     </div>
                     <div class="w-full grow md:max-w-[396px]">
                         <form id="contact-form" action="" @submit.prevent="onSubmit">
@@ -312,10 +312,10 @@
                 </div>
                 <div v-else class="justify-between gap-5 space-y-4 md:flex md:space-y-0 lg:gap-[103px]">
                     <div class="mb-5 w-full grow md:order-2 md:mb-0 md:max-w-[498px]">
-                        <nuxt-img src="/assets/img/img-12.png" class="mx-auto md:ml-0" alt="contact 2" loading="lazy" />
+                        <nuxt-img src="/images/contact-img.webp" class="mx-auto md:ml-0" alt="contact 2" loading="lazy" />
                     </div>
                     <div class="w-full grow">
-                        <nuxt-img src="/assets/img/congo-icon.svg" alt="icon" loading="lazy" />
+                        <nuxt-img src="/images/congo-icon.svg" alt="icon" loading="lazy" />
 
                         <h2
                             class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"

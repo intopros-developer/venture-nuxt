@@ -3,7 +3,7 @@
         <div v-if="finalStepActivated" class="flex flex-col items-center justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
             <div>
                 <div>
-                    <nuxt-img format="webp" src="/assets/img/congo-icon.svg" alt="Congo Icon Svg" loading="lazy" />
+                    <nuxt-img format="webp" src="/images/congo-icon.svg" alt="Congo Icon Svg" loading="lazy" />
 
                     <h2
                         class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
@@ -163,11 +163,11 @@
                     formHeading: "Your trusted partner in navigating through uncertain times. Let's accelerate your growth.",
                     formQuestion: 'What is your full name, email, and phone number?',
                     formSubTitle: 'Fill out our contact form so one of our human resource representatives can get in touch with you for an interview.',
-                    formImage: 'https://venturefund.vercel.app/assets/img/career-que-1.jpg',
+                    formImage: '/images/career-que-1.webp',
                     finalHeading: "Your trusted partner in navigating through uncertain times. Let's accelerate your growth.\n",
                     finalSubTitle: 'Answer our questions so we can better help you with your job search',
                     finalQuestion: 'Do you want to buy this service now?',
-                    finalImage: 'https://venturefund.vercel.app/assets/img/career-que-1.jpg',
+                    finalImage: '/images/career-que-1.webp',
                     finalCTAs: [
                         {
                             label: 'Book a Consultation',
@@ -181,7 +181,7 @@
                     questionnaries: [
                         {
                             stepsNo: 1,
-                            image: 'https://venturefund.vercel.app/assets/img/career-que-1.jpg',
+                            image: '/images/career-que-1.webp',
                             stepName: "Your trusted partner in navigating through uncertain times. Let's accelerate your growth.",
                             title: 'Answer five questions so we can better help you with your Business objectives',
                             questionText: 'What phase is your business in?',
@@ -213,7 +213,7 @@
                 finalHeading: "Your trusted partner in navigating through uncertain times. Let's accelerate your growth.\n",
                 finalSubTitle: 'Answer our questions so we can better help you with your job search',
                 finalQuestion: 'Do you want to buy this service now?',
-                finalImage: 'https://venturefund.vercel.app/assets/img/career-que-1.jpg',
+                finalImage: '/images/career-que-1.webp',
                 finalCTAs: [
                     {
                         label: 'Book a Consultation',
@@ -257,7 +257,7 @@
                 selectedAnswers: [],
                 currentQuestion: {
                     stepsNo: 1,
-                    image: 'https://venturefund.vercel.app/assets/img/career-que-1.jpg',
+                    image: '/images/career-que-1.webp',
                     stepName: "Your trusted partner in navigating through uncertain times. Let's accelerate your growth.",
                     title: 'Answer five questions so we can better help you with your Business objectives',
                     questionText: 'What phase is your business in?',

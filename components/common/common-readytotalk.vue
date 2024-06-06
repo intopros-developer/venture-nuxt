@@ -1,5 +1,5 @@
 <template>
-    <section id="readyToTalk" ref="readyToTalk" class="bg-cover py-10 md:py-16 xl:py-32" :style="{ backgroundColor: bgColor, backgroundImage: backgroundImage }">
+    <section id="readyToTalk" class="bg-gray-400 bg-cover py-10 md:py-16 xl:py-32" v-lazyload-bg="imgUrl">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <form id="ready-to-talk-form" action="" @submit.prevent="onSubmit">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
@@ -138,7 +138,7 @@
             },
             imgUrl: {
                 type: String,
-                default: '/assets/img/group-1.png',
+                default: '/images/bg-banner.webp',
             },
             serviceOptions: {
                 type: Array,
@@ -174,7 +174,6 @@
                 widgetId: null,
                 isSubmitting: false,
                 bgColor: '#444',
-                backgroundImage: 'none',
             };
         },
 
@@ -204,8 +203,6 @@
                 });
                 this.widgetId = id;
             } catch (e) {}
-
-            this.setupIntersectionObserver();
         },
 
         validations() {
@@ -220,28 +217,6 @@
         },
 
         methods: {
-            setupIntersectionObserver() {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            this.loadBackgroundImage();
-                            observer.unobserve(this.$refs.readyToTalk);
-                        }
-                    });
-                });
-                observer.observe(this.$refs.readyToTalk);
-            },
-
-            loadBackgroundImage() {
-                const _imageUrl = this.imgUrl ? this.imgUrl : '/assets/img/group-1.png';
-
-                const highResImage = new Image();
-                highResImage.src = _imageUrl;
-                highResImage.onload = () => {
-                    this.backgroundImage = `url(${_imageUrl})`;
-                };
-            },
-
             openSearch() {
                 this.showService = !this.showService;
                 if (this.showService) {
@@ -326,9 +301,6 @@
         transition: opacity 0.3s;
     }
 
-    /* .slide-fade-enter {
-        opacity: 1;
-    } */
     .slide-fade-leave-to {
         opacity: 0;
     }

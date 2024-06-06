@@ -34,7 +34,7 @@
             },
             imgUrl: {
                 type: String,
-                default: 'https://images.ctfassets.net/koyrlvjc3wvc/4tyXkBS5yBBWxIucd0xDLs/c95a6fb1c7db45141872da1dc2dcd8ce/iStock-1191132586.jpg',
+                default: '/images/que-8.webp',
             },
             buttonTitle: {
                 type: String,

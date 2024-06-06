@@ -31,7 +31,7 @@
                                             v-else-if="serviceDescription.attributes.descriptionVideoUrl"
                                             ref="video"
                                             class="relative h-[180px] w-full bg-cover bg-center bg-no-repeat sm:h-[280px] lg:h-[380px]"
-                                            :style="{ backgroundImage: `url(${serviceDescription.attributes.descriptionImageUrl})` }"
+                                            v-lazyload-bg="serviceDescription.attributes.descriptionImageUrl"
                                             lazyload
                                         >
                                             <iframe
@@ -88,8 +88,7 @@
                     v-else-if="serviceDescription.attributes.descriptionVideoUrl"
                     ref="video"
                     class="relative h-[180px] w-full bg-cover bg-center bg-no-repeat sm:h-[280px] lg:h-[380px]"
-                    :style="{ backgroundImage: `url(${serviceDescription.attributes.descriptionImageUrl})` }"
-                    lazyload
+                    v-lazyload-bg="serviceDescription.attributes.descriptionImageUrl"
                 >
                     <iframe
                         v-if="!showOverlay"
@@ -118,7 +117,7 @@
                         :to="serviceDescription.attributes.descriptionLinkUrl"
                         class="block pt-6 font-semibold text-[#0DA1F1]"
                     >
-                    Explore Further
+                        Explore Further
                     </nuxt-link>
                     <a v-else target="_blank" :href="serviceDescription.attributes.descriptionLinkUrl" aria-label="Explore Further" class="block pt-6 font-semibold text-[#0DA1F1]">Explore Further</a>
                 </div>
@@ -142,7 +141,7 @@
                             descriptionLink: null,
                             descriptionLinkUrl: null,
                             DescriptionMediaType: null,
-                            descriptionImageUrl: 'background-image: url("//images.ctfassets.net/koyrlvjc3wvc/4JEk9Azdv4ElA58Sh2NXDq/b45db57e747877f1a4721da923e1d986/video-thumbnail.jpg");',
+                            descriptionImageUrl: 'background-image: url(/images/thumbnail-video.webp);',
                             descriptionVideoUrl: null,
                         },
                     },

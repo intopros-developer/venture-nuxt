@@ -156,19 +156,19 @@
                                                 <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
                                                     <nuxt-link to="/search?search=grant service" class="flex items-center gap-4 text-[15px] font-semibold text-[#030303]">
                                                         <div class="h-16 w-16 flex-none overflow-hidden rounded-md">
-                                                            <nuxt-img format="webp" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" alt="Grant Service" loading="lazy" />
+                                                            <nuxt-img format="webp" src="/images/bg-slide.webp" class="h-full w-full object-cover" alt="Grant Service" loading="lazy" />
                                                         </div>
                                                         <p>Grant Service</p>
                                                     </nuxt-link>
                                                     <nuxt-link to="/search?search=media" class="flex items-center gap-4 text-[15px] font-semibold text-[#030303]">
                                                         <div class="h-16 w-16 flex-none overflow-hidden rounded-md">
-                                                            <nuxt-img format="webp" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" alt="Media" loading="lazy" />
+                                                            <nuxt-img format="webp" src="/images/bg-slide.webp" class="h-full w-full object-cover" alt="Media" loading="lazy" />
                                                         </div>
                                                         <p>Media</p>
                                                     </nuxt-link>
                                                     <nuxt-link to="/search?search=careers" class="flex items-center gap-4 text-[15px] font-semibold text-[#030303]">
                                                         <div class="h-16 w-16 flex-none overflow-hidden rounded-md">
-                                                            <nuxt-img format="webp" src="/assets/img/hero-slider/slide-3.jpg" class="h-full w-full object-cover" alt="Careers" loading="lazy" />
+                                                            <nuxt-img format="webp" src="/images/bg-slide.webp" class="h-full w-full object-cover" alt="Careers" loading="lazy" />
                                                         </div>
                                                         <p>Careers</p>
                                                     </nuxt-link>

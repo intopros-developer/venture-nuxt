@@ -18,10 +18,10 @@
                     <div class="absolute bottom-0 left-0 z-0 h-[89px] w-full bg-gradient-to-t from-[#202A36] opacity-80"></div>
                     <div v-if="slide.attributes.slideVideoUrl">
                         <video class="force-video-reload responsive-slide-video absolute inset-0 -z-10 h-full w-full object-cover" :style="videoHeight" autoplay loop muted playsinline>
-                            <source :src="slide.attributes.slideVideoUrl" type="video/mp4" loading="lazy" />
+                            <source :src="slide.attributes.slideVideoUrl" type="video/mp4" :loading="i < 4 ? 'eager' : 'lazy'" />
                         </video>
                     </div>
-                    <nuxt-img v-else loading="lazy" class="slider-img absolute -z-10 h-full w-full object-cover md:bg-top" format="webp" :alt="slide.attributes.title" :src="slide.attributes.slideImageUrl" />
+                    <nuxt-img v-else class="slider-img absolute -z-10 h-full w-full object-cover md:bg-top" format="webp" :alt="slide.attributes.title" :src="slide.attributes.slideImageUrl" :preload="i < 3 ? true : false" />
 
                     <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4" :class="{ '': i === 0 }">
                         <div
@@ -40,7 +40,7 @@
                                 >
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
-                                        src="/assets/img/Union-3@2x.png"
+                                        src="/images/icons/arrow-right.webp"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -56,7 +56,7 @@
                                 >
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
-                                        src="/assets/img/Union-3@2x.png"
+                                        src="/images/icons/arrow-right.webp"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -90,7 +90,7 @@
                                 >
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
-                                        src="/assets/img/Union-3@2x.png"
+                                        src="/images/icons/arrow-right.webp"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -107,7 +107,7 @@
                                 >
                                     {{ slide.attributes.linkTitle }}
                                     <nuxt-img
-                                        src="/assets/img/Union-3@2x.png"
+                                        src="/images/icons/arrow-right.webp"
                                         class="object-fit relative left-0 transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -164,7 +164,7 @@
                             linkTitle: 'FIND OUT HOW',
                             linkUrl: '/careers',
                             paginationTitle: 'Let’s Work Together',
-                            slideVideoUrl: 'https://videos.ctfassets.net/koyrlvjc3wvc/7tIrCBja0bvQbiMFHOEj9a/b6279398d5b237796590373eb8df5a78/home-slider-video.mp4',
+                            slideVideoUrl: '/videos/slider-video.mp4',
                             slideImageUrl: '',
                         },
                     },

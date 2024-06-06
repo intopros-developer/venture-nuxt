@@ -4,7 +4,7 @@
             <div v-swiper:brandLogo="slider_options" class="swiper relative bg-transparent" :cleanup-styles-on-destroy="false">
                 <div class="swiper-wrapper items-center">
                     <div v-for="(logo, i) in logos" :key="i" class="swiper-slide flex justify-center">
-                        <nuxt-img format="webp" :src="logo.logoUrl" :alt="'LOGO-' + i" loading="lazy" class="object-contain" />
+                        <nuxt-img format="webp" :src="logo.logoUrl" :alt="'LOGO-' + i" loading="lazy" class="mx-auto object-contain" width="197" height="150" />
                     </div>
                 </div>
             </div>
@@ -18,22 +18,25 @@
             logos: Array,
             default: () => [
                 {
-                    logoUrl: 'https://22527844.fs1.hubspotusercontent-na1.net/hubfs/22527844/images/logos/STANBUSINESS.png',
+                    logoUrl: '/images/logos/stanford.webp',
                 },
                 {
-                    logoUrl: 'https://22527844.fs1.hubspotusercontent-na1.net/hubfs/22527844/images/logos/FINRA.png',
+                    logoUrl: '/images/logos/finra.webp',
                 },
                 {
-                    logoUrl: 'https://22527844.fs1.hubspotusercontent-na1.net/hubfs/22527844/images/logos/HBS.png',
+                    logoUrl: '/images/logos/hbs.webp',
                 },
                 {
-                    logoUrl: 'https://venturefund.vercel.app/assets/img/logos/yale.png',
+                    logoUrl: '/images/logos/cbv.webp',
                 },
                 {
-                    logoUrl: 'https://22527844.fs1.hubspotusercontent-na1.net/hubfs/22527844/images/logos/cbv.png',
+                    logoUrl: '/images/logos/harvard.webp',
                 },
                 {
-                    logoUrl: 'https://venturefund.vercel.app/assets/img/logos/cfi.png',
+                    logoUrl: '/images/logos/nacva.webp',
+                },
+                {
+                    logoUrl: '/images/logos/peking.webp',
                 },
             ],
         },
@@ -77,7 +80,7 @@
 
 <style scoped>
     .brand-logo .swiper-button-prev.swiper-button-prev1 {
-        background-image: url('static/assets/img/prev-arrow.png') !important;
+        background-image: url('/images/icons/prev-arrow.png') !important;
         background: no-repeat;
         background-position: center;
         background-color: #fbfbfd;
@@ -88,7 +91,7 @@
         content: '';
     }
     .brand-logo .swiper-button-next.swiper-button-next1 {
-        background-image: url('static/assets/img/next-arrow.png') !important;
+        background-image: url('/images/icons/next-arrow.png') !important;
         background: no-repeat;
         background-position: center;
         background-color: #fbfbfd;
@@ -101,8 +104,6 @@
 
     .brand-logo .swiper-slide > img {
         height: 150px !important;
-        /* width: 100%;
-        object-fit: cover; */
     }
 
     @media (max-width: 1025px) {

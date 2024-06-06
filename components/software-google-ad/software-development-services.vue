@@ -27,32 +27,32 @@
                     return [
                         {
                             title: 'Mobile Development',
-                            svgLink: '/assets/img/mobile_icon.png',
+                            svgLink: '/images/icons/mobile.webp',
                             Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt hic aliquid debitis tenetur maxime atque reiciendis voluptatum. Iure, officiis?',
                         },
                         {
                             title: 'UX / UI Design',
-                            svgLink: '/assets/img/ux_ui_icon.png',
+                            svgLink: '/images/icons/ui-ux.webp',
                             Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt hic aliquid debitis tenetur maxime atque reiciendis voluptatum. Iure, officiis?',
                         },
                         {
                             title: 'QA Testing',
-                            svgLink: '/assets/img/qa_icon.png',
+                            svgLink: '/images/icons/qa.webp',
                             Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt hic aliquid debitis tenetur maxime atque reiciendis voluptatum. Iure, officiis?',
                         },
                         {
                             title: 'Development Team',
-                            svgLink: '/assets/img/team_icon.png',
+                            svgLink: '/images/icons/team.webp',
                             Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt hic aliquid debitis tenetur maxime atque reiciendis voluptatum. Iure, officiis?',
                         },
                         {
                             title: 'IT Consulting',
-                            svgLink: '/assets/img/it_icon.png',
+                            svgLink: '/images/icons/it.webp',
                             Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt hic aliquid debitis tenetur maxime atque reiciendis voluptatum. Iure, officiis?',
                         },
                         {
                             title: 'Product Engineering',
-                            svgLink: '/assets/img/engineering_icon.png',
+                            svgLink: '/images/icons/engineering.webp',
                             Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt hic aliquid debitis tenetur maxime atque reiciendis voluptatum. Iure, officiis?',
                         },
                     ];

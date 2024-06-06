@@ -5,6 +5,7 @@ export default {
     server: {
         // host: 0,
     },
+    dev: false,
     head: {
         title: 'Venture Plans',
         htmlAttrs: {
@@ -35,8 +36,8 @@ export default {
             { hid: 'og:type', property: 'og:type', content: 'website' },
             { hid: 'og:site_name', property: 'og:site_name', content: 'Venture Plans' },
             { hid: 'og:url', property: 'og:url', content: process.env.FE_BASE_URL || 'https://www.ventureplans.us' },
-            { hid: 'og:image', property: 'og:image', content: 'https://venture.vercel.app/assets/img/social.png' },
-            { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: 'https://venture.vercel.app/assets/img/social.png' },
+            { hid: 'og:image', property: 'og:image', content: `${process.env.FE_BASE_URL}/images/og-social.png` },
+            { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: `${process.env.FE_BASE_URL}/images/og-social.png` },
             { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
             { hid: 'og:image:height', property: 'og:image:height', content: '630' },
 
@@ -47,7 +48,7 @@ export default {
                 name: 'twitter:description',
                 content: 'Venture Plans is a global consulting firm with Ivy League-trained experts in finance, legal advisory, and digital innovation. We deliver value-based solutions to maximize business performance and outcomes.',
             },
-            { hid: 'twitter:image', name: 'twitter:image', content: 'https://venture.vercel.app/assets/img/social.png' },
+            { hid: 'twitter:image', name: 'twitter:image', content: `${process.env.FE_BASE_URL}/images/og-social.png` },
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -79,7 +80,7 @@ export default {
         CTF_SPACE_ID: process.env.CTF_SPACE_ID,
         CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
         CTF_ENVIRONMENT: process.env.CTF_ENVIRONMENT,
-        APP_URL: 'http://localhost:3000',
+        APP_URL: process.env.APP_URL,
         strapiReadOnlyToken: process.env.STRAPI_TOKEN,
         strapiURL: process.env.STRAPI_URL,
         meiliSearchURL: process.env.MEILISEARCH_URL,
@@ -114,6 +115,7 @@ export default {
 
     plugins: [
         { src: '~/plugins/axios.js' },
+        { src: '~/plugins/lazyload-bg.js' },
         { src: '~/plugins/vue-awesome-swiper.js' },
         { src: '~/plugins/vue-the-mask' },
         { src: '~/plugins/vue-vuelidate.js' },
@@ -621,6 +623,7 @@ export default {
             config.performance.hints = false;
             config.resolve.alias['node-fetch-native'] = require.resolve('node-fetch');
         },
+        devtool: 'source-map',
         postcss: {
             plugins: {
                 tailwindcss: {},

@@ -78,7 +78,7 @@
             },
             imageUrl: {
                 type: String,
-                default: '/assets/img/crossroads_china.png',
+                default: '/images/subscribe-paper-china.webp',
             },
         },
         data() {

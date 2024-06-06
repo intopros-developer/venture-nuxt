@@ -40,7 +40,7 @@
                             image: {
                                 fields: {
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/1ym0ynBMsDG1mGCPJRZpQT/7cbd51fd866b87911eafe23d30272264/slide-6.jpg',
+                                        url: '/images/bg-slide-1.webp',
                                     },
                                 },
                             },
@@ -55,7 +55,7 @@
                             image: {
                                 fields: {
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/4H2w5APQz1ZOHGj9b1aPT6/6fc1c8eb371005a0369f6fbd175b2322/slider-4.png',
+                                        url: '/images/bg-slide-2.webp',
                                     },
                                 },
                             },
@@ -70,7 +70,7 @@
                             image: {
                                 fields: {
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/0VQDK17O63v35HVgcLVku/fefb6b688c23b944509fd0dce8b5aed1/que-2.jpg',
+                                        url: '/images/grant-que-2.webp',
                                     },
                                 },
                             },

@@ -1,10 +1,10 @@
 <template>
-    <section id="careerJoinEvent" ref="careerJoinEvent" class="overflow-y-hidden bg-cover bg-[top_36%_center] py-10 xl:pb-[75px] xl:pt-20" :style="{ backgroundColor: bgColor, backgroundImage: backgroundImage }">
+    <section id="careerJoinEvent" class="overflow-y-hidden bg-cover bg-[top_36%_center] py-10 xl:pb-[75px] xl:pt-20" v-lazyload-bg="imageUrl">
         <div class="container">
             <div class="grid grid-cols-1">
                 <div class="relative max-w-[637px] md:pt-[140px]">
                     <div class="absolute -left-20 top-2.5 h-full w-full">
-                        <nuxt-img format="webp" src="/assets/img/bg-blur-subcribe.png" alt="Subscribe" loading="lazy" />
+                        <nuxt-img format="webp" src="/images/bg-blur.webp" alt="Subscribe" loading="lazy" />
                     </div>
                     <div class="relative z-[1]">
                         <p class="text-center text-2xl font-bold uppercase leading-8 text-[#f7f4f4] md:text-left md:leading-10 [&>br]:md:hidden" v-html="title"></p>
@@ -49,7 +49,7 @@
         props: {
             imageUrl: {
                 type: String,
-                default: 'https://images.ctfassets.net/koyrlvjc3wvc/5PIDqWaQeS4Qw3WtFBBf4W/a16bd4583868b261e530015704581795/Image_32_2x.webp',
+                default: '/images/event-bg-large.webp',
             },
             title: {
                 type: String,
@@ -75,7 +75,6 @@
             } else {
                 this.placeholder = 'enter_your_email_to_join_events';
             }
-            this.setupIntersectionObserver();
         },
 
         validations() {
@@ -87,25 +86,6 @@
         },
 
         methods: {
-            setupIntersectionObserver() {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            this.loadBackgroundImage();
-                            observer.unobserve(this.$refs.careerJoinEvent);
-                        }
-                    });
-                });
-                observer.observe(this.$refs.careerJoinEvent);
-            },
-
-            loadBackgroundImage() {
-                const highResImage = new Image();
-                highResImage.src = this.$props.imageUrl;
-                highResImage.onload = () => {
-                    this.backgroundImage = `url(${this.$props.imageUrl})`;
-                };
-            },
             async onSubmit() {
                 this.$v.params.$touch();
                 if (this.$v.params.$invalid || this.$v.params.$error) {

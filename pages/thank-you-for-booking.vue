@@ -117,13 +117,7 @@
                             </a>
                         </div>
                     </div>
-                    <nuxt-img
-                        format="webp"
-                        src="https://images.ctfassets.net/koyrlvjc3wvc/4tyXkBS5yBBWxIucd0xDLs/c95a6fb1c7db45141872da1dc2dcd8ce/iStock-1191132586.jpg"
-                        class="h-full w-full object-cover"
-                        alt="Continue Exploring"
-                        loading="lazy"
-                    />
+                    <nuxt-img format="webp" src="/images/consult-thankyou.webp" class="h-full w-full object-cover" alt="Continue Exploring" loading="lazy" />
 
                     <nuxt-link v-if="!isReadyToTalkSubmitted" to="/" class="b-btn mx-auto text-xs md:hidden lg:max-w-[322px] lg:py-6">Continue Exploring</nuxt-link>
 
@@ -172,7 +166,7 @@
                 link: [
                     {
                         rel: 'preload',
-                        href: 'https://images.ctfassets.net/koyrlvjc3wvc/4tyXkBS5yBBWxIucd0xDLs/c95a6fb1c7db45141872da1dc2dcd8ce/iStock-1191132586.jpg',
+                        href: '/images/consult-thankyou.webp',
                         as: 'image',
                     },
                 ],

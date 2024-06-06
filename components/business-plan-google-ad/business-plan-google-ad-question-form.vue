@@ -140,25 +140,8 @@
                     </div>
                 </div>
 
-                <!-- <div v-show="currentQuestion === 7">
-                    <div class="rounded-xl bg-white p-4 shadow-[0_1px_8px_rgba(0,0,0,0.06)] md:p-8">
-                        <h2 class="mb-4 text-base font-extrabold leading-[25px] text-black xl:mb-[26px] xl:text-[23px] xl:leading-[36px]">{{ $t('book_a_consultation') }}</h2>
-                        <p class="text-sm font-medium leading-6 text-[#353535] xl:text-[15px]">{{ $t('congratulations_on_purchasing_your_service_now_book_your_consultation_with_one_of_our_business_analysts') }}</p>
-
-                        <div
-                            class="calendly-inline-widget mx-auto w-full md:max-w-[350px]"
-                            data-url="https://calendly.com/book-your-consultation/initial-consultation?primary_color=00a1f1&hide_event_type_details=1&hide_gdpr_banner=1"
-                            style="max-width: 350px; height: 600px"
-                        ></div>
-
-                        <div class="text-center">
-                            <button class="b-btn" @click="onSubmit(8)">{{ $t('schedule_call') }}</button>
-                        </div>
-                    </div>
-                </div> -->
-
                 <div v-show="currentQuestion === 8" class="order-2 flex-1 md:order-1">
-                    <nuxt-img src="/assets/img/congo-icon.svg" alt="Icon Congo" loading="lazy" />
+                    <nuxt-img src="/images/congo-icon.svg" alt="Icon Congo" loading="lazy" />
 
                     <h2
                         class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
@@ -172,7 +155,7 @@
                 </div>
 
                 <div v-show="currentQuestion === 9" class="order-2 flex-1 md:order-1">
-                    <nuxt-img src="/assets/img/congo-icon.svg" alt="Icon Congo" loading="lazy" />
+                    <nuxt-img src="/images/congo-icon.svg" alt="Icon Congo" loading="lazy" />
                     <h2
                         class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
                         v-html="$t('we_are_sorry_all_of_our_clients_require_br_span_working_capital_span_in_order_to_qualify')"
@@ -185,7 +168,7 @@
                 </div>
 
                 <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-black/50 md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                    <nuxt-img format="webp" :src="`/assets/img/que-${currentQuestion}.jpg`" class="h-full w-full object-cover" alt="Question Image" loading="lazy" />
+                    <nuxt-img format="webp" :src="`/images/que-${currentQuestion}.webp`" class="h-full w-full object-cover" alt="Question Image" loading="lazy" />
                 </div>
             </div>
         </div>

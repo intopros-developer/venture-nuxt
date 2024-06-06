@@ -164,7 +164,7 @@
 
             image: {
                 type: String,
-                default: '//images.ctfassets.net/koyrlvjc3wvc/33TOOuzmhW8Pi4br5ZSlye/260a28f8b525a9102d3c7803306638f5/contact_banner.jpg',
+                default: '/images/contact-banner-bg.webp',
             },
         },
 

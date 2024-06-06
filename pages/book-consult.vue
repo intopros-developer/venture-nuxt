@@ -1,6 +1,6 @@
 <template>
     <div v-if="content" class="bg-white">
-        <div class="bottom-0 left-0 top-0 w-full bg-[url(/assets/img/book-consult-girl.webp)] bg-cover bg-right-top lg:fixed lg:h-[100vh] lg:w-2/5">
+        <div class="bottom-0 left-0 top-0 w-full bg-[url(/images/book-consult.webp)] bg-cover bg-right-top lg:fixed lg:h-[100vh] lg:w-2/5">
             <div class="relative flex w-full flex-col justify-around overflow-hidden px-10 lg:h-[100vh] xl:pl-[65px]">
                 <div class="fixed left-2.5 top-2.5 lg:left-3 lg:top-3 xl:left-7 xl:top-7">
                     <button type="button" aria-label="Close" class="inline-block" @click="goBackHome()"><icons-close class="!h-6 !w-6 text-white hover:text-primary lg:h-[30px] lg:w-[30px]" /></button>
@@ -26,7 +26,7 @@
                         <p class="mb-6 text-2xl text-[#f7f4f4]">{{ content.subTitle1 }}</p>
                         <div class="grid grid-cols-4 place-items-center items-center gap-x-5 gap-y-2 sm:flex sm:flex-wrap sm:gap-2 md:gap-1">
                             <div v-for="(logo, i) in content.seenOnOption.data" :key="i" class="flex h-[62px] w-[62px] items-center justify-center rounded-full bg-white p-1 px-2 shadow-[0px_1px_8px_rgba(0,0,0,0.2)]">
-                                <nuxt-img :src="logo.attributes.iconUrl" alt="logo" loading="lazy" />
+                                <nuxt-img :src="logo.attributes.iconUrl" :alt="logo.attributes.title" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -215,13 +215,12 @@
                     },
                     {
                         rel: 'preload',
-                        href: '/assets/img/book-consult-girl.webp',
+                        href: '/images/book-consult.webp',
                         as: 'image',
                     },
                 ],
             };
         },
-        // pre fell after ready to talk submitted
 
         computed: {
             getCalenderURL() {

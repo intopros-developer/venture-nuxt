@@ -1,5 +1,5 @@
 <template>
-    <section class="contact-heroform relative bg-[url(/assets/img/los_angeles_banner.jpg)] bg-cover bg-[top_8%_center] bg-no-repeat py-[65px] md:pb-[100px] xl:pt-[150px]">
+    <section class="contact-heroform relative bg-[url(/images/city-banner.webp)] bg-cover bg-[top_8%_center] bg-no-repeat py-[65px] md:pb-[100px] xl:pt-[150px]">
         <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
         <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4">
             <form id="google-ad-los-form" action="" @submit.prevent="onSubmit">

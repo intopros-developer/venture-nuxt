@@ -39,7 +39,7 @@
                             image: {
                                 fields: {
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/14XwHwdABJNMb9Fwe6qCjB/04f50a6f649036864e60f329dc5b8571/work_img1.png',
+                                        url: '/images/work-1.webp',
                                     },
                                 },
                             },
@@ -53,7 +53,7 @@
                             image: {
                                 fields: {
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/2xu2yhuzCET64ZwQ2ZKjIE/6337a656d7844ddf2bbf1f1078572db8/work_img2.png',
+                                        url: '/images/work-2.webp',
                                     },
                                 },
                             },
@@ -67,7 +67,7 @@
                             image: {
                                 fields: {
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/4PvATDnf6qhMVs54dLRLAW/93fcbb352570c8aca40130479ff69093/work_img3.png',
+                                        url: '/images/work-3.webp',
                                     },
                                 },
                             },
@@ -81,7 +81,7 @@
                             image: {
                                 fields: {
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/10SnysGclA3yPUi29hIqrD/11a584d802a0652bf5543bc77ef15342/work_img4.png',
+                                        url: '/images/work-4.webp',
                                     },
                                 },
                             },

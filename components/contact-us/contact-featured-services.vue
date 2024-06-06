@@ -131,7 +131,7 @@
                             videoThumbnailImage: {
                                 fields: {
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/4JEk9Azdv4ElA58Sh2NXDq/b45db57e747877f1a4721da923e1d986/video-thumbnail.jpg',
+                                        url: '/images/thumbnail-video.webp',
                                     },
                                 },
                             },

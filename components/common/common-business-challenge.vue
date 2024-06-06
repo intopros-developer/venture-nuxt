@@ -79,7 +79,7 @@
             },
             image: {
                 type: String,
-                default: '//images.ctfassets.net/koyrlvjc3wvc/1LiWbUsgdNPuIdSwcrtIcn/9d3453171c01163fdf45ab2f118e0043/img-3.jpg',
+                default: '/images/bussiness-bg.webp',
             },
         },
     };

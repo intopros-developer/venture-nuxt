@@ -33,7 +33,7 @@
                                     title: 'as-seen-icon-1',
                                     description: '',
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/6U9LIz97aXNGqSfzH8Gygd/9687ce41d33e4f1d8005a7b7731e5a49/as-seen-icon-1.svg',
+                                        url: '/images/seen-icon-1.svg',
                                     },
                                 },
                             },
@@ -50,7 +50,7 @@
                                     title: 'as-seen-icon-2',
                                     description: '',
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/p80CqppkNaPT18ErKMWop/db835a677276be47df72bc0a34675132/as-seen-icon-2.svg',
+                                        url: '/images/seen-icon-2.svg',
                                     },
                                 },
                             },
@@ -67,7 +67,7 @@
                                     title: 'as-seen-icon-3',
                                     description: '',
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/4BIrTBU2rcFEgXIjF4XNiL/a1998915bd03f9a6abf5be7ba0134144/as-seen-icon-3.svg',
+                                        url: '/images/seen-icon-3.svg',
                                     },
                                 },
                             },
@@ -84,7 +84,7 @@
                                     title: 'as-seen-icon-4',
                                     description: '',
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/1ZcGvj6gIbPHbB4LSCRlZu/cb3e5206f560bf36c74b690ad2cd2d26/as-seen-icon-4.svg',
+                                        url: '/images/seen-icon-4.svg',
                                     },
                                 },
                             },
@@ -101,7 +101,7 @@
                                     title: 'as-seen-icon-5',
                                     description: '',
                                     file: {
-                                        url: '//images.ctfassets.net/koyrlvjc3wvc/5BYGJQUZb6JrXN9SeypNg7/77f62da00e2e0c691727dfdf31a6594d/as-seen-icon-5.svg',
+                                        url: '/images/seen-icon-5.svg',
                                     },
                                 },
                             },
@@ -137,7 +137,7 @@
 
         computed: {
             imgSrc() {
-                return this.asSeenImage ? this.asSeenImage : '/assets/img/img-11.jpg';
+                return this.asSeenImage ? this.asSeenImage : '/images/que-4.webp';
             },
         },
     };

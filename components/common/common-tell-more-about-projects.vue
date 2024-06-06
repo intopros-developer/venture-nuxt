@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-cover bg-[32%_top] bg-no-repeat pb-[72px] pt-[112px] lg:bg-[center_top_25%]" :style="{ backgroundColor: bgColor, backgroundImage: backgroundImage }">
+    <div class="bg-cover bg-[32%_top] bg-no-repeat pb-[72px] pt-[112px] lg:bg-[center_top_25%]" :style="{ backgroundColor: bgColor, backgroundImage: `url${imageUrl}` }">
         <div class="container lg:px-[97px] xl:px-4">
             <div class="items-start justify-between gap-5 lg:flex xl:gap-[107px]">
                 <div class="relative">
@@ -133,14 +133,14 @@
                     {
                         id: 1,
                         attributes: {
-                            iconUrl: 'https://venturefund.vercel.app/assets/img/placement-logo-3.png',
+                            iconUrl: '/images/placement-logo-3.webp',
                         },
                     },
                 ],
             },
             imageUrl: {
                 type: String,
-                default: '/assets/img/image-17.webp',
+                default: '/images/bg-banner-long.webp',
             },
         },
         data() {
@@ -178,25 +178,6 @@
         },
 
         methods: {
-            setupIntersectionObserver() {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            this.loadBackgroundImage();
-                            observer.unobserve(this.$refs.careerJoinEvent);
-                        }
-                    });
-                });
-                observer.observe(this.$refs.careerJoinEvent);
-            },
-
-            loadBackgroundImage() {
-                const highResImage = new Image();
-                highResImage.src = this.$props.imageUrl;
-                highResImage.onload = () => {
-                    this.backgroundImage = `url(${this.$props.imageUrl})`;
-                };
-            },
             onFileChange(event) {
                 const file = event.target.files[0];
                 const fileType = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
@@ -247,9 +228,6 @@
                     this.isSubmitting = false;
                 }
             },
-        },
-        mounted() {
-            this.setupIntersectionObserver();
         },
     };
 </script>

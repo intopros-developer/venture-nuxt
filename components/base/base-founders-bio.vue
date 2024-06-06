@@ -83,35 +83,6 @@
             </div>
         </section>
 
-        <!-- <section class="pt-20 md:pt-28">
-            <div id="about" class=" px-10 md:px-4 lg:px-[97px] xl:px-4">
-                <div class="mb-8 flex items-center justify-center gap-[33px] text-center">
-                    <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
-                    <h2 class="text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl"
-                        v-html="content.section2Title"></h2>
-                    <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
-                </div>
-                <div class="container">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-                        <div class="border border-white rounded overflow-hidden shadow-xl">
-                            <div class="bg-primary py-16">
-                                1
-                            </div>
-                            <div class="py-10 px-2 bg-white ">
-                                Choose from 5-day standard and
-                                expedited options. Deadlines met.
-                            </div>
-                            <div>
-                                <img loading="lazy" class="object-cover h-48 w-full " src="https://venturefund.vercel.app/assets/img/career-que-1.jpg "
-                                    alt="image" />
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
         <section class="container py-24">
             <div class="justify-content-center grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
                 <div v-for="(icon, ic) in icons" :key="ic" class="justify-self-center">

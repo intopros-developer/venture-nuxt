@@ -112,7 +112,7 @@
                         attributes: {
                             name: 'Ted Van Samsung',
                             description: "I'm an executive with global master franchising, and I have collaborated internationally with many entrepreneurs. Arleo ",
-                            profileImgUrl: 'https://images.ctfassets.net/koyrlvjc3wvc/5H1y3ht65ezlbwrcC9qVLI/9ddba90f7019732147496420476b7b6a/Ted_Van_Samang.png',
+                            profileImgUrl: '/images/clients/Ted_Van_Samang.webp',
                             rating: 5,
                             googleLink: 'https://google.com',
                             yelpLink: null,

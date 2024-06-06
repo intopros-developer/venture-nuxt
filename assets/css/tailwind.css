@@ -11,17 +11,6 @@
 
 @font-face {
     font-family: 'ProximaNova';
-    src: url('https://use.typekit.net/af/199a3f/00000000000000007735955e/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3') format('woff2'),
-        url('https://use.typekit.net/af/199a3f/00000000000000007735955e/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3') format('woff'),
-        url('https://use.typekit.net/af/199a3f/00000000000000007735955e/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3') format('opentype');
-    font-display: auto;
-    font-style: normal;
-    font-weight: 800;
-    font-stretch: normal;
-}
-
-@font-face {
-    font-family: 'ProximaNova';
     src: url('https://use.typekit.net/af/e4b1a9/000000000000000077359571/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3') format('woff2'),
         url('https://use.typekit.net/af/e4b1a9/000000000000000077359571/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3') format('woff'),
         url('https://use.typekit.net/af/e4b1a9/000000000000000077359571/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3') format('opentype');
@@ -53,38 +42,6 @@
     font-stretch: normal;
 }
 
-/* @font-face {
-    font-family: 'ProximaNova';
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url(/assets/fonts/ProximaNova-Regular.woff2) format('woff2'),
-        url(/assets/fonts/ProximaNova-Regular.woff) format('woff');
-}
-@font-face {
-    font-family: 'ProximaNova';
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-    src: url(/assets/fonts/ProximaNova-Semibold.woff2) format('woff2'),
-        url(/assets/fonts/ProximaNova-Semibold.woff) format('woff');
-}
-@font-face {
-    font-family: 'ProximaNova';
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    src: url(/assets/fonts/ProximaNova-Bold.woff2) format('woff2'),
-        url(/assets/fonts/ProximaNova-Bold.woff) format('woff');
-}
-@font-face {
-    font-family: 'ProximaNova';
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-    src: url(/assets/fonts/ProximaNova-Extrabld.woff2) format('woff2'),
-        url(/assets/fonts/ProximaNova-Extrabld.woff) format('woff');
-} */
 .scrollbar::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -115,7 +72,7 @@
         @apply w-full rounded-[10px] border-0 p-4 text-sm font-medium leading-[14px] -tracking-[0.02px] text-black transition-all duration-300 placeholder:text-[#A5A5A5] placeholder:text-[#A5A5A5]/70 focus:border-0 focus:outline-0 focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 xl:p-[18px] xl:text-sm xl:leading-5 xl:-tracking-[0.03px];
     }
     .form-select {
-        @apply block w-full max-w-[294px] rounded-md border-2 border-white bg-transparent bg-[url(/assets/img/selection-arrow.svg)] bg-[length:15px_8px] bg-[right_20px_center] px-10 py-5 text-left text-[25px] text-white focus:border-white focus:outline-0 focus:ring-0 xl:max-w-[406px] xl:py-8;
+        @apply block w-full max-w-[294px] rounded-md border-2 border-white bg-transparent bg-[url(/images/selection-arrow.svg)] bg-[length:15px_8px] bg-[right_20px_center] px-10 py-5 text-left text-[25px] text-white focus:border-white focus:outline-0 focus:ring-0 xl:max-w-[406px] xl:py-8;
     }
     .form-checkbox {
         @apply h-5 w-5 rounded-[1px] border border-[#d8d8d8] bg-white text-primary focus:!shadow-none focus:ring-0;

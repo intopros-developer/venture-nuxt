@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="relative bg-[url('/assets/img/terms-and-conditions-top.png')] bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]">
+        <section class="relative bg-[url('/images/terms-and-conditions-banner.webp')] bg-cover bg-[right_48%_top] bg-no-repeat pb-9 pt-[164px] md:bg-[center_top_25%] xl:pb-[75px]">
             <div class="absolute left-0 top-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[246px]"></div>
             <div class="container relative z-10 lg:px-[97px] xl:px-4">
@@ -151,7 +151,7 @@
                 link: [
                     {
                         rel: 'preload',
-                        href: '/assets/img/terms-and-conditions-top.png',
+                        href: '/images/terms-and-conditions-banner.webp',
                         as: 'image',
                     },
                 ],

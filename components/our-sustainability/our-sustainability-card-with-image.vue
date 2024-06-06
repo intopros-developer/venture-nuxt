@@ -41,7 +41,7 @@
                         image: {
                             fields: {
                                 file: {
-                                    url: '//images.ctfassets.net/koyrlvjc3wvc/4tyXkBS5yBBWxIucd0xDLs/65b43390e806db86d3c1364026abe33e/img-5.png',
+                                    url: '/images/subscribe-img.webp',
                                 },
                             },
                         },
@@ -59,7 +59,7 @@
 
         computed: {
             imgSrc() {
-                return this.value ? `https:${this.value.image.fields.file.url}` : '/assets/img/img-5.png';
+                return this.value ? `https:${this.value.image.fields.file.url}` : '/images/subscribe-img.webp';
             },
         },
     };

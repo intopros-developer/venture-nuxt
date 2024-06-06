@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section ref="bannerSection" class="relative h-[400px] bg-cover bg-[right_32%_top] bg-no-repeat pb-12 md:bg-[center_top_8%] lg:h-[800px] xl:bg-[center_top_12%] xl:pb-[67px]" :style="{ backgroundImage: bannerBackgroundImage }">
+        <section class="relative h-[400px] bg-cover bg-[right_32%_top] bg-no-repeat pb-12 md:bg-[center_top_8%] lg:h-[800px] xl:bg-[center_top_12%] xl:pb-[67px]" v-lazyload-bg="content.bannerImgUrl">
             <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[500px]"></div>
             <div class="container relative z-10 flex h-full items-center lg:px-[97px] xl:pl-20">
@@ -82,18 +82,6 @@
                 </div>
             </div>
         </section>
-
-        <section class="container py-24">
-            <div class="justify-content-center grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
-                <div class="justify-self-center">
-                    <div class="flex flex-col items-center justify-center">
-                        <nuxt-img format="webp" src="https://cdn-icons-png.flaticon.com/512/3621/3621464.png" alt="arleodordar" loading="lazy" class="h-10 w-10" />
-
-                        <p>arleodordar</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 </template>
 
@@ -109,13 +97,12 @@
                             sectionName: '1',
                             title: 'Rapid Execution',
                             description: 'Choose from 5-day standard and expedited options. Deadlines met.',
-                            imgUrl: 'https://images.ctfassets.net/koyrlvjc3wvc/36a92TGHdSkErGnPlM7V1y/4d07d453d834a871ea453530c84cb037/rapid.png',
+                            imgUrl: '/images/rapid-execution.webp',
                         },
                     },
                 ],
             },
             title: String,
-            bannerBackgroundImage: '',
         },
 
         async asyncData(context) {
@@ -213,34 +200,6 @@
             section3Data() {
                 return this?.content?.section3Component?.data || [];
             },
-            // section4Data() {
-            //     return this?.content?.section4Component?.data || []
-            // },
-            // section5Data() {
-            //     return this?.content?.section4Component?.data || []
-            // },
-            // section6Data() {
-            //     return this?.content?.section6Component?.data || []
-            // },
-            // logoSliders() {
-            //     return this.content?.logoSlider?.data?.attributes?.logoUrls || []
-            // },
-            // readyToTalkForm() {
-            //     return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } }
-            // }
-        },
-        mounted() {
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        this.bannerBackgroundImage = `url(${this.content.bannerImgUrl})`;
-                        observer.unobserve(this.$refs.bannerSection);
-                    }
-                },
-                { rootMargin: '0px 0px 50px 0px' }
-            );
-
-            observer.observe(this.$refs.bannerSection);
         },
     };
 </script>

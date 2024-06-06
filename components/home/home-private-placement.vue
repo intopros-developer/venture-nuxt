@@ -57,7 +57,7 @@
                     {
                         id: 1,
                         attributes: {
-                            iconUrl: 'https://venturefund.vercel.app/assets/img/placement-logo-3.png',
+                            iconUrl: '/images/placement-logo-3.webp',
                         },
                     },
                 ],

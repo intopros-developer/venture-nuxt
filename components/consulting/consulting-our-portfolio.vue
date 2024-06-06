@@ -44,49 +44,49 @@
                 isShowReadMore: false,
                 content: [
                     {
-                        img: '/assets/img/career-que-1.jpg',
+                        img: '/images/career-que-1.webp',
                         subTitle: 'AI/ML Cybersecurity',
                         title: 'Mobile tools designed for the blue-collar workforce.',
                         description:
                             "A leading construction technology company, XYZ is dedicated to revolutionizing the construction industry through innovative solutions. With their cutting-edge field data platform, they are streamlining critical field workflows and helping teams capture, share, and analyze project performance in real-time. XYZ's mission is to enable construction teams to work smarter, faster, and more efficiently than ever before.",
                     },
                     {
-                        img: '/assets/img/career-que-2.jpg',
+                        img: '/images/career-que-2.webp',
                         subTitle: 'AI/ML Cybersecurity',
                         title: 'Mobile tools designed for the blue-collar workforce.',
                         description:
                             "A leading construction technology company, XYZ is dedicated to revolutionizing the construction industry through innovative solutions. With their cutting-edge field data platform, they are streamlining critical field workflows and helping teams capture, share, and analyze project performance in real-time. XYZ's mission is to enable construction teams to work smarter, faster, and more efficiently than ever before.",
                     },
                     {
-                        img: '/assets/img/career-que-3.jpg',
+                        img: '/images/career-que-3.webp',
                         subTitle: 'AI/ML Cybersecurity',
                         title: 'Mobile tools designed for the blue-collar workforce.',
                         description:
                             "A leading construction technology company, XYZ is dedicated to revolutionizing the construction industry through innovative solutions. With their cutting-edge field data platform, they are streamlining critical field workflows and helping teams capture, share, and analyze project performance in real-time. XYZ's mission is to enable construction teams to work smarter, faster, and more efficiently than ever before.",
                     },
                     {
-                        img: '/assets/img/career-que-4.jpg',
+                        img: '/images/career-que-4.webp',
                         subTitle: 'AI/ML Cybersecurity',
                         title: 'Mobile tools designed for the blue-collar workforce.',
                         description:
                             "A leading construction technology company, XYZ is dedicated to revolutionizing the construction industry through innovative solutions. With their cutting-edge field data platform, they are streamlining critical field workflows and helping teams capture, share, and analyze project performance in real-time. XYZ's mission is to enable construction teams to work smarter, faster, and more efficiently than ever before.",
                     },
                     {
-                        img: '/assets/img/career-que-5.jpg',
+                        img: '/images/career-que-5.webp',
                         subTitle: 'AI/ML Cybersecurity',
                         title: 'Mobile tools designed for the blue-collar workforce.',
                         description:
                             "A leading construction technology company, XYZ is dedicated to revolutionizing the construction industry through innovative solutions. With their cutting-edge field data platform, they are streamlining critical field workflows and helping teams capture, share, and analyze project performance in real-time. XYZ's mission is to enable construction teams to work smarter, faster, and more efficiently than ever before.",
                     },
                     {
-                        img: '/assets/img/career-que-6.jpg',
+                        img: '/images/career-que-6.webp',
                         subTitle: 'AI/ML Cybersecurity',
                         title: 'Mobile tools designed for the blue-collar workforce.',
                         description:
                             "A leading construction technology company, XYZ is dedicated to revolutionizing the construction industry through innovative solutions. With their cutting-edge field data platform, they are streamlining critical field workflows and helping teams capture, share, and analyze project performance in real-time. XYZ's mission is to enable construction teams to work smarter, faster, and more efficiently than ever before.",
                     },
                     {
-                        img: '/assets/img/career-que-7.jpg',
+                        img: '/images/career-que-7.webp',
                         subTitle: 'AI/ML Cybersecurity',
                         title: 'Mobile tools designed for the blue-collar workforce.',
                         description:

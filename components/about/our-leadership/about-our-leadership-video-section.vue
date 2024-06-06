@@ -1,7 +1,7 @@
 <template>
     <section class="group relative h-[400px] overflow-hidden bg-cover bg-center bg-no-repeat lg:h-[571px]">
         <video v-if="showOverlay" class="force-video-reload responsive-contact-us-section-video absolute h-full w-full object-cover xl:-mt-[10%] xl:h-auto" :style="videoHeight" autoplay loop muted playsinline>
-            <source :src="`https://videos.ctfassets.net/koyrlvjc3wvc/654wWfXJHIUtKBU5UXfRNF/f8b62c2d5ca30297b5437de136468c94/careers_video_01.mp4`" type="video/mp4" />
+            <source :src="`/videos/careers-video.mp4`" type="video/mp4" loading="lazy" />
         </video>
 
         <div v-if="showOverlay" class="absolute inset-0 z-[8] bg-[#1f3244]/[0.41]"></div>

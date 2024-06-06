@@ -13,7 +13,7 @@
                     <div class="">
                         <div class="ml-0">
                             <nuxt-link :to="localePath('/')" aria-label="Venture Plans" class="block w-full cursor-pointer px-5 py-4" @click.native="$store.dispatch('nav/toggle')">
-                                <nuxt-img format="webp" src="/assets/img/logo-black.svg" alt="Logo" class="h-[23px] w-[93px]" loading="lazy" />
+                                <nuxt-img format="webp" src="/images/logo-black.svg" alt="Logo" class="h-[23px] w-[93px]" loading="lazy" />
                             </nuxt-link>
                         </div>
                         <!-- <div class="mb-5 grid justify-end text-right">
