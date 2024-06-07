@@ -30,6 +30,7 @@
                     width="100%"
                     :height="videoHeight"
                     image_resize="450"
+                    loading="lazy"
                 ></iframe>
             </div>
             <button v-if="showOverlay" class="absolute inset-x-0 top-1/2 z-10 mx-auto w-[113px] -translate-y-1/2 bg-primary/[0.71] px-11 py-5 group-hover:bg-primary" @click="play()">

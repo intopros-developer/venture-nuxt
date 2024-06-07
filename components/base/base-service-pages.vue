@@ -254,7 +254,7 @@
                         <div class="swiper-button-prev -ml-3"></div>
                     </div>
 
-                    <iframe v-else class="h-screen w-full" :src="activeProductData.pdfUrlField" frameborder="0"></iframe>
+                    <iframe v-else class="h-screen w-full" :src="activeProductData.pdfUrlField" loading="lazy" frameborder="0"></iframe>
                 </div>
             </div>
         </common-modal>
