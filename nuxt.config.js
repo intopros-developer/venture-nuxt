@@ -111,10 +111,6 @@ export default {
 
     css: ['~/assets/css/tailwind.css'],
 
-    router: {
-        middleware: 'route',
-    },
-
     plugins: [
         { src: '~/plugins/axios.js' },
         { src: '~/plugins/lazyload-bg.js' },
