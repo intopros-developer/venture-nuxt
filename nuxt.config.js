@@ -1,9 +1,6 @@
 import fetch from "node-fetch"
 
 export default {
-    server: {
-        // host: 0,
-    },
     head: {
         title: 'Venture Plans',
         htmlAttrs: {
@@ -189,6 +186,10 @@ export default {
         fallbackLocale: {
             default: 'en',
         },
+    },
+
+    image: {
+        // provider: 'static',
     },
 
     generate: {
