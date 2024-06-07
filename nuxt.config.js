@@ -1,11 +1,7 @@
-import fetch from 'node-fetch';
-
 export default {
-    buildDir: 'nuxt-dist',
     server: {
         // host: 0,
     },
-    dev: false,
     head: {
         title: 'Venture Plans',
         htmlAttrs: {
@@ -112,6 +108,10 @@ export default {
     },
 
     css: ['~/assets/css/tailwind.css'],
+
+    router: {
+        middleware: 'route',
+    },
 
     plugins: [
         { src: '~/plugins/axios.js' },
