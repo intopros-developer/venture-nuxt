@@ -13,7 +13,7 @@
                     <a v-else :href="buttonUrl" class="b-btn hidden text-xs md:block lg:max-w-[322px] lg:py-6" target="_blank">{{ buttonTitle }}</a>
                 </div>
 
-                <nuxt-img :src="imgUrl" class="clip-none" loading="lazy" alt="Worl at the best place" format="webp" />
+                <img :src="imgUrl" class="clip-none" loading="lazy" alt="Worl at the best place" />
 
                 <a :href="buttonUrl" class="b-btn mx-auto text-xs md:hidden lg:max-w-[322px] lg:py-6">{{ buttonTitle }}</a>
             </div>

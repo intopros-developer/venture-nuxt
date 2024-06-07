@@ -25,7 +25,7 @@
                     <p class="b-btn hidden py-[30px] text-[14px] font-bold -tracking-[0.03px] md:block">{{ value.buttonTitle }}</p>
                 </div>
 
-                <nuxt-img format="webp" :src="imgSrc" alt="card-image" loading="lazy" />
+                <img :src="imgSrc" alt="card-image" loading="lazy" />
                 <p class="b-btn mx-auto md:hidden">{{ value.buttonTitle }}</p>
             </div>
         </div>

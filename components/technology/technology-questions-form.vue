@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-transparent md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                    <nuxt-img format="webp" :src="image" class="h-full w-full object-cover" alt="Form Question" loading="lazy" />
+                    <img :src="image" class="h-full w-full object-cover" alt="Form Question" loading="lazy" />
                 </div>
             </div>
         </div>

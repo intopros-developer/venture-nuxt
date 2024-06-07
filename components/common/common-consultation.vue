@@ -2,12 +2,12 @@
     <section class="pb-10 md:pb-16 xl:pb-[115px]">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="mb-4">
-                <nuxt-img format="webp" :src="`${imgSrc}`" alt="Img-11" loading="lazy" />
+                <img :src="`${imgSrc}`" alt="Img-11" loading="lazy" />
             </div>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:gap-[70px]">
                 <div v-for="(value, i) in values" :key="i" class="bg-white shadow-[0_3px_6px_0_rgba(0,0,0,0.16)]">
                     <div class="flex items-center justify-center bg-primary/80 px-3 py-[15px] text-white xl:px-6">
-                        <nuxt-img format="webp" :src="`${value.fields.icon.fields.file.url}`" :alt="value.fields.title" loading="lazy" class="h-[50px] w-[50px]" />
+                        <img :src="`${value.fields.icon.fields.file.url}`" :alt="value.fields.title" loading="lazy" class="h-[50px] w-[50px]" />
                     </div>
                     <div class="px-6 py-5 text-center xl:p-8">
                         <p class="mb-[14px] text-[23px] font-extrabold leading-6 text-black">{{ value.fields.title }}</p>

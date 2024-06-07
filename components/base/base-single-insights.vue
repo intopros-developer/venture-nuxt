@@ -9,7 +9,7 @@
                         <p class="font-[1.3rem] mt-4 leading-[26px] text-[#030303]">{{ content.bannerSubtitle }}</p>
                     </div>
                     <div class="relative bottom-0 left-[-50vw] top-0 ml-[50%] h-80 w-[100vw] max-w-none md:absolute md:left-[calc(50%+2.5rem)] md:ml-0 md:mt-0 md:h-full md:w-[calc(50vw-2.5rem)]">
-                        <nuxt-img format="webp" :src="content.bannerImgUrl" class="h-full w-full object-cover" :alt="content.bannerTitle" loading="lazy" />
+                        <img :src="content.bannerImgUrl" class="h-full w-full object-cover" :alt="content.bannerTitle" loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                             <div v-for="(author, i) in section1Column1Data" :key="i" class="shrink-0 border-[#e8e8e8] lg:border-t" :class="{ 'lg:pt-[29px]': i !== 0 }">
                                 <h4 v-if="i === 0" class="pt-8 font-semibold leading-[22px]">{{ content.section1Column1Title }}</h4>
                                 <div class="mt-[5px]">
-                                    <nuxt-img format="webp" :src="author.attributes.imageUrl" class="h-24 w-24 rounded-[5px] object-cover shadow-[0_3px_6px_rgba(0,0,0,0.44)]" :alt="author.attributes.authorName" loading="lazy" />
+                                    <img :src="author.attributes.imageUrl" class="h-24 w-24 rounded-[5px] object-cover shadow-[0_3px_6px_rgba(0,0,0,0.44)]" :alt="author.attributes.authorName" loading="lazy" />
                                 </div>
                                 <p class="mt-3 leading-[22px]">{{ author.attributes.authorName }}</p>
                                 <p class="mt-[3px] text-sm leading-[13px] text-[#707070]">{{ author.attributes.authorDesignation }}</p>
@@ -85,7 +85,7 @@
                                     <p>{{ content.img1Description }}</p>
                                 </div>
                             </div>
-                            <nuxt-img format="webp" class="my-10 w-full" :src="content.img1Url" alt="Figure 1" loading="lazy" />
+                            <img class="my-10 w-full" :src="content.img1Url" alt="Figure 1" loading="lazy" />
                         </div>
                         <div class="space-y-9 pt-[18px]">
                             <common-custom-strapi-display classes="text-lg" :data="content.section3Paragraph"></common-custom-strapi-display>
@@ -106,7 +106,7 @@
                         <div v-if="insightPost1" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost1.Insightsource }}</p>
-                                <nuxt-img format="webp" :src="insightPost1.imgUrl" :alt="insightPost1.title" loading="lazy" />
+                                <img :src="insightPost1.imgUrl" :alt="insightPost1.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
                                     <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost1.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost1.paragraph }}</p>
@@ -142,7 +142,7 @@
                                     <p>{{ content.img2Description }}</p>
                                 </div>
                             </div>
-                            <nuxt-img format="webp" class="my-10 w-full" :src="content.img2Url" alt="Figure 2" loading="lazy" />
+                            <img class="my-10 w-full" :src="content.img2Url" alt="Figure 2" loading="lazy" />
                         </div>
                         <div class="space-y-9 pt-[18px]">
                             <common-custom-strapi-display classes="text-lg" :data="content.section6Paragraph"></common-custom-strapi-display>
@@ -154,7 +154,7 @@
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost2.Insightsource }}</p>
 
-                                <nuxt-img format="webp" :src="insightPost2.imgUrl" :alt="insightPost2.title" loading="lazy" />
+                                <img :src="insightPost2.imgUrl" :alt="insightPost2.title" loading="lazy" />
 
                                 <div class="px-[13px] py-[15px]">
                                     <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost2.title }}</p>
@@ -181,7 +181,7 @@
                                     <p>{{ content.img3Description }}</p>
                                 </div>
                             </div>
-                            <nuxt-img format="webp" class="my-10 w-full" :src="content.img3Url" alt="Figure 3" loading="lazy" />
+                            <img class="my-10 w-full" :src="content.img3Url" alt="Figure 3" loading="lazy" />
                         </div>
                         <div class="space-y-9">
                             <common-custom-strapi-display classes="text-lg" :data="content.section8Paragraph"></common-custom-strapi-display>
@@ -191,7 +191,7 @@
                         <div v-if="insightPost3" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost3.Insightsource }}</p>
-                                <nuxt-img format="webp" :src="insightPost3.imgUrl" :alt="insightPost3.title" loading="lazy" />
+                                <img :src="insightPost3.imgUrl" :alt="insightPost3.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
                                     <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost3.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost3.paragraph }}</p>
@@ -261,7 +261,7 @@
                         <div v-if="insightPost4" class="mt-[51px]">
                             <div class="border border-[#f4f5f7]">
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost4.Insightsource }}</p>
-                                <nuxt-img format="webp" :src="insightPost4.imgUrl" :alt="insightPost4.title" loading="lazy" />
+                                <img :src="insightPost4.imgUrl" :alt="insightPost4.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
                                     <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost4.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost4.paragraph }}</p>

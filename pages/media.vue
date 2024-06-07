@@ -102,7 +102,7 @@
                     <div class="col-span-2">
                         <div class="flex items-start gap-[17px]">
                             <div class="flex h-[62px] w-[62px] shrink-0 items-center justify-center rounded-full bg-white p-[7px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)]">
-                                <nuxt-img format="webp" :src="media.attributes.iconUrl" :alt="media.attributes.title" loading="lazy" />
+                                <img :src="media.attributes.iconUrl" :alt="media.attributes.title" loading="lazy" />
                             </div>
                             <div class="max-w-2xl pt-1 lg:pt-0">
                                 <p class="text-xl font-semibold -tracking-[0.05px] text-[#030303] lg:text-[25px]">{{ media.attributes.title }}</p>
@@ -137,7 +137,7 @@
                     <div class="col-span-2">
                         <div class="flex items-start gap-[17px]">
                             <div class="flex h-[62px] w-[62px] shrink-0 items-center justify-center rounded-full bg-white p-[7px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)]">
-                                <nuxt-img format="webp" :src="release.attributes.iconUrl" :alt="release.attributes.title" loading="lazy" />
+                                <img :src="release.attributes.iconUrl" :alt="release.attributes.title" loading="lazy" />
                             </div>
                             <div class="max-w-2xl pt-1 lg:pt-0">
                                 <p class="text-xl font-semibold -tracking-[0.05px] text-[#030303] lg:text-[25px]">{{ release.attributes.title }}</p>
@@ -181,13 +181,7 @@
                         <div class="flex items-center gap-3 xl:gap-[52px]">
                             <div>
                                 <nuxt-link to="/insights">
-                                    <nuxt-img
-                                        format="webp"
-                                        :src="trend.attributes.imgUrl"
-                                        :alt="trend.attributes.title"
-                                        class="h-28 w-28 rounded-[5px] object-cover shadow-[0_3px_6px_rgba(0,0,0,0.44)] xl:h-[127px] xl:w-[127px]"
-                                        loading="lazy"
-                                    />
+                                    <img :src="trend.attributes.imgUrl" :alt="trend.attributes.title" class="h-28 w-28 rounded-[5px] object-cover shadow-[0_3px_6px_rgba(0,0,0,0.44)] xl:h-[127px] xl:w-[127px]" loading="lazy" />
                                 </nuxt-link>
                             </div>
                             <div>
@@ -216,7 +210,7 @@
                         :class="{ '!border-0 lg:col-span-2': i === 2, '!border-0': i === 6, 'md:border-l lg:border-0': i % 2 !== 0 }"
                     >
                         <div class="h-[125px] w-full shadow-[0px_3px_6px_rgba(0,0,0,0.6)] xl:h-[173px]">
-                            <nuxt-img format="webp" :src="insight.attributes.imgUrl" :alt="insight.attributes.Insightsource" class="h-full w-full object-cover" loading="lazy" />
+                            <img :src="insight.attributes.imgUrl" :alt="insight.attributes.Insightsource" class="h-full w-full object-cover" loading="lazy" />
                         </div>
                         <div class="flex h-[calc(100%-125px)] flex-col justify-between py-3 xl:h-[calc(100%-173px)] xl:py-[34px]">
                             <div>

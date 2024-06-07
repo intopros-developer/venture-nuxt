@@ -17,7 +17,7 @@
                 <div class="grid grid-cols-1 gap-[51px] sm:grid-cols-2 md:mb-[123px] md:grid-cols-3 xl:gap-24">
                     <div v-for="(team, i) in teams" :key="i">
                         <div class="mx-auto mb-[25px] h-[295px] w-[295px] overflow-hidden rounded-full sm:h-[188px] sm:w-[188px] xl:mb-9 xl:h-[276px] xl:w-[276px]">
-                            <nuxt-img format="webp" :src="`${team.attributes.imgUrl}`" :alt="team.attributes.name" loading="lazy" />
+                            <img :src="`${team.attributes.imgUrl}`" :alt="team.attributes.name" loading="lazy" />
                         </div>
                         <div class="text-center">
                             <p class="text-[20px] font-bold leading-6 -tracking-[0.04px] text-[#586376] xl:-tracking-[0.05px]">
@@ -33,7 +33,7 @@
                             <icons-downarrow class="w-2 xl:w-[11px]" :class="{ 'rotate-180': readMore.includes(i) }" />
                         </button>
 
-                        <nuxt-img format="webp" :src="`${team.attributes.logoUrl || team.attributes.iconUrl}`" :alt="team.attributes.name + '_icon'" class="mx-auto mt-[23px] h-11" loading="lazy" />
+                        <img :src="`${team.attributes.logoUrl || team.attributes.iconUrl}`" :alt="team.attributes.name + '_icon'" class="mx-auto mt-[23px] h-11" loading="lazy" />
                     </div>
                 </div>
             </div>

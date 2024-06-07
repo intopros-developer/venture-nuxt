@@ -44,9 +44,8 @@
                 </div>
                 <div v-if="serviceDescription" class="float-1">
                     <div class="mb-[34px] w-full bg-black/10 shadow-[0_3px_6px_rgba(0,0,0,0.75)] xl:h-[474px]">
-                        <nuxt-img
+                        <img
                             v-if="serviceDescription.fields.descriptionMediaType === 'image'"
-                            format="webp"
                             :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`"
                             :alt="serviceDescription.fields.descriptionPara"
                             loading="lazy"

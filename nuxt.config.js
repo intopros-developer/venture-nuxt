@@ -134,7 +134,6 @@ export default {
 
     modules: [
         '@nuxtjs/axios',
-        '@nuxt/image',
         '@nuxtjs/auth-next',
         '@nuxtjs/toast',
         '@nuxtjs/i18n',
@@ -192,10 +191,6 @@ export default {
         fallbackLocale: {
             default: 'en',
         },
-    },
-
-    image: {
-        provider: 'ipx',
     },
 
     generate: {

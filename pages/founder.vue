@@ -46,7 +46,7 @@
                     <h2 class="pb-[43px] text-center text-2xl font-medium text-[#0B3A02] md:text-[31px]" v-html="content.section3Title"></h2>
                     <div class="flex flex-wrap items-center justify-center gap-4 lg:gap-[50px]">
                         <div v-for="(logo, i) in section3Data" :key="i" class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white p-5 px-[17px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[126px] xl:w-[126px]">
-                            <nuxt-img :src="logo.attributes.iconUrl" :alt="'icon_' + i" loading="lazy" />
+                            <img :src="logo.attributes.iconUrl" :alt="'icon_' + i" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                                 <p class="text-[15px] leading-6 -tracking-[0.03]">{{ value.attributes.description }}</p>
                             </div>
                             <div class="h-48 w-full md:h-32 lg:h-48">
-                                <nuxt-img format="webp" :src="value.attributes.imgUrl" alt="RECOGNITIONS & AWARDS" loading="lazy" class="h-full w-full object-cover" />
+                                <img :src="value.attributes.imgUrl" alt="RECOGNITIONS & AWARDS" loading="lazy" class="h-full w-full object-cover" />
                             </div>
                         </div>
                     </div>

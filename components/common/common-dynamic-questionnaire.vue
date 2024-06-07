@@ -3,7 +3,7 @@
         <div v-if="finalStepActivated" class="flex flex-col items-center justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
             <div>
                 <div>
-                    <nuxt-img format="webp" src="/images/congo-icon.svg" alt="Congo Icon Svg" loading="lazy" />
+                    <img src="/images/congo-icon.svg" alt="Congo Icon Svg" loading="lazy" />
 
                     <h2
                         class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-transparent md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                <nuxt-img format="webp" :src="finalExitDetails.image" alt="Exit Details Img" loading="lazy" class="h-full w-full object-cover" />
+                <img :src="finalExitDetails.image" alt="Exit Details Img" loading="lazy" class="h-full w-full object-cover" />
             </div>
         </div>
         <div v-else id="question-box" class="flex flex-col items-start justify-between gap-5 md:flex-row md:gap-10 lg:gap-20 xl:gap-[98px]">
@@ -141,7 +141,7 @@
                 </div>
             </div>
             <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-transparent md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                <nuxt-img format="webp" :src="currentQuestion.image" alt="Current Question" class="h-full w-full object-cover" loading="lazy" />
+                <img :src="currentQuestion.image" alt="Current Question" class="h-full w-full object-cover" loading="lazy" />
             </div>
         </div>
     </section>

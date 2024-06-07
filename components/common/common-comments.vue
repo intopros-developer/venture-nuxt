@@ -27,7 +27,7 @@
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
-                            <nuxt-img format="webp" src="/images/comments/profile-picture-2.webp" alt="Michael Gough Profile" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Michael Gough
+                            <img src="/images/comments/profile-picture-2.webp" alt="Michael Gough Profile" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Michael Gough
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time></p>
                     </div>
@@ -74,7 +74,7 @@
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
-                            <nuxt-img format="webp" src="/images/comments/profile-picture-5.webp" alt="Jese Leos Profile" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Jese Leos
+                            <img src="/images/comments/profile-picture-5.webp" alt="Jese Leos Profile" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Jese Leos
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-12" title="February 12th, 2022">Feb. 12, 2022</time></p>
                     </div>
@@ -119,7 +119,7 @@
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
-                            <nuxt-img format="webp" src="/images/comments/profile-picture-3.webp" alt="Bonnie Green Profile" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Bonnie Green
+                            <img src="/images/comments/profile-picture-3.webp" alt="Bonnie Green Profile" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Bonnie Green
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-03-12" title="March 12th, 2022">Mar. 12, 2022</time></p>
                     </div>
@@ -164,7 +164,7 @@
                 <footer class="mb-2 flex items-center justify-between">
                     <div class="flex items-center">
                         <p class="mr-3 inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white">
-                            <nuxt-img format="webp" src="/images/comments/profile-picture-4.webp" alt="Helene Engels Profile" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Helene Engels
+                            <img src="/images/comments/profile-picture-4.webp" alt="Helene Engels Profile" class="mr-2 h-6 w-6 rounded-full" loading="lazy" /> Helene Engels
                         </p>
                         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-06-23" title="June 23rd, 2022">Jun. 23, 2022</time></p>
                     </div>

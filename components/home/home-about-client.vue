@@ -13,7 +13,7 @@
                     <div v-for="(data, i) in slider_data" :key="i" class="swiper-slide !h-auto">
                         <div class="swiper-slides-box flex overflow-hidden">
                             <div style="background-image: linear-gradient(162deg, #ffffff 0%, #f0f9ff 100%)" class="px-[22px] pb-3 pt-[28px] text-center">
-                                <nuxt-img :src="data.attributes.profileImgUrl" class="mx-auto h-[115px] w-[115px] rounded-full object-cover" :alt="data.attributes.name" loading="lazy" format="webp" />
+                                <img :src="data.attributes.profileImgUrl" class="mx-auto h-[115px] w-[115px] rounded-full object-cover" :alt="data.attributes.name" loading="lazy" />
                                 <div class="max-w-[120px] pt-2.5">
                                     <p v-if="data.attributes.name" class="text-sm font-bold leading-[23px]">{{ data.attributes.name }}</p>
                                     <p class="pt-3.5 text-[15px] text-[#6c7d88]">{{ data.attributes.companyName }}</p>
@@ -51,7 +51,7 @@
             <div v-for="(data, i) in slider_data" :key="i" class="swiper-slide !h-auto">
                 <div class="swiper-slides-box flex overflow-hidden">
                     <div style="background-image: linear-gradient(162deg, #ffffff 0%, #f0f9ff 100%)" class="px-[22px] pb-3 pt-[28px] text-center">
-                        <nuxt-img format="webp" :src="data.attributes.profileImgUrl" class="mx-auto h-[115px] w-[115px] rounded-full object-cover" :alt="data.attributes.name" loading="lazy" />
+                        <img :src="data.attributes.profileImgUrl" class="mx-auto h-[115px] w-[115px] rounded-full object-cover" :alt="data.attributes.name" loading="lazy" />
                         <div class="max-w-[120px] pt-2.5">
                             <p v-if="data.attributes.name" class="text-sm font-bold leading-[23px]">{{ data.attributes.name }}</p>
                             <p class="pt-3.5 text-[15px] text-[#6c7d88]">{{ data.attributes.companyName }}</p>

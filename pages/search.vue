@@ -307,7 +307,7 @@
                                 </p>
                             </nuxt-link>
                             <nuxt-link :to="getLink(item)" class="hidden h-[150px] min-w-[200px] max-w-[295px] flex-none overflow-hidden rounded-[3px] md:inline-block">
-                                <nuxt-img format="webp" :src="getImageUrl(item)" class="h-full w-full max-w-[200px] object-cover" alt="Results" loading="lazy" />
+                                <img :src="getImageUrl(item)" class="h-full w-full max-w-[200px] object-cover" alt="Results" loading="lazy" />
                             </nuxt-link>
                         </div>
                     </div>

@@ -16,7 +16,7 @@
                         <p class="text-[15px] leading-6 -tracking-[0.03]">{{ value.attributes.description }}</p>
                     </div>
                     <div class="h-48 w-full md:h-32 lg:h-48">
-                        <nuxt-img format="webp" :src="value.attributes.imgUrl" :alt="value.attributes.title" loading="lazy" class="h-full w-full object-cover" />
+                        <img :src="value.attributes.imgUrl" :alt="value.attributes.title" loading="lazy" class="h-full w-full object-cover" />
                     </div>
                 </div>
             </div>

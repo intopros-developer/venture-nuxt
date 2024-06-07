@@ -51,7 +51,7 @@
                 </div>
                 <div>
                     <div v-if="params.service === 'Harvard Graduate Applications' || params.service === 'Qualifications'" class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-16 md:pt-8">
-                        <nuxt-img format="webp" src="/images/video-thumbnail.webp" class="h-full w-full object-cover" alt="Take your business to the next level" loading="lazy" />
+                        <img src="/images/video-thumbnail.webp" class="h-full w-full object-cover" alt="Take your business to the next level" loading="lazy" />
 
                         <div class="pt-5 md:pt-8">
                             <h4 class="text-xl -tracking-[-0.06px] text-[#2F2F2F] md:text-2xl lg:text-[32px]">Take your business to the next level</h4>
@@ -64,7 +64,7 @@
                     </div>
 
                     <div v-else-if="params.service === 'Available Intern Positions' || params.service === 'About The Workplace'" class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-16 md:pt-8">
-                        <nuxt-img format="webp" src="/images/video-thumbnail.webp" class="h-full w-full object-cover" alt="Take your business to the next level" loading="lazy" />
+                        <img src="/images/video-thumbnail.webp" class="h-full w-full object-cover" alt="Take your business to the next level" loading="lazy" />
 
                         <div class="pt-5 md:pt-8">
                             <h4 class="text-xl -tracking-[-0.06px] text-[#2F2F2F] md:text-2xl lg:text-[32px]">Take your business to the next level</h4>
@@ -80,7 +80,7 @@
                         v-else-if="params.service === 'Elite Level Environment Overview' || params.service === 'Establish A New Franchising Company' || params.service === 'Investor Relations Software (Ai)'"
                         class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-16 md:pt-8"
                     >
-                        <nuxt-img format="webp" src="/images/que-1.webp" class="h-full w-full object-cover" alt="Take your business to the next level" loading="lazy" />
+                        <img src="/images/que-1.webp" class="h-full w-full object-cover" alt="Take your business to the next level" loading="lazy" />
 
                         <div class="pt-5 md:pt-8">
                             <h4 class="text-xl -tracking-[-0.06px] text-[#2F2F2F] md:text-2xl lg:text-[32px]">Take your business to the next level</h4>
@@ -93,7 +93,7 @@
                     </div>
 
                     <div v-else class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-16 md:pt-8">
-                        <nuxt-img format="webp" src="/images/que-2.webp" class="h-full w-full object-cover" alt="Take your business to the next level" loading="lazy" />
+                        <img src="/images/que-2.webp" class="h-full w-full object-cover" alt="Take your business to the next level" loading="lazy" />
 
                         <div class="pt-5 md:pt-8">
                             <h4 class="text-xl -tracking-[-0.06px] text-[#2F2F2F] md:text-2xl lg:text-[32px]">Take your business to the next level</h4>

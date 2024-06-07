@@ -11,7 +11,7 @@
                 <div class="swiper-wrapper sm:min-h-full">
                     <div v-for="(position, i) in professionalsAndPositions" :key="i" class="swiper-slide flex flex-col bg-white px-4 pb-8 pt-[18px] sm:min-h-full sm:justify-between">
                         <div class="h-[167px] overflow-hidden shadow-[0_3px_6px_rgba(0,0,0,0.44)]">
-                            <nuxt-img format="webp" :src="position.attributes.imgUrl" class="h-full w-full object-cover object-top" :alt="'swiper-slide_' + i" loading="lazy" />
+                            <img :src="position.attributes.imgUrl" class="h-full w-full object-cover object-top" :alt="'swiper-slide_' + i" loading="lazy" />
                         </div>
                         <p class="min-h-[54px] pt-[18px] text-base font-semibold leading-[18px] tracking-[0.42px] text-primary">{{ position.attributes.title }}</p>
                         <p class="pb-5 pt-[10px] text-base leading-[26px] -tracking-[0.04px] text-[#202a36]">

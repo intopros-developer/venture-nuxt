@@ -6,7 +6,7 @@
                     <div v-for="(consultant, i) in careersconsultants" :key="i" class="swiper-slide flex flex-col bg-white px-6 pb-[46px] pt-4 sm:min-h-full sm:justify-between">
                         <p class="min-h-[42px] font-semibold capitalize leading-[18px] tracking-[0.42px] text-[#030303]">{{ consultant.attributes.title }}</p>
                         <div class="mt-[9px] h-[151px] overflow-hidden shadow-[0_3px_6px_rgba(180,180,180,0.44)]">
-                            <nuxt-img format="webp" :src="consultant.attributes.imgUrl" class="h-full w-full object-cover object-top" :alt="consultant.attributes.title" loading="lazy" />
+                            <img :src="consultant.attributes.imgUrl" class="h-full w-full object-cover object-top" :alt="consultant.attributes.title" loading="lazy" />
                         </div>
                         <p class="pb-5 pt-[26px] text-sm leading-[26px] -tracking-[0.04px] text-[#202a36]">
                             {{ consultant.attributes.description }}

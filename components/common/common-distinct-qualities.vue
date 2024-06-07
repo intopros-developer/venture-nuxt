@@ -19,7 +19,7 @@
                         <p class="text-sm xl:text-xl">{{ value.fields.description }}</p>
                     </div>
                     <div class="h-48 w-full md:h-32 lg:h-48">
-                        <nuxt-img format="webp" :src="value.fields.image.fields.file.url" :alt="value.fields.title" loading="lazy" class="h-full w-full object-cover" />
+                        <img :src="value.fields.image.fields.file.url" :alt="value.fields.title" loading="lazy" class="h-full w-full object-cover" />
                     </div>
                 </div>
             </div>

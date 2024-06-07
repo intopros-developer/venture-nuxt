@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div>
-                        <nuxt-img format="webp" src="/images/software-icon.webp" alt="Bottom Logo" loading="lazy" class="mx-auto" />
+                        <img src="/images/software-icon.webp" alt="Bottom Logo" loading="lazy" class="mx-auto" />
                     </div>
                 </div>
                 <div class="h-[400px] sm:h-auto lg:mt-40">

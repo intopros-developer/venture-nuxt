@@ -4,7 +4,7 @@
             <div class="grid grid-cols-1">
                 <div class="relative max-w-[637px] md:pt-[140px]">
                     <div class="absolute -left-20 top-2.5 h-full w-full">
-                        <nuxt-img format="webp" src="/images/bg-blur.webp" alt="Subscribe" loading="lazy" />
+                        <img src="/images/bg-blur.webp" alt="Subscribe" loading="lazy" />
                     </div>
                     <div class="relative z-[1]">
                         <p class="text-center text-2xl font-bold uppercase leading-8 text-[#f7f4f4] md:text-left md:leading-10 [&>br]:md:hidden" v-html="title"></p>

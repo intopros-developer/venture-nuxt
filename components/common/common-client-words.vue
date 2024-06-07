@@ -26,7 +26,7 @@
                                 <div class="mb-10 flex flex-col items-center gap-10 md:flex-row md:items-start lg:mb-[106px]">
                                     <div class="flex-1">
                                         <div class="mb-4">
-                                            <nuxt-img src="/images/icons/quote.webp" alt="Quote" loading="lazy" />
+                                            <img src="/images/icons/quote.webp" alt="Quote" loading="lazy" />
                                         </div>
                                         <div class="space-y-5 font-bold -tracking-[0.04px] text-[#707070] lg:text-lg">
                                             <p class="max-w-[633px]">
@@ -36,7 +36,7 @@
                                     </div>
                                     <!-- shadow-[0_3px_6px_rgba(0,0,0,0.48)]  -->
                                     <div class="h-[200px] w-[200px] flex-none overflow-hidden rounded-full xl:h-[340px] xl:w-[340px]">
-                                        <nuxt-img format="webp" :src="data.attributes.profileImgUrl" alt="Profile Image" class="h-full w-full rounded-full object-cover" loading="lazy" />
+                                        <img :src="data.attributes.profileImgUrl" alt="Profile Image" class="h-full w-full rounded-full object-cover" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="text-center md:text-left">

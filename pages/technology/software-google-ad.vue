@@ -45,7 +45,7 @@
                 </div>
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
                     <div v-for="(tools, k) in toolsAndTechnology" :key="k" class="rounded-lg bg-white p-4 shadow-[0_1px_8px_rgba(0,161,241,0.08)] md:p-7 xl:col-span-2">
-                        <div class="mb-[15px] flex items-center gap-4 text-xl font-semibold"><nuxt-img format="webp" :src="tools.svgIcon" :alt="tools.title" loading="lazy" /> {{ tools.title }}</div>
+                        <div class="mb-[15px] flex items-center gap-4 text-xl font-semibold"><img :src="tools.svgIcon" :alt="tools.title" loading="lazy" /> {{ tools.title }}</div>
 
                         <div>
                             <ul class="flex flex-wrap gap-2 text-base">

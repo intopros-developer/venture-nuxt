@@ -26,7 +26,7 @@
                         <p class="mb-6 text-2xl text-[#f7f4f4]">{{ content.subTitle1 }}</p>
                         <div class="grid grid-cols-4 place-items-center items-center gap-x-5 gap-y-2 sm:flex sm:flex-wrap sm:gap-2 md:gap-1">
                             <div v-for="(logo, i) in content.seenOnOption.data" :key="i" class="flex h-[62px] w-[62px] items-center justify-center rounded-full bg-white p-1 px-2 shadow-[0px_1px_8px_rgba(0,0,0,0.2)]">
-                                <nuxt-img :src="logo.attributes.iconUrl" :alt="logo.attributes.title" loading="lazy" />
+                                <img :src="logo.attributes.iconUrl" :alt="logo.attributes.title" loading="lazy" />
                             </div>
                         </div>
                     </div>

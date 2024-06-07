@@ -57,7 +57,7 @@
                     <h3 class="pb-[43px] text-center text-2xl font-medium text-[#0B3A02] md:text-[31px]" v-html="content.section3Title"></h3>
                     <div class="flex flex-wrap items-center justify-center gap-4 lg:gap-[50px]">
                         <div v-for="(logo, i) in section3Data" :key="i" class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white p-5 px-[17px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[126px] xl:w-[126px]">
-                            <nuxt-img format="webp" :src="logo.attributes.iconUrl" :alt="'icon_' + i" loading="lazy" />
+                            <img :src="logo.attributes.iconUrl" :alt="'icon_' + i" loading="lazy" />
                         </div>
                     </div>
                 </div>

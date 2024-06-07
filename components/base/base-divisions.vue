@@ -96,9 +96,8 @@
                 <div v-if="section4Data && Array.isArray(section4Data)" class="mt-10 space-y-8 md:mt-[70px] md:space-y-14 xl:space-y-28">
                     <div v-for="(process, i) in section4Data" :key="i" class="grid grid-cols-1 items-start justify-between gap-10 md:grid-cols-2 xl:gap-20">
                         <div class="order-2 mb-10 md:mb-0" :class="{ 'md:!order-1': i % 2 !== 0 }">
-                            <nuxt-img
+                            <img
                                 v-if="process.attributes.imgUrl && process.attributes.title"
-                                format="webp"
                                 :src="process.attributes.imgUrl"
                                 :alt="process.attributes.title"
                                 class="mx-auto"

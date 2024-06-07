@@ -97,7 +97,7 @@
                                 </div>
                             </div>
                             <div class="mx-auto h-[180px] w-full max-w-[320px] overflow-hidden rounded-[100px] shadow-[0px_3px_6px_rgba(0,0,0,0.36)] md:h-[228px]">
-                                <nuxt-img format="webp" :src="data.attributes.imgUrl" class="h-full w-full object-cover" :alt="data.attributes.title" loading="lazy" />
+                                <img :src="data.attributes.imgUrl" class="h-full w-full object-cover" :alt="data.attributes.title" loading="lazy" />
                             </div>
                         </div>
                     </div>

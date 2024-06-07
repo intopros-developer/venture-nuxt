@@ -20,7 +20,7 @@
                         :index="i"
                         class="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-white p-5 px-[17px] shadow-[0px_1px_8px_rgba(0,0,0,0.2)] xl:h-[126px] xl:w-[126px]"
                     >
-                        <nuxt-img format="webp" :src="company.attributes.iconUrl" :alt="'Featured in' + i" loading="lazy" />
+                        <img :src="company.attributes.iconUrl" :alt="'Featured in' + i" loading="lazy" />
                     </div>
                 </div>
             </div>

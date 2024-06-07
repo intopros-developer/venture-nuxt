@@ -23,23 +23,23 @@
                         </div>
                         <div class="mt-8 flex gap-2 md:gap-9">
                             <span class="flex-none">
-                                <nuxt-img src="/images/icons/quote-one.webp" alt="QuoteOne" loading="lazy" class="object-contain" />
+                                <img src="/images/icons/quote-one.webp" alt="QuoteOne" loading="lazy" class="object-contain" />
                             </span>
                             <p class="max-w-[377px] text-lg italic leading-[28px] -tracking-[0.04px] text-[#707070]">
                                 {{ content.section1Description }}
                             </p>
                             <span class="flex-none self-end">
-                                <nuxt-img src="/images/icons/quote-two.webp" alt="QuoteTwo" loading="lazy" class="object-contain" />
+                                <img src="/images/icons/quote-two.webp" alt="QuoteTwo" loading="lazy" class="object-contain" />
                             </span>
                         </div>
                         <div class="mt-20 lg:mt-[204px]">
                             <p class="text-[21px] italic leading-[42px] -tracking-[0.04px] text-[#707070]">{{ content.section1Subtitle }}</p>
 
-                            <nuxt-img :src="content.section1DescriptionImgUrl || '/images/review-img.webp'" alt="Review Img" class="mt-6" loading="lazy" format="webp" />
+                            <img :src="content.section1DescriptionImgUrl || '/images/review-img.webp'" alt="Review Img" class="mt-6" loading="lazy" />
                         </div>
                     </div>
                     <div>
-                        <nuxt-img :src="content.section1ImgUrl" alt="Review Featured" loading="lazy" format="webp" />
+                        <img :src="content.section1ImgUrl" alt="Review Featured" loading="lazy" />
                     </div>
                 </div>
             </div>

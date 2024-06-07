@@ -141,7 +141,7 @@
                 </div>
 
                 <div v-show="currentQuestion === 8" class="order-2 flex-1 md:order-1">
-                    <nuxt-img src="/images/congo-icon.svg" alt="Icon Congo" loading="lazy" />
+                    <img src="/images/congo-icon.svg" alt="Icon Congo" loading="lazy" />
 
                     <h2
                         class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
@@ -155,7 +155,7 @@
                 </div>
 
                 <div v-show="currentQuestion === 9" class="order-2 flex-1 md:order-1">
-                    <nuxt-img src="/images/congo-icon.svg" alt="Icon Congo" loading="lazy" />
+                    <img src="/images/congo-icon.svg" alt="Icon Congo" loading="lazy" />
                     <h2
                         class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
                         v-html="$t('we_are_sorry_all_of_our_clients_require_br_span_working_capital_span_in_order_to_qualify')"
@@ -168,7 +168,7 @@
                 </div>
 
                 <div class="order-1 h-[236px] w-full flex-none overflow-hidden rounded-2xl bg-black/50 md:order-2 md:w-[323px] xl:h-[364px] xl:w-[497px]">
-                    <nuxt-img format="webp" :src="`/images/que-${currentQuestion}.webp`" class="h-full w-full object-cover" alt="Question Image" loading="lazy" />
+                    <img :src="`/images/que-${currentQuestion}.webp`" class="h-full w-full object-cover" alt="Question Image" loading="lazy" />
                 </div>
             </div>
         </div>

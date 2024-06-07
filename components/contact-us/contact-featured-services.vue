@@ -17,9 +17,8 @@
                         <div v-if="serviceTitle === service.fields.title" class="block lg:hidden">
                             <div v-if="serviceDescription && isMobileView" :id="`service-${index}`">
                                 <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] lg:px-8 lg:pb-16 lg:pt-8">
-                                    <nuxt-img
+                                    <img
                                         v-if="serviceDescription.fields.descriptionMediaType === 'image'"
-                                        format="webp"
                                         :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`"
                                         :alt="serviceDescription.fields.descriptionTitle"
                                         loading="lazy"
@@ -69,9 +68,8 @@
         </div>
         <div v-if="serviceDescription && !isMobileView" class="hidden lg:block">
             <div class="bg-white p-5 shadow-[0_3px_6px_rgba(0,0,0,0.16)] md:px-8 md:pb-16 md:pt-8">
-                <nuxt-img
+                <img
                     v-if="serviceDescription.fields.descriptionMediaType === 'image'"
-                    format="webp"
                     :src="`${serviceDescription.fields.descriptionMedia.fields.file.url}`"
                     :alt="serviceDescription.fields.descriptionTitle"
                     loading="lazy"

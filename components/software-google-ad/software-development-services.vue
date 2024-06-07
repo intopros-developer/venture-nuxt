@@ -3,7 +3,7 @@
         <li v-for="(service, i) in services" :key="i" class="group relative overflow-hidden px-8 pb-[43px] pt-[50px] hover:bg-primary">
             <div class="duration-700 group-hover:scale-75 group-hover:opacity-0">
                 <div class="mb-4 h-28">
-                    <nuxt-img format="webp" :src="service.svgLink" class="mx-auto" :alt="service.title" loading="lazy" />
+                    <img :src="service.svgLink" class="mx-auto" :alt="service.title" loading="lazy" />
                 </div>
                 <h3 class="text-xl font-semibold leading-[50px] group-hover:text-white lg:text-2xl">{{ service.title }}</h3>
             </div>

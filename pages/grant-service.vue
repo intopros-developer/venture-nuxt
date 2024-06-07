@@ -122,7 +122,7 @@
                 <div class="mt-10 space-y-8 md:mt-[70px] md:space-y-14 xl:space-y-28">
                     <div v-for="(process, i) in section9Data" :key="i" class="grid grid-cols-1 items-start justify-between gap-10 md:grid-cols-2 xl:gap-20">
                         <div class="order-2 mb-10 md:mb-0" :class="{ 'md:!order-1': i % 2 !== 0 }">
-                            <nuxt-img format="webp" :src="process.attributes.imgUrl" :alt="process.attributes.title" class="mx-auto" :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }" loading="lazy" />
+                            <img :src="process.attributes.imgUrl" :alt="process.attributes.title" class="mx-auto" :class="{ ' h-[201px]': i === 0, ' h-[253px]': i === 1, ' h-[199px]': i === 2 }" loading="lazy" />
                         </div>
                         <div :class="{ 'md:!order-2': i % 2 !== 0 }">
                             <div class="mb-3 flex gap-5 xl:gap-7">
@@ -239,7 +239,7 @@
                         <div class="swiper-wrapper items-center !px-10">
                             <template v-if="activeProductData.images">
                                 <div v-for="(image, index) in activeProductData.images" :key="image.imgUrl" class="swiper-slide bg-white p-4">
-                                    <nuxt-img format="webp" :src="image.imgUrl" :alt="'Description Image - ' + index" loading="lazy" class="h-full w-full object-cover" />
+                                    <img :src="image.imgUrl" :alt="'Description Image - ' + index" loading="lazy" class="h-full w-full object-cover" />
                                 </div>
                             </template>
                         </div>

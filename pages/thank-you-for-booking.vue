@@ -117,7 +117,7 @@
                             </a>
                         </div>
                     </div>
-                    <nuxt-img format="webp" src="/images/consult-thankyou.webp" class="h-full w-full object-cover" alt="Continue Exploring" loading="lazy" />
+                    <img src="/images/consult-thankyou.webp" class="h-full w-full object-cover" alt="Continue Exploring" loading="lazy" />
 
                     <nuxt-link v-if="!isReadyToTalkSubmitted" to="/" class="b-btn mx-auto text-xs md:hidden lg:max-w-[322px] lg:py-6">Continue Exploring</nuxt-link>
 

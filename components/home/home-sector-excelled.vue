@@ -15,7 +15,7 @@
         <div class="container px-10 pt-8 md:px-4 lg:px-[97px] lg:pt-[104px] xl:px-4">
             <div class="flex flex-col gap-11 md:flex-row md:items-center md:justify-between md:gap-5 lg:gap-10">
                 <section class="sectors-slider relative overflow-hidden">
-                    <nuxt-img format="webp" src="/images/top-overlay.webp" class="absolute -top-16 z-10" alt="Sectors we excelled in" loading="lazy" />
+                    <img src="/images/top-overlay.webp" class="absolute -top-16 z-10" alt="Sectors we excelled in" loading="lazy" />
                     <div v-swiper:sectorsSlider="sliderOptions" class="swiper" :cleanup-styles-on-destroy="false">
                         <div class="swiper-wrapper !max-h-[470px] lg:!max-h-[610px]">
                             <div v-for="(service, index) in data" :key="`service_${index}`" class="swiper-slide !h-auto py-[18px]">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                    <nuxt-img format="webp" src="/images/bottom-overlay.webp" class="absolute -bottom-12 z-10 lg:-bottom-16" alt="Sectors we excelled in" loading="lazy" />
+                    <img src="/images/bottom-overlay.webp" class="absolute -bottom-12 z-10 lg:-bottom-16" alt="Sectors we excelled in" loading="lazy" />
                 </section>
                 <home-sector-chart ref="sectorChart" />
             </div>
