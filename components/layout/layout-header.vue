@@ -11,7 +11,7 @@
     </header>
 </template>
 
-<script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+<script src="https://fast.wistia.com/assets/external/E-v1.js" defer></script>
 
 <script>
     export default {

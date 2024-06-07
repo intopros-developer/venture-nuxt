@@ -8,8 +8,8 @@
         </section>
         <div class="h-[1px] w-full bg-[#646464]/25"></div>
         <section class="container py-12">
-            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-            <script>
+            <script defer charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+            <script defer>
                 hbspt.forms.create({
                     region: 'na1',
                     portalId: '22527844',
