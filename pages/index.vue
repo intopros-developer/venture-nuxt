@@ -28,23 +28,23 @@
 
         <!-- <lazy-home-about-client :button-text="content.section3ButtonText" :button-url="content.section3ButtonLink" :title="content.section3Title" :testimonials="section3Data" /> -->
 
-        <lazy-common-readytotalk
+        <!-- <lazy-common-readytotalk
             id="readyToTalk"
             :img-url="readyToTalkForm.imgUrl"
             :service-options="readyToTalkForm.services.data"
             :about-paragraph="readyToTalkForm.aboutParagraph"
             :title="readyToTalkForm.title"
             :talk-in-title="readyToTalkForm.talkInTitle"
-        />
+        /> -->
 
-        <lazy-home-private-placement
+        <!-- <lazy-home-private-placement
             :button-link="content.CTA1ButtonLink"
             :button-text="content.CTA1ButtonText"
             :title="content.CTA1Title"
             :description="content.CTA1Description"
             :featured-in-text="content.section4Title"
             :featured-companies="section4Data"
-        />
+        /> -->
 
         <!-- <lazy-home-sector-excelled :title="content.section5Title" :description="content.section5Description" :data="section5Data" />
 
@@ -56,7 +56,7 @@
 
         <lazy-home-career :button-link="content.section8ButtonLink" :button-text="content.section8ButtonText" :title="content.section8Title" :subtitle="content.section8Subtitle" :image="content.section8ImgUrl" /> -->
 
-        <lazy-common-brand-logo :logos="logoSlider" />
+        <!-- <lazy-common-brand-logo :logos="logoSlider" /> -->
     </div>
 </template>
 <script>
