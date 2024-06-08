@@ -1,6 +1,6 @@
 <template>
     <section class="hero-slider relative -mt-36 md:-mt-32">
-        <div v-swiper:heroSlider="slider_options" class="swiper relative !min-h-[42rem]" style="height: 100vh !important" :cleanup-styles-on-destroy="false">
+        <div v-swiper:heroSlider="slider_options" class="swiper relative h-screen !min-h-[42rem]" :cleanup-styles-on-destroy="false">
             <div class="swiper-wrapper flex !min-h-[42rem] xl:!h-[100vh]">
                 <div v-for="(slide, i) in slider" :key="i" class="swiper-slide !h-full bg-black-700">
                     <div class="absolute top-0 z-0 h-full w-full bg-black opacity-20 sm:opacity-30"></div>
@@ -76,13 +76,14 @@
                                     >{{ slide.attributes.buttonText }}</nuxt-link
                                 >
 
-                                <a
+                                <nuxt-link
                                     v-else-if="slide.attributes.buttonText"
                                     target="_blank"
                                     :href="slide.attributes.buttonUrl"
                                     class="outline-btn slide-text-animation-before slide-text-animation-after px-10 py-3 text-[13px] font-semibold uppercase leading-4 xl:px-16 xl:py-[22px]"
-                                    >{{ slide.attributes.buttonText }}</a
                                 >
+                                    {{ slide.attributes.buttonText }}
+                                </nuxt-link>
                                 <nuxt-link
                                     v-if="!slide.attributes.buttonText && $helper.isInternalUrl(slide.attributes.linkUrl)"
                                     :to="slide.attributes.linkUrl"
@@ -99,7 +100,7 @@
                                     />
                                 </nuxt-link>
 
-                                <a
+                                <nuxt-link
                                     v-else-if="!slide.attributes.buttonText"
                                     target="_blank"
                                     :href="slide.attributes.linkUrl"
@@ -114,7 +115,7 @@
                                         width="24"
                                         height="13"
                                     />
-                                </a>
+                                </nuxt-link>
                             </div>
                         </div>
                     </div>

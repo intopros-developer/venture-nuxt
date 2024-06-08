@@ -7,29 +7,17 @@
 
         <layout-header @changeScrollPosition="changeScrollPosition" />
 
-        <!-- Right Side Bar -->
         <header-right-side-bar />
         <div class="mt-[106px] md:mt-[57px] xl:mt-[114px]" :class="{ 'mt-[114px]': isIndexPage }">
-            <!-- :class="{ 'mt-[141px] lg:mt-[114px]': scrollPosition != null && isIndexPage, 'mt-[42px]': scrollPosition === 'down' && !isIndexPage, 'mt-[141px] lg:mt-[114px]': scrollPosition === 'up' && !isIndexPage }" -->
             <nuxt />
         </div>
         <layout-footer />
-        <!-- <script src="//fast.wistia.net/assets/external/E-v1.js" async></script> -->
     </div>
 </template>
 
 <script>
-    // import AOS from 'aos';
-    // import 'aos/dist/aos.css';
     export default {
         name: 'Default',
-
-        // middleware(context) {
-        //     const token = context.$cookies.get('strapi_jwt');
-        //     if (!token) {
-        //         context.$strapi.setToken(context.$config.strapiReadOnlyToken);
-        //     }
-        // },
 
         data() {
             return {
@@ -40,17 +28,15 @@
 
         mounted() {
             document.querySelector('html').classList.add('overflow-x-hidden');
-            // AOS.init();
 
             const wistiaScript = document.createElement('script');
-            wistiaScript.setAttribute('src', 'https://fast.wistia.net/assets/external/iframe-api-v1.js');
+            wistiaScript.src = 'https://fast.wistia.net/assets/external/iframe-api-v1.js';
+            wistiaScript.defer = true;
             document.head.appendChild(wistiaScript);
 
             this.visiblity();
-            // Warn if the browser doesn't support addEventListener or the Page Visibility API
-            if (typeof document.addEventListener === 'undefined' || this.hidden === undefined) {
-            } else {
-                // Handle page visibility change
+
+            if (typeof document.addEventListener !== 'undefined' && this.hidden !== undefined) {
                 document.addEventListener(this.visibilityChange, this.handleVisibilityChange, false);
             }
         },
@@ -77,7 +63,6 @@
             handleVisibilityChange() {
                 this.visiblity();
                 if (!document[this.hidden]) {
-                    // this.$store.dispatch('nav/forceUpdateVideo', this.$helper.UUID());
                     document.querySelectorAll('.force-video-reload').forEach((element) => {
                         element.load();
                         element.play();

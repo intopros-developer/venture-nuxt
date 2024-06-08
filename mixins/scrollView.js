@@ -18,7 +18,6 @@ export default {
             if (!element) return false;
             const rect = element.getBoundingClientRect();
 
-            // checking for partial visibility
             if (rect.top < window.innerHeight && rect.bottom >= 350) {
                 return true;
             }
