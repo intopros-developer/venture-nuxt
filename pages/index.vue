@@ -61,116 +61,116 @@
 </template>
 <script>
     export default {
-        // async asyncData(context) {
-        //     try {
-        //         const data = await context.$strapiInstance.get(`${context.$config.strapi.url}/api/home-page?populate=deep`);
-        //         return {
-        //             content: context.$helper.parseData(data.data),
-        //         };
-        //     } catch {}
-        // },
-        // head() {
-        //     return {
-        //         title: this.content?.metaFields[0]?.title,
-        //         meta: [
-        //             {
-        //                 name: 'robots',
-        //                 content: 'index, all',
-        //             },
-        //             {
-        //                 hid: 'og:title',
-        //                 property: 'og:title',
-        //                 content: this.content?.metaFields[0]?.title,
-        //             },
-        //             {
-        //                 hid: 'og:image',
-        //                 property: 'og:image',
-        //                 content: this.content?.metaFields[0]?.socialImgUrl,
-        //             },
-        //             {
-        //                 hid: 'og:description',
-        //                 property: 'og:description',
-        //                 content: this.content?.metaFields[0]?.description,
-        //             },
-        //             {
-        //                 hid: 'description',
-        //                 property: 'description',
-        //                 name: 'description',
-        //                 content: this.content?.metaFields[0]?.description,
-        //             },
-        //             {
-        //                 hid: 'og:image:secure_url',
-        //                 property: 'og:image:secure_url',
-        //                 content: this.content?.metaFields[0]?.socialImgUrl,
-        //             },
-        //             {
-        //                 hid: 'twitter:description',
-        //                 property: 'twitter:description',
-        //                 content: this.content?.metaFields[0]?.description,
-        //             },
-        //             {
-        //                 hid: 'twitter:title',
-        //                 property: 'twitter:title',
-        //                 content: this.content?.metaFields[0]?.title,
-        //             },
-        //             {
-        //                 hid: 'twitter:image',
-        //                 property: 'twitter:image',
-        //                 content: this.content?.metaFields[0]?.socialImgUrl,
-        //             },
-        //             {
-        //                 hid: 'keywords',
-        //                 property: 'keywords',
-        //                 name: 'keywords',
-        //                 content: this.content?.metaFields[0]?.keywords,
-        //             },
-        //         ],
-        //         link: [
-        //             {
-        //                 rel: 'canonical',
-        //                 href: this.content?.metaFields[0]?.canonicalUrl
-        //                     ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
-        //                     : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
-        //             },
-        //         ],
-        //     };
-        // },
-        // computed: {
-        //     questionnaires() {
-        //         return this.content?.dynamicQuestionnaires?.data?.attributes || [];
-        //     },
-        //     section2Data() {
-        //         return this.content?.section2Component?.data || [];
-        //     },
-        //     section3Data() {
-        //         if (this.content?.section3Component?.data) {
-        //             this.content?.section3Component?.data.forEach((dat) => {
-        //                 dat.attributes.readMoreOn = false;
-        //             });
-        //         }
-        //         return this.content?.section3Component?.data || [];
-        //     },
-        //     readyToTalkForm() {
-        //         return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
-        //     },
-        //     section4Data() {
-        //         return this.content?.section4Component?.data || [];
-        //     },
-        //     section5Data() {
-        //         return this.content?.section5Component?.data || [];
-        //     },
-        //     section6Data() {
-        //         return this.content?.section6Component?.data || [];
-        //     },
-        //     logoSlider() {
-        //         return this.content?.logoSlider?.data?.attributes?.logoUrls || [];
-        //     },
-        //     slides() {
-        //         return this.content?.bannerMediaComponent?.data || [];
-        //     },
-        //     insights() {
-        //         return [];
-        //     },
-        // },
+        async asyncData(context) {
+            try {
+                const data = await context.$strapiInstance.get(`${context.$config.strapi.url}/api/home-page?populate=deep`);
+                return {
+                    content: context.$helper.parseData(data.data),
+                };
+            } catch {}
+        },
+        head() {
+            return {
+                title: this.content?.metaFields[0]?.title,
+                meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
+                    {
+                        hid: 'og:title',
+                        property: 'og:title',
+                        content: this.content?.metaFields[0]?.title,
+                    },
+                    {
+                        hid: 'og:image',
+                        property: 'og:image',
+                        content: this.content?.metaFields[0]?.socialImgUrl,
+                    },
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content: this.content?.metaFields[0]?.description,
+                    },
+                    {
+                        hid: 'description',
+                        property: 'description',
+                        name: 'description',
+                        content: this.content?.metaFields[0]?.description,
+                    },
+                    {
+                        hid: 'og:image:secure_url',
+                        property: 'og:image:secure_url',
+                        content: this.content?.metaFields[0]?.socialImgUrl,
+                    },
+                    {
+                        hid: 'twitter:description',
+                        property: 'twitter:description',
+                        content: this.content?.metaFields[0]?.description,
+                    },
+                    {
+                        hid: 'twitter:title',
+                        property: 'twitter:title',
+                        content: this.content?.metaFields[0]?.title,
+                    },
+                    {
+                        hid: 'twitter:image',
+                        property: 'twitter:image',
+                        content: this.content?.metaFields[0]?.socialImgUrl,
+                    },
+                    {
+                        hid: 'keywords',
+                        property: 'keywords',
+                        name: 'keywords',
+                        content: this.content?.metaFields[0]?.keywords,
+                    },
+                ],
+                link: [
+                    {
+                        rel: 'canonical',
+                        href: this.content?.metaFields[0]?.canonicalUrl
+                            ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
+                            : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                ],
+            };
+        },
+        computed: {
+            questionnaires() {
+                return this.content?.dynamicQuestionnaires?.data?.attributes || [];
+            },
+            section2Data() {
+                return this.content?.section2Component?.data || [];
+            },
+            section3Data() {
+                if (this.content?.section3Component?.data) {
+                    this.content?.section3Component?.data.forEach((dat) => {
+                        dat.attributes.readMoreOn = false;
+                    });
+                }
+                return this.content?.section3Component?.data || [];
+            },
+            readyToTalkForm() {
+                return this.content?.readyToTalkForm?.data?.attributes || { services: { data: [] } };
+            },
+            section4Data() {
+                return this.content?.section4Component?.data || [];
+            },
+            section5Data() {
+                return this.content?.section5Component?.data || [];
+            },
+            section6Data() {
+                return this.content?.section6Component?.data || [];
+            },
+            logoSlider() {
+                return this.content?.logoSlider?.data?.attributes?.logoUrls || [];
+            },
+            slides() {
+                return this.content?.bannerMediaComponent?.data || [];
+            },
+            insights() {
+                return [];
+            },
+        },
     };
 </script>
