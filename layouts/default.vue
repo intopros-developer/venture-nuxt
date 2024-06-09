@@ -18,6 +18,8 @@
 </template>
 
 <script>
+    import Intercom from '@intercom/messenger-js-sdk';
+
     export default {
         name: 'Default',
 
@@ -44,6 +46,11 @@
             if (typeof document.addEventListener !== 'undefined' && this.hidden !== undefined) {
                 document.addEventListener(this.visibilityChange, this.handleVisibilityChange, false);
             }
+
+            Intercom({
+                api_base: 'https://api-iam.intercom.io',
+                app_id: 'elswu46p',
+            });
         },
 
         methods: {

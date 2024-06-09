@@ -1,4 +1,4 @@
-import fetch from "node-fetch"
+import fetch from 'node-fetch';
 
 export default {
     head: {
@@ -45,22 +45,7 @@ export default {
             },
             { hid: 'twitter:image', name: 'twitter:image', content: `${process.env.FE_BASE_URL}/images/og-social.png` },
         ],
-        link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            {
-                rel: 'preconnect',
-                href: 'https://fonts.googleapis.com',
-            },
-            {
-                rel: 'preconnect',
-                href: 'https://fonts.gstatic.com',
-                crossorigin: true,
-            },
-            {
-                rel: 'stylesheet',
-                href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap',
-            },
-        ],
+        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
         script: [
             {
                 type: 'text/javascript',
@@ -117,6 +102,7 @@ export default {
         { src: '~/plugins/factory.js' },
         { src: '~/plugins/vue-multiselect.js' },
         { src: '~/plugins/popper.js' },
+        { src: '~/plugins/userback.client.js' },
         { src: '~/plugins/vue-flatpickr.js' },
         { src: '~/plugins/vue-scroll-active.js' },
         { src: '~/plugins/vue-apexcharts.js', mode: 'client' },
