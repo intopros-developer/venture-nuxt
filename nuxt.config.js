@@ -102,7 +102,6 @@ export default {
         { src: '~/plugins/factory.js' },
         { src: '~/plugins/vue-multiselect.js' },
         { src: '~/plugins/popper.js' },
-        { src: '~/plugins/userback.client.js' },
         { src: '~/plugins/vue-flatpickr.js' },
         { src: '~/plugins/vue-scroll-active.js' },
         { src: '~/plugins/vue-apexcharts.js', mode: 'client' },

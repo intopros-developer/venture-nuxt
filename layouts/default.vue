@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-x-hidden bg-[#FBFBFD] font-proximanova text-base font-normal text-black antialiased">
+    <div class="bg-[#FBFBFD] overflow-x-hidden font-proximanova text-base font-normal text-black antialiased">
         <div v-if="$store.state.nav.isDropdownOpen" class="fixed left-0 top-0 z-20 h-full w-full bg-transparent" @click="$store.dispatch('nav/deactiveAllDropdown')"></div>
 
         <div v-show="$store.state.nav.open" class="sidebar-left-overlay fixed left-0 top-0 z-50 h-full w-full cursor-pointer bg-black/30 transition-all duration-300" @click="$store.dispatch('nav/toggle')"></div>
@@ -18,8 +18,6 @@
 </template>
 
 <script>
-    import Intercom from '@intercom/messenger-js-sdk';
-
     export default {
         name: 'Default',
 
@@ -46,11 +44,6 @@
             if (typeof document.addEventListener !== 'undefined' && this.hidden !== undefined) {
                 document.addEventListener(this.visibilityChange, this.handleVisibilityChange, false);
             }
-
-            Intercom({
-                api_base: 'https://api-iam.intercom.io',
-                app_id: 'elswu46p',
-            });
         },
 
         methods: {
