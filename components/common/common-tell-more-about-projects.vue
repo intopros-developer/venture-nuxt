@@ -1,12 +1,12 @@
 <template>
-    <div class="bg-cover bg-[32%_top] bg-no-repeat pb-[72px] pt-[112px] lg:bg-[center_top_25%]" :style="{ backgroundColor: bgColor, backgroundImage: `url${imageUrl}` }">
+    <div class="bg-cover bg-[32%_top] bg-no-repeat pb-[72px] pt-[112px] lg:bg-[center_top_25%]" v-lazyload-bg="imageUrl">
         <div class="container lg:px-[97px] xl:px-4">
             <div class="items-start justify-between gap-5 lg:flex xl:gap-[107px]">
                 <div class="relative">
                     <div class="absolute -inset-5 m-auto h-full w-full bg-black/30 blur-2xl"></div>
                     <div v-if="tellUsMoreData.length" class="relative z-[1]">
                         <h3
-                            class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[36px] sm:leading-[52px] lg:pt-0 [&>span]:border-b-[5px] [&>span]:border-primary [&>br]:hidden md:[&>br]:block"
+                            class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[36px] sm:leading-[52px] lg:pt-0 [&>br]:hidden md:[&>br]:block [&>span]:border-b-[5px] [&>span]:border-primary"
                             v-html="tellUsMoreTitle"
                         ></h3>
                         <p class="text-white">{{ tellUseMoreSubtitle }}</p>

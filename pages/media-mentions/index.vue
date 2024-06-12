@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-10 pt-[166px] md:bg-left xl:pb-20" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-10 pt-[166px] md:bg-left xl:pb-20" v-lazyload-bg="content.bannerImgUrl">
             <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 md:px-4 lg:px-[97px] xl:px-4">
@@ -24,11 +24,11 @@
                     </div>
                     <div>
                         <div class="w-full lg:w-5/6">
-                            <p class="line-clamp-1 my-5 text-sm font-semibold text-primary">{{ media.attributes.mediaSource }}</p>
+                            <p class="my-5 line-clamp-1 text-sm font-semibold text-primary">{{ media.attributes.mediaSource }}</p>
                             <div>
-                                <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="line-clamp-2 mb-5 block text-[24px] font-bold">{{ media.attributes.title }}</nuxt-link>
+                                <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="mb-5 line-clamp-2 block text-[24px] font-bold">{{ media.attributes.title }}</nuxt-link>
                             </div>
-                            <p class="line-clamp-3 mb-7 text-base text-[#202A36]">{{ media.attributes.paragraph }}</p>
+                            <p class="mb-7 line-clamp-3 text-base text-[#202A36]">{{ media.attributes.paragraph }}</p>
                         </div>
 
                         <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="mb-10 flex w-[110px] items-center justify-center gap-2 rounded-md bg-primary py-[10px] text-[14px] text-white md:hover:bg-blue-500">

@@ -12,13 +12,15 @@
         </section>
 
         <section class="container mb-60 mt-24 lg:px-[97px] xl:px-4">
-            <div v-for="(data, i) in content" :key="i" class="max-w-4xl" :class="{ 'mb-6': i !== content.length - 1 }">
+            <div v-for="(data, i) in content" :key="i" class="mx-auto max-w-4xl" :class="{ 'mb-6': i !== content.length - 1 }">
                 <p class="mb-8 text-xl font-bold">{{ data.title }}</p>
                 <p>{{ data.description }}</p>
             </div>
-            <p>{{ copyrightText }}</p>
-            <p>{{ address }}</p>
-            <a class="underline" :href="`mailto:${email}`">{{ email }}</a>
+            <div class="mx-auto max-w-4xl mt-6">
+                <p>{{ copyrightText }}</p>
+                <p>{{ address }}</p>
+                <a class="underline" :href="`mailto:${email}`">{{ email }}</a>
+            </div>
         </section>
     </div>
 </template>

@@ -19,7 +19,7 @@
             </div>
         </section>
 
-        <section class="py-10 md:py-20 xl:pb-[70px] xl:pt-28">
+        <section class="my-10 md:my-20 xl:mb-[70px] xl:mt-28">
             <div class="container px-10 lg:px-[97px] xl:px-4">
                 <div class="mb-5 flex items-center justify-center gap-[5px] text-center md:mb-8 md:gap-8 xl:mb-16">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -72,7 +72,7 @@
             </div>
         </section>
 
-        <section class="pb-10 md:pb-16 lg:pb-[240px]">
+        <section class="mb-10 md:mb-16 lg:mb-28">
             <div class="container px-10 lg:px-[97px] xl:px-4">
                 <div class="mx-auto grid max-w-[300px] grid-cols-1 border border-[#d5d5d5] bg-white sm:max-w-none sm:grid-cols-2 md:grid-cols-3">
                     <div v-for="(data, i) in section2Data" :key="i" class="flex flex-col border-b border-[#d5d5d5] p-4 sm:border-r xl:p-14">
@@ -139,7 +139,7 @@
 
         <common-contact-us :video-thumbnail-u-r-l="content.video1ThumbnailUrl" :video-u-r-l="content.video1Url" :title="content.video1Title" :button-title="content.video1ButtonText" :button-u-r-l="content.video1ButtonLink" />
 
-        <section class="py-10 md:py-16 lg:pb-[74px] lg:pt-[222px]">
+        <section class="my-10 md:my-16 lg:mb-[74px] lg:mt-28">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-5 flex items-center justify-center gap-[5px] text-center md:gap-8">
                     <div class="hidden h-px w-full bg-[#d5d5d5] lg:block"></div>
@@ -169,7 +169,7 @@
         <!-- As seen on -->
         <contact-private-placement :title="content.section6Title" :logos="section6Data" />
 
-        <section class="py-10 md:py-16 xl:pb-[87px] xl:pt-[102px]">
+        <section class="my-10 md:my-16 xl:mb-[87px] xl:mt-[102px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="flex flex-col items-center justify-around gap-4 sm:flex-row">
                     <a
@@ -207,7 +207,7 @@
             </div>
         </section>
 
-        <section class="pb-20">
+        <section class="mb-20">
             <div class="container lg:px-[97px] xl:px-4">
                 <div class="grid grid-cols-1 space-y-20 md:grid-cols-2 md:gap-5 md:space-y-0 lg:gap-24 xl:gap-36">
                     <div>

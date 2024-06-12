@@ -1,5 +1,5 @@
 <template>
-    <div ref="clientWords" class="bg-cover bg-[right_20%_top] bg-no-repeat py-14 pb-24 md:py-16 lg:bg-center xl:pb-20 xl:pt-[162px]" :style="{ backgroundImage: 'url(/images/bg-transparent.webp)' }">
+    <div ref="clientWords" class="bg-cover bg-[right_20%_top] bg-no-repeat py-14 pb-24 md:py-16 lg:bg-center xl:pb-20 xl:pt-[162px]" v-lazyload-bg="'/images/bg-transparent.webp'">
         <section class="relative">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="pb-[50px]">

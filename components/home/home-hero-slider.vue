@@ -2,7 +2,7 @@
     <section class="hero-slider relative -mt-36 md:-mt-32">
         <div v-swiper:heroSlider="slider_options" class="swiper relative h-screen !min-h-[42rem]" :cleanup-styles-on-destroy="false">
             <div class="swiper-wrapper flex !min-h-[42rem] xl:!h-[100vh]">
-                <div v-for="(slide, i) in slider" :key="i" class="swiper-slide !h-full bg-black-700">
+                <div v-for="(slide, i) in slider" :key="i" class="swiper-slide !h-full bg-black-700 overflow-hidden">
                     <div class="absolute top-0 z-0 h-full w-full bg-black opacity-20 sm:opacity-30"></div>
                     <div
                         class="absolute top-0 z-0 h-full w-full"
@@ -17,11 +17,11 @@
                     ></div>
                     <div class="absolute bottom-0 left-0 z-0 h-[89px] w-full bg-gradient-to-t from-[#202A36] opacity-80"></div>
                     <div v-if="slide.attributes.slideVideoUrl">
-                        <video class="force-video-reload responsive-slide-video absolute inset-0 -z-10 h-full w-full object-cover" :style="videoHeight" autoplay loop muted playsinline>
+                        <video class="force-video-reload responsive-slide-video absolute top-0 bottom-0 left-0 right-0 inset-0 -z-10 h-full w-full object-cover" :style="videoHeight" autoplay loop muted playsinline>
                             <source :src="slide.attributes.slideVideoUrl" type="video/mp4" :loading="i < 4 ? 'eager' : 'lazy'" />
                         </video>
                     </div>
-                    <img v-else class="slider-img absolute -z-10 h-full w-full object-cover md:bg-top" :alt="slide.attributes.title" :src="slide.attributes.slideImageUrl" :preload="i < 3 ? true : false" />
+                    <img v-else class="slider-img absolute top-0 bottom-0 left-0 right-0 -z-10 h-full w-full object-cover" :alt="slide.attributes.title" :src="slide.attributes.slideImageUrl" :preload="i < 3 ? true : false" />
 
                     <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4" :class="{ '': i === 0 }">
                         <div

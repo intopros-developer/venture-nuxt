@@ -17,7 +17,7 @@
                 </div>
             </div>
         </section>
-        <section v-else class="relative bg-cover bg-center bg-no-repeat pb-9 pt-[164px] xl:pb-[75px]" :style="{ backgroundImage: `url(${content.bannerImgUrl})` }">
+        <section v-else class="relative bg-cover bg-center bg-no-repeat pb-9 pt-[164px] xl:pb-[75px]" v-lazyload-bg="content.bannerImgUrl">
             <div class="absolute left-0 top-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-0"></div>
             <!-- <div class="absolute top-0 z-0 h-full w-full bg-black/30"></div> -->

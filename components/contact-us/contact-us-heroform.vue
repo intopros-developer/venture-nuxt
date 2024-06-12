@@ -1,5 +1,5 @@
 <template>
-    <section class="contact-heroform hero-ultra-wide-height relative h-[770px] bg-cover bg-[center_top_25%] bg-no-repeat md:h-[730px] xl:h-[835px]" :style="{ backgroundImage: `url(${image})` }">
+    <section class="contact-heroform hero-ultra-wide-height relative h-[770px] bg-cover bg-[center_top_25%] bg-no-repeat md:h-[730px] xl:h-[835px]" v-lazyload-bg="image">
         <div class="absolute left-0 top-0 z-0 h-full w-[70%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
         <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[307px]"></div>
         <div class="container relative content-center px-10 lg:px-[97px] xl:px-4">

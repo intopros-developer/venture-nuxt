@@ -29,7 +29,7 @@
                                         v-else-if="serviceDescription.fields.videoThumbnailImage"
                                         ref="video"
                                         class="relative h-[250px] w-full bg-cover bg-center bg-no-repeat md:h-[400px]"
-                                        :style="{ backgroundImage: `url(${serviceDescription.fields.videoThumbnailImage.fields.file.url})` }"
+                                        v-lazyload-bg="serviceDescription.fields.videoThumbnailImage.fields.file.url"
                                     >
                                         <iframe
                                             v-if="!showOverlay && serviceTitle === serviceDescription.fields.title"
@@ -77,12 +77,7 @@
                     class="h-full w-full object-cover"
                 />
 
-                <div
-                    v-else-if="serviceDescription.fields.videoThumbnailImage"
-                    ref="video"
-                    class="relative h-[505px] w-full bg-cover bg-center bg-no-repeat"
-                    :style="{ backgroundImage: `url(${serviceDescription.fields.videoThumbnailImage.fields.file.url})` }"
-                >
+                <div v-else-if="serviceDescription.fields.videoThumbnailImage" ref="video" class="relative h-[505px] w-full bg-cover bg-center bg-no-repeat" v-lazyload-bg="serviceDescription.fields.videoThumbnailImage.fields.file.url">
                     <iframe
                         v-if="!showOverlay && serviceTitle === serviceDescription.fields.title"
                         :src="iframeURL"
