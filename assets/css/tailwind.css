@@ -682,3 +682,8 @@
     background: #fbfbfd;
     opacity: 0.8;
 }
+
+#userback_button_container .userback-button-e {
+    min-width: 120px !important;
+    max-width: 120px !important;
+}
