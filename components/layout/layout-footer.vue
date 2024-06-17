@@ -253,10 +253,6 @@
                     email: '',
                 };
             },
-
-            scrollToTop() {
-                window.scrollTo({ top: 0, behavior: 'smooth', easing: 'linear' });
-            },
         },
     };
 </script>

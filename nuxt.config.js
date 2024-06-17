@@ -106,6 +106,8 @@ export default {
         { src: '~/plugins/vue-scroll-active.js' },
         { src: '~/plugins/vue-apexcharts.js', mode: 'client' },
         { src: '~/plugins/vue-slide-toggle.js' },
+        { src: '~/plugins/fast.wistia-script.js', mode: 'client' },
+        { src: '~/plugins/google-tag-manager.js', mode: 'client' },
     ],
 
     components: true,
@@ -126,7 +128,6 @@ export default {
         [
             '@nuxtjs/robots',
             {
-                /* module options */
                 UserAgent: '*',
                 Disallow: ['/_ipx/', '/search*/'],
                 Sitemap: (req) => `${process.env.FE_BASE_URL}/sitemap.xml`,
@@ -149,7 +150,6 @@ export default {
     dayjs: {
         defaultLocale: 'en',
         locales: ['en'],
-        // defaultTimeZone: 'UTC',
         plugins: ['utc', 'timezone'],
     },
 
@@ -171,10 +171,6 @@ export default {
         fallbackLocale: {
             default: 'en',
         },
-    },
-
-    image: {
-        // provider: 'static',
     },
 
     generate: {
@@ -534,7 +530,6 @@ export default {
         },
         cacheTime: 7200000,
         filter({ routes }) {
-            // Filter out the i18n routes from the sitemap
             const locales = ['en', 'pt-br', 'es', 'es-ar', 'es-co', 'es-cl', 'fr', 'de-ch', 'it', 'es', 'ru', 'zh', 'ko', 'ja', 'zh-tw', 'zh-hk'];
             return routes.filter((route) => {
                 for (const locale of locales) {

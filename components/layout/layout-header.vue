@@ -11,8 +11,6 @@
     </header>
 </template>
 
-<script src="https://fast.wistia.com/assets/external/E-v1.js" defer></script>
-
 <script>
     export default {
         name: 'Header',
