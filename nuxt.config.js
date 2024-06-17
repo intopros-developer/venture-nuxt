@@ -104,7 +104,6 @@ export default {
         { src: '~/plugins/popper.js' },
         { src: '~/plugins/vue-flatpickr.js' },
         { src: '~/plugins/vue-scroll-active.js' },
-        { src: '~/plugins/vue-apexcharts.js', mode: 'client' },
         { src: '~/plugins/vue-slide-toggle.js' },
         { src: '~/plugins/fast.wistia-script.js', mode: 'client' },
         { src: '~/plugins/google-tag-manager.js', mode: 'client' },
@@ -593,11 +592,34 @@ export default {
     },
 
     build: {
-        extend(config) {
+        cache: true,
+        minifyCSS: true,
+        minifyJS: true,
+        minimize: true,
+        optimizeCSS: true,
+        extend(config, { isDev, isClient }) {
             config.performance.hints = false;
             config.resolve.alias['node-fetch-native'] = require.resolve('node-fetch');
+            if (isClient) {
+                config.devtool = 'source-map';
+            }
+            if (!isDev && isClient) {
+                config.optimization.splitChunks = {
+                    cacheGroups: {
+                        vendor: {
+                            test: /[\\/]node_modules[\\/]/,
+                            name: 'vendors',
+                            chunks: 'all',
+                        },
+                    },
+                };
+            }
         },
-        devtool: 'source-map',
+        splitChunks: {
+            layouts: true,
+            pages: true,
+            commons: true,
+        },
         postcss: {
             plugins: {
                 tailwindcss: {},

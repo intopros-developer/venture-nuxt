@@ -9,7 +9,7 @@
             </div>
             <div class="px-2 py-3 text-center">
                 <client-only>
-                    <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
+                    <vue-apexchart-loader type="radialBar" :options="chartRadialBar.options" :series="chart1.series" />
                 </client-only>
             </div>
         </div>
@@ -22,7 +22,7 @@
             </div>
             <div class="px-2 py-3 text-center">
                 <client-only>
-                    <apexchart type="area" :options="chartArea.options" :series="chart2.series"></apexchart>
+                    <vue-apexchart-loader type="area" :options="chartArea.options" :series="chart2.series" />
                 </client-only>
             </div>
         </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="px-2 py-3 text-center">
                 <client-only>
-                    <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart3.series"></apexchart>
+                    <vue-apexchart-loader type="radialBar" :options="chartRadialBar.options" :series="chart3.series" />
                 </client-only>
             </div>
         </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="px-2 py-3 text-center">
                 <client-only>
-                    <apexchart type="area" :options="chartArea.options" :series="chart4.series"></apexchart>
+                    <vue-apexchart-loader type="area" :options="chartArea.options" :series="chart4.series" />
                 </client-only>
             </div>
         </div>
@@ -58,6 +58,9 @@
 <script>
     export default {
         name: 'HomeSectorExcelled',
+        components: {
+            'vue-apexchart-loader': () => import('./vue-apexchart-loader.vue'),
+        },
         data() {
             return {
                 raisedToChart: {
@@ -283,34 +286,13 @@
                 const chart1p2 = chart1Md * 2 - chart1p1;
                 this.chart1.series = [chart1p1, chart1p2];
                 this.chart1.avgCount = parseInt(service.attributes.industryConsultant);
-                /*
-            this.chart2 = {
-                series: [
-                    {
-                        data: [15, 90, 10, 45, 30, 50, 35, 70, parseInt(service.attributes.raised)],
-                    },
-                ],
-                avgCount: service.attributes.raised,
-            };
 
-             */
                 const chart2Md = parseInt(service.attributes.businessPlansWritten);
                 const chart2p1 = parseInt(service.attributes.businessPlansWritten) / 2;
                 const chart2p2 = chart2Md * 2 - chart2p1;
 
                 this.chart3.series = [chart2p1, chart2p2];
                 this.chart3.avgCount = parseInt(service.attributes.businessPlansWritten);
-
-                /*
-            this.chart4 = {
-                series: [
-                    {
-                        data: [10, 15, 60, 50, 85, 35, 40, 65, parseInt(service.attributes.yearsOfExperience)],
-                    },
-                ],
-                avgCount: service.attributes.yearsOfExperience,
-            };
-            */
 
                 if (service.attributes.sectorName === 'Commercial Real Estate') {
                     this.chart2 = {
