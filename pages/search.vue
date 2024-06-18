@@ -323,7 +323,13 @@
 </template>
 
 <script>
+    import flatPickr from 'vue-flatpickr-component';
+    import 'flatpickr/dist/flatpickr.css';
+
     export default {
+        components: {
+            'flat-pickr': flatPickr,
+        },
         async asyncData(context) {
             try {
                 const results = await context.$axios.post(`${context.$config.meiliSearchURL}/indexes/search-page/search`, {

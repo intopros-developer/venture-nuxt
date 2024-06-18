@@ -5,14 +5,7 @@
             <div class="flex items-center justify-between gap-2">
                 <div id="banner_header_tab" class="w-[940px] overflow-x-auto overflow-y-hidden lg:overflow-visible">
                     <div class="pb-0.5 lg:pb-0">
-                        <scrollactive
-                            class="my-nav flex items-center gap-6 text-[11px] font-medium leading-[13px] -tracking-[-0.02px] text-black-700 xl:gap-8 xl:text-[13px] xl:font-normal xl:leading-5 xl:-tracking-[-0.03px]"
-                            :modify-url="false"
-                            :offset="scrollPosition === 'up' ? 200 : 160"
-                            :scroll-offset="scrollPosition === 'up' ? 200 : 160"
-                            :exact="true"
-                            @itemchanged="onItemChanged"
-                        >
+                        <nav class="my-nav flex items-center gap-6 text-[11px] font-medium leading-[13px] -tracking-[-0.02px] text-black-700 xl:gap-8 xl:text-[13px] xl:font-normal xl:leading-5 xl:-tracking-[-0.03px]">
                             <div v-for="tab in tabs" :key="tab.id">
                                 <a
                                     :id="`tab_${tab.id}`"
@@ -23,7 +16,7 @@
                                     {{ tab.title }}
                                 </a>
                             </div>
-                        </scrollactive>
+                        </nav>
                     </div>
                 </div>
                 <common-share :is-show-save-btn="isShowSaveBtn" />
@@ -63,17 +56,6 @@
         },
 
         methods: {
-            onItemChanged(event, currentItem, lastActiveItem) {
-                if (currentItem) {
-                    const id = currentItem.getAttribute('id');
-                    this.activeId = id.replace('tab_', '');
-
-                    const parent = document.querySelector('#banner_header_tab');
-                    const activeSpan = document.querySelector(`#${id}`);
-                    parent.scrollTo({ left: activeSpan.offsetLeft - window.innerWidth / 2 + activeSpan.offsetWidth, top: 0, behavior: 'smooth' });
-                }
-            },
-
             handleScroll() {
                 const st = window.pageYOffset || document.documentElement.scrollTop;
                 if (st > this.lastScrollTop) {

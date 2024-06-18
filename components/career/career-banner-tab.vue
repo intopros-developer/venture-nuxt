@@ -1,18 +1,10 @@
 <template>
-    <!-- <section class="sticky z-20 block border-b-2 border-[#CFCFCF] bg-white" :class="scrollPosition === 'up' ? 'top-[55px] md:top-[57px] xl:top-[106px]' : 'top-[54px] lg:top-[47px] xl:top-[54px]'"> -->
     <section class="sticky z-20 block border-b-2 border-[#CFCFCF] bg-white" :class="scrollPosition === 'up' ? 'top-[56px] md:top-[58px] xl:top-[114px]' : 'top-[56px] lg:top-[55px] xl:top-[54px]'">
         <div class="container relative lg:px-[97px] xl:px-4">
             <div class="flex items-center justify-between gap-2">
                 <div id="banner_header_tab" class="w-[940px] overflow-x-auto overflow-y-hidden lg:overflow-visible">
                     <div class="pb-0.5 lg:pb-0">
-                        <scrollactive
-                            class="my-nav flex items-center gap-6 text-[11px] font-medium leading-[13px] -tracking-[-0.02px] text-[#353535] xl:gap-8 xl:text-[13px] xl:leading-5 xl:-tracking-[-0.03px]"
-                            :modify-url="false"
-                            :offset="scrollPosition === 'up' ? 200 : 160"
-                            :scroll-offset="scrollPosition === 'up' ? 200 : 160"
-                            :exact="true"
-                            @itemchanged="onItemChanged"
-                        >
+                        <nav class="my-nav flex items-center gap-6 text-[11px] font-medium leading-[13px] -tracking-[-0.02px] text-[#353535] xl:gap-8 xl:text-[13px] xl:leading-5 xl:-tracking-[-0.03px]">
                             <div>
                                 <popper
                                     ref="role"
@@ -93,7 +85,7 @@
                                     {{ $t(tab.title) }}
                                 </a>
                             </div>
-                        </scrollactive>
+                        </nav>
                     </div>
                 </div>
                 <common-share :is-show-save-btn="true" />
@@ -152,17 +144,6 @@
         },
 
         methods: {
-            onItemChanged(event, currentItem, lastActiveItem) {
-                if (currentItem) {
-                    const id = currentItem.getAttribute('id');
-                    this.activeId = id.replace('tab_', '');
-
-                    const parent = document.querySelector('#banner_header_tab');
-                    const activeSpan = document.querySelector(`#${id}`);
-                    parent.scrollTo({ left: activeSpan.offsetLeft - window.innerWidth / 2 + activeSpan.offsetWidth, top: 0, behavior: 'smooth' });
-                }
-            },
-
             handleScroll() {
                 const st = window.pageYOffset || document.documentElement.scrollTop;
                 if (st > this.lastScrollTop) {

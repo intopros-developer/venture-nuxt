@@ -126,7 +126,12 @@
     </div>
 </template>
 <script>
+    import { VueSlideToggle } from 'vue-slide-toggle';
+
     export default {
+        components: {
+            VueSlideToggle,
+        },
         props: {
             services: {
                 type: Array,
