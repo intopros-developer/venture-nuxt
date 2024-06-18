@@ -42,16 +42,15 @@ export default ({ app }, inject) => {
         }
     }
 
-    let loadTimeout;
-    const delayTime = 3000;
+    let mouseMoved = false;
 
-    function resetLoadTimeout() {
-        if (loadTimeout) {
-            clearTimeout(loadTimeout);
+    function loadGtmAfterMouseMove() {
+        if (!mouseMoved) {
+            mouseMoved = true;
+            loadGtmScript();
         }
-        loadTimeout = setTimeout(loadGtmScript, delayTime);
     }
 
-    document.addEventListener('mousemove', resetLoadTimeout);
-    document.addEventListener('mousedown', resetLoadTimeout);
+    document.addEventListener('mousemove', loadGtmAfterMouseMove);
+    document.addEventListener('mousedown', loadGtmAfterMouseMove);
 };

@@ -18,7 +18,7 @@ export default ({ app }, inject) => {
     }
 
     let loadTimeout;
-    const delayTime = 3000;
+    const delayTime = 1000;
 
     function resetLoadTimeout() {
         if (loadTimeout) {

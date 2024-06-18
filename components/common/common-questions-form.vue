@@ -122,7 +122,7 @@
                     <img src="/images/congo-icon.svg" alt="Icon Congo" loading="lazy" />
                     <div v-if="!isNoCapital">
                         <h2
-                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                             v-html="$t('congratulations_you_have_span_successfully_span_br_answered_all_the_questions')"
                         ></h2>
                         <p
@@ -136,7 +136,7 @@
                     </div>
                     <div v-else>
                         <h2
-                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[24px] xl:leading-[32px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                         >
                             We are sorry all of our clients require <br /><span>working capital</span> in order to qualify
                         </h2>
@@ -306,10 +306,23 @@
         },
 
         methods: {
-            initCalendly() {
+            loadCalendlyScript() {
                 const calendlyScript = document.createElement('script');
                 calendlyScript.setAttribute('src', 'https://assets.calendly.com/assets/external/widget.js');
                 document.head.appendChild(calendlyScript);
+            },
+            initCalendly() {
+                let loadTimeout;
+                const delayTime = 1000;
+
+                const resetLoadTimeout = () => {
+                    if (loadTimeout) {
+                        clearTimeout(loadTimeout);
+                    }
+                    loadTimeout = setTimeout(this.loadCalendlyScript, delayTime);
+                };
+
+                document.addEventListener('mousemove', resetLoadTimeout);
 
                 if (parseInt(this.$route.query?.bookConsult) === 1) {
                     this.currentQuestion = 1;
