@@ -95,7 +95,8 @@ export default {
 
     plugins: [
         { src: '~/plugins/axios.js' },
-        { src: '~/plugins/lazyload-bg.js' },
+        { src: '~/plugins/lazyload-bg.js', mode: 'client' },
+        { src: '~/plugins/lazyload-img.js', mode: 'client' },
         { src: '~/plugins/vue-awesome-swiper.js' },
         { src: '~/plugins/vue-the-mask' },
         { src: '~/plugins/vue-vuelidate.js' },

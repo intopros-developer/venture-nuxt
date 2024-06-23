@@ -136,7 +136,7 @@
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
                                                         <button aria-label="English" class="flex items-center gap-2" @click="switchLang('en')">
-                                                            <img src="/images/flags/flag-global.webp" width="22" height="15" class="w-[22px]" alt="English" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-global.webp'" width="22" height="15" class="w-[22px]" alt="English" loading="lazy" />
                                                             <p>English</p>
                                                         </button>
                                                     </li>
@@ -149,31 +149,31 @@
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
                                                         <button aria-label="Brazil (Português)" class="flex items-center gap-2" @click="switchLang('pt-br')">
-                                                            <img src="/images/flags/flag-brazil.webp" class="w-[22px]" width="22" height="15" alt="Brazil (Português)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-brazil.webp'" class="w-[22px]" width="22" height="15" alt="Brazil (Português)" loading="lazy" />
                                                             <p>Brazil (Português)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Argentina (Español)" class="flex items-center gap-2" @click="switchLang('es-ar')">
-                                                            <img src="/images/flags/flag-argentina.webp" class="w-[22px]" width="22" height="15" alt="Argentina (Español)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-argentina.webp'" class="w-[22px]" width="22" height="15" alt="Argentina (Español)" loading="lazy" />
                                                             <p>Argentina (Español)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button arial-label="Chile (Español)" class="flex items-center gap-2" @click="switchLang('es-cl')">
-                                                            <img src="/images/flags/flag-chile.webp" class="w-[22px]" width="22" height="15" alt="Chile (Español)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-chile.webp'" class="w-[22px]" width="22" height="15" alt="Chile (Español)" loading="lazy" />
                                                             <p>Chile (Español)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Colombia (Español)" class="flex items-center gap-2" @click="switchLang('es-co')">
-                                                            <img src="/images/flags/flag-colombia.webp" class="w-[22px]" width="22" height="15" alt="Colombia (Español)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-colombia.webp'" class="w-[22px]" width="22" height="15" alt="Colombia (Español)" loading="lazy" />
                                                             <p>Colombia (Español)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Canada" class="flex items-center gap-2" @click="switchLang('es-co')">
-                                                            <img src="/images/flags/flag-canada.webp" class="w-[22px]" width="22" height="15" alt="Canada" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-canada.webp'" class="w-[22px]" width="22" height="15" alt="Canada" loading="lazy" />
                                                             <p>Canada</p>
                                                         </button>
                                                     </li>
@@ -186,37 +186,37 @@
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
                                                         <button aria-label="France(Français)" class="flex items-center gap-2" @click="switchLang('fr')">
-                                                            <img src="/images/flags/flag-france.webp" class="w-[22px]" width="22" height="15" alt="France (Français)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-france.webp'" class="w-[22px]" width="22" height="15" alt="France (Français)" loading="lazy" />
                                                             <p>France (Français)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Germany / Switzerland (Deutsch)" class="flex items-center gap-2" @click="switchLang('de-ch')">
-                                                            <img src="/images/flags/flag-germany.webp" class="w-[22px]" width="22" height="15" alt="Germany" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-germany.webp'" class="w-[22px]" width="22" height="15" alt="Germany" loading="lazy" />
                                                             <p>Germany / Switzerland (Deutsch)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Italy (Italiano)" class="flex items-center gap-2" @click="switchLang('it')">
-                                                            <img src="/images/flags/flag-italy.webp" class="w-[22px]" width="22" height="15" alt="Italy" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-italy.webp'" class="w-[22px]" width="22" height="15" alt="Italy" loading="lazy" />
                                                             <p>Italy (Italiano)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Spain (Español)" class="flex items-center gap-2" @click="switchLang('es')">
-                                                            <img src="/images/flags/flag-spain.webp" class="w-[22px]" width="22" height="15" alt="Spain (Español)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-spain.webp'" class="w-[22px]" width="22" height="15" alt="Spain (Español)" loading="lazy" />
                                                             <p>Spain (Español)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Russia (Русский)" class="flex items-center gap-2" @click="switchLang('ru')">
-                                                            <img src="/images/flags/flag-russia.webp" class="w-[22px]" width="22" height="15" alt="Russia (Русский)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-russia.webp'" class="w-[22px]" width="22" height="15" alt="Russia (Русский)" loading="lazy" />
                                                             <p>Russia (Русский)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="England" class="flex items-center gap-2" @click="switchLang('ru')">
-                                                            <img src="/images/flags/flag-uk.webp" class="w-[22px]" width="22" height="15" alt="England" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-uk.webp'" class="w-[22px]" width="22" height="15" alt="England" loading="lazy" />
                                                             <p>England</p>
                                                         </button>
                                                     </li>
@@ -229,43 +229,43 @@
                                                 <ul class="sub-sub-menu !space-y-3">
                                                     <li>
                                                         <button aria-label="China (中文版)" class="flex items-center gap-2" @click="switchLang('zh')">
-                                                            <img src="/images/flags/flag-uk.webp" class="w-[22px]" width="22" height="15" alt="China (中文版)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-uk.webp'" class="w-[22px]" width="22" height="15" alt="China (中文版)" loading="lazy" />
                                                             <p>China (中文版)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Korea (한국어)" class="flex items-center gap-2" @click="switchLang('ko')">
-                                                            <img src="/images/flags/flag-korea.webp" class="w-[22px]" width="22" height="15" alt="Korea (한국어)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-korea.webp'" class="w-[22px]" width="22" height="15" alt="Korea (한국어)" loading="lazy" />
                                                             <p>Korea (한국어)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Japan (日本語)" class="flex items-center gap-2" @click="switchLang('ja')">
-                                                            <img src="/images/flags/flag-japan.webp" class="w-[22px]" width="22" height="15" alt="Japan (日本語)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-japan.webp'" class="w-[22px]" width="22" height="15" alt="Japan (日本語)" loading="lazy" />
                                                             <p>Japan (日本語)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Taiwan (日本語)" class="flex items-center gap-2" @click="switchLang('zh-tw')">
-                                                            <img src="/images/flags/flag-taiwan.webp" class="w-[22px]" width="22" height="15" alt="Taiwan (日本語)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-taiwan.webp'" class="w-[22px]" width="22" height="15" alt="Taiwan (日本語)" loading="lazy" />
                                                             <p>Taiwan (日本語)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Hong Kong (日本語)" class="flex items-center gap-2" @click="switchLang('zh-hk')">
-                                                            <img src="/images/flags/flag-hongkong.webp" class="w-[22px]" width="22" height="15" alt="Hong Kong (日本語)" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-hongkong.webp'" class="w-[22px]" width="22" height="15" alt="Hong Kong (日本語)" loading="lazy" />
                                                             <p>Hong Kong (日本語)</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Australia" class="flex items-center gap-2" @click="switchLang('zh-au')">
-                                                            <img src="/images/flags/flag-australia.webp" class="w-[22px]" width="22" height="15" alt="Australia" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-australia.webp'" class="w-[22px]" width="22" height="15" alt="Australia" loading="lazy" />
                                                             <p>Australia</p>
                                                         </button>
                                                     </li>
                                                     <li>
                                                         <button aria-label="Iran" class="flex items-center gap-2" @click="switchLang('zh-ir')">
-                                                            <img src="/images/flags/flag-iran.webp" class="w-[22px]" width="22" height="15" alt="Iran" loading="lazy" />
+                                                            <img v-lazyload-img="'/images/flags/flag-iran.webp'" class="w-[22px]" width="22" height="15" alt="Iran" loading="lazy" />
                                                             <p>Iran</p>
                                                         </button>
                                                     </li>

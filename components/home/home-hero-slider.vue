@@ -40,7 +40,7 @@
                                 >
                                     {{ slide.attributes.linkTitle }}
                                     <img
-                                        src="/images/icons/arrow-right.webp"
+                                        v-lazyload-img="'/images/icons/arrow-right.webp'"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -56,7 +56,7 @@
                                 >
                                     {{ slide.attributes.linkTitle }}
                                     <img
-                                        src="/images/icons/arrow-right.webp"
+                                        v-lazyload-img="'/images/icons/arrow-right.webp'"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -91,7 +91,7 @@
                                 >
                                     {{ slide.attributes.linkTitle }}
                                     <img
-                                        src="/images/icons/arrow-right.webp"
+                                        v-lazyload-img="'/images/icons/arrow-right.webp'"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
@@ -108,7 +108,7 @@
                                 >
                                     {{ slide.attributes.linkTitle }}
                                     <img
-                                        src="/images/icons/arrow-right.webp"
+                                        v-lazyload-img="'/images/icons/arrow-right.webp'"
                                         class="object-fit relative left-0 transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
                                         loading="lazy"
