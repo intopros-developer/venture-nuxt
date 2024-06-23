@@ -21,14 +21,7 @@
                             <source :src="slide.attributes.slideVideoUrl" type="video/mp4" :loading="i < 4 ? 'eager' : 'lazy'" />
                         </video>
                     </div>
-                    <nuxt-img
-                        format="webp"
-                        v-else
-                        class="slider-img absolute bottom-0 left-0 right-0 top-0 -z-10 h-full w-full object-cover"
-                        :alt="slide.attributes.title"
-                        :src="slide.attributes.slideImageUrl"
-                        :preload="i < 3 ? true : false"
-                    />
+                    <img v-else class="slider-img absolute bottom-0 left-0 right-0 top-0 -z-10 h-full w-full object-cover" :alt="slide.attributes.title" :src="slide.attributes.slideImageUrl" :preload="i < 3 ? true : false" />
 
                     <div class="container relative z-10 px-10 md:px-4 lg:px-[97px] xl:px-4" :class="{ '': i === 0 }">
                         <div
@@ -46,8 +39,7 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img
-                                        format="webp"
+                                    <img
                                         src="/images/icons/arrow-right.webp"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
@@ -63,8 +55,7 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img
-                                        format="webp"
+                                    <img
                                         src="/images/icons/arrow-right.webp"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
@@ -99,8 +90,7 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img
-                                        format="webp"
+                                    <img
                                         src="/images/icons/arrow-right.webp"
                                         class="relative left-0 object-contain transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
@@ -117,8 +107,7 @@
                                     class="slide-learn-more-animation-before slide-learn-more-animation-after flex items-center gap-2 pb-5 pt-5 text-sm text-white"
                                 >
                                     {{ slide.attributes.linkTitle }}
-                                    <nuxt-img
-                                        format="webp"
+                                    <img
                                         src="/images/icons/arrow-right.webp"
                                         class="object-fit relative left-0 transition-all duration-300 group-hover:left-2"
                                         :alt="slide.attributes.linkTitle + '-1'"
