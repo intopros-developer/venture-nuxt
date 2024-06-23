@@ -113,6 +113,7 @@ export default {
 
     modules: [
         '@nuxtjs/axios',
+        '@nuxt/image',
         '@nuxtjs/auth-next',
         '@nuxtjs/toast',
         '@nuxtjs/i18n',
@@ -169,6 +170,8 @@ export default {
             default: 'en',
         },
     },
+
+    image: {},
 
     generate: {
         routes: async () => {
