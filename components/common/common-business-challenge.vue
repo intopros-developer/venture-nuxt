@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <section id="ourCulture" class="relative bg-cover bg-center bg-no-repeat pb-32 pt-[50px] lg:pb-[175px] lg:pt-[280px]" v-lazyload-bg="image">
+            <section id="ourCulture" class="relative bg-primary-700 bg-cover bg-center bg-no-repeat pb-32 pt-[50px] lg:pb-[175px] lg:pt-[280px]" v-lazyload-bg="image">
                 <div class="absolute left-0 top-0 -z-0 h-full w-full" style="background-image: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #2b3746 100%)"></div>
                 <div class="container relative z-10 px-10 lg:px-[97px] xl:px-4">
                     <p class="max-w-[800px] text-[28px] font-bold uppercase leading-[42px] text-white lg:text-[41px] lg:leading-[54px]" v-html="title"></p>

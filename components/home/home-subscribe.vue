@@ -28,7 +28,7 @@
                     </form>
                 </div>
                 <div class="max-w-[400px] flex-none xl:max-w-[529px]">
-                    <img :src="imageUrl" :alt="title" loading="lazy" />
+                    <img v-lazyload-img="imageUrl" :alt="title" loading="lazy" />
                 </div>
                 <form id="subscribe-form-another" action="" class="block sm:hidden" @submit.prevent="onSubmit">
                     <div class="max-w-[498px] items-stretch xl:mt-[106px] xl:max-w-[624px]">

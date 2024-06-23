@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-cover bg-[32%_top] bg-no-repeat pb-[72px] pt-[112px] lg:bg-[center_top_25%]" v-lazyload-bg="imageUrl">
+    <div class="bg-primary-700 bg-cover bg-[32%_top] bg-no-repeat pb-[72px] pt-[112px] lg:bg-[center_top_25%]" v-lazyload-bg="imageUrl">
         <div class="container lg:px-[97px] xl:px-4">
             <div class="items-start justify-between gap-5 lg:flex xl:gap-[107px]">
                 <div class="relative">

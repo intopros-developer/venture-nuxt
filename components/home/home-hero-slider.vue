@@ -2,7 +2,7 @@
     <section class="hero-slider relative -mt-36 md:-mt-32">
         <div v-swiper:heroSlider="slider_options" class="swiper relative h-screen !min-h-[42rem]" :cleanup-styles-on-destroy="false">
             <div class="swiper-wrapper flex !min-h-[42rem] xl:!h-[100vh]">
-                <div v-for="(slide, i) in slider" :key="i" class="swiper-slide !h-full overflow-hidden bg-black-700">
+                <div v-for="(slide, i) in slider" :key="i" class="swiper-slide !h-full overflow-hidden bg-primary-700">
                     <div class="absolute top-0 z-0 h-full w-full bg-black opacity-20 sm:opacity-30"></div>
                     <div
                         class="absolute top-0 z-0 h-full w-full"

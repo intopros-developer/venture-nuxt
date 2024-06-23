@@ -1,7 +1,7 @@
 <template>
     <div v-if="content">
         <!-- Hero form -->
-        <section class="contact-heroform group relative overflow-hidden bg-cover bg-center bg-no-repeat">
+        <section class="contact-heroform group relative overflow-hidden bg-primary-700 bg-cover bg-center bg-no-repeat">
             <video class="responsive-contact-us-section-video absolute h-full w-full object-cover" :style="videoHeight" autoplay loop muted playsinline>
                 <source :src="content.bannerVideoUrl" type="video/mp4" />
             </video>

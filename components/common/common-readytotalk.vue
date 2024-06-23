@@ -1,5 +1,5 @@
 <template>
-    <section id="readyToTalk" class="bg-gray-400 bg-cover py-10 md:py-16 xl:py-32" v-lazyload-bg="imgUrl">
+    <section id="readyToTalk" class="bg-primary-700 bg-cover py-10 md:py-16 xl:py-32" v-lazyload-bg="imgUrl">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <form id="ready-to-talk-form" action="" @submit.prevent="onSubmit">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="relative h-[80vh] bg-cover bg-center bg-no-repeat object-center pb-12" v-lazyload-bg="content.bannerImgUrl">
+        <section class="relative h-[80vh] bg-primary-700 bg-cover bg-center bg-no-repeat object-center pb-12" v-lazyload-bg="content.bannerImgUrl">
             <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[500px]"></div>
             <div class="container relative z-10 flex h-full items-center lg:px-[97px] xl:pl-20">

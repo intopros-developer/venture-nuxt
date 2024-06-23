@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section class="relative bg-cover bg-[right_32%_top] bg-no-repeat pb-12 pt-[100px] md:bg-[center_top_8%] lg:pt-[166px] xl:bg-[center_top_12%] xl:pb-[67px]" v-lazyload-bg="content.bannerImgUrl">
+        <section class="relative bg-primary-700 bg-cover bg-[right_32%_top] bg-no-repeat pb-12 pt-[100px] md:bg-[center_top_8%] lg:pt-[166px] xl:bg-[center_top_12%] xl:pb-[67px]" v-lazyload-bg="content.bannerImgUrl">
             <div class="absolute left-0 top-0 z-0 h-full w-full bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-[214px]"></div>
             <div class="container relative z-10 lg:px-[97px] xl:px-4">
