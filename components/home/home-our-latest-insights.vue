@@ -9,7 +9,7 @@
             <div v-if="insightsData" class="relative z-[1] grid grid-cols-1 md:grid-cols-2 lg:-mx-2">
                 <div v-for="(insight, i) in insightsData" :key="i" class="relative mb-8 md:px-7" :class="{ 'border-[#d5d5d5] md:border-r': i % 2 === 0 }">
                     <div class="h-48 w-full shadow-[0px_3px_6px_rgba(0,0,0,0.6)] xl:h-[276px]">
-                        <img :src="insight.attributes.imgUrl" class="h-full w-full object-cover" :alt="insight.attributes.title" loading="lazy" />
+                        <img v-lazyload-img="insight.attributes.imgUrl" class="h-full w-full object-cover" :alt="insight.attributes.title" loading="lazy" />
                     </div>
                     <div class="flex h-[calc(100%-192px)] flex-col justify-between px-0 py-[34px] xl:h-[calc(100%-276px)]">
                         <div>
