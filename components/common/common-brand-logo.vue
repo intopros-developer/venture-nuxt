@@ -54,6 +54,8 @@
                     touchRatio: 1,
                     centeredSlides: true,
                     init: false,
+                    lazy: true,
+                    preloadImages: false,
                     breakpoints: {
                         640: {
                             slidesPerView: 4,
