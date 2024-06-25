@@ -59,6 +59,12 @@
 @tailwind utilities;
 
 @layer components {
+    .font-bold {
+        font-weight: 600 !important;
+    }
+    .custom-blur {
+        filter: blur(40px);
+    }
     .form-input,
     .form-textarea,
     .form-multiselect {
@@ -88,6 +94,9 @@
         @apply absolute left-0 top-[54px] -z-20 w-full shadow-[0_14px_6px_rgba(0,0,0,0.02)] xl:top-20;
     }
     .megamenu li .sub-menu h3 {
+        @apply inline-block border-b-[3px] border-primary text-base font-bold uppercase leading-7;
+    }
+    .megamenu li .sub-menu .head-link {
         @apply inline-block border-b-[3px] border-primary text-base font-bold uppercase leading-7;
     }
     .megamenu li .sub-menu ul {
@@ -285,6 +294,26 @@
     }
     .custom-multiselect.career-form-custom:hover button svg {
         @apply !text-white;
+    }
+}
+
+@layer base {
+  * {
+    --tw-backdrop-sepia:  ;
+    --will-be-deleted: ; 
+  }
+  *,
+    ::before,
+    ::after {
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
     }
 }
 /* Menu Animation*/
@@ -686,4 +715,19 @@
 #userback_button_container .userback-button-e {
     min-width: 120px !important;
     max-width: 120px !important;
+}
+
+
+*,
+::before,
+::after {
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
 }

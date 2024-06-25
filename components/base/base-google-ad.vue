@@ -163,6 +163,18 @@
         <!-- common-business-challenge -->
         <common-business-challenge :title="content.section8Title" :image="content.section8ImgUrl" :values="section8Data" :button-text="content.section8ButtonText" :button-url="content.section8ButtonLink" />
 
+        <section class="pb-20 pt-14 md:pb-32">
+            <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
+                <div class="mb-8 flex items-center justify-center gap-2.5 text-center">
+                    <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
+                    <h2 id="driveForResults" class="text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl" v-html="content.sectionNewTitle"></h2>
+                    <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
+                </div>
+                <common-toggle-content :content="content.SectionNewDescription" />
+            </div>
+            <div class="pt-[76px] text-center"><a href="/book-consult" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6" data-v-77418fce="">Contact us</a></div>
+        </section>
+
         <section class="py-10 lg:pb-[198px] lg:pt-[93px]">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-4 flex items-center justify-center gap-[33px] text-center">
@@ -185,22 +197,12 @@
                                     <h3 class="mb-3 mt-3 text-xl font-bold leading-7 text-[#202a36] xl:mb-6 xl:text-[21px]">
                                         {{ process.attributes.title }}
                                     </h3>
-                                    <p v-if="process.attributes.description && !activeProcessReadMore.includes(i)" class="overflow-hidden text-sm font-medium text-[#353535] xl:text-lg xl:leading-9">
-                                        {{ process.attributes.description.slice(0, process.attributes.description.indexOf('\n')) }}
-                                    </p>
-                                    <p v-if="activeProcessReadMore.includes(i)" class="overflow-hidden text-sm font-medium text-[#353535] xl:text-lg xl:leading-9">
-                                        {{ process.attributes.description }}
-                                    </p>
-                                    <button :aria-label="$t('read_more')" class="mt-3 flex items-center justify-start gap-4 text-sm font-semibold text-primary xl:text-xl" @click="toggleProcess(i)">
-                                        <p class="text-base">{{ activeProcessReadMore.includes(i) ? $t('read_less') : $t('read_more') }}</p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" class="h-1 w-2 xl:h-[6px] xl:w-[11px]" :class="{ 'rotate-180': activeProcessReadMore.includes(i) }">
-                                            <g>
-                                                <g>
-                                                    <path fill="currentColor" d="M.439.546l4.907 4.907L10.254.546z"></path>
-                                                </g>
-                                            </g>
-                                        </svg>
-                                    </button>
+                                    <common-toggle-content
+                                        content-class="overflow-hidden text-sm font-medium text-[#353535] xl:text-lg xl:leading-9"
+                                        :show-blur="false"
+                                        :content="process.attributes.description"
+                                        read-more-class="w-full items-center justify-start"
+                                    />
                                 </div>
                             </div>
                         </div>

@@ -54,6 +54,10 @@
                 type: Number,
                 default: 24,
             },
+            showAll: {
+                type: Boolean,
+                default: false,
+            },
         },
 
         data() {
@@ -72,6 +76,9 @@
             this.textBoxContent = this.content;
             this.textBoxFullContent = this.content;
             this.hideCustomContent();
+            if (this.showAll) {
+                this.toggleContentShow();
+            }
             // this.perLineHeight = parseInt(getComputedStyle(this.$refs.customToggleContainer.$el).lineHeight);
             // console.log(this.$refs.customToggleContainer.$el.firstChild)
         },
