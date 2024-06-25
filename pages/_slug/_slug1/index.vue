@@ -26,9 +26,7 @@
         props: {
             name: {
                 type: String,
-                default: () => {
-                    return 'about-page';
-                },
+                default: () => 'about-page',
             },
         },
         async asyncData(context) {
@@ -73,13 +71,11 @@
                         baseURL: baseURL.data.data[0].attributes,
                     };
                 } else {
-                    return {
-                        content: null,
-                        currentPage: '',
-                    };
+                    context.error({ statusCode: 404, message: 'Page not found' });
                 }
             } catch (e) {
                 console.error('Error', e);
+                context.error({ statusCode: 404, message: 'An error occurred' });
             }
         },
         data() {

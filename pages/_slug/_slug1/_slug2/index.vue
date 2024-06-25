@@ -13,8 +13,7 @@
         <div v-else class="nuxt-error">
             <section class="item-center flex min-h-[calc(100vh-530px)] flex-col justify-center">
                 <div class="container py-20 text-center">
-                    <h1 class="text-8xl font-bold text-black/70">404</h1>
-                    <p class="my-5">An error occurred</p>
+                    <h1 class="my-5 text-4xl font-bold text-black/70">An error occurred</h1>
                     <nuxt-link class="text-primary hover:underline" :to="localePath('/')">Home page</nuxt-link>
                 </div>
             </section>
@@ -27,9 +26,7 @@
         props: {
             name: {
                 type: String,
-                default: () => {
-                    return 'about-page';
-                },
+                default: () => 'about-page',
             },
         },
         async asyncData(context) {
@@ -74,13 +71,11 @@
                         baseURL: baseURL.data.data[0].attributes,
                     };
                 } else {
-                    return {
-                        content: null,
-                        currentPage: '',
-                    };
+                    context.error({ statusCode: 404, message: 'Page not found' });
                 }
             } catch (e) {
                 console.error('Error', e);
+                context.error({ statusCode: 404, message: 'An error occurred' });
             }
         },
         data() {
@@ -90,7 +85,7 @@
         },
         head() {
             return {
-                title: this.content ? 'Venture Plans' : '404 | Page not found',
+                title: this.content ? 'Venture Plans' : 'Page not found',
                 meta: this.content
                     ? []
                     : [
