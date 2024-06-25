@@ -9,7 +9,7 @@
             </div>
             <div class="px-2 py-3 text-center">
                 <!-- <client-only>
-                    <vue-apexchart-loader type="radialBar" :options="chartRadialBar.options" :series="chart1.series" />
+                    <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
                 </client-only> -->
             </div>
         </div>
@@ -22,7 +22,7 @@
             </div>
             <div class="px-2 py-3 text-center">
                 <!-- <client-only>
-                    <vue-apexchart-loader type="area" :options="chartArea.options" :series="chart2.series" />
+                    <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
                 </client-only> -->
             </div>
         </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="px-2 py-3 text-center">
                 <!-- <client-only>
-                    <vue-apexchart-loader type="radialBar" :options="chartRadialBar.options" :series="chart3.series" />
+                    <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
                 </client-only> -->
             </div>
         </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="px-2 py-3 text-center">
                 <!-- <client-only>
-                    <vue-apexchart-loader type="area" :options="chartArea.options" :series="chart4.series" />
+                    <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
                 </client-only> -->
             </div>
         </div>
@@ -58,7 +58,6 @@
 <script>
     export default {
         name: 'HomeSectorExcelled',
-
         data() {
             return {
                 raisedToChart: {
