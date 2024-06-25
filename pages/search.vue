@@ -964,7 +964,7 @@
                     },
                     {
                         name: 'robots',
-                        content: 'noindex',
+                        content: 'index',
                     },
                 ],
                 link: [
