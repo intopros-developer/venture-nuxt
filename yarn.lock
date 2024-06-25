@@ -7230,7 +7230,7 @@
     "lower-case" "^2.0.2"
     "tslib" "^2.0.3"
 
-"node-fetch-native@^1.4.1", "node-fetch-native@^1.6.1":
+"node-fetch-native@^1.4.1", "node-fetch-native@^1.6.1", "node-fetch-native@^1.6.4":
   "integrity" "sha512-IhOigYzAKHd244OC0JIMIUrjzctirCmPkaIfhDeGcEETWof5zKYUW7e7MYvChGWh/4CJeXEgsRyGzuF334rOOQ=="
   "resolved" "https://registry.npmjs.org/node-fetch-native/-/node-fetch-native-1.6.4.tgz"
   "version" "1.6.4"
