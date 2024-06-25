@@ -54,7 +54,7 @@
 
         <lazy-home-subscribe :image-url="content.section7ImgUrl" :title="content.section7Title" :description="content.section7Description" />
 
-        <lazy-home-career :button-link="content.section8ButtonLink" :button-text="content.section8ButtonText" :title="content.section8Title" :subtitle="content.section8Subtitle" :image="content.section8ImgUrl" /> -->
+        <lazy-home-career :button-link="content.section8ButtonLink" :button-text="content.section8ButtonText" :title="content.section8Title" :subtitle="content.section8Subtitle" :image="content.section8ImgUrl" />
 
         <lazy-common-brand-logo :logos="logoSlider" />
     </div>
