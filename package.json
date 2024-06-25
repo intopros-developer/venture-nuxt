@@ -35,7 +35,6 @@
         "nuxt-compress": "^5.0.0",
         "swiper": "^5.4.5",
         "vue": "^2.7.14",
-        "vue-apexcharts": "^1.6.2",
         "vue-awesome-swiper": "^4.1.1",
         "vue-click-outside": "^1.1.0",
         "vue-flatpickr-component": "^8.1.7",
