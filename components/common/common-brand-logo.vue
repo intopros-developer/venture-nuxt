@@ -15,30 +15,18 @@
 <script>
     export default {
         props: {
-            logos: Array,
-            default: () => [
-                {
-                    logoUrl: '/images/logos/stanford.webp',
-                },
-                {
-                    logoUrl: '/images/logos/finra.webp',
-                },
-                {
-                    logoUrl: '/images/logos/hbs.webp',
-                },
-                {
-                    logoUrl: '/images/logos/cbv.webp',
-                },
-                {
-                    logoUrl: '/images/logos/harvard.webp',
-                },
-                {
-                    logoUrl: '/images/logos/nacva.webp',
-                },
-                {
-                    logoUrl: '/images/logos/peking.webp',
-                },
-            ],
+            logos: {
+                type: Array,
+                default: () => [
+                    { logoUrl: '/images/logos/stanford.webp' },
+                    { logoUrl: '/images/logos/finra.webp' },
+                    { logoUrl: '/images/logos/hbs.webp' },
+                    { logoUrl: '/images/logos/cbv.webp' },
+                    { logoUrl: '/images/logos/harvard.webp' },
+                    { logoUrl: '/images/logos/nacva.webp' },
+                    { logoUrl: '/images/logos/peking.webp' },
+                ],
+            },
         },
         data() {
             return {
@@ -57,25 +45,17 @@
                     lazy: true,
                     preloadImages: false,
                     breakpoints: {
-                        640: {
-                            slidesPerView: 4,
-                            spaceBetween: 50,
-                        },
-                        768: {
-                            slidesPerView: 4,
-                            spaceBetween: 50,
-                        },
-                        1024: {
-                            slidesPerView: 6,
-                            spaceBetween: 60,
-                        },
+                        640: { slidesPerView: 4, spaceBetween: 50 },
+                        768: { slidesPerView: 4, spaceBetween: 50 },
+                        1024: { slidesPerView: 6, spaceBetween: 60 },
                     },
                 },
             };
         },
-
         mounted() {
-            this.brandLogo.init();
+            this.$nextTick(() => {
+                this.brandLogo.init();
+            });
         },
     };
 </script>
