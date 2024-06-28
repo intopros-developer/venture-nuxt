@@ -181,7 +181,7 @@ export default {
 
     generate: {
         routes: async () => {
-            const routes = [];
+            const routes = ["/"];
             const apiUrl = process.env.STRAPI_URL;
             const authToken = process.env.STRAPI_TOKEN;
             const collectionEndpoint = `${apiUrl}/api/base-urls`;
@@ -193,7 +193,6 @@ export default {
                 },
             });
             if (!response.ok) {
-                console.log('Network response was not ok');
                 return routes;
             }
             const data = await response.json();
@@ -230,6 +229,7 @@ export default {
                     }
                 }
             }
+
             return routes;
         },
         cacheTime: 7200000,
