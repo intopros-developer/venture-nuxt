@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 
 export default {
+    target: 'static',
     ssr: !!(process.env.IS_SSG && process.env.IS_SSG === 'true'),
     head: {
         title: 'Venture Plans',
@@ -108,6 +109,8 @@ export default {
         { src: '~/plugins/factory.js' },
         { src: '~/plugins/vue-multiselect.js' },
         { src: '~/plugins/popper.js' },
+        { src: '~/plugins/vue-scroll-active.js' },
+        { src: '~/plugins/vue-apexcharts.js', mode: 'client' },
         { src: '~/plugins/fast.wistia-script.js', mode: 'client' },
         { src: '~/plugins/google-tag-manager.js', mode: 'client' },
         { src: '~/plugins/script-loader.js', mode: 'client' },

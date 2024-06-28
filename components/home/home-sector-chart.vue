@@ -8,9 +8,9 @@
                 </p>
             </div>
             <div class="px-2 py-3 text-center">
-                <!-- <client-only>
+                <client-only>
                     <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
-                </client-only> -->
+                </client-only>
             </div>
         </div>
         <div class="rounded-xl bg-white shadow-[0px_1px_8px_rgba(0,161,241,0.12)]">
@@ -21,9 +21,9 @@
                 </p>
             </div>
             <div class="px-2 py-3 text-center">
-                <!-- <client-only>
+                <client-only>
                     <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
-                </client-only> -->
+                </client-only>
             </div>
         </div>
         <div class="rounded-xl bg-white shadow-[0px_1px_8px_rgba(0,161,241,0.12)]">
@@ -34,9 +34,9 @@
                 </p>
             </div>
             <div class="px-2 py-3 text-center">
-                <!-- <client-only>
+                <client-only>
                     <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
-                </client-only> -->
+                </client-only>
             </div>
         </div>
         <div class="rounded-xl bg-white shadow-[0px_1px_8px_rgba(0,161,241,0.12)]">
@@ -47,9 +47,9 @@
                 </p>
             </div>
             <div class="px-2 py-3 text-center">
-                <!-- <client-only>
+                <client-only>
                     <apexchart type="radialBar" :options="chartRadialBar.options" :series="chart1.series"></apexchart>
-                </client-only> -->
+                </client-only>
             </div>
         </div>
     </div>

@@ -59,9 +59,6 @@
 @tailwind utilities;
 
 @layer components {
-    .font-bold {
-        font-weight: 600 !important;
-    }
     .custom-blur {
         filter: blur(40px);
     }
@@ -298,22 +295,22 @@
 }
 
 @layer base {
-  * {
-    --tw-backdrop-sepia:  ;
-    --will-be-deleted: ; 
-  }
-  *,
+    * {
+        --tw-backdrop-sepia: ;
+        --will-be-deleted: ;
+    }
+    *,
     ::before,
     ::after {
-    --tw-backdrop-blur: ;
-    --tw-backdrop-brightness: ;
-    --tw-backdrop-contrast: ;
-    --tw-backdrop-grayscale: ;
-    --tw-backdrop-hue-rotate: ;
-    --tw-backdrop-invert: ;
-    --tw-backdrop-opacity: ;
-    --tw-backdrop-saturate: ;
-    --tw-backdrop-sepia: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
     }
 }
 /* Menu Animation*/
@@ -717,17 +714,16 @@
     max-width: 120px !important;
 }
 
-
 *,
 ::before,
 ::after {
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
 }

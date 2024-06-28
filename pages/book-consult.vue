@@ -11,7 +11,7 @@
                     </nuxt-link>
                 </div>
                 <div class="relative">
-                    <span class="absolute -inset-5 -z-[1] m-auto bg-black/30 blur-2xl"></span>
+                    <span class="custom-blur absolute -inset-5 -z-[1] m-auto bg-black/30"></span>
                     <p
                         class="pt-6 text-xl font-bold uppercase leading-[32px] text-[#f7f4f4] sm:text-[32px] sm:leading-[52px] lg:pt-0 [&>span]:border-b-[5px] [&>span]:border-primary [&>br]:hidden md:[&>br]:block"
                         v-html="content.title2"

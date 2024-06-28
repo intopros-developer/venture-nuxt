@@ -15,6 +15,9 @@ module.exports = {
         fontFamily: {
             proximanova: ['ProximaNova'],
         },
+        font: {
+            bold: 600,
+        },
         colors: {
             transparent: 'transparent',
             current: 'currentColor',
