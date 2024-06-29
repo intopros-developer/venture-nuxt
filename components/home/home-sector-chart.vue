@@ -56,8 +56,13 @@
 </template>
 
 <script>
+    import VueApexCharts from 'vue-apexcharts';
+
     export default {
         name: 'HomeSectorExcelled',
+        components: {
+            'apexchart': VueApexCharts
+        },
         data() {
             return {
                 raisedToChart: {

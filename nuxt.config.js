@@ -109,7 +109,6 @@ export default {
         { src: '~/plugins/vue-multiselect.js' },
         { src: '~/plugins/popper.js' },
         { src: '~/plugins/vue-scroll-active.js' },
-        { src: '~/plugins/vue-apexcharts.js', mode: 'client' },
         { src: '~/plugins/fast.wistia-script.js', mode: 'client' },
         { src: '~/plugins/google-tag-manager.js', mode: 'client' },
         { src: '~/plugins/script-loader.js', mode: 'client' },
