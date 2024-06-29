@@ -1,8 +1,7 @@
 import fetch from 'node-fetch';
 
 export default {
-    // target: 'static',
-    ssr: !!(process.env.IS_SSG && process.env.IS_SSG === 'true'),
+    target: 'static',
     head: {
         title: 'Venture Plans',
         htmlAttrs: {
@@ -193,7 +192,6 @@ export default {
                 },
             });
             if (!response.ok) {
-                console.log('Network response was not ok');
                 return routes;
             }
             const data = await response.json();
