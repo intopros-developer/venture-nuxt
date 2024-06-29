@@ -8,7 +8,7 @@
             </picture>
             <div>
                 <div class="absolute left-0 top-0 z-10 h-full w-full bg-gradient-to-r from-[#2b3746] opacity-10"></div>
-                <div class="relative z-10 mx-4 px-2 pt-0 md:px-4 lg:mx-20 lg:px-4 lg:pt-[65px] lg:pb-[146px]">
+                <div class="relative z-10 mx-4 px-2 pt-0 md:px-4 lg:mx-20 lg:px-4 lg:pb-[146px] lg:pt-[65px]">
                     <div>
                         <div class="grid max-w-full grid-cols-12 items-end justify-between gap-4 space-y-4 lg:max-w-[75%]">
                             <div class="col-span-12 pt-12 text-white lg:col-span-8 lg:text-black">
@@ -27,7 +27,7 @@
                                     </li>
                                 </ul>
                                 <div>
-                                    <a :href="content.bannerButtonUrl" class="outline-btn w-full border-white py-[14px] px-11 text-center text-xl font-semibold leading-[21px] text-white md:w-auto lg:border-black lg:text-black">
+                                    <a :href="content.bannerButtonUrl" class="outline-btn w-full border-white px-11 py-[14px] text-center text-xl font-semibold leading-[21px] text-white md:w-auto lg:border-black lg:text-black">
                                         {{ content.bannerButtonText }}
                                     </a>
                                 </div>
@@ -170,7 +170,7 @@
 
         <common-contact-us :videoThumbnailURL="content.video1ThumbnailUrl" :buttonTitle="content.video1ButtonText" :buttonURL="content.video1ButtonLink" :videoURL="content.video1Url" :title="content.video1Title" />
 
-        <section id="getApproval" class="bg-white pt-32 pb-20">
+        <section id="getApproval" class="bg-white pb-20 pt-32">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-8 flex items-center justify-center gap-2.5 text-center">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -229,7 +229,7 @@
             </div>
         </section>
 
-        <section id="typesOfSBA" class="bg-white pt-32 pb-20">
+        <section id="typesOfSBA" class="bg-white pb-20 pt-32">
             <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
                 <div class="mb-8 flex items-center justify-center gap-2.5 text-center">
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
@@ -623,9 +623,7 @@
                 link: [
                     {
                         rel: 'canonical',
-                        href: this.content?.metaFields[0]?.canonicalUrl
-                            ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
-                            : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                        href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
                     },
                 ],
                 meta: [

@@ -24,11 +24,11 @@
                     </div>
                     <div>
                         <div class="w-full lg:w-5/6">
-                            <p class="line-clamp-1 my-5 text-sm font-semibold text-primary">{{ media.attributes.mediaSource }}</p>
+                            <p class="my-5 line-clamp-1 text-sm font-semibold text-primary">{{ media.attributes.mediaSource }}</p>
                             <div>
-                                <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="line-clamp-2 mb-5 block text-[24px] font-bold">{{ media.attributes.title }}</nuxt-link>
+                                <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="mb-5 line-clamp-2 block text-[24px] font-bold">{{ media.attributes.title }}</nuxt-link>
                             </div>
-                            <p class="line-clamp-3 mb-7 text-base text-[#202A36]">{{ media.attributes.paragraph }}</p>
+                            <p class="mb-7 line-clamp-3 text-base text-[#202A36]">{{ media.attributes.paragraph }}</p>
                         </div>
 
                         <nuxt-link :to="'/media-mentions/' + media.attributes.singleMediaPageSlug" class="mb-10 flex w-[110px] items-center justify-center gap-2 rounded-md bg-primary py-[10px] text-[14px] text-white md:hover:bg-blue-500">
@@ -71,9 +71,7 @@
                 link: [
                     {
                         rel: 'canonical',
-                        href: this.content?.metaFields[0]?.canonicalUrl
-                            ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
-                            : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                        href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
                     },
                     {
                         rel: 'preload',

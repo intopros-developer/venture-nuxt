@@ -479,9 +479,7 @@
                 link: [
                     {
                         rel: 'canonical',
-                        href: this.content?.metaFields[0]?.canonicalUrl
-                            ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
-                            : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                        href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
                     },
                     {
                         rel: 'preload',

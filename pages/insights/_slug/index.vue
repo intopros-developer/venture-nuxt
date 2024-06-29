@@ -111,7 +111,7 @@
                                 <p class="px-[13px] py-[15px] text-lg font-medium leading-7 text-[#202a36]">{{ insightPost1.Insightsource }}</p>
                                 <img :src="insightPost1.imgUrl" :alt="insightPost1.title" loading="lazy" />
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost1.title }}</p>
+                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost1.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost1.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost1.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700" aria-label="Read Further">Read Further</nuxt-link>
@@ -161,7 +161,7 @@
                                 <img :src="insightPost2.imgUrl" :alt="insightPost2.title" loading="lazy" />
 
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost2.title }}</p>
+                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost2.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost2.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost2.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700" aria-label="Read Further">Read Further</nuxt-link>
@@ -200,7 +200,7 @@
                                 <img :src="insightPost3.imgUrl" :alt="insightPost3.title" loading="lazy" />
 
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost3.title }}</p>
+                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost3.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost3.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost3.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700" aria-label="Read Further">Read Further</nuxt-link>
@@ -272,7 +272,7 @@
                                 <img :src="insightPost4.imgUrl" :alt="insightPost4.title" loading="lazy" />
 
                                 <div class="px-[13px] py-[15px]">
-                                    <p class="line-clamp-2 mb-2 text-sm font-semibold text-[#202a36]">{{ insightPost4.title }}</p>
+                                    <p class="mb-2 line-clamp-2 text-sm font-semibold text-[#202a36]">{{ insightPost4.title }}</p>
                                     <p class="line-clamp-3 text-sm leading-[21px] -tracking-[0.03px] text-[#767677]">{{ insightPost4.paragraph }}</p>
                                     <div class="mt-2">
                                         <nuxt-link :to="`/insights/${insightPost4.singleInsightPageSlug}`" class="text-sm font-medium leading-3 text-primary hover:text-primary-700" aria-label="Read Further">Read Further</nuxt-link>
@@ -314,9 +314,7 @@
                 link: [
                     {
                         rel: 'canonical',
-                        href: this.content?.metaFields[0]?.canonicalUrl
-                            ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
-                            : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                        href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
                     },
                     {
                         rel: 'preload',

@@ -318,7 +318,7 @@
                         <img src="/images/congo-icon.svg" alt="icon" loading="lazy" />
 
                         <h2
-                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green [&>br]:hidden [&>br]:md:inline-block"
+                            class="mb-4 mt-3.5 text-base font-extrabold leading-[25px] text-[#707070] xl:mb-[30px] xl:text-[28px] xl:leading-[39px] [&>br]:hidden [&>br]:md:inline-block [&>span]:border-b-[5px] [&>span]:border-green [&>span]:text-green"
                             v-html="$t('congratulations_you_have_span_successfully_span_booked_your_interview')"
                         ></h2>
                         <p
@@ -383,9 +383,7 @@
                 link: [
                     {
                         rel: 'canonical',
-                        href: this.content?.metaFields[0]?.canonicalUrl
-                            ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
-                            : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                        href: (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
                     },
                 ],
                 meta: [
