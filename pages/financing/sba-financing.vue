@@ -159,9 +159,10 @@
                     <h2 id="aboutUs" class="text-2xl font-bold uppercase text-black sm:shrink-0 xl:text-3xl" v-html="content.section2Title"></h2>
                     <div class="hidden h-px w-full bg-[#d5d5d5] sm:block"></div>
                 </div>
-                <common-toggle-content :content="content.section2Description" />
+                <common-toggle-content :show-all="true" :content="content.section2Description" />
             </div>
         </section>
+        <div class="pt-[76px] text-center"><a href="/book-consult" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">Contact Us to Learn How</a></div>
 
         <common-dynamic-questionnaire :data="questionnaires"></common-dynamic-questionnaire>
 
@@ -178,7 +179,7 @@
                 </div>
                 <common-toggle-content :show-blur="false" :show-all="true" read-more-class="hidden" :content="content.SectionNewDescription" />
             </div>
-            <div class="pt-[76px] text-center"><a href="/book-consult" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6" data-v-77418fce="">Contact us</a></div>
+            <div class="pt-[76px] text-center"><a href="/book-consult" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6" data-v-77418fce="">Find Out How We Can Help You</a></div>
         </section>
 
         <!-- Start portfolio -->
@@ -237,6 +238,7 @@
                 </div>
                 <common-toggle-content :show-blur="false" :show-all="true" read-more-class="hidden" :content="content.section6Description" />
             </div>
+            <div class="pt-[76px] text-center"><a href="/book-consult" class="b-btn text-xs uppercase lg:max-w-[322px] lg:py-6">Contact Us Today to Get Started</a></div>
         </section>
 
         <home-sector-excelled :title="content.section12Title" :description="content.section12Description" :data="section12Data" />
@@ -618,7 +620,19 @@
         head() {
             return {
                 title: this.content?.metaFields[0]?.title,
+                link: [
+                    {
+                        rel: 'canonical',
+                        href: this.content?.metaFields[0]?.canonicalUrl
+                            ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
+                            : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                ],
                 meta: [
+                    {
+                        name: 'robots',
+                        content: 'index, all',
+                    },
                     {
                         hid: 'og:title',
                         property: 'og:title',

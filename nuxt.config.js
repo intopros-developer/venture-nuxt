@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 export default {
-    target: 'static',
+    // target: 'static',
     ssr: !!(process.env.IS_SSG && process.env.IS_SSG === 'true'),
     head: {
         title: 'Venture Plans',

@@ -36,7 +36,9 @@
                                     <template v-if="mainNav.navChildItems">
                                         <div v-for="(subNav, subId) in mainNav.navChildItems" :key="subNav.url + subId" class="bg-white px-10 py-6" :class="subNav.mainClass ? subNav.mainClass : ''">
                                             <div class="mb-6">
-                                                <nuxt-link :to="subNav.url" class="uppercase transition-all duration-300 hover:text-primary" @click.native="$store.dispatch('nav/resetAllDesktopMenu', mainNav)">{{ subNav.name }}</nuxt-link>
+                                                <nuxt-link :to="subNav.url" class="head-link uppercase transition-all duration-300 hover:text-primary" @click.native="$store.dispatch('nav/resetAllDesktopMenu', mainNav)">{{
+                                                    subNav.name
+                                                }}</nuxt-link>
                                             </div>
                                             <div
                                                 v-if="subNav.navChildItems && Array.isArray(subNav.navChildItems) && subNav.navChildItems.length > 0 && Array.isArray(subNav.navChildItems[0])"

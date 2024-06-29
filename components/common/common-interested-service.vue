@@ -1,5 +1,5 @@
 <template>
-    <section class="relative bg-primary-700 bg-cover bg-no-repeat" v-lazyload-bg="backgroundImage">
+    <section class="relative bg-gray-700 bg-cover bg-no-repeat" v-lazyload-bg="backgroundImage">
         <div class="z-1 absolute top-0 h-full w-full bg-black opacity-30"></div>
         <div class="container relative z-10 px-10 py-[80px] md:px-4 lg:px-[97px] xl:px-4">
             <div class="flex flex-col items-center justify-between gap-5 md:flex-row">

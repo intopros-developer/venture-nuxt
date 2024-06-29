@@ -2,21 +2,8 @@
     <section class="hero-slider relative -mt-36 md:-mt-32">
         <div v-swiper:heroSlider="slider_options" class="swiper relative h-screen !min-h-[42rem]" :cleanup-styles-on-destroy="false">
             <div class="swiper-wrapper flex !min-h-[42rem] xl:!h-[100vh]">
-                <div v-for="(slide, i) in slider" :key="i" class="swiper-slide !h-full overflow-hidden" v-lazyload-bg="slide.attributes.slideVideoThumbnailUrl">
-                    <p>{{ slide.attributes.slideVideoThumbnailUrl }}</p>
-
+                <div v-for="(slide, i) in slider" :key="i" class="swiper-slide !h-full overflow-hidden bg-gray-700" v-lazyload-bg="slide.attributes.slideVideoThumbnailUrl">
                     <div class="absolute top-0 z-0 h-full w-full bg-black opacity-20 sm:opacity-30"></div>
-                    <div
-                        class="absolute top-0 z-0 h-full w-full"
-                        :class="{
-                            'bg-gradient-to-r from-[#2B3746]/70 md:-left-[20%] md:w-[55%]': i === 5,
-                            'w-full bg-gradient-to-l from-[#313c4a]/0 via-[#0b0d11]/[0.14] to-[#0a0c0f] opacity-25': i === 4,
-                            'bg-gradient-to-r from-[#2B3746]/70 md:-left-[10%] md:w-[55%]': i === 3,
-                            '-left-[40%] bg-gradient-to-r from-[#2b3746] md:w-[65%]': i === 2,
-                            '-left-[30%] bg-gradient-to-r from-[#2b3746] md:w-[90%]': i === 1,
-                            'bg-gradient-to-r from-[#2B3746]/70 md:-left-[40%] md:w-[65%]': i === 0,
-                        }"
-                    ></div>
                     <div class="absolute bottom-0 left-0 z-0 h-[89px] w-full bg-gradient-to-t from-[#202A36] opacity-80"></div>
                     <div v-if="slide.attributes.slideVideoUrl">
                         <video class="force-video-reload responsive-slide-video absolute inset-0 bottom-0 left-0 right-0 top-0 -z-10 h-full w-full object-cover" :style="videoHeight" autoplay loop muted playsinline>
@@ -244,6 +231,14 @@
                             rel: 'preload',
                             href: slide.attributes.slideVideoUrl,
                             as: 'video',
+                            fetchpriority: 'high',
+                        });
+                    }
+                    if (slide.attributes.slideVideoThumbnailUrl) {
+                        preloadLinks.push({
+                            rel: 'preload',
+                            href: slide.attributes.slideVideoThumbnailUrl,
+                            as: 'image',
                             fetchpriority: 'high',
                         });
                     }

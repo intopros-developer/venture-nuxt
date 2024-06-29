@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section v-if="content.bannerVideoUrl" class="contact-heroform group relative overflow-hidden bg-primary-700 bg-cover bg-center bg-no-repeat">
+        <section v-if="content.bannerVideoUrl" class="contact-heroform group relative overflow-hidden bg-gray-700 bg-cover bg-center bg-no-repeat">
             <video class="responsive-contact-us-section-video absolute h-auto w-full object-cover" style="min-height: 571px; height: 20vw" autoplay loop muted playsinline>
                 <source :src="content.bannerVideoUrl" type="video/mp4" />
             </video>
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </section>
-        <section v-else class="relative bg-primary-700 bg-cover bg-center bg-no-repeat pb-9 pt-[164px] xl:pb-[75px]" v-lazyload-bg="content.bannerImgUrl">
+        <section v-else class="relative bg-gray-700 bg-cover bg-center bg-no-repeat pb-9 pt-[164px] xl:pb-[75px]" v-lazyload-bg="content.bannerImgUrl">
             <div class="absolute left-0 top-0 z-0 h-full w-[90%] bg-gradient-to-r from-[#2b3746] via-transparent"></div>
             <div class="absolute bottom-0 left-0 h-[161px] w-full bg-gradient-to-t from-[#202a36] via-transparent opacity-80 xl:h-0"></div>
             <!-- <div class="absolute top-0 z-0 h-full w-full bg-black/30"></div> -->

@@ -1,5 +1,5 @@
 <template>
-    <section v-lazyload-bg="image" class="bg-primary-700 bg-cover bg-[80%_center] md:bg-top">
+    <section v-lazyload-bg="image" class="bg-gray-700 bg-cover bg-[80%_center] md:bg-top">
         <div class="container px-10 md:px-4 lg:px-[97px] xl:px-4">
             <div class="pb-[27px] pt-[68px] text-center md:text-left xl:pb-[70px] xl:pt-[169px]">
                 <div class="group pb-[25px] pt-[40px] lg:max-w-[510px] xl:max-w-[700px] xl:pb-[25px] xl:pt-[100px]">

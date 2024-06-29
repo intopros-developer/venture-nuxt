@@ -1,5 +1,5 @@
 <template>
-    <section id="careerJoinEvent" class="overflow-y-hidden bg-primary-700 bg-cover bg-[top_36%_center] py-10 xl:pb-[75px] xl:pt-20" v-lazyload-bg="imageUrl">
+    <section id="careerJoinEvent" class="overflow-y-hidden bg-gray-700 bg-cover bg-[top_36%_center] py-10 xl:pb-[75px] xl:pt-20" v-lazyload-bg="imageUrl">
         <div class="container">
             <div class="grid grid-cols-1">
                 <div class="relative max-w-[637px] md:pt-[140px]">

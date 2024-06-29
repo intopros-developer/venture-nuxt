@@ -1,6 +1,6 @@
 <template>
     <div v-if="content">
-        <section class="contact-heroform group relative overflow-hidden bg-cover bg-center bg-no-repeat bg-primary-700">
+        <section class="contact-heroform group relative overflow-hidden bg-gray-700 bg-cover bg-center bg-no-repeat">
             <video class="responsive-contact-us-section-video absolute h-auto w-full object-cover" style="min-height: 571px; height: 20vw" autoplay loop muted playsinline>
                 <source :src="content.bannerImgUrl" type="video/mp4" />
             </video>
@@ -306,6 +306,12 @@
                         href: this.content?.metaFields[0]?.canonicalUrl
                             ? (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.content.metaFields[0].canonicalUrl
                             : (process.env.FE_BASE_URL ? process.env.FE_BASE_URL : 'https://www.ventureplans.us') + this.$route.path,
+                    },
+                    {
+                        rel: 'preload',
+                        href: this.content?.bannerImgUrl,
+                        as: 'video',
+                        fetchpriority: 'high',
                     },
                 ],
                 meta: [
