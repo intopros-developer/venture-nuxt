@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 
 export default {
-    target: 'static',
     head: {
         title: 'Venture Plans',
         htmlAttrs: {
