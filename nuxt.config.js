@@ -1,8 +1,6 @@
 import fetch from 'node-fetch';
 
 export default {
-    target: !!(process.env.IS_SSG && process.env.IS_SSG === 'true') ? 'static' : 'server',
-    ssr: !!(process.env.IS_SSG && process.env.IS_SSG === 'true') ? false : true,
     head: {
         title: 'Venture Plans',
         htmlAttrs: {
