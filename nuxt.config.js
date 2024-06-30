@@ -168,8 +168,7 @@ export default {
                 domain: process.env.APP_URL,
             },
         ],
-        strategy: 'prefix_and_default', // prefix_and_default
-        // lazy: true,
+        strategy: 'prefix_and_default',
         parsePages: true,
         langDir: 'lang/',
         defaultLocale: 'en',
@@ -177,6 +176,8 @@ export default {
             default: 'en',
         },
     },
+
+    serverMiddleware: ['~/server-middleware/redirect'],
 
     generate: {
         routes: async () => {
@@ -452,7 +453,7 @@ export default {
             local: {
                 token: {
                     property: 'token',
-                    maxAge: 31536000, // 1 year
+                    maxAge: 31536000,
                 },
 
                 user: {
