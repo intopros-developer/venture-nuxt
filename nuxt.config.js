@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 
 export default {
+    ssr: true,
     head: {
         title: 'Venture Plans',
         htmlAttrs: {

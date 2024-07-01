@@ -1,4 +1,16 @@
 {
     "version": 2,
-    "builds": []
+    "builds": [
+        {
+            "src": "nuxt.config.js",
+            "use": "@nuxtjs/vercel-builder@0.23",
+            "config": {
+                "serverFiles": [
+                    "./.nuxt/dist/sitemap-routes.json"
+                ],
+                "memory": 3009,
+                "maxDuration": 300
+            }
+        }
+    ]
 }
