@@ -1,6 +1,7 @@
 export default ({ app }, inject) => {
     let userbackLoaded = false;
     let intercomLoaded = false;
+    let additionalScriptLoaded = false;
 
     function loadUserbackScript() {
         if (!userbackLoaded) {
@@ -62,6 +63,22 @@ export default ({ app }, inject) => {
         }
     }
 
+    function loadScripts() {
+        if (!(userbackLoaded && intercomLoaded && additionalScriptLoaded)) {
+            loadUserbackScript();
+
+            loadIntercomScript();
+
+            if (!additionalScriptLoaded) {
+                const additionalScript = document.createElement('script');
+                additionalScript.innerHTML =
+                    'var $wc_load=function(a){return JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};';
+                document.head.appendChild(additionalScript);
+                additionalScriptLoaded = true;
+            }
+        }
+    }
+
     let loadTimeout;
     const delayTime = 5000;
 
@@ -69,10 +86,7 @@ export default ({ app }, inject) => {
         if (loadTimeout) {
             clearTimeout(loadTimeout);
         }
-        loadTimeout = setTimeout(() => {
-            loadUserbackScript();
-            loadIntercomScript();
-        }, delayTime);
+        loadTimeout = setTimeout(loadScripts, delayTime);
     }
 
     document.addEventListener('mousemove', resetLoadTimeout);
