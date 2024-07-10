@@ -112,7 +112,6 @@ export default {
         { src: '~/plugins/vue-scroll-active.js' },
         { src: '~/plugins/fast.wistia-script.js', mode: 'client' },
         { src: '~/plugins/google-tag-manager.js', mode: 'client' },
-        { src: '~/plugins/script-loader.js', mode: 'client' },
     ],
 
     components: true,
